@@ -219,9 +219,7 @@ $\bar{x} = \frac{\sum x_i}{n}  \quad \text{(para amostras)}$
 $\mu = \frac{\sum x_i}{N}  \quad \text{(para populações)}$
 
 📌 **Exemplo:** Se as idades de cinco estudantes são 18, 20, 22, 24 e 26, a média será:  
-$
-\bar{x} = \frac{18 + 20 + 22 + 24 + 26}{5} = 22
-$  
+$\bar{x} = \frac{18 + 20 + 22 + 24 + 26}{5} = 22$  
 
 ---
 
@@ -252,12 +250,8 @@ As medidas de dispersão indicam o grau de variabilidade dos dados.
 
 A variância mede o quão dispersos os valores estão em relação à média.  
 
-$
-\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}  \quad \text{(para população)}
-$
-$
-s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}  \quad \text{(para amostras)}
-$
+$\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}  \quad \text{(para população)}$
+$s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}  \quad \text{(para amostras)}$
 
 📌 **Exemplo:** Se temos os tempos de resposta de um site (1.2, 1.5, 1.8, 2.0, 3.5 segundos), a variância indicará a dispersão dos tempos em relação à média.  
 
@@ -267,12 +261,8 @@ $
 
 O desvio padrão é a raiz quadrada da variância e expressa a dispersão na mesma unidade dos dados.  
 
-$
-\sigma = \sqrt{\sigma^2}
-$
-$
-s = \sqrt{s^2}
-$
+$\sigma = \sqrt{\sigma^2}$
+$s = \sqrt{s^2}$
 
 📌 **Exemplo:** Se a média do tempo de resposta de um site é **2 segundos** e o desvio padrão é **0,8 segundos**, significa que os tempos variam, em média, 0,8 segundos em torno da média.  
 
@@ -282,14 +272,10 @@ $
 
 A amplitude é a diferença entre o maior e o menor valor de um conjunto de dados.  
 
-$
-A = X_{\max} - X_{\min}
-$
+$A = X_{\max} - X_{\min}$
 
 📌 **Exemplo:** Se os salários de um grupo variam de R$2.000 a R$15.000, a amplitude será:  
-$
-A = 15.000 - 2.000 = 13.000
-$  
+$A = 15.000 - 2.000 = 13.000$  
 
 ---
 
