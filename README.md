@@ -79,12 +79,12 @@ Esses conceitos estão relacionados à contagem e organização de elementos em 
 
 - **Arranjo**: É uma seleção de "k" elementos a partir de um conjunto de "n" elementos, levando em conta a ordem.
 
-- **Combinação**: Diferente da permutação, nas combinações não se considera a ordem dos elementos selecionados. O número de combinações de "n" elementos tomados de "k" em "k" é dado pela fórmula \(\frac{n!}{k!(n-k)!}\).
+- **Combinação**: Diferente da permutação, nas combinações não se considera a ordem dos elementos selecionados. O número de combinações de "n" elementos tomados de "k" em "k" é dado pela fórmula $\frac{n!}{k!(n-k)!}$.
 
 ---
 
 ## **Probabilidade de um evento - Definições básicas**  
-Probabilidade é uma medida da chance de ocorrência de um evento. A probabilidade de um evento \(E\) é calculada pela razão entre o número de resultados favoráveis e o número total de resultados possíveis. Em termos matemáticos, \(P(E) = \frac{\text{número de resultados favoráveis}}{\text{número total de resultados possíveis}}\). A probabilidade varia de 0 a 1, sendo 0 impossível e 1 certeza.
+Probabilidade é uma medida da chance de ocorrência de um evento. A probabilidade de um evento $E$ é calculada pela razão entre o número de resultados favoráveis e o número total de resultados possíveis. Em termos matemáticos, $P(E) = \frac{\text{número de resultados favoráveis}}{\text{número total de resultados possíveis}}$. A probabilidade varia de 0 a 1, sendo 0 impossível e 1 certeza.
 
 ---
 
@@ -98,9 +98,9 @@ Vários teoremas são utilizados para calcular as probabilidades de eventos comp
 ---
 
 ## **Probabilidade condicional e eventos independentes**  
-- **Probabilidade condicional**: Refere-se à probabilidade de um evento ocorrer dado que outro evento já ocorreu. A probabilidade condicional de um evento \(A\) dado que \(B\) ocorreu é dada por \(P(A|B) = \frac{P(A \cap B)}{P(B)}\).
+- **Probabilidade condicional**: Refere-se à probabilidade de um evento ocorrer dado que outro evento já ocorreu. A probabilidade condicional de um evento $A$ dado que $B$ ocorreu é dada por $P(A|B) = \frac{P(A \cap B)}{P(B)}$.
 
-- **Eventos independentes**: São eventos em que a ocorrência de um evento não afeta a probabilidade de ocorrência do outro. Se dois eventos \(A\) e \(B\) são independentes, então \(P(A \cap B) = P(A) \cdot P(B)\).
+- **Eventos independentes**: São eventos em que a ocorrência de um evento não afeta a probabilidade de ocorrência do outro. Se dois eventos $A$ e $B$ são independentes, então $P(A \cap B) = P(A) \cdot P(B)$.
 
 ---
 
@@ -109,7 +109,7 @@ Variáveis aleatórias discretas assumem valores contáveis, e sua distribuiçã
 
 - **Distribuição equiprovável**: Todos os resultados possíveis têm a mesma probabilidade. Exemplo clássico é o lançamento de uma moeda honesta, onde a probabilidade de cara ou coroa é a mesma.
 
-- **Distribuição de Bernoulli**: Relacionada a experimentos com dois resultados possíveis (sucesso ou fracasso). A probabilidade de sucesso é \(p\) e a de fracasso é \(1 - p\).
+- **Distribuição de Bernoulli**: Relacionada a experimentos com dois resultados possíveis (sucesso ou fracasso). A probabilidade de sucesso é $p$ e a de fracasso é $1 - p$.
 
 ---
 
