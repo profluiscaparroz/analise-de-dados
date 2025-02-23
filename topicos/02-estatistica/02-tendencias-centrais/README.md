@@ -1,5 +1,13 @@
 # Tendências de Medidas Estatísticas: Conceitos e Aplicações
 
+## Sumario
+
+- [Média aritmética](#1-média-aritmética)
+- [Média Geométrica](#2-média-geométrica-definição-propriedades-e-aplicações)
+- [Méida harmonica](#3-média-harmônica)
+- [Mediana](#4-mediana)
+- [Moda](#5-moda)
+
 A estatística desempenha um papel fundamental na análise e interpretação de dados, sendo amplamente utilizada em diversas áreas do conhecimento. Dentre as principais ferramentas estatísticas, destacam-se as medidas de tendência central, que permitem resumir um conjunto de dados em um único valor representativo. Essas medidas incluem a **média aritmética**, a **mediana** e a **moda**, cada uma com suas características e aplicações específicas.
 
 ## 1. Média Aritmética
@@ -72,7 +80,135 @@ A média aritmética é uma ferramenta estatística fundamental, sendo amplament
 - TRIOLA, M. F. *Elementary Statistics*. Pearson, 2021.
 - MOORE, D. S.; MCCABE, G. P. *Introduction to the Practice of Statistics*. W. H. Freeman, 2017.
 
-## 2. Mediana
+## 2. Média Geométrica: Definição, Propriedades e Aplicações
+
+A média geométrica é uma medida de tendência central utilizada principalmente para calcular a taxa média de crescimento em processos multiplicativos. Diferente da média aritmética, que soma os valores e divide pelo total, a média geométrica multiplica os valores e extrai a raiz correspondente. Seu uso é comum em finanças, economia, ciências da computação e estatística aplicada.
+
+### 1. Definição Matemática
+
+A média geométrica de um conjunto de $n$ valores positivos $x_1, x_2, \dots, x_n$ é dada por:
+
+$G = \sqrt[n]{x_1 \cdot x_2 \cdot \dots \cdot x_n}$
+
+ou, de forma equivalente,
+
+$ G = \left( \prod_{i=1}^{n} x_i \right)^{\frac{1}{n}} $
+
+Esta fórmula garante que a média geométrica sempre resultará em um valor menor ou igual à média aritmética, conforme demonstrado pela desigualdade de Minkowski.
+
+### Propriedades da Média Geométrica
+
+A média geométrica possui algumas propriedades fundamentais:
+
+- **Invariância a Escalas Proporcionais**: Se todos os elementos forem multiplicados por uma constante, a média geométrica também é multiplicada por essa constante.
+- **Sempre Menor ou Igual à Média Aritmética**: A desigualdade entre média geométrica e aritmética indica que a média geométrica é uma estimativa conservadora em relação à aritmética.
+- **Adequada para Crescimento Composto**: Em processos onde os valores são multiplicativos, a média geométrica é mais apropriada que a média aritmética.
+
+### Aplicações da Média Geométrica
+
+A média geométrica é amplamente empregada em diversas áreas, incluindo:
+
+#### Finanças e Economia
+
+Em análise financeira, a média geométrica é usada para calcular a taxa média de retorno sobre investimentos ao longo do tempo, considerando o crescimento composto.
+
+Exemplo:
+
+Se um investimento tem taxas de retorno anuais de 10%, 5% e 15%, a média geométrica é:
+
+$G = \sqrt[3]{(1.10) \times (1.05) \times (1.15)} - 1 \approx 9.9\%$
+
+#### Ciências Biológicas e Epidemiologia
+
+A média geométrica é utilizada para calcular a taxa de crescimento populacional e de propagação de doenças.
+
+#### Estatística e Análise de Dados
+
+A média geométrica é empregada em análises estatísticas que envolvem variáveis multiplicativas, como na construção de índices estatísticos e modelos matemáticos.
+
+### Limitações da Média Geométrica
+
+Apesar de suas vantagens, a média geométrica também possui limitações:
+
+- **Necessidade de Valores Positivos**: Não pode ser aplicada quando há valores negativos ou nulos no conjunto de dados.
+- **Maior Complexidade Computacional**: Exige operações de multiplicação e extração de raiz, podendo ser menos intuitiva que a média aritmética.
+- **Sensibilidade a Pequenas Variações**: Em conjuntos com valores muito próximos, pode não representar grandes diferenças na distribuição dos dados.
+
+### Conclusão
+
+A média geométrica é uma ferramenta essencial na estatística e em diversas áreas do conhecimento, sendo particularmente útil em análises que envolvem crescimento composto e proporções multiplicativas. Seu uso adequado depende do contexto dos dados e da natureza das variáveis analisadas. No entanto, sua aplicação deve ser feita com cautela, considerando suas limitações e comparando-a com outras medidas de tendência central.
+
+## Referências
+
+- MOOD, A. M.; GRAYBILL, F. A.; BOES, D. C. *Introduction to the Theory of Statistics*. McGraw-Hill, 1974.
+- MONTGOMERY, D. C. *Applied Statistics and Probability for Engineers*. John Wiley & Sons, 2019.
+- BLAND, J. M.; ALTMAN, D. G. *Statistical Methods for Assessing Agreement Between Two Methods of Clinical Measurement*. The Lancet, 1986.
+
+## 3. Média harmônica
+
+A média harmônica é uma medida de tendência central que é particularmente útil para conjuntos de dados em que as quantidades são expressas em taxas ou razões. Diferente da média aritmética e da média geométrica, a média harmônica enfatiza os valores menores da distribuição, sendo amplamente utilizada em áreas como economia, física e estatística aplicada.
+
+### Definição da Média Harmônica
+
+A média harmônica de um conjunto de $ n $ números positivos $ x_1, x_2, ..., x_n $ é definida como o recíproco da média aritmética dos recíprocos dos valores individuais:
+
+$H = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}}$
+
+Essa expressão mostra que a média harmônica dá mais peso aos valores menores, o que a torna particularmente útil em situações onde a influência dos valores pequenos é mais relevante.
+
+### Propriedades da Média Harmônica
+
+A média harmônica apresenta propriedades importantes:
+
+- **Sempre menor ou igual à média aritmética e à média geométrica**: Para quaisquer valores positivos, temos que:
+  $  H \leq G \leq A$
+  onde $ H $ é a média harmônica, $G$ é a média geométrica e $A$ é a média aritmética.
+
+- **Maior sensibilidade a valores pequenos**: Pequenos valores exercem maior influência na média harmônica do que na aritmética ou geométrica.
+
+- **Utilização em cálculos de taxas**: A média harmônica é a abordagem correta para calcular a média de grandezas como velocidade média e taxa de juros harmônica.
+
+### Aplicabilidades da Média Harmônica
+
+#### Economia e Finanças
+A média harmônica é usada na cálculo do índice de retorno médio de investimentos quando os retornos são expressos como razões. Isso evita superestimações que poderiam ocorrer ao se utilizar a média aritmética.
+
+#### Física e Engenharia
+Em problemas que envolvem velocidades médias, a média harmônica é a forma correta de calcular a velocidade média quando a distância percorrida é constante. Por exemplo, se um carro percorre uma determinada distância a 60 km/h em um trecho e a 40 km/h em outro, a velocidade média correta é obtida pela média harmônica, e não pela aritmética.
+
+#### Estatística e Ciência de Dados
+A média harmônica é útil na análise de dados, especialmente em métricas de avaliação de modelos de aprendizado de máquina. Um exemplo é o cálculo da média F1-score, que utiliza a média harmônica para combinar precisão e revocação de classificação.
+
+### Exemplos de Cálculo
+
+#### Exemplo 1: Velocidade Média
+Se um carro percorre 100 km a uma velocidade de 60 km/h e depois outros 100 km a 40 km/h, a velocidade média $ V_m $ é dada por:
+
+$V_m = \frac{2}{\frac{1}{60} + \frac{1}{40}} = 48 \text{ km/h}$
+
+#### Exemplo 2: Média de Taxas de Crescimento
+Se uma empresa cresce 20% no primeiro ano e 30% no segundo ano, a taxa média de crescimento não é simplesmente a média aritmética de 25%, mas sim a média harmônica:
+
+$H = \frac{2}{\frac{1}{1.2} + \frac{1}{1.3}} = 24,39\%$
+
+### Limitações da Média Harmônica
+
+Apesar de sua utilidade, a média harmônica possui algumas limitações:
+- Não pode ser aplicada quando existem valores nulos ou negativos no conjunto de dados.
+- Em algumas situações, a média geométrica ou a aritmética pode ser mais apropriada.
+
+### Conclusão
+
+A média harmônica é uma ferramenta estatística essencial para calcular a média de taxas e razões, sendo amplamente utilizada em diversas áreas do conhecimento. Sua capacidade de enfatizar valores menores a torna especialmente útil em situações onde pequenos valores impactam significativamente o resultado final. No entanto, seu uso deve ser considerado com atenção, pois pode não ser adequada para todos os tipos de dados.
+
+## Referências
+
+- MOOD, A. M.; GRAYBILL, F. A.; BOES, D. C. *Introduction to the Theory of Statistics*. McGraw-Hill, 1974.
+- MONTGOMERY, D. C. *Applied Statistics and Probability for Engineers*. John Wiley & Sons, 2019.
+- WASSERMAN, L. *All of Statistics: A Concise Course in Statistical Inference*. Springer, 2004.
+
+
+## 4. Mediana
 
 A mediana é uma medida de tendência central amplamente utilizada na estatística para representar o valor central de um conjunto de dados. Em muitas situações, a mediana é preferida à média aritmética, especialmente quando há a presença de outliers ou distribuições assimétricas. Sua utilização está presente em diversas áreas do conhecimento, como economia, saúde, ciências sociais e engenharia.
 
@@ -82,7 +218,7 @@ O conceito de mediana remonta ao século XIX, tendo sido formalmente introduzido
 
 ### Definição da Mediana
 
-A mediana de um conjunto de \( n \) valores ordenados é o valor que ocupa a posição central. Se \( n \) for ímpar, a mediana é o elemento exatamente no meio da distribuição. Se \( n \) for par, a mediana é a média aritmética dos dois valores centrais. A fórmula matemática para a mediana pode ser expressa como:
+A mediana de um conjunto de $ n $ valores ordenados é o valor que ocupa a posição central. Se $ n $ for ímpar, a mediana é o elemento exatamente no meio da distribuição. Se $ n $ for par, a mediana é a média aritmética dos dois valores centrais. A fórmula matemática para a mediana pode ser expressa como:
 
 - Para um número ímpar de observações:
 
@@ -133,7 +269,7 @@ $\tilde{x} = \frac{3 + 4}{2} = 3.5$
 
 Indicando que a maior parte da população tem renda muito menor do que a média sugere.
 
-### 4.2. Saúde e Epidemiologia
+### Saúde e Epidemiologia
 
 Em estudos epidemiológicos, a mediana é frequentemente usada para expressar medidas como tempo de sobrevivência em análises de Kaplan-Meier (Bland, 2015). Ela fornece um indicador robusto para a análise da longevidade em tratamentos médicos e experimentos clínicos.
 
@@ -178,7 +314,7 @@ A mediana é uma medida de tendência central robusta e amplamente utilizada, se
 - PIKETTY, T. *Capital in the Twenty-First Century*. Harvard University Press, 2014.
 
 
-## 3. Moda
+## 5. Moda
 
 A moda é uma medida de tendência central amplamente utilizada na estatística para descrever a frequência de ocorrência de valores em um conjunto de dados. Ao contrário da média e da mediana, que estão relacionadas à posição central dos dados, a moda identifica os valores mais comuns dentro de uma distribuição.
 
@@ -191,11 +327,11 @@ A moda de um conjunto de dados é o valor ou os valores que ocorrem com maior fr
 - **Multimodal**: Quando existem três ou mais valores modais.
 - **Amodal**: Quando nenhum valor se destaca por ocorrer com maior frequência.
 
-Matematicamente, se tivermos um conjunto de dados \( X = \{x_1, x_2, \dots, x_n\} \), a moda \( Mo \) é definida como:
+Matematicamente, se tivermos um conjunto de dados $ X = \{x_1, x_2, \dots, x_n\} $, a moda $ Mo $ é definida como:
 
 $ Mo = \arg\max_{x_i} f(x_i) $
 
-onde \( f(x_i) \) representa a frequência de ocorrência de cada valor \( x_i \).
+onde $ f(x_i) $ representa a frequência de ocorrência de cada valor $ x_i $.
 
 ### Propriedades da Moda
 
@@ -302,4 +438,3 @@ As medidas de tendência central são essenciais para a análise de dados e a to
 - FREEDMAN, D.; PISANI, R.; PURVES, R. *Statistics*. W. W. Norton & Company, 2017.
 - MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. John Wiley & Sons, 2018.
 - TRIOLA, M. F. *Elementary Statistics*. Pearson, 2021.
-
