@@ -24,7 +24,7 @@ Uma distribuição de frequência geralmente inclui os seguintes componentes:
    
    $fr = \frac{f}{N}$
 
-   Onde $f$ é a frequência absoluta de uma classe e $ N $ é o total de dados.
+   Onde $f$ é a frequência absoluta de uma classe e $N$ é o total de dados.
 
 5. **Frequência Percentual (fp%):**  
    A frequência percentual é a frequência relativa expressa em porcentagem. Ela é calculada multiplicando a frequência relativa por 100.
