@@ -124,10 +124,6 @@ Uma análise estatística mostra que um novo medicamento reduz a pressão arteri
 
 ## **5. Conceitos Fundamentais da Estatística**
 
-A estatística é uma ciência que lida com a coleta, organização, análise, interpretação e apresentação de dados. Ela desempenha um papel essencial na tomada de decisões baseadas em evidências, sendo amplamente aplicada em diversas áreas do conhecimento. Para entender a estatística em profundidade, é fundamental conhecer seus conceitos básicos e avançados. Este texto aborda os principais conceitos estatísticos, com referências a autores relevantes na área.
-
----
-
 ### **1. População e Amostra**
 
 Um dos primeiros conceitos fundamentais da estatística é a distinção entre **população** e **amostra**.  
@@ -141,12 +137,171 @@ Montgomery e Runger (2010) destacam que "a análise estatística frequentemente 
 Uma pesquisa eleitoral que entrevista 2.000 pessoas para estimar a intenção de voto de uma população de milhões de eleitores.
 
 ---
+### **2. Censo e Amostragem**  
 
-### **2. Estatística Descritiva e Inferencial**
+#### **2.1. Censo**  
+O **censo** é um levantamento estatístico que coleta informações de **todos os indivíduos** de uma população. Ele fornece **dados precisos**, mas pode ser caro e demorado.  
+
+📌 **Exemplo:** O **Censo Demográfico do IBGE**, realizado a cada 10 anos no Brasil, coleta informações sobre toda a população brasileira.  
+
+#### **2.2. Amostragem**  
+A **amostragem** é a coleta de dados de **uma parte da população**, permitindo a realização de análises sem necessidade de examinar todos os indivíduos.  
+
+📌 **Exemplo:** Para saber a **intenção de votos** em uma eleição, institutos de pesquisa entrevistam uma amostra representativa dos eleitores.  
+
+- **Técnicas de amostragem:**  
+  - **Aleatória simples**: Todos têm a mesma chance de serem escolhidos.  
+  - **Estratificada**: A população é dividida em grupos (estratos) e cada um é amostrado proporcionalmente.  
+  - **Sistemática**: Seleção de elementos a intervalos fixos (exemplo: a cada 10 pessoas).  
+  - **Por conveniência**: Escolha de indivíduos disponíveis, sem aleatoriedade (menos confiável).  
+
+---
+
+### **3. Dado e Variável**  
+
+#### **3.1. Dado**  
+Os **dados** são as informações coletadas em um estudo estatístico. Eles podem ser números, palavras ou símbolos que representam características observadas.  
+
+📌 **Exemplo:** Idades de estudantes (18, 20, 22, 25) são **dados numéricos**, enquanto cores de carros (azul, vermelho, preto) são **dados categóricos**.  
+
+#### **3.2. Variável**  
+Uma **variável** é qualquer característica que pode assumir diferentes valores em uma pesquisa.  
+
+📌 **Exemplo:**  
+- A **idade** de uma pessoa é uma variável (pois pode assumir valores diferentes para cada indivíduo).  
+- O **sexo** (masculino ou feminino) também é uma variável.  
+
+---
+
+### **4. Tipos de Variáveis**  
+
+As variáveis estatísticas podem ser classificadas em **quantitativas** e **qualitativas**.  
+
+#### **4.1. Variáveis Quantitativas**  
+São aquelas que representam **valores numéricos** e permitem cálculos matemáticos.  
+
+##### **4.1.1. Quantitativa Discreta**  
+Valores numéricos **inteiros** que não admitem frações.  
+
+📌 **Exemplo:** Número de filhos em uma família (0, 1, 2, 3...).  
+
+##### **4.1.2. Quantitativa Contínua**  
+Valores numéricos que **admitem frações e casas decimais**.  
+
+📌 **Exemplo:** Altura de uma pessoa (1,75 m), peso (68,4 kg) e temperatura (36,7°C).  
+
+---
+
+#### **4.2. Variáveis Qualitativas**  
+São aquelas que representam **categorias ou atributos** e não podem ser medidas numericamente.  
+
+##### **4.2.1. Qualitativa Nominal**  
+Categorias **sem ordem natural** ou hierarquia.  
+
+📌 **Exemplo:** Cores de olhos (azul, verde, castanho), estado civil (solteiro, casado, divorciado).  
+
+##### **4.2.2. Qualitativa Ordinal**  
+Categorias **com uma ordem ou hierarquia**.  
+
+📌 **Exemplo:** Nível de escolaridade (fundamental, médio, superior), nível de satisfação (ruim, médio, bom, excelente).  
+
+---
+
+### **5. Medidas de Tendência Central**  
+
+As medidas de tendência central resumem um conjunto de dados com um único valor representativo.  
+
+#### **5.1. Média Aritmética $(\bar{x}$  ou  $\mu$)**  
+
+A média é a soma de todos os valores dividida pelo número total de observações.  
+
+$\bar{x} = \frac{\sum x_i}{n}  \quad \text{(para amostras)}$
+$\mu = \frac{\sum x_i}{N}  \quad \text{(para populações)}$
+
+📌 **Exemplo:** Se as idades de cinco estudantes são 18, 20, 22, 24 e 26, a média será:  
+$
+\bar{x} = \frac{18 + 20 + 22 + 24 + 26}{5} = 22
+$  
+
+---
+
+### **5.2. Mediana ($Md$)**  
+
+A mediana é o valor central de um conjunto de dados ordenado.  
+
+- Se o número de elementos for ímpar, a mediana é o valor do meio.  
+- Se for par, a mediana é a média dos dois valores centrais.  
+
+📌 **Exemplo:** Para os valores {10, 15, 20, 25, 30}, a mediana é **20**, pois está no meio da distribuição.  
+
+---
+
+### **5.3. Moda ($Mo$)**  
+
+A moda é o valor que ocorre com mais frequência.  
+
+📌 **Exemplo:** Se as notas de uma turma são {7, 8, 8, 9, 10}, a moda é **8**, pois ocorre mais vezes.  
+
+---
+
+## **6. Medidas de Dispersão**  
+
+As medidas de dispersão indicam o grau de variabilidade dos dados.  
+
+### **6.1. Variância ($\sigma^2$ ou $s^2$)**  
+
+A variância mede o quão dispersos os valores estão em relação à média.  
+
+$
+\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}  \quad \text{(para população)}
+$
+$
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}  \quad \text{(para amostras)}
+$
+
+📌 **Exemplo:** Se temos os tempos de resposta de um site (1.2, 1.5, 1.8, 2.0, 3.5 segundos), a variância indicará a dispersão dos tempos em relação à média.  
+
+---
+
+### **6.2. Desvio Padrão ($\sigma$ ou $s$)**  
+
+O desvio padrão é a raiz quadrada da variância e expressa a dispersão na mesma unidade dos dados.  
+
+$
+\sigma = \sqrt{\sigma^2}
+$
+$
+s = \sqrt{s^2}
+$
+
+📌 **Exemplo:** Se a média do tempo de resposta de um site é **2 segundos** e o desvio padrão é **0,8 segundos**, significa que os tempos variam, em média, 0,8 segundos em torno da média.  
+
+---
+
+### **6.3. Amplitude ($A$)**  
+
+A amplitude é a diferença entre o maior e o menor valor de um conjunto de dados.  
+
+$
+A = X_{\max} - X_{\min}
+$
+
+📌 **Exemplo:** Se os salários de um grupo variam de R$2.000 a R$15.000, a amplitude será:  
+$
+A = 15.000 - 2.000 = 13.000
+$  
+
+---
+
+O estudo da estatística envolve conceitos fundamentais, como **população e amostra**, **tipos de variáveis**, **medidas de tendência central** e **medidas de dispersão**. Esses conceitos são essenciais para coletar, organizar e interpretar dados, possibilitando análises precisas e tomadas de decisão informadas em diversas áreas do conhecimento.
+
+---
+
+### **7. Estatística Descritiva e Inferencial**
 
 A estatística pode ser dividida em duas grandes áreas: **estatística descritiva** e **estatística inferencial**.  
 
-#### **2.1 Estatística Descritiva**  
+#### **7.1 Estatística Descritiva**  
 Refere-se ao resumo e apresentação de dados por meio de tabelas, gráficos e medidas numéricas. Segundo Triola (2018), "a estatística descritiva nos ajuda a entender os dados sem inferir nada além do conjunto analisado".  
 
 Principais medidas:  
@@ -156,7 +311,7 @@ Principais medidas:
 📌 **Exemplo:**  
 Ao analisar a altura de 1.000 pessoas, podemos calcular a **média** para identificar o valor central e o **desvio padrão** para avaliar a variação entre os indivíduos.
 
-#### **2.2 Estatística Inferencial**  
+#### **7.2 Estatística Inferencial**  
 Busca fazer inferências sobre a população com base em uma amostra, utilizando **probabilidades** e **modelos estatísticos**. Montgomery e Runger (2010) afirmam que "a inferência estatística nos permite generalizar conclusões sobre uma população inteira a partir de uma amostra".  
 
 Principais ferramentas:  
@@ -169,11 +324,11 @@ Uma empresa quer saber se um novo medicamento reduz a pressão arterial. Um **te
 
 ---
 
-### **3. Medidas Estatísticas**
+### **8. Medidas Estatísticas**
 
 As medidas estatísticas são fundamentais para descrever e entender os dados.
 
-#### **3.1 Medidas de Tendência Central**  
+#### **8.1 Medidas de Tendência Central**  
 São valores que indicam onde os dados tendem a se concentrar. Segundo Ross (2017), "a média, mediana e moda são os pilares para resumir um conjunto de dados".  
 
 - **Média (𝜇 ou x̄)**: Soma dos valores dividida pelo número total de observações.  
@@ -183,7 +338,7 @@ São valores que indicam onde os dados tendem a se concentrar. Segundo Ross (201
 📌 **Exemplo:**  
 Se temos as idades: {20, 22, 22, 24, 25}, a média é 22,6 anos, a mediana é 22 e a moda é 22.
 
-#### **3.2 Medidas de Dispersão**  
+#### **8.2 Medidas de Dispersão**  
 Indicam o quão espalhados os dados estão em relação à média.  
 
 - **Variância (σ² ou s²)**: Mede a dispersão dos dados em relação à média.  
@@ -195,23 +350,23 @@ Se temos dois grupos de alunos com médias de 80 pontos em um teste, mas um grup
 
 ---
 
-### **4. Distribuições Estatísticas**
+### **9. Distribuições Estatísticas**
 
 A distribuição estatística descreve como os dados estão organizados em relação a um eixo.  
 
-#### **4.1 Distribuição Normal**  
+#### **9.1 Distribuição Normal**  
 A distribuição normal, ou curva de Gauss, é uma das mais importantes da estatística. Segundo Walpole et al. (2011), "muitos fenômenos naturais seguem uma distribuição normal, tornando-a essencial para a modelagem estatística".  
 
 📌 **Exemplo:**  
 Altura de pessoas, notas em testes padronizados e medições de erro de instrumentos seguem, geralmente, a distribuição normal.
 
-#### **4.2 Distribuição Binomial**  
+#### **9.2 Distribuição Binomial**  
 Usada para eventos com dois possíveis resultados, como "sucesso" e "fracasso".  
 
 📌 **Exemplo:**  
 Se lançamos uma moeda 10 vezes, a distribuição binomial pode calcular a probabilidade de obtermos exatamente 6 caras.  
 
-#### **4.3 Distribuição de Poisson**  
+#### **9.3 Distribuição de Poisson**  
 Modela a frequência de eventos raros em um intervalo de tempo fixo.  
 
 📌 **Exemplo:**  
@@ -219,7 +374,7 @@ Número de chamadas recebidas em um call center por minuto.
 
 ---
 
-### **5. Testes de Hipóteses e Significância Estatística**
+### **10. Testes de Hipóteses e Significância Estatística**
 
 Os **testes de hipóteses** são usados para verificar se uma afirmação sobre um parâmetro populacional é verdadeira.  
 
@@ -233,7 +388,7 @@ Uma empresa testa se um novo fertilizante aumenta a produtividade agrícola. Se 
 
 ---
 
-### **6. Correlação e Regressão**
+### **11. Correlação e Regressão**
 
 A **correlação** mede a relação entre duas variáveis.  
 
