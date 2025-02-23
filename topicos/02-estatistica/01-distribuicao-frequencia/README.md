@@ -22,18 +22,14 @@ Uma distribuição de frequência geralmente inclui os seguintes componentes:
 4. **Frequência Relativa (fr):**  
    A frequência relativa é a razão entre a frequência absoluta de uma classe e o total de observações no conjunto de dados. Ela é calculada pela fórmula:
    
-   $
-   fr = \frac{f}{N}
-   $
+   $fr = \frac{f}{N}$
 
-   Onde $ f $ é a frequência absoluta de uma classe e $ N $ é o total de dados.
+   Onde $f$ é a frequência absoluta de uma classe e $ N $ é o total de dados.
 
 5. **Frequência Percentual (fp%):**  
    A frequência percentual é a frequência relativa expressa em porcentagem. Ela é calculada multiplicando a frequência relativa por 100.
 
-   $
-   fp\% = fr \times 100
-   $
+   $fp\% = fr \times 100$
 
 ### **Exemplo de Distribuição de Frequência**
 
@@ -120,20 +116,20 @@ A frequência acumulada é simplesmente a soma das frequências absolutas à med
 ### **5. Calcule a Frequência Relativa**
 A frequência relativa é calculada dividindo a frequência absoluta de cada classe pelo total de dados. Neste caso, temos 15 dados no total.
 
-- **18-22**: $ \frac{3}{15} = 0.2 $
-- **23-27**: $ \frac{3}{15} = 0.2 $
-- **28-32**: $ \frac{4}{15} = 0.267 $
-- **33-37**: $ \frac{3}{15} = 0.2 $
-- **38-42**: $ \frac{2}{15} = 0.133 $
+- **18-22**: $\frac{3}{15} = 0.2$
+- **23-27**: $\frac{3}{15} = 0.2$
+- **28-32**: $\frac{4}{15} = 0.267$
+- **33-37**: $\frac{3}{15} = 0.2$
+- **38-42**: $\frac{2}{15} = 0.133$
 
 ### **6. Calcule a Frequência Percentual**
 A frequência percentual é simplesmente a frequência relativa multiplicada por 100.
 
-- **18-22**: $ 0.2 \times 100 = 20\% $
-- **23-27**: $ 0.2 \times 100 = 20\% $
-- **28-32**: $ 0.267 \times 100 = 26.7\% $
-- **33-37**: $ 0.2 \times 100 = 20\% $
-- **38-42**: $ 0.133 \times 100 = 13.3\% $
+- **18-22**: $0.2 \times 100 = 20\%$
+- **23-27**: $0.2 \times 100 = 20\%$
+- **28-32**: $0.267 \times 100 = 26.7\%$
+- **33-37**: $0.2 \times 100 = 20\%$
+- **38-42**: $0.133 \times 100 = 13.3\%$
 
 ---
 
@@ -163,20 +159,16 @@ Aqui estão os principais passos para construir as classes de uma distribuição
 #### 1. **Determinação do Número de Classes**
 O número de classes a ser usado pode ser definido com base no número total de observações ou de acordo com critérios específicos. Um critério comum para determinar o número de classes é a **regra de Sturges**, que pode ser calculada da seguinte maneira:
 
-$
-k = 1 + 3.322 \log(n)
-$
+$k = 1 + 3.322 \log(n)$
 
 Onde:
-- $ k $ é o número de classes
-- $ n $ é o número de dados na amostra
+- $k$ é o número de classes
+- $n$ é o número de dados na amostra
 
 #### 2. **Determinação do Intervalo das Classes**
 O intervalo (ou amplitude) de cada classe é calculado com base na diferença entre o valor máximo e o valor mínimo dos dados, dividida pelo número de classes:
 
-$
-\text{Amplitude da Classe} = \frac{\text{Valor Máximo} - \text{Valor Mínimo}}{k}
-$
+$\text{Amplitude da Classe} = \frac{\text{Valor Máximo} - \text{Valor Mínimo}}{k}$
 
 #### 3. **Criação das Classes**
 A partir do valor mínimo dos dados, criamos intervalos consecutivos (classes) com a amplitude definida no passo anterior. Cada classe deve cobrir um intervalo de valores dentro do conjunto de dados.
@@ -197,24 +189,18 @@ Vamos usar um conjunto de dados fictício de idades, como já foi mostrado anter
 #### **Passo 1: Determinar o Número de Classes**
 Para calcular o número de classes $ k $, usamos a fórmula de Sturges:
 
-$
-k = 1 + 3.322 \log(15)
-$
+$k = 1 + 3.322 \log(15)$
 
 Vamos calcular:
 
-$
-k = 1 + 3.322 \log(15) \approx 1 + 3.322 \times 1.176 = 1 + 3.91 \approx 4.91
-$
+$k = 1 + 3.322 \log(15) \approx 1 + 3.322 \times 1.176 = 1 + 3.91 \approx 4.91$
 
 Arredondamos para o número inteiro mais próximo, ou seja, 5 classes.
 
 #### **Passo 2: Determinar o Intervalo das Classes**
 Agora, calculamos a amplitude das classes. O valor mínimo é 18 e o valor máximo é 40.
 
-$
-\text{Amplitude da Classe} = \frac{40 - 18}{5} = \frac{22}{5} = 4.4
-$
+$\text{Amplitude da Classe} = \frac{40 - 18}{5} = \frac{22}{5} = 4.4$
 
 Arredondamos para o número inteiro mais próximo, ou seja, 4. Agora sabemos que cada classe terá uma amplitude de 4.
 
@@ -288,24 +274,18 @@ Vamos considerar um conjunto de dados fictício de idades com pontos flutuantes:
 #### **Passo 1: Determinar o Número de Classes**
 Utilizando a fórmula de Sturges para o número de classes $ k $:
 
-$
-k = 1 + 3.322 \log(n)
-$
+$k = 1 + 3.322 \log(n)$
 
 Onde $ n = 15 $, portanto:
 
-$
-k = 1 + 3.322 \log(15) \approx 1 + 3.322 \times 1.176 = 1 + 3.91 \approx 5.91
-$
+$k = 1 + 3.322 \log(15) \approx 1 + 3.322 \times 1.176 = 1 + 3.91 \approx 5.91$
 
 Arredondamos para 6 classes.
 
 #### **Passo 2: Determinar o Intervalo das Classes**
 O valor mínimo é 18.2 e o valor máximo é 40.2. A amplitude da classe é calculada da seguinte forma:
 
-$
-\text{Amplitude da Classe} = \frac{40.2 - 18.2}{6} = \frac{22}{6} \approx 3.67
-$
+$\text{Amplitude da Classe} = \frac{40.2 - 18.2}{6} = \frac{22}{6} \approx 3.67$
 
 A amplitude será de aproximadamente 3.7. Vamos arredondar para 3.7.
 
