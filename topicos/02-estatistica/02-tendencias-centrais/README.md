@@ -19,9 +19,9 @@ A média aritmética de um conjunto de $n$ valores é calculada somando-se todos
 $\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}$
 
 onde:
-- $ \bar{x} $ representa a média aritmética;
-- $ x_i $ são os valores individuais do conjunto de dados;
-- $ n $ é o número total de observações.
+- $\bar{x}$ representa a média aritmética;
+- $x_i$ são os valores individuais do conjunto de dados;
+- $n$ é o número total de observações.
 
 A média é amplamente utilizada devido à sua simplicidade e facilidade de cálculo. Ela fornece um valor representativo do conjunto de dados, sendo especialmente útil em distribuições simétricas.
 
@@ -29,7 +29,7 @@ A média é amplamente utilizada devido à sua simplicidade e facilidade de cál
 
 A média aritmética possui diversas propriedades que a tornam uma ferramenta poderosa na estatística:
 
-- **Linearidade**: Se dois conjuntos de dados possuem médias $ \bar{x} $ e $ \bar{y} $, então a média da soma dos conjuntos é a soma das médias.
+- **Linearidade**: Se dois conjuntos de dados possuem médias $\bar{x}$ e $\bar{y}$, então a média da soma dos conjuntos é a soma das médias.
 - **Sensibilidade a Outliers**: Valores extremos podem influenciar significativamente a média, tornando-a pouco representativa em distribuições assimétricas.
 - **Utilização em Distribuições Simétricas**: Quando os dados estão uniformemente distribuídos, a média fornece uma boa medida central.
 - **Dependência da Escala**: Se todos os valores forem multiplicados por um fator constante, a média também será multiplicada pelo mesmo fator.
@@ -92,7 +92,7 @@ $G = \sqrt[n]{x_1 \cdot x_2 \cdot \dots \cdot x_n}$
 
 ou, de forma equivalente,
 
-$ G = \left( \prod_{i=1}^{n} x_i \right)^{\frac{1}{n}} $
+$G = \left( \prod_{i=1}^{n} x_i \right)^{\frac{1}{n}}$
 
 Esta fórmula garante que a média geométrica sempre resultará em um valor menor ou igual à média aritmética, conforme demonstrado pela desigualdade de Minkowski.
 
@@ -161,8 +161,8 @@ Essa expressão mostra que a média harmônica dá mais peso aos valores menores
 A média harmônica apresenta propriedades importantes:
 
 - **Sempre menor ou igual à média aritmética e à média geométrica**: Para quaisquer valores positivos, temos que:
-  $  H \leq G \leq A$
-  onde $ H $ é a média harmônica, $G$ é a média geométrica e $A$ é a média aritmética.
+  $H \leq G \leq A$
+  onde $H$ é a média harmônica, $G$ é a média geométrica e $A$ é a média aritmética.
 
 - **Maior sensibilidade a valores pequenos**: Pequenos valores exercem maior influência na média harmônica do que na aritmética ou geométrica.
 
@@ -218,27 +218,27 @@ O conceito de mediana remonta ao século XIX, tendo sido formalmente introduzido
 
 ### Definição da Mediana
 
-A mediana de um conjunto de $ n $ valores ordenados é o valor que ocupa a posição central. Se $ n $ for ímpar, a mediana é o elemento exatamente no meio da distribuição. Se $ n $ for par, a mediana é a média aritmética dos dois valores centrais. A fórmula matemática para a mediana pode ser expressa como:
+A mediana de um conjunto de $ n $ valores ordenados é o valor que ocupa a posição central. Se $n$ for ímpar, a mediana é o elemento exatamente no meio da distribuição. Se $n$ for par, a mediana é a média aritmética dos dois valores centrais. A fórmula matemática para a mediana pode ser expressa como:
 
 - Para um número ímpar de observações:
 
-  $ \tilde{x} = x_{(\frac{n+1}{2})} $
+  $\tilde{x} = x_{(\frac{n+1}{2})}$
 
 - Para um número par de observações:
 
-  $ \tilde{x} = \frac{x_{(\frac{n}{2})} + x_{(\frac{n}{2}+1)}}{2} $
+  $\tilde{x} = \frac{x_{(\frac{n}{2})} + x_{(\frac{n}{2}+1)}}{2}$
 
-onde $ x_{(i)}$ representa o $i$-ésimo valor ordenado do conjunto de dados.
+onde $x_{(i)}$ representa o $i$-ésimo valor ordenado do conjunto de dados.
 
 ### Exemplo
 
 Considere um conjunto de dados representando a idade de 7 pessoas: {23, 29, 31, 34, 35, 40, 42}. Como o número de elementos é ímpar (7), a mediana será o quarto valor ordenado:
 
-$ \tilde{x} = 34 $
+$\tilde{x} = 34$
 
 Agora, considere um conjunto de dados com 6 valores: {23, 29, 31, 34, 35, 40}. Como o número de elementos é par, a mediana será a média dos dois valores centrais:
 
-$ \tilde{x} = \frac{31 + 34}{2} = 32.5 $
+$\tilde{x} = \frac{31 + 34}{2} = 32.5$
 
 ### Propriedades da Mediana
 
@@ -327,11 +327,11 @@ A moda de um conjunto de dados é o valor ou os valores que ocorrem com maior fr
 - **Multimodal**: Quando existem três ou mais valores modais.
 - **Amodal**: Quando nenhum valor se destaca por ocorrer com maior frequência.
 
-Matematicamente, se tivermos um conjunto de dados $ X = \{x_1, x_2, \dots, x_n\} $, a moda $ Mo $ é definida como:
+Matematicamente, se tivermos um conjunto de dados $X = \{x_1, x_2, \dots, x_n\}$, a moda $Mo$ é definida como:
 
-$ Mo = \arg\max_{x_i} f(x_i) $
+$Mo = \arg\max_{x_i} f(x_i)$
 
-onde $ f(x_i) $ representa a frequência de ocorrência de cada valor $ x_i $.
+onde $f(x_i)$ representa a frequência de ocorrência de cada valor $x_i$.
 
 ### Propriedades da Moda
 
@@ -378,7 +378,7 @@ A escolha entre moda, média e mediana depende do tipo de dado analisado e da di
 
 Considere o seguinte conjunto de notas de alunos:
 
-$ \{7, 8, 9, 8, 10, 8, 7, 6, 9, 8\} $
+$\{7, 8, 9, 8, 10, 8, 7, 6, 9, 8\}$
 
 A moda é **8**, pois é o valor que ocorre com maior frequência.
 
@@ -386,7 +386,7 @@ A moda é **8**, pois é o valor que ocorre com maior frequência.
 
 Suponha que uma pesquisa perguntou a 10 pessoas qual sua cor favorita, e as respostas foram:
 
-$ \{"Azul", "Vermelho", "Azul", "Verde", "Azul", "Amarelo", "Verde", "Azul", "Vermelho", "Verde"\} $
+$\{"Azul", "Vermelho", "Azul", "Verde", "Azul", "Amarelo", "Verde", "Azul", "Vermelho", "Verde"\}$
 
 A moda é **"Azul"**, pois aparece mais vezes do que as outras cores.
 
@@ -394,7 +394,7 @@ A moda é **"Azul"**, pois aparece mais vezes do que as outras cores.
 
 Se tivermos o conjunto:
 
-$ \{5, 6, 6, 7, 8, 8, 9\} $
+$\{5, 6, 6, 7, 8, 8, 9\}$
 
 As modas são **6** e **8**, tornando essa uma distribuição bimodal.
 
