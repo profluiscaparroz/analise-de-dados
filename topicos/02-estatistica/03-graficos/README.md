@@ -833,33 +833,425 @@ plt.show()
 Esses gráficos são eficazes para visualizar dados temporais e entender como as variáveis se comportam, permitindo uma análise mais profunda e a comunicação de insights de forma clara.
 
 ## **3. Gráfico de Pizza**
-### 🥧 O que é?
-O **gráfico de pizza** divide um círculo em fatias proporcionais aos valores representados.
 
-###  Quando usar?
-- Comparação de proporções entre categorias.
-- Representação de distribuição percentual.
+Os **gráficos de pizza** (ou gráficos de setores) são uma das ferramentas visuais mais conhecidas e utilizadas em estatísticas e análise de dados. Eles são usados para representar distribuições percentuais ou proporcionais de um conjunto de dados, fornecendo uma maneira intuitiva de entender como diferentes partes contribuem para o total.
 
-###  Exemplo:
-Distribuição de gastos em um orçamento doméstico.
+### **3.1. O Que São Gráficos de Pizza?**
 
-🚨 **Cuidado**: Evite usar quando há muitas categorias ou quando as diferenças entre os valores são pequenas, pois pode dificultar a interpretação.
+Um gráfico de pizza é uma representação gráfica circular que é dividida em "fatias", onde cada fatia representa uma categoria ou variável em um conjunto de dados. A área de cada fatia é proporcional à frequência ou porcentagem da categoria representada. Em essência, ele mostra a composição de um todo e como as diferentes partes se comparam entre si.
+
+Cada fatia é atribuída a uma parte do total, com o valor total sendo 100% (ou 1, dependendo da escala). Em geral, gráficos de pizza são usados para representar dados qualitativos ou categóricos, como a distribuição de vendas por região ou a participação de mercado de diferentes empresas.
+
+### **3.2. História dos Gráficos de Pizza**
+
+O gráfico de pizza foi criado por **William Playfair**, um economista e engenheiro escocês do século XVIII, conhecido por ser um dos pioneiros na visualização de dados. Playfair introduziu gráficos como o de barras e o de pizza em suas publicações, como em seu trabalho de 1801, "The Commercial and Political Atlas", onde ele usava gráficos para ilustrar o comércio da Grã-Bretanha.
+
+Desde então, o gráfico de pizza se tornou um dos tipos mais populares de gráficos utilizados em reportagens e relatórios corporativos, embora alguns analistas afirmem que ele pode ser menos eficaz do que outros gráficos para representar dados de maneira precisa.
+
+## **3.3. Importância dos Gráficos de Pizza na Análise de Dados**
+
+- **Facilidade de Interpretação**: Os gráficos de pizza são facilmente compreendidos pelo público geral. Eles visualizam de forma clara a proporção de partes em relação ao todo, tornando-se uma ferramenta intuitiva de visualização.
+  
+- **Comparação Proporcional**: Eles permitem uma comparação direta de diferentes partes de um todo. Por exemplo, se você tem a participação de mercado de diversas empresas, um gráfico de pizza pode facilitar a comparação da participação relativa de cada uma.
+
+- **Eficiência Visual**: Embora nem sempre sejam a melhor escolha para dados com muitas categorias, para conjuntos de dados pequenos ou com poucas variáveis, os gráficos de pizza são extremamente eficazes. Eles ajudam a ver rapidamente qual categoria é maior ou menor.
+
+## **3.4. Tipos de Gráficos de Pizza e suas Derivações**
+
+1. **Gráfico de Pizza Simples**
+
+   Este é o tipo mais básico de gráfico de pizza, onde os dados são representados por uma única pizza dividida em fatias. Cada fatia é proporcional à quantidade da categoria representada.
+
+   - **Exemplo**: Se um gráfico de pizza mostra a distribuição de vendas de um produto entre diferentes regiões, as fatias representam a porcentagem de vendas em cada região.
+
+2. **Gráfico de Pizza Explodido**
+
+   No gráfico de pizza explodido, uma ou mais fatias são destacadas para chamar atenção para uma categoria específica. Isso ajuda a enfatizar uma parte dos dados, tornando-a mais visível e destacando-a em relação às outras fatias.
+
+   - **Exemplo**: Em um gráfico de pizza mostrando o orçamento de uma empresa, a fatia representando os "Custos com Marketing" pode ser destacada para enfatizar quanto da receita está sendo alocada para esse setor.
+
+3. **Gráfico de Pizza 3D**
+
+   Um gráfico de pizza 3D é uma variação onde a representação visual é criada em três dimensões, dando um efeito visual mais impactante. Embora visualmente interessantes, eles podem ser mais difíceis de interpretar corretamente, pois distorções de perspectiva podem fazer com que as comparações entre fatias não sejam tão precisas.
+
+   - **Exemplo**: Usado principalmente para apresentações e relatórios onde o apelo visual é mais importante do que a precisão absoluta.
+
+4. **Gráfico de Pizza com Subgráficos (ou "Gráfico de Pizza em Pizza")**
+
+   Em algumas situações, pode ser útil representar uma fatia de um gráfico de pizza com um gráfico de pizza adicional. Isso permite explorar mais profundamente a composição de uma parte do conjunto de dados. Esse tipo é frequentemente usado quando se quer mostrar a subdivisão de uma categoria em categorias menores.
+
+   - **Exemplo**: Se você estiver analisando a participação de mercado de várias empresas, uma fatia de uma empresa específica pode ser detalhada com um gráfico de pizza mostrando sua participação em diferentes regiões.
+
+5. **Gráfico de Pizza em Forma de Rosca (Doughnut Chart)**
+
+   Um gráfico de pizza em forma de rosca é uma variação onde o gráfico de pizza possui um buraco no centro. Esse tipo de gráfico permite uma visualização semelhante ao gráfico de pizza, mas com mais espaço central para incluir informações adicionais, como o total das categorias ou até mesmo um indicador de proporção.
+
+   - **Exemplo**: Pode ser usado para mostrar a distribuição de vendas por produto, enquanto o centro da rosca pode conter a soma total das vendas.
+
+## **3.5. Vantagens e Desvantagens dos Gráficos de Pizza**
+
+**Vantagens:**
+- **Simples e intuitivo**: Fácil para o público entender rapidamente a distribuição percentual.
+- **Visualmente atraente**: Ideal para apresentações e quando se quer mostrar a composição de um todo de forma simples.
+- **Efetivo para poucas categorias**: Quando há apenas algumas categorias, o gráfico de pizza é muito eficaz.
+
+**Desvantagens:**
+- **Dificuldade com muitas categorias**: Se muitas categorias forem usadas, o gráfico de pizza fica confuso e difícil de interpretar.
+- **Comparação imprecisa**: A comparação visual entre fatias próximas pode ser difícil, especialmente quando as diferenças são pequenas.
+- **Não recomendado para dados contínuos**: Para variáveis contínuas ou dados mais complexos, outros tipos de gráficos como barras ou linhas são preferíveis.
+
+### **Conclusão**
+
+Os gráficos de pizza são uma ferramenta poderosa e simples para representar a composição de um conjunto de dados. Quando usados de forma adequada, eles podem ajudar a transmitir rapidamente informações sobre a proporção das diferentes categorias de um conjunto. No entanto, é importante lembrar que eles têm limitações, especialmente quando o número de categorias é grande ou quando a precisão visual é necessária.
+
+Para criar um gráfico de pizza no Excel com base nos conceitos que discutimos, siga os passos abaixo para realizar o exemplo de um gráfico de pizza simples e de um gráfico de pizza "explodido".
+
+### **Exemplo de Gráfico de Pizza no Excel: Participação de Mercado de Produtos**
+
+#### **Passo 1: Organizar os Dados**
+Primeiro, crie uma tabela no Excel com os dados de participação de mercado dos produtos. A tabela pode ser algo como:
+
+| Produto    | Participação (%) |
+|------------|------------------|
+| Produto A  | 40               |
+| Produto B  | 30               |
+| Produto C  | 20               |
+| Produto D  | 10               |
+
+#### **Passo 2: Criar o Gráfico de Pizza Simples**
+1. Selecione os dados (a tabela que você criou).
+2. Vá até a aba **Inserir** na parte superior da tela.
+3. Na seção **Gráficos**, clique em **Pizza** (ícone de gráfico de pizza).
+4. Escolha o tipo **Pizza** simples.
+5. O Excel irá criar automaticamente um gráfico de pizza com base nos dados selecionados.
+6. O gráfico será inserido na planilha. Você pode mover e ajustar o tamanho do gráfico conforme necessário.
+
+#### **Passo 3: Personalizar o Gráfico de Pizza**
+1. Para adicionar **rótulos de porcentagem**, clique com o botão direito do mouse sobre o gráfico de pizza e escolha a opção **Adicionar Rótulos de Dados**.
+2. Para exibir as porcentagens, clique novamente com o botão direito nos rótulos e selecione **Formatar Rótulos de Dados**. Marque a opção **Porcentagem** e ajuste o formato como preferir.
+3. Para dar um título ao gráfico, clique na área de título e digite, por exemplo, "Participação de Mercado dos Produtos".
+
+#### **Passo 4: Criar o Gráfico de Pizza Explodido**
+1. Selecione o gráfico de pizza já criado.
+2. Clique com o botão direito sobre a fatia que você deseja destacar (por exemplo, "Produto A").
+3. Selecione a opção **Explodir Fatia** (ou **Explodir**).
+4. A fatia selecionada será "explodida", ou seja, afastada um pouco do centro do gráfico, destacando-a.
+5. Para dar um efeito mais chamativo, você pode repetir o processo para outras fatias, se necessário.
+
+#### **Passo 5: Ajustar o Gráfico (opcional)**
+- **Mudança de Cores**: Para mudar as cores das fatias, clique em uma fatia e, em seguida, clique na opção de **Formatar** e escolha uma nova cor.
+- **Mudança de Estilo**: Você também pode selecionar um estilo de gráfico diferente, clicando em **Alterar Tipo de Gráfico** na aba **Design**.
+
+#### **Resultado Esperado**
+- Você terá um gráfico de pizza simples e, se desejar, uma versão explodida para destacar uma categoria, como o "Produto A".
+- O gráfico exibirá claramente a porcentagem de participação de cada produto no mercado total, ajudando na visualização das proporções.
+
+#### **Dicas Adicionais**
+- **Use Gráficos de Pizza com Moderação**: Para garantir que o gráfico seja eficiente, evite incluir muitas categorias, pois isso pode tornar o gráfico confuso.
+- **Exploração e Detalhes**: Se houver uma categoria com destaque, como o "Produto A" no exemplo, explodi-la pode ser útil para chamar a atenção dos leitores ou para enfatizar informações específicas.
+
 
 ---
 
 ## **4. Histograma**
-###  O que é?
-O **histograma** é semelhante ao gráfico de barras, mas representa a distribuição de frequências de um conjunto de dados numéricos, agrupando-os em intervalos (bins).
 
-###  Quando usar?
-- Analisar a distribuição de dados contínuos.
-- Identificar padrões como assimetria ou dispersão.
-- Avaliação de normalidade de dados.
+### **Gráficos de Histograma: Explicação Aprofundada**
 
-###  Exemplo:
-Distribuição de idades dos clientes de uma academia.
+Os **gráficos de histograma** são uma ferramenta essencial na estatística para a visualização de distribuições de dados numéricos. Eles são usados para mostrar a frequência de ocorrências de um conjunto de dados em intervalos ou "bins" (caixas), permitindo que se identifique padrões, tendências e a forma da distribuição.
+
+#### **O que é um Histograma?**
+Um histograma é um tipo de gráfico de barras que exibe a distribuição de um conjunto de dados. Cada barra representa a frequência (número de ocorrências) de dados que caem dentro de um intervalo específico (bin). Ao contrário de um gráfico de barras, onde as categorias são separadas, no histograma, as barras são contínuas, refletindo a natureza contínua dos dados numéricos.
+
+#### **Estrutura do Histograma**
+1. **Eixo X (horizontal)**: Representa os intervalos de dados (bins). Cada intervalo agrupa um conjunto de valores. Por exemplo, se você estiver analisando a altura de indivíduos, os intervalos podem ser definidos em faixas de 5 cm (150-155 cm, 155-160 cm, etc.).
+   
+2. **Eixo Y (vertical)**: Representa a frequência (ou a densidade) de ocorrência dos dados em cada intervalo. Ou seja, quantos valores do conjunto de dados caem dentro de cada bin.
+
+3. **Bins**: São as divisões do eixo X que agrupam os dados. A escolha do número de bins pode influenciar a aparência do histograma e a interpretação dos dados.
+
+#### **Histograma x Gráfico de Barras**
+Embora o histograma seja visualmente semelhante ao gráfico de barras, há uma diferença fundamental:
+- O **gráfico de barras** é utilizado para dados categóricos, onde as barras são separadas, representando diferentes categorias.
+- O **histograma** é utilizado para dados contínuos ou quantitativos, onde as barras são tocadas umas nas outras, refletindo a continuidade dos dados.
+
+### **Derivações do Histograma em Estatística**
+
+#### **1. Histogramas de Frequência**
+O **histograma de frequência** exibe a quantidade absoluta de ocorrências dentro de cada intervalo. Este tipo de histograma é útil para entender a distribuição de um conjunto de dados, identificando a frequência com que certos valores ocorrem em um intervalo específico.
+
+Exemplo:
+Imagine que você tenha um conjunto de dados sobre a pontuação de alunos em um teste, e deseja visualizar quantos alunos ficaram em cada faixa de pontuação. O histograma de frequência pode mostrar, por exemplo, quantos alunos tiveram pontuações entre 0-10, 10-20, etc.
+
+#### **2. Histogramas de Densidade**
+Um **histograma de densidade** é uma versão do histograma onde a área de cada barra não é a frequência absoluta, mas a densidade, que é calculada dividindo a frequência pelo número de dados e o tamanho do intervalo (bin). A densidade total de todas as barras deve ser igual a 1, o que transforma o histograma em uma função de densidade de probabilidade.
+
+Este tipo de histograma é frequentemente utilizado em estatísticas para aproximar a **distribuição de probabilidade** de um conjunto de dados, como em distribuições normais, exponenciais, etc.
+
+#### **3. Histogramas Cumulativos**
+O **histograma cumulativo** é uma variação onde a altura de cada barra representa a soma das frequências até aquele ponto, acumulando o total de ocorrências. Ele é útil para entender a distribuição acumulada de dados.
+
+Por exemplo, em um teste de desempenho, um histograma cumulativo pode mostrar quantos alunos tiveram notas até um certo valor, ajudando a visualizar a porcentagem acumulada de alunos que ficaram dentro de uma faixa de pontuação.
+
+#### **4. Histogramas Normalizados**
+Quando trabalhamos com grandes volumes de dados, pode ser útil **normalizar** o histograma. Isso é feito dividindo a frequência de cada bin pela quantidade total de dados, o que permite uma comparação mais fácil entre diferentes conjuntos de dados. Isso é especialmente importante em análises onde queremos comparar distribuições de diferentes amostras com diferentes tamanhos.
+
+#### **1. Identificação da Distribuição dos Dados**
+O histograma permite identificar rapidamente a distribuição dos dados. A distribuição pode ter várias formas, como:
+- **Distribuição Normal**: Os dados se distribuem de forma simétrica, com a maioria das ocorrências concentradas em torno da média.
+- **Distribuição Assimétrica**: Quando a distribuição não é simétrica, com os dados tendendo para a direita (distribuição positiva) ou para a esquerda (distribuição negativa).
+- **Distribuição Uniforme**: Onde todas as barras têm aproximadamente a mesma altura, indicando que os dados são distribuídos uniformemente ao longo dos intervalos.
+
+#### **2. Detectando Outliers e Anomalias**
+Os histogramas são úteis para identificar **outliers** (valores atípicos) e anomalias nos dados. Se uma barra estiver muito afastada das outras, pode indicar a presença de um dado fora do padrão.
+
+#### **3. Análise de Tendências e Modos**
+O histograma também pode revelar **modos** nos dados, que são os valores mais frequentes. Um gráfico de histograma pode ser unimodal (um pico), bimodal (dois picos) ou multimodal (vários picos). Esse comportamento é importante para identificar padrões ou características específicas dos dados.
+
+#### **4. Avaliação da Dispersão**
+O histograma ajuda a avaliar a **dispersão** dos dados, ou seja, o quanto os dados estão espalhados em torno da média. Se a distribuição dos dados for muito estreita, isso sugere baixa variabilidade; se for muito ampla, indica maior dispersão.
+
+### **Considerações sobre o Histograma**
+
+- **Escolha do número de bins**: A escolha do número de bins pode afetar a interpretação do histograma. Se houver poucos bins, a visualização pode ser muito "rasteira" e perder detalhes. Por outro lado, muitos bins podem criar um gráfico muito fragmentado, tornando difícil observar tendências.
+- **Alternativas ao Histograma**: Em algumas situações, a distribuição dos dados pode ser melhor representada com **gráficos de densidade kernel** ou **boxplots** (diagramas de caixa), especialmente quando se deseja uma análise mais precisa da forma da distribuição.
+
+### **Conclusão**
+O histograma é uma ferramenta poderosa para explorar e visualizar distribuições de dados em estatísticas. Ele oferece insights importantes sobre a estrutura dos dados, como dispersão, tendências centrais e a presença de outliers. Com as várias derivações (histogramas de frequência, de densidade, cumulativos e normalizados), o histograma se torna ainda mais útil em diferentes contextos analíticos, seja na análise exploratória de dados ou na modelagem estatística.
+
+### **Exemplo de histograma EXCEL**
+Aqui estão os passos para criar histogramas e suas variações no Excel. Vamos cobrir as opções principais: **histograma simples**, **histograma acumulado**, **histograma de densidade** e **histograma normalizado**.
+
+### **1. Histograma Simples no Excel**
+
+#### **Passos para criar um histograma simples:**
+
+1. **Prepare seus dados**: Digite os dados que deseja analisar em uma coluna do Excel. Exemplo: Digite os dados de uma amostra (por exemplo, notas de um teste) na coluna A.
+   
+   **Exemplo de Dados:**
+   ```
+   75
+   80
+   85
+   90
+   95
+   100
+   105
+   110
+   115
+   120
+   125
+   ```
+
+2. **Defina os intervalos (bins)**: Crie uma segunda coluna que especifica os intervalos (bins) para o histograma. Exemplo:
+   ```
+   70-80
+   81-90
+   91-100
+   101-110
+   111-120
+   121-130
+   ```
+
+3. **Selecione os dados**: Selecione o intervalo de dados e os intervalos (bins) que você deseja utilizar.
+
+4. **Inserir o gráfico**:
+   - Vá para a guia **Inserir**.
+   - No grupo **Gráficos**, clique em **Histograma** (o ícone de gráfico de barras agrupadas).
+   - Escolha a opção **Histograma**.
+
+O Excel irá gerar automaticamente o histograma com as barras representando as frequências de cada intervalo.
 
 ---
+
+### **2. Histograma Acumulado no Excel**
+
+#### **Passos para criar um histograma acumulado:**
+
+1. **Prepare seus dados** da mesma forma que no histograma simples.
+
+2. **Crie a coluna de Frequências Acumuladas**: Depois de criar a tabela de frequências, crie uma coluna à parte chamada "Frequência Acumulada", onde você irá somar as frequências das barras anteriores.
+
+   Exemplo de tabela de frequências acumuladas:
+   ```
+   Intervalo      | Frequência | Frequência Acumulada
+   70-80          | 2          | 2
+   81-90          | 3          | 5
+   91-100         | 2          | 7
+   101-110        | 2          | 9
+   111-120        | 1          | 10
+   ```
+
+3. **Criar o gráfico**:
+   - Selecione as colunas de intervalos e frequência acumulada.
+   - Vá para a guia **Inserir** e escolha um **Gráfico de Linhas**.
+   - Isso criará o gráfico acumulado, onde o eixo Y será a frequência acumulada.
+
+---
+
+### **3. Histograma de Densidade no Excel**
+
+#### **Passos para criar um histograma de densidade:**
+
+1. **Calcular a densidade**: Para obter a densidade de cada intervalo, divida a frequência de cada intervalo pelo total de dados e pelo tamanho do intervalo.
+
+   A fórmula para a densidade seria:
+   $\text{Densidade} = \frac{\text{Frequência}}{\text{Número de Dados} \times \text{Tamanho do Intervalo}}$
+
+2. **Criar os dados de densidade**: Digite os valores de densidade na coluna correspondente.
+
+3. **Criar o gráfico**:
+   - Selecione os dados de densidade.
+   - Vá para **Inserir**, escolha **Gráfico de Linhas** ou **Gráfico de Barras** para criar o histograma de densidade.
+
+O gráfico de densidade indicará a distribuição de dados em termos de probabilidade (como a área sob a curva sendo igual a 1).
+
+---
+
+### **4. Histograma Normalizado no Excel**
+
+#### **Passos para criar um histograma normalizado no Excel:**
+
+1. **Calcular a normalização**: Para normalizar um histograma, basta dividir a frequência de cada intervalo pelo total de dados.
+
+   $\text{Frequência Normalizada} = \frac{\text{Frequência}}{\text{Total de Dados}}$
+
+2. **Criar a coluna de frequências normalizadas**.
+
+3. **Criar o gráfico**:
+   - Selecione os dados de frequência normalizada.
+   - Vá para **Inserir**, escolha **Gráfico de Barras** ou **Histograma**.
+   
+O gráfico gerado mostrará as proporções de dados dentro de cada intervalo, e o total da área será igual a 1, refletindo a distribuição normalizada dos dados.
+
+---
+
+### **Dicas Importantes para Criar Histogramas no Excel:**
+
+- **Escolher o número de bins**: O Excel automaticamente sugere o número de bins, mas você pode ajustá-los para obter uma visualização mais precisa. Para fazer isso:
+  1. Clique com o botão direito do mouse no eixo X do gráfico de histograma.
+  2. Selecione **Formatar Eixo**.
+  3. Ajuste a **largura do intervalo (bin width)** para definir o número de bins.
+
+- **Visualização clara**: Utilize títulos e rótulos claros para as barras, e sempre defina um título para o gráfico. Isso facilita a compreensão dos dados pelos outros.
+
+- **Análise visual**: Ao analisar o histograma no Excel, procure por padrões, como picos ou assimetrias, que possam indicar a distribuição dos dados e possíveis outliers.
+
+Esses passos permitem que você crie e explore histogramas no Excel de forma eficiente, com base nas variações e necessidades da análise estatística.
+
+---
+
+### **Exemplo de histograma em PYTHON**
+
+Aqui estão os exemplos em Python para criar diferentes tipos de histogramas e suas variações: **histograma simples**, **histograma acumulado**, **histograma de densidade** e **histograma normalizado**.
+
+Vamos usar as bibliotecas `matplotlib`, `numpy` e `seaborn` para isso.
+
+### **1. Histograma Simples em Python**
+
+Primeiro, vamos criar um histograma simples, mostrando a distribuição dos dados.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Gerando um conjunto de dados aleatórios com distribuição normal
+dados = np.random.normal(0, 1, 1000)  # Média 0, desvio padrão 1, 1000 dados
+
+# Criando o histograma
+plt.hist(dados, bins=30, edgecolor='black', alpha=0.7)
+
+# Adicionando título e rótulos aos eixos
+plt.title('Histograma Simples')
+plt.xlabel('Valor')
+plt.ylabel('Frequência')
+
+# Exibindo o gráfico
+plt.show()
+```
+
+Este exemplo cria um histograma simples com 30 bins, utilizando uma distribuição normal de 1000 dados gerados aleatoriamente. O eixo X representa os valores dos dados, e o eixo Y representa a frequência de ocorrência de cada valor nos bins.
+
+---
+
+### **2. Histograma Acumulado em Python**
+
+Agora, vamos criar um histograma acumulado, onde as barras representam a soma das frequências até aquele ponto.
+
+```python
+# Criando o histograma acumulado
+plt.hist(dados, bins=30, cumulative=True, edgecolor='black', alpha=0.7)
+
+# Adicionando título e rótulos aos eixos
+plt.title('Histograma Acumulado')
+plt.xlabel('Valor')
+plt.ylabel('Frequência Acumulada')
+
+# Exibindo o gráfico
+plt.show()
+```
+
+Neste exemplo, a opção `cumulative=True` transforma o histograma simples em acumulado. O eixo Y agora mostra a soma das frequências até o intervalo atual.
+
+---
+
+### **3. Histograma de Densidade em Python**
+
+Em vez de mostrar apenas as frequências, podemos criar um histograma de densidade, que normaliza as barras para representar a densidade de probabilidade.
+
+```python
+# Criando o histograma de densidade
+plt.hist(dados, bins=30, density=True, alpha=0.7, edgecolor='black')
+
+# Adicionando título e rótulos aos eixos
+plt.title('Histograma de Densidade')
+plt.xlabel('Valor')
+plt.ylabel('Densidade')
+
+# Exibindo o gráfico
+plt.show()
+```
+
+Aqui, a opção `density=True` normaliza o histograma, de forma que a área total das barras seja igual a 1. Isso faz com que o gráfico represente uma **função de densidade de probabilidade**.
+
+---
+
+### **4. Histograma Normalizado em Python**
+
+Um histograma normalizado pode ser criado dividindo a frequência de cada bin pelo total de dados. Isso é semelhante ao histograma de densidade, mas com a diferença de que ele pode ser mais explícito.
+
+```python
+# Calculando a frequência normalizada
+contagem, bins, _ = plt.hist(dados, bins=30, alpha=0.7, edgecolor='black')
+
+# Normalizando as frequências
+contagem_normalizada = contagem / sum(contagem)
+
+# Plotando o histograma normalizado
+plt.bar(bins[:-1], contagem_normalizada, width=np.diff(bins), edgecolor='black', alpha=0.7)
+
+# Adicionando título e rótulos aos eixos
+plt.title('Histograma Normalizado')
+plt.xlabel('Valor')
+plt.ylabel('Frequência Normalizada')
+
+# Exibindo o gráfico
+plt.show()
+```
+
+Aqui, calculamos a frequência normalizada dividindo a contagem de cada bin pelo total de dados, e em seguida criamos um gráfico de barras com essas frequências normalizadas.
+
+---
+
+### **Conclusão**
+
+Esses exemplos demonstram como criar diferentes tipos de histogramas em Python usando a biblioteca `matplotlib`:
+
+1. **Histograma Simples**: Mostra a distribuição das frequências para diferentes intervalos de dados.
+2. **Histograma Acumulado**: Acumula as frequências até cada intervalo, ajudando a visualizar a soma acumulada dos dados.
+3. **Histograma de Densidade**: Mostra a densidade de probabilidade, onde a área total é igual a 1.
+4. **Histograma Normalizado**: Normaliza as frequências para que a soma seja igual a 1, representando proporções.
+
+Essas variações são úteis dependendo do tipo de análise que você deseja fazer sobre seus dados, seja para identificar a distribuição, a probabilidade ou a acumulatividade dos valores.
 
 ## **5. Gráfico de Dispersão**
 ### ⚫ O que é?
