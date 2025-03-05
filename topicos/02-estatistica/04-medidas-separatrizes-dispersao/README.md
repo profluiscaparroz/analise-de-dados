@@ -259,8 +259,8 @@ A amplitude pode ser definida matematicamente da seguinte forma:
 $\text{Amplitude} = X_{\max} - X_{\min}$  
 
 onde:  
--$X_{\max}$ representa o maior valor do conjunto de dados.  
--$X_{\min}$ representa o menor valor do conjunto de dados.  
+- $X_{\max}$ representa o maior valor do conjunto de dados.  
+- $X_{\min}$ representa o menor valor do conjunto de dados.  
 
 A amplitude expressa a **distância total** coberta pelos valores dentro de uma distribuição. Se os dados forem muito dispersos, a amplitude será grande; se forem concentrados, a amplitude será pequena.  
 
@@ -269,8 +269,8 @@ Por exemplo, considere o seguinte conjunto de dados:
 **Exemplo 1**:  
 $\{5, 8, 12, 14, 17, 21, 24\}$  
 
-- O maior valor ($X_{\max}$) é **24**.  
-- O menor valor ($X_{\min}$) é **5**.  
+- O maior valor ( $X_{\max}$ ) é **24**.  
+- O menor valor ( $X_{\min}$ ) é **5**.  
 
 Logo, a amplitude será:  
 
@@ -289,14 +289,14 @@ A amplitude é uma **medida de dispersão absoluta**, ou seja, seu valor depende
 #### **Exemplo Comparativo**  
 Considere os dois conjuntos de dados abaixo:  
 
-- **Conjunto A**:$\{10, 12, 14, 16, 18\}$  
-- **Conjunto B**:$\{2, 5, 10, 20, 30\}$  
+- **Conjunto A**: $\{10, 12, 14, 16, 18\}$  
+- **Conjunto B**: $\{2, 5, 10, 20, 30\}$  
 
 Para ambos os conjuntos:  
 $\text{Amplitude} = X_{\max} - X_{\min}$  
 
-- Para o **Conjunto A**:$18 - 10 = 8$  
-- Para o **Conjunto B**:$30 - 2 = 28$  
+- Para o **Conjunto A**: $18 - 10 = 8$  
+- Para o **Conjunto B**: $30 - 2 = 28$  
 
 Embora o Conjunto B tenha uma amplitude maior, sua variabilidade real pode ser melhor representada por medidas mais robustas, como a variância ou o desvio padrão.  
 
@@ -315,15 +315,15 @@ O **intervalo interquartil (IQR)** é uma medida de dispersão mais robusta, poi
 $IQR = Q_3 - Q_1$  
 
 onde:  
--$Q_1$ (primeiro quartil) representa o valor abaixo do qual 25% dos dados estão localizados.  
--$Q_3$ (terceiro quartil) representa o valor abaixo do qual 75% dos dados estão localizados.  
+- $Q_1$ (primeiro quartil) representa o valor abaixo do qual 25% dos dados estão localizados.  
+- $Q_3$ (terceiro quartil) representa o valor abaixo do qual 75% dos dados estão localizados.  
 
 #### **3.3. Amplitude Relativa**  
 A amplitude relativa expressa a dispersão dos dados em relação ao valor médio da amostra:  
 
 $\text{Amplitude Relativa} = \frac{X_{\max} - X_{\min}}{\bar{X}}$  
 
-onde$\bar{X}$ é a média aritmética dos valores do conjunto.  
+onde $\bar{X}$ é a média aritmética dos valores do conjunto.  
 
 ---
 
@@ -409,18 +409,18 @@ O desvio médio é calculado como a média das diferenças absolutas entre cada 
 $DM = \frac{\sum |X_i - \mu|}{N}$
 
 onde:  
--$DM$ = Desvio médio  
--$X_i$ = Cada valor do conjunto de dados  
--$\mu$ = Média populacional  
--$N$ = Número total de elementos da população  
+- $DM$ = Desvio médio  
+- $X_i$ = Cada valor do conjunto de dados  
+- $\mu$ = Média populacional  
+- $N$ = Número total de elementos da população  
 
 #### **1.2. Para uma Amostra**  
 
 $DM = \frac{\sum |X_i - \bar{X}|}{n}$
 
 onde:  
--$\bar{X}$ = Média amostral  
--$n$ = Número de elementos da amostra  
+- $\bar{X}$ = Média amostral  
+- $n$ = Número de elementos da amostra  
 
 O uso da **média aritmética** como referência para medir as diferenças permite entender como os dados se comportam em relação ao valor central.  
 
@@ -466,13 +466,13 @@ $\bar{X} = \frac{5 + 10 + 15 + 20 + 25}{5} = 15$
 
 **Passo 2: Calcular os Desvios Absolutos**  
 
-|$X_i$ |$|X_i - \bar{X}|$ |
+| $X_i$   | $\|X_i - \bar{X}\|$ |
 |---------|----------------|
-| 5       |$|5 - 15| = 10$ |
-| 10      |$|10 - 15| = 5$  |
-| 15      |$|15 - 15| = 0$  |
-| 20      |$|20 - 15| = 5$  |
-| 25      |$|25 - 15| = 10$ |
+| 5       | $\|5 - 15\| = 10$ |
+| 10      | $\|10 - 15\| = 5$  |
+| 15      | $\|15 - 15\| = 0$  |
+| 20      | $\|20 - 15\| = 5$  |
+| 25      | $\|25 - 15\| = 10$ |
 
 **Passo 3: Calcular o Desvio Médio**  
 
@@ -581,13 +581,13 @@ $\sigma^2 = \frac{\sum (X_i - \mu)^2}{N}$
 $s^2 = \frac{\sum (X_i - \bar{X})^2}{n - 1}$
 
 onde:  
--$X_i$ representa cada valor do conjunto de dados,  
--$\mu$ é a média populacional,  
--$\bar{X}$ é a média amostral,  
--$N$ é o número total de elementos da população,  
--$n$ é o número total de elementos da amostra,  
--$\sigma^2$ é a variância populacional,  
--$s^2$ é a variância amostral.  
+- $X_i$ representa cada valor do conjunto de dados,  
+- $\mu$ é a média populacional,  
+- $\bar{X}$ é a média amostral,  
+- $N$ é o número total de elementos da população,  
+- $n$ é o número total de elementos da amostra,  
+- $\sigma^2$ é a variância populacional,  
+- $s^2$ é a variância amostral.  
 
 A principal diferença entre **variância populacional** e **variância amostral** é o denominador. No caso amostral, subtrai-se **1** do número de elementos (graus de liberdade) para corrigir o viés da estimativa, garantindo que a variância amostral seja uma estimativa não tendenciosa da variância populacional.  
 
@@ -730,9 +730,9 @@ A fórmula do desvio padrão **populacional** ($\sigma$) é:
 $\sigma = \sqrt{\frac{\sum (X_i - \mu)^2}{N}}$  
 
 Onde:  
--$X_i$ representa cada valor do conjunto de dados,  
--$\mu$ é a média populacional,  
--$N$ é o número total de elementos na população.  
+- $X_i$ representa cada valor do conjunto de dados,  
+- $\mu$ é a média populacional,  
+- $N$ é o número total de elementos na população.  
 
 Para amostras, o **desvio padrão amostral** ($s$) é calculado com um pequeno ajuste, substituindo$N$ por$n - 1$ (graus de liberdade):  
 
@@ -761,9 +761,9 @@ Embora ambas tenham média 7, a Turma B tem uma dispersão muito maior, o que in
 
 O desvio padrão é essencial para compreender distribuições de dados, especialmente a **distribuição normal** (ou Gaussiana). A **Regra Empírica** afirma que, em uma distribuição normal:  
 
-- **68%** dos valores estão dentro de **1 desvio padrão** da média ($\mu \pm \sigma$).  
-- **95%** dos valores estão dentro de **2 desvios padrão** ($\mu \pm 2\sigma$).  
-- **99,7%** dos valores estão dentro de **3 desvios padrão** ($\mu \pm 3\sigma$).  
+- **68%** dos valores estão dentro de **1 desvio padrão** da média ( $\mu \pm \sigma$ ).  
+- **95%** dos valores estão dentro de **2 desvios padrão** ( $\mu \pm 2\sigma$ ).  
+- **99,7%** dos valores estão dentro de **3 desvios padrão** ( $\mu \pm 3\sigma$ ).  
 
 Essa regra permite prever a dispersão dos dados e identificar valores atípicos (**outliers**) quando um dado se encontra além de 3 desvios padrão da média.  
 
@@ -854,8 +854,8 @@ O **Coeficiente de Variação** é calculado pela razão entre o **desvio padrã
 $CV = \left( \frac{\sigma}{\mu} \right) \times 100$
 
 onde:
--$\sigma$ é o **desvio padrão** da distribuição dos dados.
--$\mu$ é a **média aritmética** dos dados.
+- $\sigma$ é o **desvio padrão** da distribuição dos dados.
+- $\mu$ é a **média aritmética** dos dados.
 
 #### **Interpretação do Coeficiente de Variação**
 O Coeficiente de Variação é uma medida **adimensional**, ou seja, não possui unidade, o que facilita comparações entre conjuntos de dados de unidades diferentes. O **CV** expressa a quantidade de variação relativa, em relação à média, de um conjunto de dados. Quanto maior o valor do **CV**, maior será a variabilidade em relação à média.  
@@ -964,7 +964,7 @@ print(f"Intervalo Interquartil (IQR): {iqr}")
 
 ---
 
-## **4. Conclusão**  
+## **Conclusão**  
 
 As medidas de dispersão são **essenciais** para entender a variabilidade dos dados e interpretar distribuições estatísticas. O desvio padrão e a variância são amplamente usados na análise de riscos e na modelagem estatística, enquanto o coeficiente de variação permite comparações entre diferentes conjuntos de dados.  
 
