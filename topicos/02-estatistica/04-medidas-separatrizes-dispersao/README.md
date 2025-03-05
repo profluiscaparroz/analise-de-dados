@@ -26,9 +26,9 @@ Para qualquer medida separatriz, o valor $P_k$ (onde $k$ é o percentil, decil o
 $P_k = \left( \frac{k}{m} \right) \times (n+1)$
 
 onde:
--$k$ = número da medida separatriz desejada (exemplo: 1º quartil, 3º decil, 90º percentil).  
--$m$ = número total de divisões (4 para quartis, 10 para decis, 100 para percentis).  
--$n$ = total de elementos no conjunto de dados ordenado.  
+- $k$ = número da medida separatriz desejada (exemplo: 1º quartil, 3º decil, 90º percentil).  
+- $m$ = número total de divisões (4 para quartis, 10 para decis, 100 para percentis).  
+- $n$ = total de elementos no conjunto de dados ordenado.  
 
 Se o índice encontrado não for um número inteiro, deve-se **interpolar** entre os valores adjacentes.
 
