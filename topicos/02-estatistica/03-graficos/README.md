@@ -112,8 +112,6 @@ Embora as faixas de idade possam ser interpretadas como intervalos, o foco aqui 
 
 Dados agrupados sem intervalos são extremamente úteis quando você está lidando com variáveis qualitativas ou discretas, que podem ser representadas em categorias claras. Essas categorias ajudam a simplificar a análise e a interpretação dos dados, sem a complexidade de lidar com intervalos contínuos. O uso dessas categorias facilita a visualização e comunicação dos resultados de maneira mais eficiente, seja em relatórios, apresentações ou gráficos interativos.
 
-
-
 A análise de dados é um processo fundamental em diversas áreas, permitindo a extração de insights a partir de conjuntos de dados. Um dos principais recursos para facilitar a interpretação de informações são os **gráficos**, que representam os dados visualmente e ajudam a identificar padrões, tendências e relações entre variáveis.
 
 A escolha do gráfico adequado depende do tipo de dado que se deseja representar e da análise que se pretende realizar. A seguir, apresentamos os principais tipos de gráficos e seus usos:
@@ -180,36 +178,6 @@ A maneira mais comum de exibir dados contínuos sem agrupamento é através de u
 
 3. **Visualização Clara**: O gráfico de linha é muito intuitivo e permite que qualquer pessoa visualize rapidamente a tendência de uma variável ao longo do tempo.
 
-### **Exemplo Visual em Python (Gráfico de Linha)**
-
-Aqui está um exemplo de como você poderia plotar os dados de preço de ações ao longo de uma semana usando Python:
-
-```python
-# Importando as bibliotecas
-import matplotlib.pyplot as plt
-
-# Dados
-dias = ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7']
-preco_acao = [25.5, 26.0, 27.2, 25.8, 28.5, 29.0, 30.2]
-
-# Criando o gráfico de linha
-plt.plot(dias, preco_acao, marker='o', linestyle='-', color='b')
-
-# Adicionando título e rótulos aos eixos
-plt.title('Preço das Ações ao Longo da Semana')
-plt.xlabel('Dia')
-plt.ylabel('Preço (R$)')
-
-# Exibindo o gráfico
-plt.show()
-```
-
-### **Explicação do Código**:
-- Usamos a biblioteca **Matplotlib** para plotar o gráfico de linha.
-- O eixo **X** representa os dias da semana.
-- O eixo **Y** representa os preços das ações.
-- Utilizamos a função `plt.plot()` para conectar os pontos de dados com uma linha, criando o gráfico de linha.
-
 ### **Considerações Finais**
 
 A **representação de dados contínuos sem agrupamento** é uma maneira eficiente de visualizar dados com variações sutis ou rápidas. Ao invés de fazer agrupamentos ou intervalos, o gráfico conecta os dados individuais para ilustrar a evolução da variável ao longo de um eixo contínuo. Esse tipo de análise é extremamente útil para detectar tendências, padrões e flutuações em dados contínuos, especialmente quando os dados precisam ser analisados em detalhes sem a perda de informações.
@@ -250,11 +218,11 @@ Vamos considerar um conjunto de dados que representa a **nota final** de alunos 
 
 A seguir, podemos calcular os **pontos médios** de cada intervalo:
 
-- Para o intervalo 0-10, o ponto médio é \( \frac{0 + 10}{2} = 5 \)
-- Para o intervalo 11-20, o ponto médio é \( \frac{11 + 20}{2} = 15.5 \)
-- Para o intervalo 21-30, o ponto médio é \( \frac{21 + 30}{2} = 25.5 \)
-- Para o intervalo 31-40, o ponto médio é \( \frac{31 + 40}{2} = 35.5 \)
-- Para o intervalo 41-50, o ponto médio é \( \frac{41 + 50}{2} = 45.5 \)
+- Para o intervalo 0-10, o ponto médio é $\frac{0 + 10}{2} = 5$
+- Para o intervalo 11-20, o ponto médio é $\frac{11 + 20}{2} = 15.5$
+- Para o intervalo 21-30, o ponto médio é $\frac{21 + 30}{2} = 25.5$
+- Para o intervalo 31-40, o ponto médio é $\frac{31 + 40}{2} = 35.5$
+- Para o intervalo 41-50, o ponto médio é $\frac{41 + 50}{2} = 45.5$
 
 Agora, podemos **plotar** essas frequências contra os pontos médios para criar um polígono de frequências.
 
