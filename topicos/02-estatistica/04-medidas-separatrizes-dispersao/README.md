@@ -466,13 +466,15 @@ $\bar{X} = \frac{5 + 10 + 15 + 20 + 25}{5} = 15$
 
 **Passo 2: Calcular os Desvios Absolutos**  
 
-| $X_i$   | $\|X_i - \bar{X}\|$ |
+
+|$X_i$    |$\|X_i - \bar{X}\|$ |
 |---------|----------------|
-| 5       | $\|5 - 15\| = 10$ |
-| 10      | $\|10 - 15\| = 5$  |
-| 15      | $\|15 - 15\| = 0$  |
-| 20      | $\|20 - 15\| = 5$  |
-| 25      | $\|25 - 15\| = 10$ |
+| 5       |$\|5 - 15\| = 10$ |
+| 10      |$\|10 - 15\| = 5$  |
+| 15      |$\|15 - 15\| = 0$  |
+| 20      |$\|20 - 15\| = 5$  |
+| 25      |$\|25 - 15\| = 10$ |
+
 
 **Passo 3: Calcular o Desvio Médio**  
 
@@ -553,14 +555,6 @@ O **desvio médio** é uma medida de dispersão **simples, intuitiva e fácil de
 Embora seja menos utilizado em estatísticas inferenciais, seu papel em análises descritivas e aplicações industriais o torna uma ferramenta valiosa para compreender a dispersão dos dados.  
 
 ---
-
-### **7. Referências**  
-
-- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 8. ed. São Paulo: Saraiva, 2017.  
-- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7th ed. John Wiley & Sons, 2018.  
-- TRIOLA, M. F. *Introdução à Estatística*. 13. ed. Pearson, 2020.  
-
----  
 
 ## **3. Variância**  
 
@@ -706,14 +700,6 @@ A variância é uma das medidas mais importantes da estatística, pois permite q
 
 Entender a variância ajuda a tomar **decisões mais embasadas** e aprimorar a análise de dados, tornando-se uma ferramenta indispensável na estatística moderna.  
 
----
-
-### **8. Referências**  
-
-- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 8. ed. São Paulo: Saraiva, 2017.  
-- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7th ed. John Wiley & Sons, 2018.  
-- TRIOLA, M. F. *Introdução à Estatística*. 13. ed. Pearson, 2020.
-
 
 ## **4. Desvio Padrão**  
 
@@ -835,14 +821,6 @@ Apesar de ser amplamente utilizado, é importante **combiná-lo com outras medid
 
 ---
 
-### **9. Referências**  
-
-- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 8. ed. São Paulo: Saraiva, 2017.  
-- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7th ed. John Wiley & Sons, 2018.  
-- TRIOLA, M. F. *Introdução à Estatística*. 13. ed. Pearson, 2020.  
-
----  
-
 ## **5. Coeficiente de Variação (CV)**  
 
 O **Coeficiente de Variação (CV)** é uma medida de dispersão relativa que expressa o grau de variabilidade de um conjunto de dados em relação à média, sendo, portanto, uma forma de comparar a dispersão de diferentes distribuições, especialmente quando essas distribuições têm unidades ou magnitudes diferentes. Ele é particularmente útil em contextos onde desejamos comparar a variabilidade entre duas ou mais séries de dados que podem ter escalas ou unidades diferentes, mas que se refere a uma mesma característica ou fenômeno.
@@ -932,15 +910,135 @@ As medidas de dispersão são fundamentais para diversas aplicações estatísti
 - **Identificação de outliers** e padrões em conjuntos de dados.  
 - **Base para inferência estatística**, como intervalos de confiança e testes de hipóteses.  
 
-## **Conclusão**  
 Medidas de dispersão complementam as medidas de tendência central ao fornecer uma visão detalhada sobre a variabilidade dos dados. O desvio padrão e a variância são amplamente utilizados devido à sua aplicabilidade em modelos estatísticos e inferência, enquanto o coeficiente de variação é útil para comparações entre diferentes contextos.  
 
-## **Referências**  
-- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 8. ed. São Paulo: Saraiva, 2017.  
-- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7th ed. John Wiley & Sons, 2018.  
-- TRIOLA, M. F. *Introdução à Estatística*. 13. ed. Pearson, 2020.  
 
-## **6. Exemplo Prático em Python**  
+## **Diferença entre Amplitude, Desvio Médio, Variância, Desvio Padrão e Coeficiente de Variação**  
+
+Todos esses conceitos estatísticos medem a **dispersão dos dados**, ou seja, o quão espalhados os valores estão em relação à média. Cada um tem um propósito específico.
+
+---
+
+## $ **1. Amplitude** – "A Diferença Entre o Maior e o Menor Valor"  
+A **amplitude** é a forma mais simples de medir a dispersão. Ela **considera apenas os extremos** e ignora os valores intermediários.  
+
+ **Fórmula da Amplitude:**  
+$
+\text{Amplitude} = X_{\text{máx}} - X_{\text{mín}}
+$
+
+✔️ **Quando usar?**  
+- Quando precisamos de uma **medida rápida e fácil** da dispersão.  
+- Pode ser **enganosa** se houver outliers, pois considera apenas dois valores.  
+
+**Exemplo Prático:**  
+Se os tempos de entrega de pizza forem **25, 30, 28, 22 e 35 minutos**, a amplitude será:  
+$
+\text{Amplitude} = 35 - 22 = 13
+$
+Ou seja, a maior diferença entre os tempos foi de **13 minutos**.
+
+---
+
+## **2. Desvio Médio** – "Média das Diferenças Absolutas"  
+O **desvio médio** calcula a **média das diferenças absolutas** em relação à média.  
+
+ **Fórmula do Desvio Médio:**  
+$
+DM = \frac{\sum |X_i - \mu|}{n}
+$
+
+✔️ **Quando usar?**  
+- Quando queremos uma medida de dispersão **intuitiva e fácil de interpretar**.  
+- **Menos sensível a outliers** do que a variância e o desvio padrão.  
+
+**Exemplo Prático:**  
+Se a média do tempo de entrega for **28 minutos**, e as diferenças absolutas forem **3, 2, 0, 6 e 7**, o desvio médio será:  
+
+$
+\frac{3+2+0+6+7}{5} = 3.6
+$
+
+---
+
+## **3. Variância $(\sigma^2)$** – "Média das Diferenças Elevadas ao Quadrado"  
+A **variância** mede a dispersão dos dados **elevando ao quadrado** as diferenças entre cada ponto e a média.  
+
+ **Fórmula da Variância:**  
+$
+\sigma^2 = \frac{\sum (X_i - \mu)^2}{n}
+$
+✔️ **Quando usar?**  
+- Quando queremos uma **medida mais rigorosa da dispersão**.  
+- Usada em cálculos estatísticos como **regressão e machine learning**.  
+
+**Exemplo Prático:**  
+Se a média do tempo de entrega for **28 minutos**, e as diferenças ao quadrado forem **9, 4, 0, 36 e 49**, a variância será:  
+$\frac{9+4+0+36+49}{5} = 19.6$
+
+---
+
+## **4. Desvio Padrão $(\sigma$)** – "Raiz Quadrada da Variância"  
+O **desvio padrão** é simplesmente a **raiz quadrada da variância**, mantendo a mesma unidade dos dados.  
+
+ **Fórmula do Desvio Padrão:**  
+$
+\sigma = \sqrt{\frac{\sum (X_i - \mu)^2}{n}}
+$
+
+✔️ **Quando usar?**  
+- Quando queremos uma **medida de dispersão intuitiva** na **mesma unidade dos dados**.  
+- Muito usado em **estatística descritiva e inferencial**.  
+
+**Exemplo Prático:**  
+Se a variância dos tempos de entrega for **19.6**, então o desvio padrão será:  
+$
+\sqrt{19.6} \approx 4.43
+$
+Ou seja, em média, os tempos de entrega variam **4.43 minutos** da média.
+
+---
+
+## **5. Coeficiente de Variação (CV)** – "Dispersão Relativa"  
+O **coeficiente de variação** mede a **dispersão em relação à média**. Diferente dos outros métodos, ele é **expresso em porcentagem**, permitindo comparar dispersões de diferentes conjuntos de dados.  
+
+ **Fórmula do Coeficiente de Variação:**  
+$
+CV = \left( \frac{\sigma}{\mu} \right) \times 100\%
+$
+
+✔️ **Quando usar?**  
+- Quando queremos **comparar a variabilidade de dois conjuntos de dados com unidades diferentes**.  
+- Útil para avaliar **consistência em medidas financeiras, industriais e científicas**.  
+
+**Exemplo Prático:**  
+Se a média do tempo de entrega for **28 minutos** e o desvio padrão for **4.43 minutos**, então:  
+$
+CV = \left( \frac{4.43}{28} \right) \times 100\% \approx 15.8\%
+$
+Isso significa que **a variação dos tempos de entrega representa cerca de 15.8% da média**.
+
+---
+
+###  **Resumo**   
+
+| Medida                  | O que significa? | Fórmula |
+|-------------------------|-----------------|---------|
+| **Amplitude**          | Diferença entre o maior e o menor valor | \(X_{\text{máx}} - X_{\text{mín}}$ |
+| **Desvio Médio**       | Média das diferenças absolutas em relação à média | \(\frac{\sum |X_i - \mu|}{n}$ |
+| **Variância**         | Média das diferenças quadradas em relação à média | \(\frac{\sum (X_i - \mu)^2}{n}$ |
+| **Desvio Padrão**     | Raiz quadrada da variância, mantém a unidade original dos dados | \(\sqrt{\frac{\sum (X_i - \mu)^2}{n}}$ |
+| **Coeficiente de Variação** | Dispersão em relação à média, expresso em % | \(\left( \frac{\sigma}{\mu} \right) \times 100\%$ |
+
+**Dica prática:**  
+- **Amplitude**: Boa para uma análise inicial, mas não confiável.  
+- **Desvio Médio**: Mais intuitivo e fácil de interpretar.  
+- **Variância**: Mais precisa, mas difícil de entender.  
+- **Desvio Padrão**: Melhor medida geral de dispersão.  
+- **Coeficiente de Variação**: Melhor para **comparar dados de naturezas diferentes**.  
+
+
+## **Exemplo Prático em Python**  
 
 Aqui está um exemplo de como calcular medidas de dispersão em Python usando a biblioteca `numpy`:  
 
@@ -972,9 +1070,10 @@ A escolha da melhor medida de dispersão depende do **contexto da análise**, da
 
 ---
 
-## **5. Referências**  
+## **Referências**  
 
 - BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 8. ed. São Paulo: Saraiva, 2017.  
 - MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7th ed. John Wiley & Sons, 2018.  
 - TRIOLA, M. F. *Introdução à Estatística*. 13. ed. Pearson, 2020.  
-- TUKEY, J. W. *Exploratory Data Analysis*. Reading, MA: Addison-Wesley, 1977.  
+- TUKEY, J. W. *Exploratory Data Analysis*. Reading, MA: Addison-Wesley, 1977.     
+
