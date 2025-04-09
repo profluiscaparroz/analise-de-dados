@@ -1538,21 +1538,21 @@ $
 
 Onde:
 - **X**: O valor individual que estamos analisando.
-- **\(\mu\)** (mu): A média dos dados.
-- **\(\sigma\)** (sigma): O desvio padrão dos dados.
+- **$\mu\)** (mu): A média dos dados.
+- **$\sigma\)** (sigma): O desvio padrão dos dados.
 
 #### **Explicando os Componentes:**
 
 1. **X**: Este é o valor específico para o qual queremos calcular o Z-score. Pode ser, por exemplo, a nota de um aluno em uma prova ou a altura de uma pessoa em um estudo de crescimento.
    
-2. **\(\mu\)**: A **média** de todos os valores no conjunto de dados. Ela é calculada somando todos os valores e dividindo pela quantidade de elementos:
+2. **$\mu\)**: A **média** de todos os valores no conjunto de dados. Ela é calculada somando todos os valores e dividindo pela quantidade de elementos:
 
    $
    \mu = \frac{1}{n} \sum_{i=1}^n X_i
    $
    Onde $n$ é o número total de dados e $X_i$ são os valores individuais.
 
-3. **\(\sigma\)**: O **desvio padrão** indica a dispersão dos dados em relação à média. Ele é calculado pela fórmula:
+3. **$\sigma\)**: O **desvio padrão** indica a dispersão dos dados em relação à média. Ele é calculado pela fórmula:
 
    $
    \sigma = \sqrt{\frac{1}{n} \sum_{i=1}^n (X_i - \mu)^2}
@@ -1577,7 +1577,7 @@ Vamos calcular o Z-score de um valor usando um conjunto de dados simples. Suponh
 
 Queremos calcular o Z-score para o aluno que obteve a nota **85**.
 
-#### **Passo 1: Calcular a Média (\(\mu\))**
+#### **Passo 1: Calcular a Média ($\mu\))**
 
 A média das notas é:
 
@@ -1585,7 +1585,7 @@ $
 \mu = \frac{70 + 75 + 80 + 85 + 90}{5} = \frac{400}{5} = 80
 $
 
-#### **Passo 2: Calcular o Desvio Padrão (\(\sigma\))**
+#### **Passo 2: Calcular o Desvio Padrão ($\sigma\))**
 
 Agora, vamos calcular o desvio padrão das notas. A fórmula é:
 
