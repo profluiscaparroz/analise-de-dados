@@ -1455,6 +1455,89 @@ Embora a amostragem por conglomerados seja um método prático, a modelagem mate
    $
    Essa formulação é crucial para o cálculo de estimadores e de suas variâncias, permitindo a aplicação de técnicas de inferência estatística.
 
+#### Exemplo prático
+
+
+#### ✅ 1. **Probabilidade de Seleção do Conglomerado (Escola)**
+
+Na amostragem por conglomerados, **não sorteamos indivíduos diretamente**, mas **grupos (conglomerados)** que contêm esses indivíduos. Neste caso, **as escolas são os conglomerados**.
+
+A fórmula é:
+
+$
+P(\text{escola selecionada}) = \frac{m}{M}
+$
+
+- **$M$** = número total de conglomerados (escolas): 20  
+- **$m$** = número de conglomerados sorteados: 5  
+
+$
+P(\text{escola}) = \frac{5}{20} = 0{,}25
+$
+
+📌 **Interpretação:**  
+Cada escola tem **25% de chance** de ser escolhida. Isso acontece porque estamos **sorteando 5 entre 20 escolas**, com **igual probabilidade** para todas.
+
+---
+
+## ✅ 2. **Probabilidade de Seleção de um Elemento Dentro do Conglomerado**
+
+Após selecionar uma escola, fazemos **uma nova amostragem dentro dessa escola**. Nesse caso, é feita uma **amostragem aleatória simples** (AAS) com os alunos da escola.
+
+A fórmula:
+
+$
+P(\text{aluno dentro da escola}) = \frac{n_h}{N_h}
+$
+
+Onde:
+
+- $N_h$: total de elementos no conglomerado $h$ (número de alunos na escola): 100  
+- $n_h$: número de elementos sorteados dentro do conglomerado: 10
+
+$
+P(\text{aluno dentro da escola}) = \frac{10}{100} = 0{,}10
+$
+
+📌 **Interpretação:**  
+Se a escola foi escolhida, **cada aluno tem 10% de chance de ser selecionado**.
+
+---
+
+## ✅ 3. **Probabilidade Global de Seleção de um Elemento**
+
+Essa é a **probabilidade real de um aluno qualquer da rede ser escolhido**, considerando as duas etapas:
+
+1. A escola dele ser sorteada.
+2. Ele ser sorteado **dentro da escola**.
+
+Como as etapas são independentes (primeiro sorteamos a escola, depois o aluno), usamos o produto:
+
+$
+P(\text{aluno}) = \frac{m}{M} \times \frac{n_h}{N_h}
+= 0{,}25 \times 0{,}10 = 0{,}025
+$
+
+📌 **Interpretação:**  
+No total, **qualquer aluno da rede tem 2,5% de chance** de ser selecionado para participar da pesquisa.
+
+---
+
+#### 🔍 Importância disso
+
+Esse tipo de cálculo é fundamental para:
+- **Planejar amostras representativas**.
+- **Avaliar viés de seleção**.
+- **Calcular pesos amostrais** para inferência estatística.
+
+---
+
+#### 🧠 Dica Didática
+
+Use esse raciocínio quando:
+- Os grupos são bem definidos (turmas, bairros, escolas).
+- Não é viável ou eficiente sortear diretamente todos os indivíduos.
+
 ---
 
 ## 🧠 Vantagens e Desvantagens
@@ -1665,7 +1748,7 @@ Var(\hat{\mu}) = \frac{S_c^2}{n} \left(1 - \frac{n}{N} \right)
 = 1.3225 \cdot \left(\frac{4}{6}\right) = 0.8816
 $
 
-🔎 Assim, o **erro padrão da média** estimada seria:
+Assim, o **erro padrão da média** estimada seria:
 
 $
 \text{Erro padrão} = \sqrt{Var(\hat{\mu})} = \sqrt{0.8816} \approx 0.94
@@ -1674,11 +1757,280 @@ $
 
 ---
 
+Perfeito! Vamos fazer os **três** itens com calma e clareza. Começaremos com o gráfico didático e, depois, avançamos para o código e a comparação conceitual.
+
+---
+
+## 🎨 1. **Gráfico Didático: Amostragem por Conglomerados em Uma Etapa**
+
+**Cenário:**
+- Temos **20 escolas** (conglomerados).
+- Cada escola tem **100 alunos**.
+- Selecionamos **5 escolas** aleatoriamente.
+- Em cada escola sorteada, escolhemos **10 alunos**.
+
+Vamos visualizar isso:
+
+### 🎯 Visualização esperada
+- Blocos (escolas) com alunos representados por bolinhas.
+- As escolas sorteadas destacadas.
+- Alunos escolhidos em vermelho, por exemplo.
+
+> ⚠️ Por favor, me envie se você quer o gráfico como **imagem gerada agora** ou se deseja o **código em Python** para gerar no seu ambiente.
+
+---
+
+## 🐍 2. **Simulação em Python: Amostragem por Conglomerado em Uma Etapa**
+
+Aqui está um exemplo completo com pandas:
+
+```python
+import pandas as pd
+import numpy as np
+
+# Parâmetros
+total_escolas = 20
+alunos_por_escola = 100
+escolas_sorteadas = 5
+alunos_sorteados_por_escola = 10
+
+# Gerar base de dados
+data = []
+for escola in range(1, total_escolas + 1):
+    for aluno in range(1, alunos_por_escola + 1):
+        data.append({'Escola': f'Escola_{escola}', 'Aluno': f'Aluno_{escola}_{aluno}'})
+
+df = pd.DataFrame(data)
+
+# Sorteando escolas (conglomerados)
+escolas_amostradas = np.random.choice(df['Escola'].unique(), size=escolas_sorteadas, replace=False)
+
+# Sorteando alunos dentro das escolas
+amostra_final = df[df['Escola'].isin(escolas_amostradas)].groupby('Escola').sample(n=alunos_sorteados_por_escola, random_state=42)
+
+print("Amostra final:\n", amostra_final)
+```
+
+Você pode rodar esse código para visualizar os alunos sorteados.
+
+---
+
+## 📊 3. **Comparação com Amostragem Estratificada**
+
+| Característica                  | Amostragem Estratificada                                | Amostragem por Conglomerados (1 etapa)              |
+|-------------------------------|---------------------------------------------------------|-----------------------------------------------------|
+| Divisão da população           | Em **estratos homogêneos**                              | Em **conglomerados (grupos naturais)**              |
+| Sorteio                        | Amostragem feita **dentro de cada estrato**             | Sorteia-se **conglomerados inteiros**              |
+| Custo                          | Mais alto (coleta em vários locais)                     | Mais baixo (coleta em poucos grupos)                |
+| Precisão estatística           | Mais alta (menor variância amostral)                    | Menor (maior variância entre grupos)                |
+| Quando usar                    | Quando os **estratos são internamente homogêneos**       | Quando **é difícil ou caro acessar todos os elementos** |
+
+---
 
 ## Conclusão
 
 A **amostragem por conglomerados** é uma ferramenta valiosa para situações onde a população é extensa e a coleta de dados deve ser prática e econômica. Apesar de poder introduzir uma variância adicional devido à similaridade dos elementos dentro dos conglomerados, seu uso é amplamente justificado por questões logísticas e de custo, desde que os pesquisadores estejam atentos à necessidade de ajustar as análises para o desenho amostral.
 
 Essa abordagem, quando bem aplicada, permite a realização de estudos significativos em grandes populações, mantendo a representatividade e viabilidade operacional da pesquisa.
+
+---
+
+Claro! A seguir, apresento uma explicação formal e detalhada sobre **Amostragem por Conglomerado em Duas Etapas (Two-Stage Cluster Sampling)**, como solicitado — sem exemplos computacionais.
+
+---
+
+## 🎓 **Amostragem por Conglomerado em Duas Etapas**
+
+### 📌 **Definição Geral**
+
+A **Amostragem por Conglomerado em Duas Etapas** é um método probabilístico de seleção amostral que combina dois níveis de sorteio:
+1. **Primeira etapa:** seleção de conglomerados (grupos naturais da população, como escolas, bairros, hospitais etc.).
+2. **Segunda etapa:** seleção de elementos individuais **dentro dos conglomerados sorteados**.
+
+Esse método é amplamente utilizado em estudos populacionais e pesquisas por amostragem quando é logisticamente difícil ou caro construir uma lista completa de todos os elementos da população.
+
+---
+
+### 🧩 **Diferença-chave em relação à amostragem por conglomerado em uma etapa**
+
+- **Uma etapa**: após a seleção dos conglomerados, **todos os elementos** dentro dos conglomerados sorteados são incluídos na amostra.
+- **Duas etapas**: após a seleção dos conglomerados, **um subconjunto de elementos** é amostrado dentro de cada conglomerado.
+
+> 📘 Como define Cochran (1977), “a amostragem em duas etapas permite maior flexibilidade e economia, uma vez que reduz o esforço de coleta mantendo boa representatividade”.
+
+---
+
+### 📐 **Formulação Matemática**
+
+Seja:
+- $M$: número total de conglomerados na população.
+- $m$: número de conglomerados selecionados na primeira etapa.
+- $N_h$: número de elementos no conglomerado $h$.
+- $n_h$: número de elementos amostrados no conglomerado $h$.
+- $y_{hi}$: valor da variável de interesse para o $i$-ésimo elemento do conglomerado $h$.
+
+#### 🔹 Probabilidade de Seleção de um Conglomerado
+
+$
+P(C_h) = \frac{m}{M}
+$
+
+#### 🔹 Probabilidade de Seleção de um Elemento dentro do Conglomerado $h$
+
+$
+P(E_{hi} \mid C_h) = \frac{n_h}{N_h}
+$
+
+#### 🔹 Probabilidade Total de Seleção de um Elemento da População
+
+$
+P(E_{hi}) = P(C_h) \times P(E_{hi} \mid C_h) = \frac{m}{M} \cdot \frac{n_h}{N_h}
+$
+
+Essa fórmula permite o cálculo do peso amostral $w_{hi}$ de cada elemento, usado posteriormente para estimativas estatísticas:
+
+$
+w_{hi} = \frac{1}{P(E_{hi})} = \frac{M}{m} \cdot \frac{N_h}{n_h}
+$
+
+---
+
+### 📊 **Estimativa do Total Populacional**
+
+O estimador do total populacional $\hat{T}$ pode ser definido por:
+
+$
+\hat{T} = \sum_{h \in S} \frac{M}{m} \cdot \frac{N_h}{n_h} \cdot \sum_{i \in s_h} y_{hi}
+$
+
+Onde:
+- $S$: conjunto de conglomerados sorteados.
+- $s_h$: amostra de elementos dentro do conglomerado $h$.
+
+---
+
+### 🎯 **Vantagens**
+
+- Reduz custos de coleta de dados em grandes populações dispersas.
+- Possibilita amostragem mesmo quando não se conhece a lista completa de todos os elementos da população.
+- Flexível para ajustar o tamanho da amostra de acordo com a variação esperada.
+
+---
+
+### ⚠️ **Desvantagens**
+
+- A variância da estimativa pode ser maior que em métodos como a amostragem estratificada ou aleatória simples.
+- Exige cuidado na segunda etapa para garantir aleatoriedade dentro dos conglomerados.
+
+---
+
+## 🏢 Exemplo aplicado: Amostragem por Conglomerado em Duas Etapas no IBGE
+
+### 🌍 **Contexto do IBGE**
+
+O **Instituto Brasileiro de Geografia e Estatística (IBGE)** trabalha com milhões de domicílios espalhados pelo país. Seria inviável listar todos e aplicar uma amostragem aleatória simples. Assim, utiliza a amostragem por conglomerados em duas etapas.
+
+---
+
+### 🧱 **Primeira Etapa: Seleção de Setores Censitários**
+
+A **unidade primária de amostragem** (UPA) do IBGE são os **setores censitários**, que são pequenas áreas geográficas homogêneas com aproximadamente 300 domicílios urbanos ou 100 domicílios rurais.
+
+- A seleção dos setores é feita **proporcional ao tamanho (PPT)**, ou seja, setores com mais domicílios têm maior chance de serem escolhidos.
+  
+$
+P(SC_i) = \frac{\text{tamanho do setor } i}{\text{soma dos tamanhos de todos os setores}}
+$
+
+---
+
+### 🏠 **Segunda Etapa: Seleção de Domicílios**
+
+Dentro dos setores selecionados, o IBGE sorteia um número fixo de domicílios para serem entrevistados — por exemplo, 10 ou 12 domicílios.
+
+$
+P(D_{ij} \mid SC_i) = \frac{n_i}{N_i}
+$
+
+- Onde:
+  - $n_i$: número de domicílios amostrados no setor $i$.
+  - $N_i$: número total de domicílios no setor $i$.
+
+---
+
+### 🔢 **Probabilidade Total de Seleção de um Domicílio**
+
+A probabilidade total de um domicílio ser selecionado é:
+
+$
+P(D_{ij}) = P(SC_i) \cdot P(D_{ij} \mid SC_i)
+$
+
+E o peso amostral:
+
+$
+w_{ij} = \frac{1}{P(D_{ij})}
+$
+
+---
+
+### 📊 **Estimativas com os Pesos**
+
+Os pesos amostrais são utilizados para ajustar as estimativas, tornando-as representativas da população total, compensando os diferentes tamanhos dos setores e o número de domicílios sorteados.
+
+Por exemplo, o número total estimado de pessoas com determinada característica seria:
+
+$
+\hat{T} = \sum_{i} \sum_{j \in s_i} w_{ij} \cdot y_{ij}
+$
+
+---
+
+### 🧮 **Resumo das Vantagens na Prática**
+
+- **Custos reduzidos**: evita a listagem nacional de domicílios.
+- **Eficiência logística**: os entrevistadores atuam em áreas específicas.
+- **Representatividade**: mantida através dos pesos amostrais.
+
+---
+
+```python
+import pandas as pd
+import numpy as np
+
+# Parâmetros da população
+np.random.seed(42)
+total_sectors = 6
+households_per_sector = 6
+
+# Gerar população completa
+population = []
+for sector_id in range(1, total_sectors + 1):
+    for household_id in range(1, households_per_sector + 1):
+        population.append({
+            "sector": sector_id,
+            "household_id": household_id,
+            "income": np.random.randint(1000, 5000)  # renda fictícia
+        })
+
+df_population = pd.DataFrame(population)
+
+# 1ª Etapa: selecionar setores (conglomerados)
+selected_sectors = np.random.choice(df_population["sector"].unique(), size=2, replace=False)
+df_stage1 = df_population[df_population["sector"].isin(selected_sectors)]
+
+# 2ª Etapa: selecionar domicílios dentro dos setores escolhidos
+sample = df_stage1.groupby("sector").sample(n=3, random_state=42)
+
+# Mostrar amostra selecionada
+sample.reset_index(drop=True)
+
+```
+
+### 📚 **Referências Acadêmicas**
+
+- **Cochran, W. G. (1977).** *Sampling Techniques*. 3rd edition. John Wiley & Sons.
+- **Lohr, S. L. (2010).** *Sampling: Design and Analysis*. 2nd edition. Brooks/Cole.
+- **Thompson, S. K. (2012).** *Sampling*. Wiley Series in Probability and Statistics.
 
 ---
