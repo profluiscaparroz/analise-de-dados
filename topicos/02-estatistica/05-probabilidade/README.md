@@ -2027,6 +2027,26 @@ sample.reset_index(drop=True)
 
 ```
 
+Aqui está uma tabela comparativa clara entre os principais **tipos de amostragem probabilística**, destacando a **Amostragem por Conglomerados** em relação às outras:
+
+| Critério                              | Aleatória Simples                     | Sistemática                              | Estratificada                                                                 | **Conglomerado**                                                                 |
+|--------------------------------------|---------------------------------------|------------------------------------------|--------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| **Unidade básica de amostragem**     | Indivíduo                             | Indivíduo                                | Indivíduo dentro de um estrato                                                | **Grupo de indivíduos (conglomerado)**                                           |
+| **Como seleciona a amostra**         | Sorteia indivíduos da população total | Escolhe 1 ponto inicial e salta em k     | Divide a população em grupos homogêneos (estratos) e sorteia em cada grupo   | **Sorteia grupos inteiros e usa todos ou parte dos elementos desses grupos**     |
+| **Objetivo**                         | Amostra representativa aleatória      | Simplicidade e praticidade               | Garantir representação proporcional de subgrupos                              | **Reduzir custos logísticos em populações grandes e dispersas**                  |
+| **Necessidade de lista completa?**   | Sim                                   | Sim                                      | Sim (com identificação de estratos)                                           | **Não necessariamente** (basta listar os conglomerados)                          |
+| **Custo logístico**                  | Alto (contato direto com todos)       | Moderado                                 | Alto (precisa identificar e dividir estratos)                                 | **Baixo** (trabalha com grupos geográficos, escolas, etc.)                        |
+| **Precisão estatística**             | Alta                                   | Moderada                                 | Alta (quando estratos são bem definidos)                                     | **Menor precisão se os conglomerados forem internamente homogêneos**             |
+| **Exemplo típico**                   | Sorteio de 100 pessoas de um cadastro | Seleção de cada 10º cliente              | Sorteio de alunos por série escolar                                          | **Sorteio de escolas inteiras e depois alunos dentro delas (ou todos os alunos)** |
+
+---
+
+**Resumo**:
+
+- A **amostragem por conglomerado** é muito útil quando é difícil ou caro acessar toda a população.
+- Ela **reduz custos**, mas pode **sacrificar precisão** estatística se os grupos sorteados forem muito semelhantes internamente.
+- Em contraste, métodos como a **estratificada** aumentam a precisão, mas exigem mais informações e estrutura.
+
 ### 📚 **Referências Acadêmicas**
 
 - **Cochran, W. G. (1977).** *Sampling Techniques*. 3rd edition. John Wiley & Sons.
