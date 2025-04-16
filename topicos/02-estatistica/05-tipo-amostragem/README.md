@@ -1,3 +1,235 @@
+# Introdução a vies
+
+O **viés em estatística** é um conceito fundamental que se refere a desvios sistemáticos entre estimativas obtidas a partir de amostras e os valores reais dos parâmetros populacionais. Esse desvio pode ocorrer devido a erros no processo de coleta, seleção ou análise dos dados, levando a conclusões incorretas sobre a população estudada.
+
+---
+
+### 📖 Definições Fundamentais
+No contexto estatístico, viés é definido como
+
+>“Um erro sistemático, ou desvio da verdade, nos resultados ou inferências.
+Essa definição enfatiza que o viés não é resultado do acaso, mas sim de falhas sistemáticas que afetam a precisão das estimativas
+
+---
+
+### 🧠 Tipos Comuns de Viés
+
+### 📊 **1. Viés de Seleção**
+
+**Definição:** Ocorre quando a amostra escolhida **não representa adequadamente a população**, geralmente por **critério de inclusão/exclusão** inadequado.
+
+**🧠 Exemplo:**
+
+Uma universidade deseja avaliar a satisfação dos alunos com os serviços acadêmicos. No entanto, ela aplica o questionário **apenas em alunos que frequentam a biblioteca**.
+
+- ❌ Problema: estudantes que **não frequentam a biblioteca** (por falta de tempo, por trabalharem, etc.) **ficam de fora** da amostra.
+- ✅ Resultado: a amostra tende a ser composta por alunos mais engajados ou satisfeitos, distorcendo os resultados gerais.
+
+---
+
+### 📬 **2. Viés de Não Resposta**
+
+**Definição:** Ocorre quando **uma parte significativa da amostra não responde** à pesquisa, e esses não-respondentes têm **características diferentes** dos que responderam.
+
+**🧠 Exemplo:**
+
+Um instituto envia um questionário sobre **nível de estresse no trabalho** para 1.000 funcionários. Apenas 200 respondem.
+
+- ❌ Problema: os que estão mais estressados podem **não ter tempo ou disposição** para responder, ou podem **evitar se expor**.
+- ✅ Resultado: a média de estresse será **subestimada**, pois os casos mais graves estão ausentes.
+
+---
+
+### ⚖️ **3. Viés de Medição**
+
+**Definição:** Ocorre quando o **instrumento ou método de coleta de dados é impreciso**, causando erro sistemático.
+
+**🧠 Exemplo:**
+
+Um estudo quer medir o peso médio de recém-nascidos. A balança usada está **descalibrada e adiciona sempre 150g a mais**.
+
+- ❌ Problema: todos os dados coletados estão **sistematicamente incorretos**.
+- ✅ Resultado: a média será **superestimada**, mesmo com uma amostra aleatória bem feita.
+
+---
+
+### 🧠 **4. Viés de Confirmação**
+
+**Definição:** Acontece quando os pesquisadores **buscam ou interpretam evidências** que **confirmem hipóteses pré-existentes**, ignorando evidências contrárias.
+
+**🧠 Exemplo:**
+
+Um pesquisador acredita que **alunos que usam aplicativos educacionais têm melhor desempenho**. Ele coleta dados e dá mais atenção aos casos que confirmam isso, ignorando ou explicando com desculpas os casos que contradizem.
+
+- ❌ Problema: a interpretação se torna **parcial**, e os resultados **não são objetivos**.
+- ✅ Resultado: o estudo **reflete crenças do pesquisador** mais do que a realidade.
+
+---
+
+### 📐 Viés em Modelos Estatístico
+
+David A. Freedman destacou que, em modelos de regressão, especialmente quando o número de variáveis explicativas é grande em relação ao número de observações, é comum identificar variáveis não relacionadas como estatisticamente significativs Esse fenômeno, conhecido como "paradoxo de Freedman", ilustra como a seleção de modelos pode introduzir viés nas análies 
+
+---
+
+### 📊 Viés em Revisões Sistemátics
+
+A Cochrane Collaboration, reconhecida por suas revisões sistemáticas rigorosas, utiliza ferramentas específicas para avaliar o risco de viés em estudos clínio. O viés é categorizado em diferentes domínios, como viés de seleção, desempenho e relato, permitindo uma avaliação abrangente da qualidade dos estudos includos citeturn0search4.
+
+---
+
+### 🎯 Importância de Identificar e Corrigir o Vés
+
+A presença de viés pode comprometer a validade das conclusões estatísticas, levando a decisões baseadas em informações distorcds. Portanto, é cruial:
+
+- Utilizar métodos de amostragem adequados para garantir representativiade.
+
+- Empregar instrumentos de medição calibrados e procedimentos padronizdos.
+
+- Aplicar técnicas estatísticas apropriadas que considerem possíveis fontes de iés.
+
+
+
+---
+
+## 🎯 **Definição Formal do Viés**
+O **viés de um estimador** $\hat{\theta}$ em relação ao parâmetro verdadeiro $\theta$ é dado por:
+
+$
+\text{Viés}(\hat{\theta}) = E[\hat{\theta}] - \theta
+$
+
+Onde:
+- $ E[\hat{\theta}] $: Valor esperado (médio) do estimador $\hat{\theta}$
+- $ \theta $: Valor real do parâmetro da população
+
+
+$
+\text{Viés}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta
+$
+
+### 🔤 Leitura em português:
+
+> **"Viés de theta chapéu é igual à esperança de theta chapéu menos theta."**
+
+---
+
+### 🎓 Explicando os termos:
+
+| Símbolo                 | Leitura                    | Significado                                                                 |
+|-------------------------|----------------------------|----------------------------------------------------------------------------|
+| $\hat{\theta}$      | **theta chapéu**           | Um estimador (ex: média amostral) do parâmetro verdadeiro $\theta$     |
+| $\theta$            | **theta**                  | Parâmetro verdadeiro da população (ex: média populacional)                  |
+| $\mathbb{E}[\hat{\theta}]$ | **esperança de theta chapéu** | Valor esperado do estimador, ou seja, média de seus resultados ao repetir a amostragem infinitamente |
+
+---
+
+## ✅ **Exemplo Prático para Excel**
+
+### 🧮 Cenário
+Vamos estimar a **média da população** com três amostragens diferentes. A população real tem:
+
+- População: [5, 10, 15, 20, 25]  
+- Média populacional verdadeira $\theta = 15$
+
+Você coleta três amostras simples com reposição:
+- Amostra 1: [10, 15, 20] → Média = 15
+- Amostra 2: [5, 10, 15] → Média = 10
+- Amostra 3: [15, 20, 25] → Média = 20
+
+Agora, vamos calcular o viés do estimador da média.
+
+---
+
+### 📊 **Como montar no Excel**
+
+| **Amostra** | **Valores**        | **Média da Amostra ($\hat{\theta}$)** |
+|-------------|---------------------|----------------------------------------|
+| Amostra 1   | 10, 15, 20          | =MÉDIA(10;15;20) → 15                  |
+| Amostra 2   | 5, 10, 15           | =MÉDIA(5;10;15) → 10                   |
+| Amostra 3   | 15, 20, 25          | =MÉDIA(15;20;25) → 20                  |
+|             |                     |                                        |
+| Média das Médias (E[$\hat{\theta}$]) | =MÉDIA(15;10;20) → 15              |
+| Valor Real da População ($\theta$) | 15                                   |
+| **Viés**    | =15 - 15            | 0                                      |
+
+---
+
+## 📌 **Interpretação**
+- Como o **valor esperado do estimador** (média das médias amostrais) é **igual ao valor verdadeiro da população**, o **viés é zero**.
+- Isso mostra que, nesse caso, o estimador da média **não é enviesado**.
+
+---
+
+## 📌 O que é o Teorema do Erro Quadrático Médio (MSE)?
+Ele mostra que o erro total de um estimador pode ser decomposto em **três componentes**:
+
+$
+\text{MSE}(\hat{\theta}) = \underbrace{(\mathbb{E}[\hat{\theta}] - \theta)^2}_{\text{Viés}^2} + \underbrace{\text{Var}(\hat{\theta})}_{\text{Variância}} + \underbrace{\text{Erro irreducível}}_{\text{(às vezes negligenciado)}}
+$
+
+---
+
+### ✅ Termos explicados:
+
+| Componente         | Significado                                                                 |
+|--------------------|------------------------------------------------------------------------------|
+| **Viés**           | Diferença sistemática entre o valor esperado do estimador e o valor real    |
+| **Variância**      | Quão sensível o estimador é a mudanças na amostra                           |
+| **Erro irreducível** | Ruído ou aleatoriedade natural no processo, que nenhum modelo consegue capturar |
+
+---
+
+## ⚖️ O *trade-off*: Viés vs. Variância
+
+- **Modelos com alto viés** tendem a **subestimar** a complexidade dos dados. São simples demais (ex: média constante). **Erros sistemáticos**.
+- **Modelos com alta variância** são **muito sensíveis aos dados de entrada**. Geralmente se ajustam demais ao acaso (overfitting).
+  
+A **melhor solução** geralmente não é o modelo com o menor viés nem o de menor variância, mas **aquele com o menor MSE**.
+
+---
+
+### 📉 Visualização intuitiva (analogia):
+
+|                       | Baixo Viés + Alta Variância         | Alto Viés + Baixa Variância          |
+|-----------------------|--------------------------------------|---------------------------------------|
+| 🎯 Tiros no alvo       | Espalhados, mas em média no centro   | Agrupados, mas longe do centro        |
+| 🧠 Interpretação       | Modelo complexo e instável           | Modelo simples, mas incorreto         |
+
+---
+
+## 🧪 Exemplo numérico simples:
+
+Suponha que você quer estimar a média verdadeira de uma população: $ \theta = 10 $
+
+Você testa dois estimadores:
+
+### Estimador A:
+- Média esperada: $ \mathbb{E}[\hat{\theta}] = 9 $
+- Variância: $ \text{Var}(\hat{\theta}) = 1 $
+
+$
+\text{MSE}_A = (9 - 10)^2 + 1 = 1 + 1 = 2
+$
+
+### Estimador B:
+- Média esperada: $ \mathbb{E}[\hat{\theta}] = 10 $
+- Variância: $ \text{Var}(\hat{\theta}) = 4 $
+
+$
+\text{MSE}_B = (10 - 10)^2 + 4 = 0 + 4 = 4
+$
+
+**Mesmo com viés**, o estimador A tem **menor erro quadrático médio** e é preferível nesse caso!
+
+---
+
+### 📚 Referências confiáveis
+
+- HASTIE, Trevor; TIBSHIRANI, Robert; FRIEDMAN, Jerome. *The Elements of Statistical Learning*. Springer, 2009. (Cap. 2)
+- GÉRON, Aurélien. *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*. O'Reilly Media, 2019. (Cap. 4)
+
+
 # Introdução a amostragem
 
 ---
@@ -68,6 +300,84 @@ O importante é que essas estimativas sejam feitas com **riscos controlados** de
 
 > “A teoria da amostragem nos dá ferramentas para calcular o erro associado às estimativas, garantindo que os resultados possam ser generalizados para a população com um grau conhecido de precisão.”  
 > — *Wonnacott & Wonnacott, 1990*
+
+Claro! Vamos entender o **viés estatístico** a partir de sua **formulação matemática**, com um **exemplo passo a passo**, e em seguida explicar **quando usá-la**.
+
+---
+
+## 📐 **Fórmula Matemática do Viés**
+
+O **viés de um estimador** $\hat{\theta}$ em relação a um parâmetro populacional $\theta$ é dado por:
+
+$
+\text{Viés}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta
+$
+
+- $\mathbb{E}[\hat{\theta}]$: valor esperado (ou média) do estimador.
+- $\theta$: valor real do parâmetro da população.
+
+---
+
+## 🧮 **Exemplo Passo a Passo**
+
+**Contexto**: Suponha que queremos estimar a **média** da população $\mu = 5$, e usamos um **estimador enviesado**, como a **média truncada** (que ignora o maior valor).
+
+### 🔢 Passo 1: População e parâmetro
+
+Considere a população:
+$
+\{3, 5, 7\}
+\Rightarrow \mu = \frac{3 + 5 + 7}{3} = 5
+$
+
+### 🔢 Passo 2: Todas as amostras possíveis (de tamanho 2, sem reposição)
+
+- (3,5)
+- (3,7)
+- (5,7)
+
+### 🔢 Passo 3: Calcular o estimador enviesado — média truncada (descartando o maior valor da amostra)
+
+| Amostra | Maior valor | Média truncada |
+|--------|-------------|----------------|
+| (3,5)   | 5           | 3              |
+| (3,7)   | 7           | 3              |
+| (5,7)   | 7           | 5              |
+
+### 🔢 Passo 4: Valor esperado do estimador
+
+$
+\mathbb{E}[\hat{\mu}] = \frac{3 + 3 + 5}{3} = \frac{11}{3} \approx 3{,}67
+$
+
+### 🔢 Passo 5: Cálculo do viés
+
+$
+\text{Viés}(\hat{\mu}) = \mathbb{E}[\hat{\mu}] - \mu = 3{,}67 - 5 = -1{,}33
+$
+
+🔍 **Interpretação**: O estimador subestima o valor real da média da população.
+
+---
+
+## 🧠 **Quando usar essa fórmula?**
+
+Você deve usar a fórmula do viés quando:
+
+- Está comparando diferentes estimadores de um parâmetro (por exemplo, média amostral vs. média truncada).
+- Quer verificar se um **estimador é insesgado** (bias = 0).
+- Precisa analisar o **trade-off entre viés e variância** (ex: Teorema de decomposição de erro quadrático médio).
+
+---
+
+## ⚠️ Observações importantes
+
+- Um estimador **insesgado** tem $\mathbb{E}[\hat{\theta}] = \theta$.
+- Um estimador **enviesado** pode ser útil se reduzir a variância drasticamente (como na **regularização**).
+
+---
+
+Se quiser, posso fazer essa simulação em Python também ou aplicar ao caso de **estimativa de proporções**. Deseja que eu continue com isso?
 
 ---
 
@@ -2052,5 +2362,82 @@ Aqui está uma tabela comparativa clara entre os principais **tipos de amostrage
 - **Cochran, W. G. (1977).** *Sampling Techniques*. 3rd edition. John Wiley & Sons.
 - **Lohr, S. L. (2010).** *Sampling: Design and Analysis*. 2nd edition. Brooks/Cole.
 - **Thompson, S. K. (2012).** *Sampling*. Wiley Series in Probability and Statistics.
+
+---
+
+# Amostragem Não Probabilística
+
+A amostragem **não probabilística** é um método de seleção em que **nem todos os elementos da população têm chance conhecida e igual de serem incluídos na amostra**. A escolha dos elementos geralmente depende de critérios subjetivos, conveniência ou julgamento do pesquisador.
+
+Segundo Babbie (2010), “na amostragem não probabilística, os casos não são selecionados aleatoriamente; em vez disso, a escolha dos elementos reflete decisões tomadas pelo pesquisador com base em sua própria avaliação”.
+
+> 📚 **Referência**:  
+> Babbie, E. (2010). *The Practice of Social Research*. Wadsworth.
+
+---
+
+## 🔍 Tipos de Amostragem Não Probabilística
+
+### 1. **Amostragem por Conveniência**
+> Seleção de elementos que estão mais facilmente disponíveis para o pesquisador.
+
+- **Exemplo:** Entrevistar os primeiros 50 estudantes que saem de uma sala.
+- **Vantagem:** Rápida e de baixo custo.
+- **Limitação:** Alto risco de viés, pois a amostra pode não representar adequadamente a população.
+
+> 🔎 Segundo Malhotra (2006), é “um método útil em estágios exploratórios, mas deve ser usado com cautela, pois não garante representatividade”.
+
+---
+
+### 2. **Amostragem por Julgamento (ou Intencional)**
+> O pesquisador seleciona os elementos que, em sua opinião, são mais representativos.
+
+- **Exemplo:** Escolher especialistas para opinar sobre uma tecnologia.
+- **Vantagem:** Útil em estudos qualitativos ou pilotos.
+- **Limitação:** Subjetividade elevada; depende da expertise do pesquisador.
+
+> 📖 Kotler e Keller (2012) destacam que essa abordagem é útil quando os participantes devem ter características específicas para fornecer informações relevantes.
+
+---
+
+### 3. **Amostragem por Quotas**
+> A população é dividida em subgrupos (como sexo, idade, escolaridade), e são selecionadas cotas de cada grupo com base em proporções conhecidas.
+
+- **Exemplo:** Selecionar 40% mulheres e 60% homens, conforme distribuição da população.
+- **Vantagem:** Tenta garantir proporcionalidade.
+- **Limitação:** Seleção dentro dos subgrupos ainda pode ser enviesada (não aleatória).
+
+> 📌 Segundo Malhotra (2006), “a amostragem por cotas busca imitar a estrutura da população, mas sua eficácia depende da qualidade dos dados demográficos e do controle rigoroso da aplicação”.
+
+---
+
+### 4. **Amostragem Bola de Neve (Snowball)**
+> Usada quando os elementos da população são difíceis de identificar. Um participante indica outro, formando uma “cadeia”.
+
+- **Exemplo:** Pesquisas com usuários de drogas, populações marginalizadas ou grupos profissionais raros.
+- **Vantagem:** Permite acessar populações ocultas ou difíceis de rastrear.
+- **Limitação:** Pode gerar amostras altamente correlacionadas, com baixo grau de diversidade.
+
+> 🧠 Biernacki e Waldorf (1981) observaram que "esse método é particularmente útil para estudar redes sociais ou populações ocultas".
+
+---
+
+## ⚖️ Considerações Críticas
+
+| Tipo                    | Vantagem Principal                     | Limitação Principal                        |
+|-------------------------|----------------------------------------|--------------------------------------------|
+| Conveniência            | Simples e econômica                    | Alto viés e baixa representatividade        |
+| Julgamento              | Foco em casos representativos          | Subjetividade do pesquisador               |
+| Quotas                  | Proporcionalidade controlada           | Seleção dentro da cota é não aleatória     |
+| Bola de Neve            | Útil para populações difíceis de acesso| Amostra tende a ser homogênea              |
+
+---
+
+## 📚 Referências Bibliográficas
+
+- Babbie, E. (2010). *The Practice of Social Research*. Wadsworth.
+- Malhotra, N. K. (2006). *Pesquisa de Marketing: Uma Orientação Aplicada*. Bookman.
+- Kotler, P., & Keller, K. L. (2012). *Administração de Marketing*. Pearson.
+- Biernacki, P., & Waldorf, D. (1981). *Snowball Sampling: Problems and Techniques of Chain Referral Sampling*. Sociological Methods & Research.
 
 ---
