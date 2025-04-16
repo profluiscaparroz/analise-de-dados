@@ -1093,3 +1093,30 @@ A estatística é uma ciência essencial que evoluiu ao longo dos séculos e hoj
 Ao seguir um processo estruturado, que inclui a coleta, organização, análise e interpretação dos dados, a estatística permite entender fenômenos complexos, prever tendências e otimizar processos.  
 
 Com o crescimento do volume de dados e a evolução da tecnologia, a estatística continuará sendo uma ferramenta indispensável para o avanço da ciência e da sociedade.
+
+Claro! Abaixo está uma lista das **referências clássicas e teóricas** mencionadas ou baseadas no conteúdo que discutimos ao longo de toda a explicação sobre viés e amostragem probabilística e não probabilística. Todas são fontes reconhecidas academicamente e amplamente utilizadas em cursos de estatística, metodologia científica e análise de dados:
+
+---
+
+
+### 📚 **Referências Bibliográficas em Formato ABNT**
+
+**COCHRAN, William G.** *Sampling techniques*. 3. ed. New York: John Wiley & Sons, 1977.
+
+**KISH, Leslie.** *Survey sampling*. New York: John Wiley & Sons, 1965.
+
+**LOHR, Sharon L.** *Sampling: design and analysis*. 2. ed. Boston: Brooks/Cole, 2010.
+
+**LEVY, Paul S.; LEMESHOW, Stanley.** *Sampling of populations: methods and applications*. 4. ed. Hoboken: Wiley, 2013.
+
+**BABBIE, Earl.** *The practice of social research*. 12. ed. Belmont: Wadsworth Cengage Learning, 2010.
+
+**GROVES, Robert M. et al.** *Survey methodology*. 2. ed. Hoboken: John Wiley & Sons, 2009.
+
+**SUDMAN, Seymour; KALTON, Graham.** New developments in the sampling of special populations. *Annual Review of Sociology*, v. 12, p. 401–429, 1986.
+
+**INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE).** *Manual técnico de amostragem*. Rio de Janeiro: IBGE, 2003. Disponível em: https://biblioteca.ibge.gov.br. Acesso em: 13 abr. 2025.
+
+**EUROSTAT.** *Handbook on precision requirements and variance estimation for ESS households surveys*. Luxembourg: Publications Office of the European Union, 2013.
+
+---
