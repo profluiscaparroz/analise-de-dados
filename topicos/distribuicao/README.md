@@ -170,10 +170,6 @@ $
 
 ---
 
-Claro! Vamos por partes para deixar **bem didático**:
-
----
-
 ## 📏 O que é **Tamanho de Amostra Proporcional**?
 
 O **tamanho da amostra proporcional** é uma técnica usada quando você quer garantir que **cada grupo** ou **segmento** de uma população esteja **representado proporcionalmente** na amostra final.
@@ -249,6 +245,93 @@ $
 n = \frac{(2.576)^2 \cdot 0.5 \cdot 0.5}{(0.05)^2} = \frac{1.658}{0.0025} \approx 664
 $
 
+Para calcular o **tamanho da amostra** a partir de uma população, levando em consideração os **níveis de confiança** (90%, 95% ou 99%), usamos fórmulas estatísticas baseadas em **amostragem probabilística**, especialmente a **amostragem aleatória simples**.
+
+---
+
+## ✅ **Fórmula básica para tamanho da amostra (população infinita)**
+
+$
+n = \frac{Z^2 \cdot p \cdot (1 - p)}{e^2}
+$
+
+**Onde:**
+
+- $n$: tamanho da amostra
+- $Z$: valor da **distribuição normal padrão** associado ao nível de confiança
+- $p$: proporção esperada (suponha 0,5 se desconhecida – maximiza o tamanho da amostra)
+- $e$: margem de erro (erro amostral tolerável, geralmente 0,05 = 5%)
+
+---
+
+## 🔢 **Valores de Z para os principais níveis de confiança:**
+
+| Nível de confiança | Valor de Z |
+|--------------------|------------|
+| 90%                | 1,645      |
+| 95%                | 1,960      |
+| 99%                | 2,576      |
+
+---
+
+## 🔍 **Exemplo com população infinita**
+
+Suponha que queremos estimar uma proporção com:
+
+- Nível de confiança: **95%**
+- Proporção esperada: **0,5** (p = 50%)
+- Margem de erro: **5%** (e = 0,05)
+
+$
+n = \frac{(1,96)^2 \cdot 0,5 \cdot (1 - 0,5)}{(0,05)^2}
+$
+
+$
+n = \frac{3,8416 \cdot 0,25}{0,0025} = \frac{0,9604}{0,0025} = \boxed{384,16}
+$
+
+**Resultado**: Você precisaria de **aproximadamente 385 pessoas** na amostra.
+
+---
+
+## 👥 **População finita (com correção)**
+
+Se você **conhece o tamanho da população (N)**, use a **correção de população finita**:
+
+$
+n_{ajustada} = \frac{n}{1 + \left(\frac{n - 1}{N}\right)}
+$
+
+---
+
+### 🔧 **Exemplo com população finita:**
+
+População total $N = 1.000$  
+Amostra anterior $n = 385$
+
+$
+n_{ajustada} = \frac{385}{1 + \left(\frac{384}{1000}\right)} = \frac{385}{1 + 0,384} = \frac{385}{1,384} = \boxed{278}
+$
+
+**Resultado**: Para uma população de 1.000 pessoas, bastam **278 indivíduos** na amostra para os mesmos parâmetros.
+
+---
+
+## 📊 Comparação rápida de tamanhos de amostra para populações grandes:
+
+| Margem de erro | 90% (Z=1,645) | 95% (Z=1,96) | 99% (Z=2,576) |
+|----------------|---------------|--------------|---------------|
+| 10%            | 68            | 97           | 166           |
+| 5%             | 271           | 385          | 666           |
+| 3%             | 752           | 1.067        | 1.843         |
+
+---
+
+## 🧠 Dica:
+
+- Se você **não sabe a proporção esperada (p)**, use **0,5**.
+- Se quiser **diminuir o tamanho da amostra**, aumente a **margem de erro** ou reduza o **nível de confiança**.
+
 ---
 
 ## 🛠️ Aplicando na prática
@@ -258,18 +341,6 @@ Se você quer fazer uma **pesquisa proporcional** com um nível de confiança de
 1. Calcule o tamanho da amostra total com a fórmula.
 2. Distribua proporcionalmente esse valor pelas regiões de acordo com o percentual da população de cada uma.
 
----
-
-### 🚀 Quer um exemplo com Python ou Excel para automatizar isso?
-
-Posso montar uma planilha ou script completo que:
-- Calcula a amostra total com base no Z e erro.
-- Distribui proporcionalmente pelos grupos.
-- Aplica correção para população finita se necessário.
-
-Quer que eu prepare isso para você?
-
-Ótima pergunta! Vamos explicar **com clareza e exemplos práticos** o que é a **proporção esperada (p)** e por que às vezes usamos **0.5** por padrão.
 
 ---
 
@@ -302,7 +373,7 @@ Porque **0.5 é o pior caso possível** em termos de variabilidade. Isso signifi
 
 ### 🔍 Comparação:
 
-| Proporção esperada (p) | Variabilidade \(p(1-p)\) |
+| Proporção esperada (p) | Variabilidade $p(1-p)$ |
 |------------------------|--------------------------|
 | 0.1                    | 0.09                     |
 | 0.3                    | 0.21                     |
@@ -310,7 +381,7 @@ Porque **0.5 é o pior caso possível** em termos de variabilidade. Isso signifi
 | 0.7                    | 0.21                     |
 | 0.9                    | 0.09                     |
 
-> 📌 Quanto maior \(p(1-p)\), maior a variabilidade — então o tamanho da amostra será maior para garantir a precisão.
+> 📌 Quanto maior $p(1-p)$, maior a variabilidade — então o tamanho da amostra será maior para garantir a precisão.
 
 ---
 
@@ -382,9 +453,9 @@ Você quer saber: **isso é estatisticamente diferente?**
 
 Use o **Z-teste da média:**
 
-\[
+$
 Z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}} = \frac{73 - 70}{\frac{10}{\sqrt{100}}} = \frac{3}{1} = 3.0
-\]
+$
 
 - Z = 3 → **muito improvável ser por acaso** (apenas 0.3% dos casos)
 - Você **rejeita a hipótese nula** de que "nada mudou"
@@ -514,5 +585,3 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-
-Esse código mostra graficamente o conceito de **Z-score** e como ele se relaciona com os intervalos de confiança na distribuição normal.
