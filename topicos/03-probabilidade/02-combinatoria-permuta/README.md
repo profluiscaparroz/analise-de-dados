@@ -1,9 +1,9 @@
 
-## 🎓 **Fatorial na Matemática: Um Conceito Central**
+# **Fatorial na Matemática: Um Conceito Central**
 
 ---
 
-### 📌 **Definição Formal**
+### **Definição Formal**
 
 O fatorial de um número inteiro não negativo $n$, denotado por $n!$, é o produto de todos os inteiros positivos menores ou iguais a $n$:
 
@@ -219,7 +219,6 @@ No caso do fatorial (`n!`), ele cresce extremamente rápido porque é o produto 
 Por isso, usamos uma **escala logarítmica** no gráfico. Essa escala "comprime" os valores maiores, permitindo que o crescimento exponencial do fatorial seja visualizado de forma mais clara e compreensível.
 
 ```python
-```python
 import matplotlib.pyplot as plt
 import math
 
@@ -243,9 +242,6 @@ plt.savefig('crescimento_fatorial.png', dpi=300)
 
 plt.show()
 ```
-```
-
-
 
 ### 🧠 Dica:
 - A escala do eixo Y é **logarítmica** para visualizar melhor o crescimento exponencial do fatorial. Sem isso, os valores cresceriam tão rápido que ficaria difícil de ver os pontos pequenos.
@@ -727,8 +723,7 @@ Ao ensinar permutação, não basta mostrar uma fórmula. É essencial **dar sen
 
 ---
 
-## Arranjo
----
+# Arranjo
 
 ### 🕰️ **1. Um Pouco de História**
 
@@ -824,8 +819,6 @@ Distribua 5 cartões com nomes (ex: Ana, Bruno, Carla, Diego, Elisa). Peça:
   A(n, p) = \frac{n!}{(n - p)!}
   $
 - Sempre que **não há repetição** e **a posição importa**, usamos **arranjos**.
-
-Claro! Aqui vão **exemplos didáticos de arranjos**, bem explicados, com situações cotidianas e passo a passo para resolver **na mão**. Todos os exemplos foram pensados para ajudar os alunos a fixar os conceitos de forma intuitiva, prática e divertida.
 
 ---
 
@@ -997,7 +990,6 @@ $
 A(3, 2) = \frac{3!}{1!} = \frac{6}{1} = 6
 $
 
-
 ---
 
 ### ✅ **Parte 1 – Função em Python para calcular um arranjo**
@@ -1041,3 +1033,6 @@ A(10, 1): 10
 ```
 
 ---
+
+# Combinação
+
