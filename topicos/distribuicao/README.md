@@ -585,3 +585,132 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+
+Perfeito, agora vamos transpor esse conteúdo de **combinação** para o ambiente de **Python**, focando em aprendizado e prática. Abaixo segue uma explicação com **exemplos práticos**, desde o uso da fórmula até a biblioteca pronta `math` — ideal para aplicar em sala de aula, avaliações automáticas ou pequenos projetos.
+
+---
+
+## 🐍 1. **Usando a fórmula manualmente em Python**
+
+```python
+def fatorial(n):
+    resultado = 1
+    for i in range(2, n + 1):
+        resultado *= i
+    return resultado
+
+def combinacao(n, p):
+    return fatorial(n) // (fatorial(p) * fatorial(n - p))
+
+# Exemplo: de 8 alunos, quantas comissões de 3 posso montar?
+n = 8
+p = 3
+print(f"C({n}, {p}) =", combinacao(n, p))
+```
+
+🔹 **Saída**:
+```
+C(8, 3) = 56
+```
+
+---
+
+## 🧮 2. **Usando a biblioteca `math`**
+
+A partir do Python 3.8+, a função `math.comb(n, p)` faz isso diretamente.
+
+```python
+import math
+
+n = 8
+p = 3
+
+print(f"C({n}, {p}) =", math.comb(n, p))
+```
+
+🔹 É mais rápido e seguro (lida com inteiros grandes e casos extremos).
+
+---
+
+## 🧠 3. **Visualizando combinações possíveis com `itertools`**
+
+Para mostrar todas as combinações possíveis (além de contar), podemos usar:
+
+```python
+from itertools import combinations
+
+alunos = ["Ana", "Beto", "Carla", "Diego", "Elisa"]
+pares = list(combinations(alunos, 2))
+
+print("Total de pares:", len(pares))
+for par in pares:
+    print(par)
+```
+
+🔹 **Saída**:
+```
+Total de pares: 10
+('Ana', 'Beto')
+('Ana', 'Carla')
+...
+```
+
+---
+
+## 📊 4. **Gráfico de crescimento da combinação com Python**
+
+Vamos ver como o número de combinações cresce com `n`, mantendo `p` fixo:
+
+```python
+import matplotlib.pyplot as plt
+import math
+
+p = 3
+n_values = list(range(3, 21))  # de 3 a 20
+c_values = [math.comb(n, p) for n in n_values]
+
+plt.plot(n_values, c_values, marker='o')
+plt.title(f"C(n, {p}) - Crescimento da Combinação")
+plt.xlabel("n (elementos totais)")
+plt.ylabel("Número de combinações")
+plt.grid(True)
+plt.show()
+```
+
+---
+
+## 🎓 5. **Aplicações didáticas**
+
+### ✅ Exercício automático:
+
+```python
+def quiz_combinacao(n, p):
+    print(f"Quantas combinações de {p} elementos podem ser feitas a partir de {n} elementos?")
+    resposta = int(input("Sua resposta: "))
+    correta = math.comb(n, p)
+    if resposta == correta:
+        print("✔️ Correto!")
+    else:
+        print(f"❌ Errado! A resposta certa é {correta}")
+
+quiz_combinacao(6, 2)
+```
+
+---
+
+## 🚀 Extra: Comparando combinações com permutações e arranjos
+
+```python
+def permutacao(n):
+    return fatorial(n)
+
+def arranjo(n, p):
+    return fatorial(n) // fatorial(n - p)
+
+n, p = 5, 2
+print("Permutação:", permutacao(n))
+print("Arranjo:", arranjo(n, p))
+print("Combinação:", combinacao(n, p))
+```
+
+---
