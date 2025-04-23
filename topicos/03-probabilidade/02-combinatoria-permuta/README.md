@@ -1143,5 +1143,38 @@ $
 > C(n, p) = \frac{n!}{p!(n - p)!}
 > $
 
+
 ---
+
+### 📊 Tabela Comparativa: Fatorial x Permutação x Arranjo x Combinação
+
+| Conceito      | Definição                                                                 | Fórmula                                      | Ordem importa? | Repetição permitida? | Exemplo prático                                     |
+|---------------|---------------------------------------------------------------------------|----------------------------------------------|----------------|-----------------------|-----------------------------------------------------|
+| **Fatorial (n!)** | Produto de todos os inteiros positivos até `n`                             | $n! = n \cdot (n-1) \cdot \dots \cdot 1$  | ❌ Não se aplica | ❌ Não se aplica        | Quantas formas de organizar 4 pessoas em fila       |
+| **Permutação (P)** | Quantas maneiras de **organizar todos os elementos**                     | $P(n) = n!$                               | ✅ Sim         | ❌ Não                 | Organizar 5 livros em uma estante                   |
+| **Arranjo (A)**    | Quantas maneiras de **escolher e organizar parte dos elementos**         | $A(n, p) = \frac{n!}{(n - p)!}$           | ✅ Sim         | ❌ Não                 | Pódio de 3 atletas entre 10 participantes           |
+| **Combinação (C)** | Quantas maneiras de **escolher parte dos elementos sem se importar com ordem** | $C(n, p) = \frac{n!}{p! \cdot (n - p)!}$ | ❌ Não         | ❌ Não                 | Formar grupos de 3 pessoas entre 10 disponíveis     |
+
+---
+
+### ✅ Resumo visual (ordem importa?):
+
+| Conceito    | Ordem Importa? | Seleciona Subconjuntos? |
+|-------------|----------------|--------------------------|
+| Fatorial    | Não (total)     | Não                      |
+| Permutação  | Sim             | Não                      |
+| Arranjo     | Sim             | Sim                      |
+| Combinação  | Não             | Sim                      |
+
+---
+
+### Dicas:
+
+- **Usar fatorial** quando for base para outras fórmulas.
+- **Usar permutação** quando quiser **organizar tudo**.
+- **Usar arranjo** quando quiser **organizar parte**.
+- **Usar combinação** quando quiser **escolher parte**, **sem se importar com a ordem**.
+
+---
+
 
