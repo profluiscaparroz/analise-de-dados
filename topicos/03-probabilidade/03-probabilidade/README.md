@@ -279,7 +279,7 @@ Esse resultado, conhecido como **Lei Fraca dos Grandes Números**, foi um marco 
 
 A formulação moderna da Lei Fraca dos Grandes Números pode ser expressa assim:
 
-> Dada uma sequência de variáveis aleatórias independentes e identicamente distribuídas com esperança matemática \( \mu \), a média amostral dessas variáveis converge em probabilidade para \( \mu \) conforme o número de observações tende ao infinito.
+> Dada uma sequência de variáveis aleatórias independentes e identicamente distribuídas com esperança matemática $\mu$, a média amostral dessas variáveis converge em probabilidade para $\mu$ conforme o número de observações tende ao infinito.
 
 Essa explicação formal surgiu principalmente no século XIX e início do século XX, com matemáticos como **Siméon Denis Poisson**, **Pafnuty Chebyshev**, e posteriormente **Andrey Kolmogorov**, que deram bases cada vez mais rigorosas para o conceito.
 
@@ -501,11 +501,12 @@ plt.show()
 
 **Interpretação**: À medida que o número de sorteios aumenta, a frequência relativa do Ás de Copas tende a se estabilizar em torno de 1/52 (aproximadamente 1,92%), conforme previsto pela probabilidade teórica.
 
----
-
 Esses exemplos demonstram como a **Lei dos Grandes Números** se manifesta em diferentes contextos, mostrando que, com um número suficientemente grande de experimentos, a frequência relativa de um evento tende a se aproximar da sua probabilidade teórica.
 
 ---
+# Conceitos gerais sobre probabilidade
+
+## Experimentos aleatório
 
 Um **experimento aleatório** é uma ação ou processo que, mesmo sendo repetido sob condições idênticas, pode resultar em diferentes desfechos, impossíveis de serem previstos com certeza antes de sua realização. Essa imprevisibilidade é uma característica fundamental dos experimentos aleatórios. ([Experimentos determinísticos e aleatórios - Ensino Médio - YouTube](https://www.youtube.com/watch?v=KnXK3i448xg&utm_source=chatgpt.com))
 
@@ -527,7 +528,7 @@ Um **experimento aleatório** é uma ação ou processo que, mesmo sendo repetid
 
 - **Sorteio de uma carta de um baralho**: Ao retirar uma carta aleatoriamente de um baralho, não é possível saber antecipadamente qual será a carta selecionada. ([Espaço amostral](https://pt.wikipedia.org/wiki/Espa%C3%A7o_amostral?utm_source=chatgpt.com))
 
-### 🧠 Aplicações
+###  Aplicações
 
 O conceito de experimentos aleatórios é fundamental na teoria das probabilidades e na estatística, sendo utilizado para modelar e analisar situações em diversas áreas, como:
 
@@ -539,74 +540,255 @@ O conceito de experimentos aleatórios é fundamental na teoria das probabilidad
 
 - **Ciências Sociais**: Pesquisas de opinião e estudos de comportamento. ([Atribuição aleatória](https://pt.wikipedia.org/wiki/Atribui%C3%A7%C3%A3o_aleat%C3%B3ria?utm_source=chatgpt.com))
 
-Compreender experimentos aleatórios é essencial para interpretar e prever fenômenos em que o acaso desempenha um papel significativo.
+---
 
-Na teoria das probabilidades, um **ponto amostral** é um resultado específico de um experimento aleatório. Ele representa um único elemento dentro do espaço amostral, que é o conjunto de todos os possíveis resultados desse experimento.  ([O que é um ponto amostral em probabilidade? | CK-12 Foundation](https://www.ck12.org/flexi/pt-br/mat-8-anos/conceitos-basicos-de-probabilidade/o-que-e-um-ponto-amostral-em-probabilidade/?utm_source=chatgpt.com))
+## Ponto Amostral em Probabilidade
 
-### 🧠 Definição Formal
+No estudo da probabilidade, um conceito fundamental — mas que muitas vezes passa despercebido nos primeiros contatos com a disciplina — é o de **ponto amostral**. Ele é a base da construção do espaço amostral e, portanto, de toda análise probabilística.
+
+Segundo **Sheldon Ross** em *Introduction to Probability Models* (11ª edição, 2014), "um **ponto amostral** representa um resultado possível de um experimento aleatório" (Ross, 2014, p. 7). Ou seja, cada realização possível de um experimento corresponde a um único ponto dentro do conjunto total de possibilidades, chamado de **espaço amostral**.
+
+Para entender melhor, consideremos um exemplo simples: lançar uma moeda. O experimento tem dois possíveis resultados: "cara" ou "coroa". Cada resultado individual (cara, ou coroa) é um **ponto amostral**. O conjunto de todos esses pontos — {cara, coroa} — é o espaço amostral.
+
+Essa definição simples esconde uma grande profundidade. Como explica **William Feller** em *An Introduction to Probability Theory and Its Applications* (1950), "o rigor na descrição dos pontos amostrais é essencial para a precisão das análises posteriores" (Feller, 1950, p. 3). Se o espaço amostral é mal definido, todos os cálculos de probabilidade podem se tornar inconsistentes.
+
+Resumidamente, na teoria das probabilidades, um **ponto amostral** é um resultado específico de um experimento aleatório. Ele representa um único elemento dentro do espaço amostral, que é o conjunto de todos os possíveis resultados desse experimento.  ([O que é um ponto amostral em probabilidade? | CK-12 Foundation](https://www.ck12.org/flexi/pt-br/mat-8-anos/conceitos-basicos-de-probabilidade/o-que-e-um-ponto-amostral-em-probabilidade/?utm_source=chatgpt.com))
+
+##  Definição Formal
 
 Seja Ω o espaço amostral de um experimento aleatório. Um ponto amostral é um elemento ω ∈ Ω, ou seja, um dos possíveis resultados individuais do experimento.
 
-### 🎲 Exemplos
+### A importância do ponto amostral em experimentos complexos
 
-- **Lançamento de um dado**: O espaço amostral é Ω = {1, 2, 3, 4, 5, 6}. Cada número representa um ponto amostral.
+Em experimentos mais elaborados, identificar corretamente os pontos amostrais pode ser desafiador. Por exemplo, ao lançar dois dados, o espaço amostral não é simplesmente {2, 3, 4, ..., 12} (os possíveis totais), mas sim todos os pares ordenados possíveis, como (1,1), (1,2), ..., (6,6). Cada par representa um ponto amostral distinto.
 
-- **Lançamento de uma moeda**: O espaço amostral é Ω = {cara, coroa}. Cada face é um ponto amostral. ([Probabilidade: o que é, como calcular, exercícios - Brasil Escola](https://brasilescola.uol.com.br/matematica/probabilidade.htm?utm_source=chatgpt.com))
+**Andrey Kolmogorov**, ao formalizar a teoria das probabilidades em *Foundations of the Theory of Probability* (1933), introduziu a necessidade de definir o espaço amostral como um conjunto dotado de uma estrutura matemática chamada **espaço mensurável**. Para Kolmogorov, era fundamental tratar os pontos amostrais como elementos de um conjunto bem definido e mensurável para garantir a consistência lógica da teoria.
 
-- **Sorteio de uma carta de um baralho**: O espaço amostral contém 52 pontos amostrais, cada um representando uma carta específica. ([Conceito e Cálculo da Probabilidade - Toda Matéria](https://www.todamateria.com.br/probabilidade/?utm_source=chatgpt.com))
+Kolmogorov escreve:
 
-### 🔍 Importância
+> "O primeiro passo na construção do cálculo das probabilidades é a fixação de um conjunto de possibilidades elementares e a designação de certos subconjuntos como eventos" (Kolmogorov, 1933, tradução livre).
 
-Compreender o conceito de ponto amostral é fundamental para a construção de eventos e para o cálculo de probabilidades. Eventos são subconjuntos do espaço amostral e podem ser compostos por um ou mais pontos amostrais. 
+Isso reforça a ideia de que os pontos amostrais não são apenas resultados isolados, mas a peça inicial para toda a construção da probabilidade formal.
 
-### 📚 Aplicações
+### Exemplos de pontos amostrais em diferentes contextos
 
-O conceito de ponto amostral é amplamente utilizado em diversas áreas, como estatística, engenharia, ciências sociais e naturais, para modelar e analisar fenômenos aleatórios.
+- **Lançamento de uma moeda**: Os pontos amostrais são "cara" e "coroa".
+- **Lançamento de um dado**: Pontos amostrais são {1, 2, 3, 4, 5, 6}.
+- **Seleção de uma pessoa aleatoriamente de uma população**: Cada pessoa individual é um ponto amostral.
+- **Sorteio da Mega-Sena**: Um ponto amostral seria uma combinação específica de 6 números dentre 60 possíveis.
+
+Observe que, em situações como sorteios ou escolhas de várias alternativas, o ponto amostral pode ser **simples** (um único número) ou **composto** (um conjunto de números, ordenados ou não).
+
+### Considerações adicionais
+
+A clareza no conceito de ponto amostral é crucial para evitar confusões mais adiante, especialmente em problemas que envolvem:
+- **Eventos compostos** (combinações de pontos amostrais),
+- **Espaços amostrais contínuos** (por exemplo, medir a altura de uma pessoa, onde há infinitos pontos amostrais possíveis entre, digamos, 1,50 m e 2,00 m),
+- **Eventos dependentes** ou **independentes** (onde a estrutura do espaço amostral influencia diretamente as probabilidades).
+
+Como reforça **Grimmett e Stirzaker** em *Probability and Random Processes* (3ª edição, 2001):
+
+> "A compreensão do espaço amostral e de seus pontos elementares é fundamental não apenas para a definição de eventos, mas também para o desenvolvimento de quaisquer processos probabilísticos subsequentes" (Grimmett & Stirzaker, 2001, p. 5).
+
+Assim, dominar o conceito de ponto amostral é o primeiro passo para qualquer estudo sério em probabilidade e estatística.
 
 ---
 
-### 🔍 O que é Espaço Amostral?
+### Referências utilizadas
 
-O **espaço amostral**, representado pela letra grega Ω (ômega), é o conjunto de todos os possíveis resultados de um experimento aleatório. Cada elemento desse conjunto é chamado de **ponto amostral**. Compreender o espaço amostral é essencial para calcular probabilidades, pois ele define o universo de resultados possíveis.  ([Probabilidade: entenda o conceito e cálculo - Estratégia Militares](https://militares.estrategia.com/portal/materias-e-dicas/matematica/probabilidade-entenda-o-conceito-e-calculo/?utm_source=chatgpt.com), [Definições básicas de probabilidade - Mundo Educação - UOL](https://mundoeducacao.uol.com.br/matematica/definicoes-basicas-probabilidade.htm?utm_source=chatgpt.com), [Resumo de Probabilidade: Espaço Amostral e sua Importância](https://www.teachy.com.br/resumos/ensino-medio/2ano/matematica/probabilidade-espaco-amostral-e-sua-importancia-Expositiva?utm_source=chatgpt.com))
+- Feller, W. (1950). *An Introduction to Probability Theory and Its Applications*. Wiley.
+- Kolmogorov, A. N. (1933). *Foundations of the Theory of Probability*. (Tradução: 1956).
+- Ross, S. M. (2014). *Introduction to Probability Models* (11th ed.). Academic Press.
+- Grimmett, G., & Stirzaker, D. (2001). *Probability and Random Processes* (3rd ed.). Oxford University Press.
 
+---
+
+## Espaço Amostral
+
+O conceito de espaço amostral é um dos fundamentos mais importantes da teoria da probabilidade. Em termos simples, o espaço amostral é o conjunto de todos os resultados possíveis de um experimento aleatório.
+
+Segundo Grinstead e Snell (1997), autores de um dos livros mais respeitados sobre probabilidade aplicada, "o espaço amostral é o conjunto de todos os resultados básicos que podem ocorrer na realização de um experimento" (Grinstead & Snell, Introduction to Probability, p. 11). Assim, qualquer análise probabilística precisa, antes de qualquer cálculo, definir claramente qual é o seu espaço amostral.
+
+O **espaço amostral**, representado pela letra grega Ω (ômega), é o conjunto de todos os possíveis resultados de um experimento aleatório. Cada elemento desse conjunto é chamado de **ponto amostral**. Compreender o espaço amostral é essencial para calcular probabilidades, pois ele define o universo de resultados possíveis.
+
+
+### Definição Formal
+
+De forma mais formal, o espaço amostral, geralmente representado pela letra $\Omega$ (ômega), é um conjunto que contém todos os possíveis resultados de um experimento.
+
+Exemplos clássicos:
+- Ao lançar uma moeda, o espaço amostral é $\Omega = \{ \text{cara}, \text{coroa} \}$.
+- Ao lançar um dado de seis faces, temos $\Omega = \{1, 2, 3, 4, 5, 6\}$.
+- Ao observar o sexo de um recém-nascido, o espaço amostral poderia ser $\Omega = \{\text{masculino}, \text{feminino}\}$.
+
+O espaço amostral pode ser:
+- **Finito**: quando há um número limitado de resultados possíveis, como nos exemplos acima.
+- **Infinito**: quando o conjunto de resultados é ilimitado, como ao medir o tempo até a falha de uma máquina (um tempo contínuo positivo).
+
+### Importância
+
+A correta identificação do espaço amostral é essencial porque a probabilidade de qualquer evento é definida **em relação a esse espaço**. Como afirma **William Feller** (1950), considerado um dos fundadores da teoria moderna da probabilidade, "*a escolha do espaço amostral adequado é a primeira e talvez a mais importante decisão no tratamento de qualquer problema de probabilidade*" (Feller, *An Introduction to Probability Theory and Its Applications*, Vol. 1, p. 2).
+
+Se o espaço amostral for mal definido, todos os cálculos subsequentes podem ser incorretos. Um erro clássico é omitir possibilidades ou interpretar o experimento de forma incompleta.
+
+### Tipos de Espaço Amostral
+
+1. **Espaço Amostral Discreto**
+   - Conjunto finito ou enumerável de resultados.
+   - Exemplo: o resultado de uma loteria em que se escolhe um número inteiro de 1 a 100.
+
+2. **Espaço Amostral Contínuo**
+   - Os resultados formam um intervalo contínuo de números reais.
+   - Exemplo: a altura de uma pessoa, que pode assumir infinitos valores dentro de um intervalo, como de 1,50 m a 2,00 m.
+
+Em espaços amostrais contínuos, a probabilidade de um valor específico é, tecnicamente, zero — trabalhamos então com probabilidades de intervalos.
+
+### Espaço Amostral e Eventos
+
+Dentro do espaço amostral, um **evento** é simplesmente um subconjunto de resultados. Por exemplo:
+- Em $\Omega = \{1,2,3,4,5,6\}$, o evento "tirar um número par" é o subconjunto $\{2,4,6\}$.
+  
+Assim, ao definir o espaço amostral, também preparamos o terreno para a definição formal de eventos e suas respectivas probabilidades.
 ---
 
 ### 📚 Exemplos de Espaço Amostral
 
 1. **Lançamento de uma moeda**:
-   - Ω = {cara, coroa} ([Resumo de Probabilidade: Espaço Amostral e sua Importância](https://www.teachy.com.br/resumos/ensino-medio/2ano/matematica/probabilidade-espaco-amostral-e-sua-importancia-Expositiva?utm_source=chatgpt.com))
+   - Ω = {cara, coroa} ([Resumo de Probabilidade: Espaço Amostral e sua Importância]
 
 2. **Lançamento de um dado de seis faces**:
    - $Ω = {1, 2, 3, 4, 5, 6}$
 
 3. **Lançamento de duas moedas**:
-   - $Ω = {(cara, cara), (cara, coroa), (coroa, cara), (coroa, coroa)}$ ([Espaço Amostral e Evento - InfoEscola](https://www.infoescola.com/matematica/espaco-amostral-e-evento/?utm_source=chatgpt.com))
+   - $Ω = {(cara, cara), (cara, coroa), (coroa, cara), (coroa, coroa)}$
 
 4. **Sorteio de uma carta de um baralho padrão**:
-   - Ω = {todas as 52 cartas do baralho} ([Conceito e Cálculo da Probabilidade - Toda Matéria](https://www.todamateria.com.br/probabilidade/?utm_source=chatgpt.com))
+   - Ω = {todas as 52 cartas do baralho}
 
 5. **Medição da altura de uma pessoa**:
-   - Ω = {x ∈ ℝ | x > 0} (um intervalo contínuo de números reais positivos) ([[PDF] Probabilidade - aula I](https://www.est.ufmg.br/~marcosop/est031/aulas/Capitulo_2_1.pdf?utm_source=chatgpt.com))
+   - Ω = {x ∈ ℝ | x > 0} (um intervalo contínuo de números reais positivos)
 
 ---
 
-### 🔢 Tipos de Espaço Amostral
+### Considerações Filosóficas
 
-- **Discreto**: Contém um número finito ou enumerável de resultados.
-  - *Exemplo*: Lançamento de um dado. ([Função massa de probabilidade](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_massa_de_probabilidade?utm_source=chatgpt.com))
+A definição do espaço amostral não é puramente mecânica — ela envolve uma escolha intelectual, que depende de como o problema é interpretado. Por isso, como explica **Ian Hacking** (1975) em seu livro *The Emergence of Probability*, "*o conceito de espaço amostral reflete o modo como o experimentador escolhe conceber o experimento, e não apenas as propriedades físicas do fenômeno*" (Hacking, *The Emergence of Probability*, p. 86).
 
-- **Contínuo**: Inclui um intervalo de números reais, representando uma infinidade não enumerável de resultados.
-  - *Exemplo*: Medição da temperatura ambiente.
+Por exemplo, ao lançar dois dados, o espaço amostral pode ser considerado como os pares ordenados (1,1), (1,2), ..., (6,6), ou pode ser simplificado para a soma dos dois dados (2 a 12), dependendo da pergunta feita.
+
+### Exemplo em python
+
+Vou fazer o seguinte:
+
+- Criar uma **simulação de lançamentos de um dado** (evento clássico de probabilidade).
+- **Visualizar** os resultados em **gráficos**:
+  - Frequência de cada face
+  - Convergência da frequência relativa (Lei dos Grandes Números)
+
+Esse exemplo é didático, ilustra bem **evento aleatório**, **espaço amostral**, **frequência relativa** e como a probabilidade se manifesta ao longo do tempo.
 
 ---
 
-### 🧠 Importância do Espaço Amostral
+Aqui está o código completo com explicações:
 
-O espaço amostral serve como base para definir **eventos**, que são subconjuntos de Ω. Por exemplo, ao lançar um dado, o evento "obter um número par" corresponde ao subconjunto {2, 4, 6}. Para calcular a probabilidade de um evento, é necessário conhecer o espaço amostral completo.  ([Resumo de Probabilidade: Espaço Amostral e sua Importância](https://www.teachy.com.br/resumos/ensino-medio/2ano/matematica/probabilidade-espaco-amostral-e-sua-importancia-Expositiva?utm_source=chatgpt.com))
+```python
+import random
+import matplotlib.pyplot as plt
+import numpy as np
 
-Na teoria das probabilidades, um **evento** é qualquer subconjunto do espaço amostral de um experimento aleatório. O espaço amostral, denotado por Ω, representa o conjunto de todos os resultados possíveis de um experimento. Assim, um evento é uma coleção de resultados que compartilham uma característica comum ou atendem a um critério específico. ([Conceito e Cálculo da Probabilidade - Toda Matéria](https://www.todamateria.com.br/probabilidade/?utm_source=chatgpt.com))
+# Configurações básicas
+faces = [1, 2, 3, 4, 5, 6]  # Espaço amostral de um dado justo
+n_lancamentos = 10000       # Número de experimentos
 
-### 🔍 Tipos de Eventos
+# Simulando lançamentos
+resultados = [random.choice(faces) for _ in range(n_lancamentos)]
+
+# Contando ocorrências de cada face
+contagem = {face: resultados.count(face) for face in faces}
+
+# Frequência relativa
+frequencia_relativa = {face: contagem[face] / n_lancamentos for face in faces}
+
+# Plotando o gráfico de barras das frequências absolutas
+plt.figure(figsize=(12, 6))
+
+plt.subplot(1, 2, 1)
+plt.bar(contagem.keys(), contagem.values(), color='skyblue')
+plt.title('Frequência Absoluta das Faces')
+plt.xlabel('Face do Dado')
+plt.ylabel('Número de Ocorrências')
+plt.xticks(faces)
+
+# Mostrando a convergência da frequência relativa
+frequencias_ao_longo_do_tempo = {face: [] for face in faces}
+contagem_parcial = {face: 0 for face in faces}
+
+for i, resultado in enumerate(resultados, start=1):
+    contagem_parcial[resultado] += 1
+    for face in faces:
+        frequencias_ao_longo_do_tempo[face].append(contagem_parcial[face] / i)
+
+plt.subplot(1, 2, 2)
+for face in faces:
+    plt.plot(frequencias_ao_longo_do_tempo[face], label=f'Face {face}')
+    
+plt.title('Convergência da Frequência Relativa')
+plt.xlabel('Número de Lançamentos')
+plt.ylabel('Frequência Relativa')
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
+#### Figura saída
+
+![Imagem do gráfico resultante do script acima](img/ponto_amostral.png)
+
+---
+
+### Explicação dos Conceitos Ilustrados:
+
+1. **Espaço amostral**:
+   - Todas as possíveis saídas do lançamento: {1, 2, 3, 4, 5, 6}
+
+2. **Evento aleatório**:
+   - O resultado de um lançamento individual do dado (por exemplo, "obter um 4").
+
+3. **Probabilidade teórica**:
+   - Para um dado justo, a probabilidade de cada face é $\frac{1}{6} \approx 0,1667$.
+
+4. **Simulação prática**:
+   - Utilizamos `random.choice` para modelar o caráter aleatório de cada lançamento.
+
+5. **Frequência relativa**:
+   - A proporção de vezes que cada face aparece em relação ao número total de lançamentos.
+
+6. **Lei dos Grandes Números**:
+   - O segundo gráfico mostra como, à medida que o número de lançamentos cresce, a frequência relativa se aproxima da probabilidade teórica.
+
+---
+
+### Pequeno Exemplo de Saída:
+
+**Gráfico 1** — *Frequência absoluta*: Quantas vezes cada número saiu.
+
+**Gráfico 2** — *Frequência relativa ao longo do tempo*: Cada linha tende a convergir para 1/6 ≈ 0.1667.
+
+---
+
+### Referência Científica:
+
+- **Ross, S. M. (2014). "Introduction to Probability Models"** — 11th Edition, Academic Press.  
+  Esse tipo de simulação é um exemplo clássico de modelagem de variáveis aleatórias discretas em probabilidade.
+- **Feller, W. (1968). "An Introduction to Probability Theory and Its Applications"** — Volume 1.  
+  Utiliza experimentos similares para ilustrar conceitos fundamentais de espaço amostral e eventos.
+
+---
+
+
+## Eventos
 
 1. **Evento Elementar**: Contém apenas um resultado do espaço amostral.  
    *Exemplo*: No lançamento de um dado, obter o número 4 é um evento elementar: {4}.
@@ -650,7 +832,7 @@ Onde: ([Probabilidade: entenda o conceito e cálculo - Estratégia Militares](ht
 
 P(A) = 3 / 6 = 0,5 ou 50%
 
-### 🧠 Aplicações Práticas
+###  Aplicações Práticas
 
 Compreender o conceito de eventos é fundamental para a análise de situações probabilísticas em diversas áreas, como:
 
