@@ -100,8 +100,8 @@ $
 $
 
 Onde:
-- $ E[\hat{\theta}] $: Valor esperado (médio) do estimador $\hat{\theta}$
-- $ \theta $: Valor real do parâmetro da população
+- $E[\hat{\theta}]$: Valor esperado (médio) do estimador $\hat{\theta}$
+- $\theta$: Valor real do parâmetro da população
 
 
 $
@@ -200,21 +200,21 @@ A **melhor solução** geralmente não é o modelo com o menor viés nem o de me
 
 ## 🧪 Exemplo numérico simples:
 
-Suponha que você quer estimar a média verdadeira de uma população: $ \theta = 10 $
+Suponha que você quer estimar a média verdadeira de uma população: $\theta = 10$
 
 Você testa dois estimadores:
 
 ### Estimador A:
-- Média esperada: $ \mathbb{E}[\hat{\theta}] = 9 $
-- Variância: $ \text{Var}(\hat{\theta}) = 1 $
+- Média esperada: $\mathbb{E}[\hat{\theta}] = 9$
+- Variância: $\text{Var}(\hat{\theta}) = 1$
 
 $
 \text{MSE}_A = (9 - 10)^2 + 1 = 1 + 1 = 2
 $
 
 ### Estimador B:
-- Média esperada: $ \mathbb{E}[\hat{\theta}] = 10 $
-- Variância: $ \text{Var}(\hat{\theta}) = 4 $
+- Média esperada: $\mathbb{E}[\hat{\theta}] = 10$
+- Variância: $\text{Var}(\hat{\theta}) = 4$
 
 $
 \text{MSE}_B = (10 - 10)^2 + 4 = 0 + 4 = 4
@@ -300,8 +300,6 @@ O importante é que essas estimativas sejam feitas com **riscos controlados** de
 
 > “A teoria da amostragem nos dá ferramentas para calcular o erro associado às estimativas, garantindo que os resultados possam ser generalizados para a população com um grau conhecido de precisão.”  
 > — *Wonnacott & Wonnacott, 1990*
-
-Claro! Vamos entender o **viés estatístico** a partir de sua **formulação matemática**, com um **exemplo passo a passo**, e em seguida explicar **quando usá-la**.
 
 ---
 
@@ -2143,9 +2141,6 @@ A **amostragem por conglomerados** é uma ferramenta valiosa para situações on
 
 Essa abordagem, quando bem aplicada, permite a realização de estudos significativos em grandes populações, mantendo a representatividade e viabilidade operacional da pesquisa.
 
----
-
-Claro! A seguir, apresento uma explicação formal e detalhada sobre **Amostragem por Conglomerado em Duas Etapas (Two-Stage Cluster Sampling)**, como solicitado — sem exemplos computacionais.
 
 ---
 
