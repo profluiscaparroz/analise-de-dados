@@ -787,8 +787,82 @@ plt.show()
 
 ---
 
-
 ## Eventos
+
+Em teoria da probabilidade, o conceito de **evento** é fundamental. Um evento representa um conjunto de possíveis resultados dentro de um experimento aleatório. A maneira como esses eventos se relacionam — se são independentes, mutuamente exclusivos, compostos, entre outros — determina como calculamos e interpretamos probabilidades.
+
+De acordo com a definição clássica, apresentada por **Andrey Kolmogorov** em sua obra *Foundations of the Theory of Probability* (1933), um evento é um subconjunto de um espaço amostral $\Omega$, onde o espaço amostral é o conjunto de todos os resultados possíveis de um experimento. Kolmogorov formalizou a probabilidade em termos de teoria dos conjuntos e medidas, o que permitiu à disciplina um rigor matemático muito mais sólido.
+
+## Classificação dos eventos
+
+**1. Evento simples**  
+Um evento simples é aquele que contém apenas um único resultado. Por exemplo, ao lançar um dado, o evento "sair o número 3" é um evento simples, pois corresponde a exatamente um resultado no espaço amostral $\{1,2,3,4,5,6\}$.
+
+**2. Evento composto**  
+Um evento composto envolve dois ou mais resultados. O evento "sair um número par" no lançamento de um dado, por exemplo, corresponde ao conjunto $\{2,4,6\}$.
+
+Segundo **Sheldon Ross**, em *A First Course in Probability* (2014), "a análise de eventos compostos frequentemente envolve a aplicação das regras da soma e do produto da probabilidade, baseadas em interseções e uniões de conjuntos."
+
+**3. Evento impossível e evento certo**  
+- Um evento impossível é aquele que nunca ocorre. Sua probabilidade é 0. Exemplo: lançar um dado comum e obter o número 7.
+- Um evento certo é aquele que sempre ocorre. Sua probabilidade é 1. Exemplo: ao lançar um dado, "obter um número entre 1 e 6".
+
+## Relações entre eventos
+
+**Eventos mutuamente exclusivos (ou disjuntos)**  
+Dois eventos são mutuamente exclusivos quando não podem ocorrer ao mesmo tempo. Formalmente, se $A$ e $B$ são mutuamente exclusivos, então:
+
+$
+A \cap B = \emptyset
+$
+
+Isto é, a interseção dos eventos é o conjunto vazio.
+
+Segundo **William Feller** em *An Introduction to Probability Theory and Its Applications* (1950), "eventos mutuamente exclusivos ilustram o princípio da adição simples: a probabilidade de ocorrência de um ou outro é a soma das probabilidades individuais."
+
+Exemplo: ao lançar um dado, os eventos "sair 2" e "sair 5" são mutuamente exclusivos.
+
+**Eventos independentes**  
+Dois eventos são independentes se a ocorrência de um não altera a probabilidade do outro ocorrer. Formalmente, eventos $A$ e $B$ são independentes se:
+
+$
+P(A \cap B) = P(A) \times P(B)
+$
+
+Por exemplo, ao lançar duas moedas, o resultado da primeira não interfere no resultado da segunda.
+
+Como coloca **Grimmett e Stirzaker** em *Probability and Random Processes* (2001): "A independência é um conceito central para modelar fenômenos onde fatores não interagem diretamente, mas cuja compreensão correta é frequentemente negligenciada na prática."
+
+## Operações com eventos
+
+Eventos podem ser combinados de diversas maneiras:
+
+- **União (A ∪ B)**: o evento "A ou B ocorre" — inclui qualquer resultado que pertença a A, a B ou a ambos.
+- **Interseção (A ∩ B)**: o evento "A e B ocorrem" — inclui apenas resultados que pertencem simultaneamente a A e B.
+- **Complemento (A')**: o evento "A não ocorre" — inclui todos os resultados que não estão em A.
+
+Essas operações seguem leis similares às leis da álgebra de conjuntos, como as **leis de De Morgan**, que afirmam:
+
+$
+(A \cup B)' = A' \cap B'
+$
+$
+(A \cap B)' = A' \cup B'
+$
+
+Essas propriedades são fundamentais para manipular expressões de probabilidade de forma correta.
+
+## A importância de entender eventos
+
+Dominar o conceito de eventos é essencial porque:
+
+- Permite a construção de modelos probabilísticos realistas.
+- Fornece base para lidar com probabilidades condicionais (por exemplo, "qual a chance de chover, dado que está nublado?").
+- É indispensável para o estudo de variáveis aleatórias e distribuições de probabilidade, que são pilares em estatística, ciência de dados, engenharia, economia e muitas outras áreas.
+
+Como destaca **Leonard J. Savage** em *The Foundations of Statistics* (1954), "qualquer decisão racional em face da incerteza passa inevitavelmente pela correta compreensão de eventos e suas inter-relações."
+
+---
 
 1. **Evento Elementar**: Contém apenas um resultado do espaço amostral.  
    *Exemplo*: No lançamento de um dado, obter o número 4 é um evento elementar: {4}.
@@ -801,6 +875,133 @@ plt.show()
 
 4. **Evento Certo**: Inclui todos os resultados possíveis; sua ocorrência é garantida.  
    *Exemplo*: Obter um número entre 1 e 6 ao lançar um dado: {1, 2, 3, 4, 5, 6}.
+
+---
+
+### Tipos de Eventos em Probabilidade: Explicação com Fórmula e Exemplos Simples
+
+#### 1. Evento Elementar
+
+**Definição:**  
+Um **evento elementar** é aquele que contém **apenas um único resultado** do espaço amostral. Ele representa um caso específico em um experimento aleatório.
+
+**Fórmula aplicada:**  
+Se o espaço amostral tem $n$ resultados igualmente prováveis, a probabilidade de um evento elementar é:
+
+$
+P(E) = \frac{1}{n}
+$
+
+**Exemplo:**  
+- Experimento: Lançar um dado de seis faces.
+- Evento: Obter o número 4.
+- Espaço amostral: $\{1, 2, 3, 4, 5, 6\}$.
+
+Aplicando a fórmula:
+
+$
+P(\{4\}) = \frac{1}{6}
+$
+
+Ou seja, a chance de sair o número 4 é de $\frac{1}{6}$ (aproximadamente 16,67%).
+
+---
+
+#### 2. Evento Composto
+
+**Definição:**  
+Um **evento composto** é aquele que inclui **dois ou mais resultados** possíveis do espaço amostral.
+
+**Fórmula aplicada:**  
+Se os resultados são igualmente prováveis, a probabilidade de um evento composto é:
+
+$
+P(E) = \frac{\text{número de resultados favoráveis}}{\text{número total de resultados}}
+$
+
+**Exemplo:**  
+- Experimento: Lançar um dado de seis faces.
+- Evento: Obter um número par (2, 4 ou 6).
+- Espaço amostral: $\{1, 2, 3, 4, 5, 6\}$.
+- Resultados favoráveis: $\{2, 4, 6\}$ (3 números).
+
+Aplicando a fórmula:
+
+$
+P(\text{par}) = \frac{3}{6} = \frac{1}{2}
+$
+
+Ou seja, a chance de sair um número par é de 50%.
+
+---
+
+#### 3. Evento Impossível
+
+**Definição:**  
+Um **evento impossível** é aquele que **não contém nenhum resultado** do espaço amostral. Sua probabilidade é sempre **zero**.
+
+**Fórmula aplicada:**  
+A probabilidade de um evento impossível é:
+
+$
+P(E) = 0
+$
+
+**Exemplo:**  
+- Experimento: Lançar um dado de seis faces.
+- Evento: Obter o número 7.
+- Espaço amostral: $\{1, 2, 3, 4, 5, 6\}$.
+- O número 7 **não existe** no espaço amostral.
+
+Logo:
+
+$
+P(\{7\}) = 0
+$
+
+Ou seja, é impossível obter 7 nesse experimento.
+
+---
+
+#### 4. Evento Certo
+
+**Definição:**  
+Um **evento certo** é aquele que **inclui todos os resultados possíveis**. Sua ocorrência é garantida.
+
+**Fórmula aplicada:**  
+A probabilidade de um evento certo é:
+
+$
+P(E) = 1
+$
+
+**Exemplo:**  
+- Experimento: Lançar um dado de seis faces.
+- Evento: Obter um número entre 1 e 6.
+- Espaço amostral: $\{1, 2, 3, 4, 5, 6\}$.
+- Todos os resultados possíveis estão incluídos.
+
+Logo:
+
+$
+P(\{1,2,3,4,5,6\}) = 1
+$
+
+Ou seja, é garantido que ao lançar o dado sairá um número entre 1 e 6.
+
+---
+
+#### Resumo Visual
+
+| Tipo de Evento      | Definição                               | Fórmula                   | Exemplo (lançamento de dado) | Probabilidade |
+|---------------------|-----------------------------------------|----------------------------|------------------------------|---------------|
+| Elementar           | Um único resultado                     | $P(E) = \frac{1}{n}$    | Obter 4                     | $\frac{1}{6}$ |
+| Composto            | Dois ou mais resultados                 | $P(E) = \frac{\text{favoráveis}}{n}$ | Obter número par        | $\frac{1}{2}$ |
+| Impossível          | Nenhum resultado                       | $P(E) = 0$              | Obter 7                     | $0$         |
+| Certo               | Todos os resultados                    | $P(E) = 1$              | Obter número entre 1 e 6     | $1$         |
+
+---
+
 
 ### 🔗 Relações entre Eventos
 
@@ -817,20 +1018,20 @@ plt.show()
 
 A probabilidade de um evento A ocorrer é dada pela razão entre o número de resultados favoráveis a A e o número total de resultados possíveis no espaço amostral Ω: ([Probabilidade: o que é, como calcular, exercícios - Brasil Escola](https://brasilescola.uol.com.br/matematica/probabilidade.htm?utm_source=chatgpt.com))
 
-P(A) = n(A) / n(Ω)
+$P(A) = n(A) / n(Ω)$
 
-Onde: ([Probabilidade: entenda o conceito e cálculo - Estratégia Militares](https://militares.estrategia.com/portal/materias-e-dicas/matematica/probabilidade-entenda-o-conceito-e-calculo/?utm_source=chatgpt.com))
+Onde:
 
-- P(A): Probabilidade do evento A
-- n(A): Número de resultados favoráveis ao evento A
-- n(Ω): Número total de resultados no espaço amostral
+- $P(A)$: Probabilidade do evento A
+- $n(A)$: Número de resultados favoráveis ao evento A
+- $n(Ω)$: Número total de resultados no espaço amostral
 
-*Exemplo*: Ao lançar um dado de seis faces, qual a probabilidade de obter um número par? ([Conceito e Cálculo da Probabilidade - Toda Matéria](https://www.todamateria.com.br/probabilidade/?utm_source=chatgpt.com))
+Exemplo*: Ao lançar um dado de seis faces, qual a probabilidade de obter um número par? 
 
-- Evento A: {2, 4, 6} ⇒ n(A) = 3
-- Espaço amostral Ω: {1, 2, 3, 4, 5, 6} ⇒ n(Ω) = 6 ([Conceito e Cálculo da Probabilidade - Toda Matéria](https://www.todamateria.com.br/probabilidade/?utm_source=chatgpt.com))
+- Evento $A: {2, 4, 6} ⇒ n(A) = 3$
+- Espaço amostral $Ω: {1, 2, 3, 4, 5, 6} ⇒ n(Ω)$
 
-P(A) = 3 / 6 = 0,5 ou 50%
+$P(A) = 3 / 6 = 0,5 ou 50%$
 
 ###  Aplicações Práticas
 
@@ -868,7 +1069,7 @@ Isso porque a soma das probabilidades de A e de seu complemento deve ser igual a
 
 ---
 
-### Exemplo bem simples
+### Exemplo
 
 Imagine que você lança uma moeda. O espaço amostral é:
 
@@ -909,70 +1110,174 @@ O evento A' é **todo o resto** que não é A.
 
 ---
 
-### Exemplo:
+### Tipos de eventos que vamos ilustrar:
+| Tipo | Descrição |
+|:----|:----------|
+| **Eventos mutuamente exclusivos** | Não podem ocorrer simultaneamente. Ex: "obter 2" ou "obter 5" num dado no mesmo lançamento. |
+| **Eventos independentes** | A ocorrência de um evento não afeta o outro. Ex: Lançar dois dados. |
+| **Eventos dependentes** | A ocorrência de um evento afeta a ocorrência do outro. Ex: Tirar uma carta de um baralho sem reposição. |
+| **Eventos complementares** | Um evento acontece se e somente se o outro não acontecer. Ex: "sair par" e "não sair par" no lançamento de um dado. |
 
-Vamos simular o lançamento de uma moeda 1000 vezes. Vamos contar:
+---
 
-- Quantas vezes deu **cara** (evento A).
-- Quantas vezes deu **coroa** (evento complementar A').
+Vou criar um código completo que simule essas situações **com gráficos** 📈:
 
 ```python
 import random
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Número de lançamentos
-num_lancamentos = 1000
+# Configurações básicas
+n_simulacoes = 10000
+faces = [1, 2, 3, 4, 5, 6]
 
-# Contadores
-cara = 0
-coroa = 0
+# 1. Eventos Mutuamente Exclusivos (Ex: tirar 2 ou 5 em um dado)
+ocorrencias_2 = 0
+ocorrencias_5 = 0
+ocorrencias_2_ou_5 = 0
 
-# Simulação dos lançamentos
-for _ in range(num_lancamentos):
-    resultado = random.choice(['cara', 'coroa'])
-    if resultado == 'cara':
-        cara += 1
+# 2. Eventos Independentes (Lançar dois dados)
+ocorrencias_independente = 0  # Ex: primeiro dado = 2, segundo dado = 5
+
+# 3. Eventos Dependentes (Tirar duas cartas sem reposição)
+# Simulando simplificadamente com um conjunto pequeno
+baralho = ['A', 'K', 'Q', 'J'] * 2  # Pequeno baralho para simplificar
+
+ocorrencias_dependente = 0
+
+# 4. Eventos Complementares (Par vs Não par no dado)
+ocorrencias_par = 0
+ocorrencias_nao_par = 0
+
+# Iniciando simulações
+for _ in range(n_simulacoes):
+    # Mutuamente exclusivos
+    resultado = random.choice(faces)
+    if resultado == 2:
+        ocorrencias_2 += 1
+    if resultado == 5:
+        ocorrencias_5 += 1
+    if resultado == 2 or resultado == 5:
+        ocorrencias_2_ou_5 += 1
+    
+    # Independentes
+    dado1 = random.choice(faces)
+    dado2 = random.choice(faces)
+    if dado1 == 2 and dado2 == 5:
+        ocorrencias_independente += 1
+
+    # Dependentes
+    baralho_copia = baralho.copy()
+    carta1 = random.choice(baralho_copia)
+    baralho_copia.remove(carta1)
+    carta2 = random.choice(baralho_copia)
+    if carta1 == 'A' and carta2 == 'K':
+        ocorrencias_dependente += 1
+
+    # Complementares
+    if resultado % 2 == 0:
+        ocorrencias_par += 1
     else:
-        coroa += 1
+        ocorrencias_nao_par += 1
 
-# Calculando probabilidades
-p_cara = cara / num_lancamentos
-p_coroa = coroa / num_lancamentos
+# Frequências
+frequencias = {
+    "Mutuamente Exclusivos (2 ou 5)": ocorrencias_2_ou_5 / n_simulacoes,
+    "Independentes (2 no dado 1 e 5 no dado 2)": ocorrencias_independente / n_simulacoes,
+    "Dependentes (A e K sem reposição)": ocorrencias_dependente / n_simulacoes,
+    "Par (Complementar)": ocorrencias_par / n_simulacoes,
+    "Não Par (Complementar)": ocorrencias_nao_par / n_simulacoes
+}
 
-print(f"Total de lançamentos: {num_lancamentos}")
-print(f"Quantidade de caras: {cara}")
-print(f"Quantidade de coroas: {coroa}")
-print(f"Probabilidade de sair cara: {p_cara:.2f}")
-print(f"Probabilidade de sair coroa (complemento): {p_coroa:.2f}")
-print(f"Verificação: {p_cara + p_coroa:.2f} (deve ser próximo de 1.0)")
-
-# Gráfico de barras
-plt.bar(['Cara', 'Coroa'], [cara, coroa], color=['blue', 'orange'])
-plt.title('Simulação de Lançamentos de Moeda')
-plt.ylabel('Quantidade')
+# Visualizando
+plt.figure(figsize=(12, 6))
+sns.barplot(x=list(frequencias.keys()), y=list(frequencias.values()), palette="viridis")
+plt.title('Demonstração de Diferentes Tipos de Eventos em Probabilidade')
+plt.ylabel('Frequência Observada')
+plt.xticks(rotation=20, ha='right')
+plt.grid(axis='y')
+plt.tight_layout()
 plt.show()
+
+# Exibindo os valores numéricos
+for evento, freq in frequencias.items():
+    print(f"{evento}: {freq:.4f}")
 ```
 
 ---
 
-### O que esse código faz?
+#### Explicação Detalhada:
 
-- Simula 1000 lançamentos de moeda.
-- Conta quantas vezes deu **cara** e **coroa**.
-- Calcula a **probabilidade experimental** de cada evento.
-- Verifica que a soma das probabilidades é aproximadamente 1.
-- Mostra um gráfico para visualizar o que aconteceu.
+#### 1. **Eventos Mutuamente Exclusivos**
+- Definição: Dois eventos são **mutuamente exclusivos** se **não podem ocorrer ao mesmo tempo**.
+- Exemplo: No lançamento de um dado, **não pode sair 2 e 5 ao mesmo tempo**.
+- No gráfico: A barra "Mutuamente Exclusivos (2 ou 5)" mostra a proporção de vezes que saiu **2 ou 5**.
+
+> Fórmula para eventos mutuamente exclusivos:
+$
+P(A \cup B) = P(A) + P(B)
+$
 
 ---
 
-Quer que eu também monte uma variação onde você escolhe o número de lançamentos e o programa já mostra o complemento automaticamente? 🎯
+#### 2. **Eventos Independentes**
+- Definição: Dois eventos são **independentes** se a ocorrência de um **não afeta** a ocorrência do outro.
+- Exemplo: Lançar dois dados; o resultado do primeiro **não influencia** o segundo.
+- No gráfico: A barra "Independentes (2 no dado 1 e 5 no dado 2)" mostra a frequência de obter 2 no primeiro dado e 5 no segundo.
 
-### 📝 Notação e Representação
+> Fórmula:
+$
+P(A \cap B) = P(A) \times P(B)
+$
 
-- **Notação**: Ω = {resultado₁, resultado₂, ..., resultadoₙ}
+---
 
-- **Representação gráfica**: Diagramas de Venn são frequentemente utilizados para ilustrar o espaço amostral e seus eventos associados. ([Evento (teoria das probabilidades)](https://pt.wikipedia.org/wiki/Evento_%28teoria_das_probabilidades%29?utm_source=chatgpt.com))
+#### 3. **Eventos Dependentes**
+- Definição: Dois eventos são **dependentes** se a ocorrência do primeiro **altera a probabilidade** do segundo.
+- Exemplo: Retirar duas cartas sem reposição; a primeira carta tirada muda o baralho.
+- No gráfico: A barra "Dependentes (A e K sem reposição)" mostra a frequência desse evento ocorrer.
 
-### 📚 Referência
+> Fórmula:
+$
+P(A \cap B) = P(A) \times P(B|A)
+$
+*(onde $P(B|A)$ é a probabilidade de B dado que A ocorreu)*
 
-Este exemplo é inspirado em práticas comuns de simulação para demonstrar a Lei dos Grandes Números, conforme discutido em recursos educacionais sobre estatística e probabilidade.
+---
+
+#### 4. **Eventos Complementares**
+- Definição: Dois eventos são complementares se **um é exatamente o oposto** do outro.
+- Exemplo: "sair par" e "não sair par" no dado.
+- No gráfico: As barras "Par (Complementar)" e "Não Par (Complementar)" devem somar aproximadamente 1.
+
+> Fórmula:
+$
+P(\text{Não A}) = 1 - P(A)
+$
+
+---
+
+#### 📈 Interpretação do Gráfico
+
+- Cada barra representa a **frequência relativa** de cada tipo de evento.
+- Eventos complementares (par/não par) devem ter aproximadamente a mesma altura, porque paridade é simétrica no dado.
+- Eventos independentes e dependentes terão frequências mais baixas, porque exigem condições específicas.
+
+---
+
+# 📚 Referências Científicas
+
+- **Grinstead, C. M., & Snell, J. L. (1997). "Introduction to Probability"** — Excelente para eventos e simulações básicas.
+- **Ross, S. M. (2014). "Introduction to Probability Models"** — Aborda formalmente independência, dependência e eventos compostos.
+- **Klenke, A. (2013). "Probability Theory"** — Livro avançado sobre teoria da probabilidade moderna.
+
+---
+
+Esse exemplo mostra como simular diferentes tipos de eventos aleatórios em Python e interpretar visualmente suas diferenças em um gráfico de barras, com base em conceitos fundamentais de probabilidade.
+
+---
+
+
+## Resumo
+
+Em probabilidade, eventos são os "blocos de construção" que usamos para descrever situações incertas. Entender sua definição, suas classificações, e suas relações é fundamental para aplicar a teoria probabilística de forma rigorosa e eficaz.
