@@ -128,6 +128,85 @@ Da simples dúvida sobre a sorte de um jogo até os algoritmos que governam rede
 
 ---
 
+## Fórmula da probabilidade
+
+A **probabilidade** de um evento acontecer é, basicamente, uma medida do "quanto é provável" que ele ocorra. A fórmula mais simples e clássica da probabilidade é:
+
+$
+\text{Probabilidade (Evento)} = \frac{\text{Número de resultados favoráveis}}{\text{Número total de resultados possíveis}}
+$
+
+Ou seja, você pega o número de situações que te interessam (os resultados favoráveis) e divide pelo número total de situações possíveis (todos os resultados que podem ocorrer).
+
+Essa fórmula é válida quando **todos os resultados possíveis têm a mesma chance de ocorrer** (ou seja, são igualmente prováveis).
+
+---
+
+### Exemplos didáticos
+
+**Exemplo 1: Lançar um dado**
+
+Imagine que você tem um dado comum de seis faces, numeradas de 1 a 6. Qual a probabilidade de sair o número 4?
+
+- Resultados favoráveis: só existe **1 resultado** que é o número 4.
+- Resultados possíveis: são **6 números** (1, 2, 3, 4, 5, 6).
+
+Aplicando a fórmula:
+
+$
+\text{Probabilidade de sair 4} = \frac{1}{6}
+$
+
+Ou seja, existe **1 chance em 6** de sair o número 4.
+
+---
+
+**Exemplo 2: Tirar uma carta de copas de um baralho**
+
+Um baralho comum tem 52 cartas. Existem 13 cartas de copas (♣️). Qual a probabilidade de tirar uma carta de copas ao pegar uma carta aleatoriamente?
+
+- Resultados favoráveis: **13 cartas** de copas.
+- Resultados possíveis: **52 cartas** no total.
+
+Aplicando a fórmula:
+
+$
+\text{Probabilidade de copas} = \frac{13}{52} = \frac{1}{4}
+$
+
+Ou seja, a chance de tirar uma carta de copas é de **25%**.
+
+---
+
+**Exemplo 3: Escolher uma bola azul de uma caixa**
+
+Suponha que você tenha uma caixa com 3 bolas azuis e 2 bolas vermelhas. Você vai pegar uma bola sem olhar. Qual a probabilidade de pegar uma bola azul?
+
+- Resultados favoráveis: **3 bolas azuis**.
+- Resultados possíveis: **3 azuis + 2 vermelhas = 5 bolas**.
+
+Aplicando a fórmula:
+
+$
+\text{Probabilidade de azul} = \frac{3}{5}
+$
+
+Ou seja, a chance de pegar uma bola azul é de **60%**.
+
+---
+
+### Observações importantes
+
+- A probabilidade sempre é um número entre **0** (impossível) e **1** (certeza absoluta). Quando expressamos como porcentagem, basta multiplicar o número por 100.
+  
+- Se um evento é muito improvável (por exemplo, $\frac{1}{1000}$), sua probabilidade é muito próxima de 0. Se é muito provável ($\frac{999}{1000}$), ela é próxima de 1.
+
+- Se dois eventos são **mutuamente exclusivos** (ou seja, não podem acontecer ao mesmo tempo, como sair 2 *e* 5 no mesmo lançamento de dado), podemos somar suas probabilidades para descobrir a chance de "um ou outro" acontecer.
+
+---
+
+
+
 Um **experimento aleatório** é uma ação ou processo que, mesmo sendo repetido sob condições idênticas, pode resultar em diferentes desfechos, impossíveis de serem previstos com certeza antes de sua realização. Essa imprevisibilidade é uma característica fundamental dos experimentos aleatórios. ([Experimentos determinísticos e aleatórios - Ensino Médio - YouTube](https://www.youtube.com/watch?v=KnXK3i448xg&utm_source=chatgpt.com))
 
 ### 🔍 Características Principais
