@@ -1014,11 +1014,170 @@ Ou seja, é garantido que ao lançar o dado sairá um número entre 1 e 6.
 - **Eventos Complementares**: Dois eventos são complementares se a ocorrência de um implica a não ocorrência do outro, e juntos abrangem todo o espaço amostral.  
   *Exemplo*: Ao lançar uma moeda, os eventos "obter cara" e "obter coroa" são complementares.
 
-### 📐 Cálculo de Probabilidade de um Evento
 
-A probabilidade de um evento A ocorrer é dada pela razão entre o número de resultados favoráveis a A e o número total de resultados possíveis no espaço amostral Ω: ([Probabilidade: o que é, como calcular, exercícios - Brasil Escola](https://brasilescola.uol.com.br/matematica/probabilidade.htm?utm_source=chatgpt.com))
 
-$P(A) = n(A) / n(Ω)$
+### Relações entre eventos em probabilidade: fórmulas e exemplos
+
+#### 1. Eventos mutuamente exclusivos (ou disjuntos)
+
+#### Definição
+Dois eventos são **mutuamente exclusivos** quando **não podem acontecer ao mesmo tempo**. Se um ocorre, o outro não pode ocorrer.
+
+#### Fórmula
+Se $A$ e $B$ são mutuamente exclusivos:
+
+$
+P(A \text{ ou } B) = P(A) + P(B)
+$
+
+e
+
+$
+P(A \cap B) = 0
+$
+
+(o símbolo $\cap$ significa "e" — interseção — mas aqui a interseção é vazia).
+
+#### Exemplo simples
+**Experimento**: Lançar um dado.
+
+- Evento A: "Sair 2" → $A = \{2\}$
+- Evento B: "Sair 5" → $B = \{5\}$
+
+Não tem como sair 2 **e** 5 no mesmo lançamento. Então, são mutuamente exclusivos.
+
+Se:
+- $P(A) = \frac{1}{6}$
+- $P(B) = \frac{1}{6}$
+
+Então:
+$
+P(A \text{ ou } B) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}
+$
+
+👉 **Chance de sair 2 ou 5**: 1 em 3.
+
+---
+
+#### 2. Eventos independentes
+
+##### Definição
+Dois eventos são **independentes** se a ocorrência de um **não altera** a probabilidade do outro ocorrer.
+
+##### Fórmula
+Se $A$ e $B$ são independentes:
+
+$
+P(A \cap B) = P(A) \times P(B)
+$
+
+(o símbolo $\cap$ aqui representa "A **e** B ocorrem juntos").
+
+##### Exemplo simples
+**Experimento**: Lançar duas moedas, uma vez cada.
+
+- Evento A: "Primeira moeda dá cara."
+- Evento B: "Segunda moeda dá cara."
+
+Cada moeda é lançada de forma separada, sem influência da outra.
+
+Se:
+- $P(A) = \frac{1}{2}$
+- $P(B) = \frac{1}{2}$
+
+Então:
+$
+P(A \cap B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}
+$
+
+👉 **Chance de dar cara nas duas moedas**: 1 em 4.
+
+---
+
+#### 3. União de eventos (A ou B)
+
+##### Definição
+A união representa o evento "A ocorre, B ocorre, ou ambos ocorrem".
+
+##### Fórmula geral
+Para quaisquer eventos $A$ e $B$:
+
+$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$
+
+(Se forem mutuamente exclusivos, $P(A \cap B) = 0$, e a fórmula vira só $P(A) + P(B)$).
+
+##### Exemplo simples
+**Experimento**: Tirar uma carta de um baralho.
+
+- Evento A: "Carta é de copas."
+- Evento B: "Carta é um rei."
+
+Sabemos:
+- $P(A) = \frac{13}{52} = \frac{1}{4}$ (13 copas num baralho de 52).
+- $P(B) = \frac{4}{52} = \frac{1}{13}$ (4 reis num baralho de 52).
+- Mas a carta **rei de copas** está em **ambos** os eventos, então:
+  - $P(A \cap B) = \frac{1}{52}$.
+
+Aplicando a fórmula:
+
+$
+P(A \cup B) = \frac{1}{4} + \frac{1}{13} - \frac{1}{52}
+$
+
+Colocando tudo no mesmo denominador (52):
+
+$
+P(A \cup B) = \frac{13}{52} + \frac{4}{52} - \frac{1}{52} = \frac{16}{52} = \frac{4}{13}
+$
+
+👉 **Chance de tirar uma carta que seja de copas ou um rei**: 4 em 13.
+
+---
+
+#### 4. Complemento de um evento
+
+##### Definição
+O complemento de um evento $A$, denotado $A'$ ou $\overline{A}$, é o evento "A **não ocorre**".
+
+##### Fórmula
+$
+P(A') = 1 - P(A)
+$
+
+##### Exemplo simples
+**Experimento**: Lançar um dado.
+
+- Evento A: "Sair número par" → $\{2, 4, 6\}$.
+
+Sabemos:
+- $P(A) = \frac{3}{6} = \frac{1}{2}$
+
+Então:
+$
+P(A') = 1 - \frac{1}{2} = \frac{1}{2}
+$
+
+👉 **Chance de sair número ímpar** (complemento de "número par") é também 1/2.
+
+---
+
+#### Resumo rápido
+| Tipo de relação | Fórmula | Exemplo |
+| :--- | :--- | :--- |
+| Mutuamente Exclusivos | $P(A \text{ ou } B) = P(A) + P(B)$ | Lançar dado: sair 2 ou 5 |
+| Independentes | $P(A \text{ e } B) = P(A) \times P(B)$ | Lançar duas moedas |
+| União | $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ | Carta ser de copas ou rei |
+| Complemento | $P(A') = 1 - P(A)$ | Não sair número par no dado |
+
+---
+
+### Cálculo de Probabilidade de um Evento
+
+A probabilidade de um evento A ocorrer é dada pela razão entre o número de resultados favoráveis a A e o número total de resultados possíveis no espaço amostral Ω:
+
+$P(A) = n(A)/n(Ω)$
 
 Onde:
 
