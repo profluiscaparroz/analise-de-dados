@@ -1143,5 +1143,239 @@ $
 > C(n, p) = \frac{n!}{p!(n - p)!}
 > $
 
+
 ---
 
+### 📊 Tabela Comparativa: Fatorial x Permutação x Arranjo x Combinação
+
+| Conceito      | Definição                                                                 | Fórmula                                      | Ordem importa? | Repetição permitida? | Exemplo prático                                     |
+|---------------|---------------------------------------------------------------------------|----------------------------------------------|----------------|-----------------------|-----------------------------------------------------|
+| **Fatorial (n!)** | Produto de todos os inteiros positivos até `n`                             | $n! = n \cdot (n-1) \cdot \dots \cdot 1$  | ❌ Não se aplica | ❌ Não se aplica        | Quantas formas de organizar 4 pessoas em fila       |
+| **Permutação (P)** | Quantas maneiras de **organizar todos os elementos**                     | $P(n) = n!$                               | ✅ Sim         | ❌ Não                 | Organizar 5 livros em uma estante                   |
+| **Arranjo (A)**    | Quantas maneiras de **escolher e organizar parte dos elementos**         | $A(n, p) = \frac{n!}{(n - p)!}$           | ✅ Sim         | ❌ Não                 | Pódio de 3 atletas entre 10 participantes           |
+| **Combinação (C)** | Quantas maneiras de **escolher parte dos elementos sem se importar com ordem** | $C(n, p) = \frac{n!}{p! \cdot (n - p)!}$ | ❌ Não         | ❌ Não                 | Formar grupos de 3 pessoas entre 10 disponíveis     |
+
+---
+
+### ✅ Resumo visual (ordem importa?):
+
+| Conceito    | Ordem Importa? | Seleciona Subconjuntos? |
+|-------------|----------------|--------------------------|
+| Fatorial    | Não (total)     | Não                      |
+| Permutação  | Sim             | Não                      |
+| Arranjo     | Sim             | Sim                      |
+| Combinação  | Não             | Sim                      |
+
+---
+
+### Dicas:
+
+- **Usar fatorial** quando for base para outras fórmulas.
+- **Usar permutação** quando quiser **organizar tudo**.
+- **Usar arranjo** quando quiser **organizar parte**.
+- **Usar combinação** quando quiser **escolher parte**, **sem se importar com a ordem**.
+
+---
+
+## Exemplo para ser replicação em excel
+---
+
+## 📊 **1. FATORIAL (n!)**
+
+| A       | B                     |
+|---------|-----------------------|
+| **n**   | 5                     |
+| **n!**  | `=FATORIAL(A2)`       |
+
+📌 **Explicação**:
+- Fatorial de 5 é: `5 × 4 × 3 × 2 × 1 = 120`
+
+---
+
+## 🔁 **2. PERMUTAÇÃO**
+
+| A       | B                     |
+|---------|-----------------------|
+| **n**   | 6                     |
+| **P(n)**| `=FATORIAL(A2)`       |
+
+📌 **Explicação**:
+- Permutação de 6 elementos (organizar todos) = `6! = 720`
+
+---
+
+## 🔄 **3. ARRANJO (n, p)**
+
+| A       | B         | C                        |
+|---------|-----------|--------------------------|
+| **n**   | **p**     | **A(n, p)**              |
+| 7       | 3         | `=FATORIAL(A2)/(FATORIAL(A2-B2))` |
+
+📌 **Explicação**:
+- Arranjo de 3 entre 7 = `7! / (7−3)! = 7×6×5 = 210`
+- Considera ordem e escolha parcial.
+
+---
+
+## 📎 **4. COMBINAÇÃO (n, p)**
+
+| A       | B         | C                          |
+|---------|-----------|----------------------------|
+| **n**   | **p**     | **C(n, p)**                |
+| 10      | 4         | `=FATORIAL(A2)/(FATORIAL(B2)*FATORIAL(A2-B2))` |
+
+📌 **Explicação**:
+- Combinação de 4 entre 10 = `10! / (4! × 6!) = 210`
+- Sem considerar a ordem.
+
+---
+
+## ✅ Dica Extra: Com função pronta no Excel
+
+A partir de versões mais recentes do Excel, você pode usar:
+
+- `=COMBIN(n, p)` → Combinação
+- `=PERMUT(n, p)` → Permutação parcial (arranjo)
+- `=FATORIAL(n)`  → Fatorial
+
+---
+
+## 💡 Sugestão de apresentação:
+
+Monte uma **planilha com áreas editáveis** para `n` e `p`, deixando o resultado dinâmico. Os alunos podem alterar os valores e ver os efeitos em tempo real, por exemplo:
+
+| 🧮 Escolha n | 🔢 Escolha p | ✅ Combinação | 🔁 Arranjo | 🔄 Permutação |
+|-------------|--------------|---------------|------------|----------------|
+|      8      |       3      | `=COMBIN(A2,B2)` | `=PERMUT(A2,B2)` | `=FATORIAL(A2)` |
+
+---
+
+- **Fatorial**
+- **Permutação**
+- **Arranjo**
+- **Combinação**
+
+E exibir os resultados em formato de **tabela legível**, como se fosse uma mini planilha.
+
+---
+
+## ✅ Código Python — Exemplo Didático
+
+```python
+import math
+from tabulate import tabulate
+
+# Funções
+def fatorial(n):
+    return math.factorial(n)
+
+def permutacao(n):
+    return math.factorial(n)
+
+def arranjo(n, p):
+    return math.factorial(n) // math.factorial(n - p)
+
+def combinacao(n, p):
+    return math.factorial(n) // (math.factorial(p) * math.factorial(n - p))
+
+# Exemplo com valores
+exemplos = [
+    {"n": 5, "p": 3},
+    {"n": 6, "p": 2},
+    {"n": 7, "p": 4},
+    {"n": 8, "p": 5},
+]
+
+# Criar tabela
+tabela = []
+
+for ex in exemplos:
+    n, p = ex["n"], ex["p"]
+    linha = [
+        n,
+        p,
+        f"{n}!", fatorial(n),
+        "P(n)", permutacao(n),
+        "A(n,p)", arranjo(n, p),
+        "C(n,p)", combinacao(n, p)
+    ]
+    tabela.append(linha)
+
+# Cabeçalho
+cabecalho = ["n", "p", "Fatorial", "Valor", "Permutação", "Valor", "Arranjo", "Valor", "Combinação", "Valor"]
+
+# Exibir tabela formatada
+print(tabulate(tabela, headers=cabecalho, tablefmt="grid"))
+```
+
+---
+
+## 🧾 Saída esperada (exemplo):
+
+```
++----+-----+-----------+--------+-------------+--------+----------+--------+--------------+--------+
+| n  | p   | Fatorial  | Valor  | Permutação  | Valor  | Arranjo  | Valor  | Combinação   | Valor  |
++----+-----+-----------+--------+-------------+--------+----------+--------+--------------+--------+
+| 5  | 3   | 5!        | 120    | P(n)        | 120    | A(n,p)   | 60     | C(n,p)       | 10     |
+| 6  | 2   | 6!        | 720    | P(n)        | 720    | A(n,p)   | 30     | C(n,p)       | 15     |
+| 7  | 4   | 7!        | 5040   | P(n)        | 5040   | A(n,p)   | 840    | C(n,p)       | 35     |
+| 8  | 5   | 8!        | 40320  | P(n)        | 40320  | A(n,p)   | 6720   | C(n,p)       | 56     |
++----+-----+-----------+--------+-------------+--------+----------+--------+--------------+--------+
+```
+
+---
+
+#### **exemplo completo em Python usando apenas bibliotecas prontas**, como:
+
+- `math` – para **fatorial**
+- `scipy.special` – para **funções combinatórias e gama**
+- `pandas` – para exibir a tabela como se fosse uma planilha
+- `tabulate` – para imprimir de forma bonita no terminal (opcional)
+
+---
+
+### Exemplo com bibliotecas Python
+
+```python
+import math
+import pandas as pd
+from scipy.special import comb, perm
+from tabulate import tabulate
+
+# Lista de exemplos: (n, p)
+valores = [(5, 3), (6, 2), (7, 4), (10, 5)]
+
+# Lista para guardar os resultados
+dados = []
+
+for n, p in valores:
+    dados.append({
+        'n': n,
+        'p': p,
+        'n! (fatorial)': math.factorial(n),
+        'Permutação (P(n))': perm(n, exact=True),  # scipy calcula permutação total
+        'Arranjo (A(n,p))': perm(n, p, exact=True), # scipy com p
+        'Combinação (C(n,p))': comb(n, p, exact=True)
+    })
+
+# Criar DataFrame com os resultados
+df = pd.DataFrame(dados)
+
+# Exibir como planilha
+print(tabulate(df, headers='keys', tablefmt='grid'))
+```
+
+---
+
+### 🧾 Saída esperada no terminal:
+
+```
++----+----+------------------+----------------------+--------------------+------------------------+
+|   n |   p |   n! (fatorial) |   Permutação (P(n)) |   Arranjo (A(n,p)) |   Combinação (C(n,p)) |
++----+----+------------------+----------------------+--------------------+------------------------+
+|   5 |   3 |              120 |                  120 |                 60 |                     10 |
+|   6 |   2 |              720 |                  720 |                 30 |                     15 |
+|   7 |   4 |             5040 |                 5040 |                840 |                     35 |
+|  10 |   5 |           3628800 |              3628800 |              30240 |                    252 |
++----+----+------------------+----------------------+--------------------+------------------------+
+```
