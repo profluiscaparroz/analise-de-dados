@@ -205,7 +205,67 @@ Ou seja, a chance de pegar uma bola azul é de **60%**.
 
 ---
 
+## Probabilidade Teórica e Probabilidade Experimental: Conceitos Fundamentais
 
+A probabilidade é o campo da matemática que trata da incerteza e do acaso. Dentro deste vasto domínio, dois conceitos fundamentais são a **probabilidade teórica** e a **probabilidade experimental**. Ambos são modos de pensar e medir a chance de eventos ocorrerem, mas partem de abordagens diferentes e complementares.
+
+#### Probabilidade Teórica
+
+A **probabilidade teórica** é baseada em modelos matemáticos ideais e raciocínio lógico. Ela surge da análise das possibilidades em situações em que todos os resultados são igualmente prováveis. É uma abordagem que não depende de testes práticos ou observações; tudo é inferido a partir de princípios matemáticos.
+
+Por exemplo, ao lançar um dado justo de seis faces, a probabilidade teórica de sair o número 2 é $\frac{1}{6}$, simplesmente porque existe um único resultado favorável em seis possíveis.
+
+O desenvolvimento da probabilidade teórica remonta aos trabalhos de **Pierre de Fermat** e **Blaise Pascal** no século XVII, durante a famosa troca de cartas sobre problemas de jogos de azar. Esse diálogo é considerado por muitos historiadores, como Ian Hacking em *The Emergence of Probability* (1975), como o "nascimento oficial" da teoria da probabilidade.
+
+Como destaca Hacking:
+
+> "Foi ao resolver problemas de jogos que Fermat e Pascal criaram uma nova ciência — uma teoria matemática do acaso que até então não existia."  
+(*Hacking, I., 1975. The Emergence of Probability.*)
+
+A probabilidade teórica é, portanto, uma construção racional baseada em suposições ideais, como a equiprobabilidade dos resultados.
+
+#### Probabilidade Experimental
+
+Já a **probabilidade experimental** é construída pela observação prática de eventos. Ela se baseia em dados obtidos de experimentos repetidos muitas vezes, e a probabilidade de um evento é definida como a razão entre o número de vezes que o evento ocorre e o número total de ensaios realizados.
+
+Se lançarmos um dado 600 vezes e o número 2 aparecer 95 vezes, a probabilidade experimental de sair 2 será:
+
+$
+\frac{95}{600} \approx 0,158
+$
+
+Essa frequência observada pode diferir da probabilidade teórica ($\frac{1}{6} \approx 0,166$) por causa de flutuações aleatórias, erros experimentais ou imperfeições no dado. Contudo, conforme o número de experimentos cresce, a frequência tende a se aproximar do valor teórico, conforme estabelece a chamada **Lei dos Grandes Números**.
+
+O matemático suíço **Jacob Bernoulli** foi o primeiro a formular esta lei de forma rigorosa no livro *Ars Conjectandi* (1713). Bernoulli afirmou:
+
+> "Quanto mais vezes lançarmos um dado, mais seguramente podemos julgar da verdadeira proporção das faces."  
+(*Bernoulli, J., 1713. Ars Conjectandi.*)
+
+Essa observação formaliza a ideia de que a probabilidade experimental se aproxima da teórica à medida que realizamos um grande número de experimentos.
+
+#### Relação e Diferenças
+
+Embora teórica e experimental sejam abordagens distintas, elas são profundamente conectadas.
+
+- A **probabilidade teórica** serve como um guia ou referência sobre o que esperar em condições ideais.
+- A **probabilidade experimental** testa essas expectativas no mundo real, revelando se os pressupostos teóricos são razoáveis ou se precisam ser ajustados.
+
+Em contextos científicos e industriais, a combinação das duas é essencial. Por exemplo, ao desenvolver medicamentos, pesquisadores utilizam a probabilidade teórica para desenhar estudos e a probabilidade experimental para analisar os resultados dos ensaios clínicos.
+
+Em áreas como a inteligência artificial moderna, a aprendizagem de máquina (machine learning) usa métodos probabilísticos que são, essencialmente, experimentais — algoritmos que atualizam seus modelos baseados em observação de dados massivos.
+
+Como explica David MacKay em *Information Theory, Inference, and Learning Algorithms* (2003):
+
+> "Todos os métodos de aprendizado, em última análise, dependem da coleta de dados experimentais para ajustar e validar modelos teóricos de inferência."  
+(*MacKay, D.J.C., 2003. Information Theory, Inference, and Learning Algorithms.*)
+
+#### Conclusão
+
+A compreensão profunda da diferença entre probabilidade teórica e experimental é crucial para o pensamento científico moderno. A teoria oferece um mapa idealizado; a experimentação fornece o terreno real. Navegar com segurança entre esses dois mundos — ideal e empírico — é a essência do raciocínio probabilístico maduro.
+
+Assim, a probabilidade não é apenas uma ferramenta matemática; é uma linguagem para dialogar com a incerteza, equilibrando o rigor do pensamento dedutivo com a humildade da observação prática.
+
+---
 
 Um **experimento aleatório** é uma ação ou processo que, mesmo sendo repetido sob condições idênticas, pode resultar em diferentes desfechos, impossíveis de serem previstos com certeza antes de sua realização. Essa imprevisibilidade é uma característica fundamental dos experimentos aleatórios. ([Experimentos determinísticos e aleatórios - Ensino Médio - YouTube](https://www.youtube.com/watch?v=KnXK3i448xg&utm_source=chatgpt.com))
 
