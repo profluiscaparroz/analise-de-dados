@@ -29,8 +29,6 @@ Com o avanço da disciplina, surgem noções mais refinadas como variáveis alea
 
 A probabilidade é uma das ferramentas mais poderosas que a humanidade desenvolveu para entender o desconhecido. Nascida do jogo e da curiosidade, ela evoluiu para ser um pilar da ciência moderna. Com ela, aprendemos que nem tudo precisa ser certo para ser estudado de maneira rigorosa — o que, de certa forma, aproxima a matemática da própria experiência humana, que é cheia de surpresas e incertezas.
 
-Claro! Vou continuar o texto, expandindo ainda mais a explicação com riqueza de detalhes, mas sempre sem entrar em fórmulas complexas:
-
 ---
 
 ### A evolução da probabilidade como ciência
@@ -1279,7 +1277,6 @@ O evento A' é **todo o resto** que não é A.
 
 ---
 
-Vou criar um código completo que simule essas situações **com gráficos** 📈:
 
 ```python
 import random
