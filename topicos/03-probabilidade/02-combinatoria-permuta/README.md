@@ -1177,8 +1177,7 @@ $
 
 ---
 
-## Exemplo para ser replicacao em excel
-
+## Exemplo para ser replicação em excel
 ---
 
 ## 📊 **1. FATORIAL (n!)**
