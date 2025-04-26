@@ -69,10 +69,10 @@ O **espaço amostral**, representado pela letra grega Ω (ômega), é o conjunto
    - Ω = {cara, coroa} ([Resumo de Probabilidade: Espaço Amostral e sua Importância](https://www.teachy.com.br/resumos/ensino-medio/2ano/matematica/probabilidade-espaco-amostral-e-sua-importancia-Expositiva?utm_source=chatgpt.com))
 
 2. **Lançamento de um dado de seis faces**:
-   - Ω = {1, 2, 3, 4, 5, 6}
+   - $Ω = {1, 2, 3, 4, 5, 6}$
 
 3. **Lançamento de duas moedas**:
-   - Ω = {(cara, cara), (cara, coroa), (coroa, cara), (coroa, coroa)} ([Espaço Amostral e Evento - InfoEscola](https://www.infoescola.com/matematica/espaco-amostral-e-evento/?utm_source=chatgpt.com))
+   - $Ω = {(cara, cara), (cara, coroa), (coroa, cara), (coroa, coroa)}$ ([Espaço Amostral e Evento - InfoEscola](https://www.infoescola.com/matematica/espaco-amostral-e-evento/?utm_source=chatgpt.com))
 
 4. **Sorteio de uma carta de um baralho padrão**:
    - Ω = {todas as 52 cartas do baralho} ([Conceito e Cálculo da Probabilidade - Toda Matéria](https://www.todamateria.com.br/probabilidade/?utm_source=chatgpt.com))
@@ -151,8 +151,6 @@ Compreender o conceito de eventos é fundamental para a análise de situações 
 - **Ciências naturais**: Estudos de fenômenos aleatórios na física e biologia.
 - **Engenharia**: Avaliação de confiabilidade de sistemas e processos.
 
-Claro! Vamos detalhar **eventos complementares** de forma bem didática:
-
 ---
 
 ### O que são Eventos Complementares?
@@ -164,7 +162,7 @@ Em probabilidade, **eventos complementares** são dois eventos que:
 
 Ou seja, **ou um acontece, ou o outro acontece**, sem deixar nenhuma possibilidade de fora.
 
-💡 **Resumo fácil**: Se A é um evento, o **complementar de A** (chamado de \( A' \)) é "A não acontecer".
+💡 **Resumo fácil**: Se A é um evento, o **complementar de A** (chamado de $A'$) é "A não acontecer".
 
 ---
 
@@ -172,9 +170,9 @@ Ou seja, **ou um acontece, ou o outro acontece**, sem deixar nenhuma possibilida
 
 A probabilidade do complemento de um evento A é:
 
-\[
+$
 P(A') = 1 - P(A)
-\]
+$
 
 Isso porque a soma das probabilidades de A e de seu complemento deve ser igual a 1 (100%).
 
@@ -184,14 +182,14 @@ Isso porque a soma das probabilidades de A e de seu complemento deve ser igual a
 
 Imagine que você lança uma moeda. O espaço amostral é:
 
-\[
+$
 \Omega = \{\text{Cara}, \text{Coroa}\}
-\]
+$
 
-Se o evento A é "sair Cara", o complemento de A (\( A' \)) é "não sair Cara", ou seja, "sair Coroa".
+Se o evento A é "sair Cara", o complemento de A ($A'$) é "não sair Cara", ou seja, "sair Coroa".
 
-- \( P(\text{Cara}) = 0,5 \)
-- Então, \( P(\text{Coroa}) = 1 - 0,5 = 0,5 \)
+- $P(\text{Cara}) = 0,5$
+- Então, $P(\text{Coroa}) = 1 - 0,5 = 0,5$
 
 Eles são complementares porque juntos cobrem todas as possibilidades do lançamento da moeda.
 
@@ -201,8 +199,8 @@ Eles são complementares porque juntos cobrem todas as possibilidades do lançam
 
 Em uma sala, 30% dos alunos usam óculos.
 
-- Evento A: "Aluno usa óculos" → \( P(A) = 0,3 \)
-- Evento A': "Aluno **não** usa óculos" → \( P(A') = 1 - 0,3 = 0,7 \)
+- Evento A: "Aluno usa óculos" → $P(A) = 0,3$
+- Evento A': "Aluno **não** usa óculos" → $P(A') = 1 - 0,3 = 0,7$
 
 Então, a probabilidade de um aluno **não usar óculos** é 70%.
 
@@ -319,8 +317,6 @@ plt.show()
 - **Linha vermelha tracejada**: Indica a probabilidade teórica de obter "cara" em um lançamento de moeda justa (0,5).
 
 Você notará que, nos primeiros lançamentos, a proporção de "caras" pode variar significativamente. No entanto, à medida que o número de lançamentos aumenta, essa proporção tende a se estabilizar em torno de 0,5, ilustrando a **Lei dos Grandes Números**.
-
-Claro! Vamos explorar duas variações para ilustrar a **Lei dos Grandes Números** utilizando Python:
 
 1. **Lançamento de dado**: Simulando a frequência relativa de uma face específica. ([Lei dos grandes números - GeoGebra](https://www.geogebra.org/m/VUTCB5Wr?utm_source=chatgpt.com))
 
