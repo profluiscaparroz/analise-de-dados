@@ -157,6 +157,11 @@ A distribuição normal, ou gaussiana, é uma das distribuições mais important
 
 ---
 
+## **Análise de Regressão**  
+A análise de regressão é uma técnica estatística fundamental que investiga a relação entre variáveis, permitindo modelar e predizer o comportamento de uma variável dependente a partir de uma ou mais variáveis independentes. Este tópico aborda regressão linear simples e múltipla, pressupostos estatísticos, avaliação de modelos, diagnóstico de resíduos e tipos especiais como regressão polinomial, Ridge e Lasso. Mais detalhes podem ser vistos em [Análise de Regressão](topicos/08-regressao/README.md)
+
+---
+
 ## **Teste de Hipóteses**  
 O teste de hipóteses é uma metodologia estatística fundamental para tomar decisões baseadas em dados. Permite avaliar se uma afirmação sobre uma população é suportada pela evidência disponível em uma amostra. Este tópico aborda a estrutura dos testes, tipos de erro, principais testes estatísticos (t, qui-quadrado, ANOVA), interpretação do valor-p, tamanho do efeito e poder estatístico. Mais detalhes podem ser vistos em [Teste de Hipóteses](topicos/07-teste-hipoteses/README.md)
 
