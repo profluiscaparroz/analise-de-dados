@@ -8,20 +8,25 @@ Outra contribuição essencial vem de Tukey (1977), que, em *Exploratory Data An
 
 Com o avanço das tecnologias de big data e inteligência artificial, a disciplina de análise de dados evoluiu para incorporar técnicas avançadas de aprendizado de máquina e mineração de dados, conforme descrito por Hastie, Tibshirani e Friedman (2009) em *The Elements of Statistical Learning*. 
 
-Dessa forma, a análise de dados se estabelece como um campo essencial para transformar grandes volumes de informação em conhecimento útil, permitindo uma tomada de decisão baseada em evidências. Mais detalhes podem ser visto em [Introdução análise de dados](topicos/01-introducao/README.md)
+Dessa forma, a análise de dados se estabelece como um campo essencial para transformar grandes volumes de informação em conhecimento útil, permitindo uma tomada de decisão baseada em evidências. Mais detalhes podem ser vistos em [Introdução análise de dados](topicos/01-introducao/README.md)
 
 ---
 ## Tópicos previsto para disciplina
 
 
 ## **Estatística**  
-A estatística é uma área da matemática que se dedica à coleta, organização, análise, interpretação e apresentação de dados. Seu objetivo principal é extrair informações relevantes e conclusões significativas a partir de dados coletados de amostras ou populações. A estatística é fundamental em diversos campos, como ciências sociais, economia, saúde, educação, e muitos outros, pois permite tomar decisões informadas baseadas em evidências. Mais detalhes podem ser visto em [Introducao estatística](topicos/02-estatistica/README.md)
+A estatística é uma área da matemática que se dedica à coleta, organização, análise, interpretação e apresentação de dados. Seu objetivo principal é extrair informações relevantes e conclusões significativas a partir de dados coletados de amostras ou populações. A estatística é fundamental em diversos campos, como ciências sociais, economia, saúde, educação, e muitos outros, pois permite tomar decisões informadas baseadas em evidências. Mais detalhes podem ser vistos em [Introdução estatística](topicos/02-estatistica/README.md)
 
 
 ---
 
 ## **Representações gráficas**  
-Representações gráficas são uma ferramenta visual usada para apresentar dados de forma clara e acessível. Através delas, podemos identificar padrões, tendências, distribuições e relações entre variáveis de maneira intuitiva. Exemplos incluem gráficos de barras, histogramas, diagramas de dispersão, gráficos de linha e setores. Essas representações são essenciais para a interpretação rápida e eficiente de grandes volumes de dados.
+Representações gráficas são uma ferramenta visual usada para apresentar dados de forma clara e acessível. Através delas, podemos identificar padrões, tendências, distribuições e relações entre variáveis de maneira intuitiva. Exemplos incluem gráficos de barras, histogramas, diagramas de dispersão, gráficos de linha e setores. Essas representações são essenciais para a interpretação rápida e eficiente de grandes volumes de dados. Mais detalhes podem ser vistos em [Visualização de Dados](topicos/05-visualizacao-dados/README.md)
+
+---
+
+## **Qualidade e Validação de Dados**  
+A qualidade de dados é fundamental para garantir análises confiáveis e decisões precisas. Este tópico aborda as dimensões da qualidade (precisão, completude, consistência), técnicas de validação, identificação de problemas comuns como outliers e dados ausentes, e processos de limpeza de dados. Inclui metodologias e ferramentas práticas para manter a integridade dos dados ao longo do pipeline de análise. Mais detalhes podem ser vistos em [Qualidade de Dados](topicos/06-qualidade-dados/README.md)
 
 ---
 
@@ -149,6 +154,16 @@ A distribuição exponencial modela o tempo entre ocorrências de um evento em u
 
 ## **Distribuição normal**  
 A distribuição normal, ou gaussiana, é uma das distribuições mais importantes da estatística. Sua curva é simétrica e em forma de sino, e é definida por dois parâmetros: a média (\(\mu\)) e o desvio padrão (\(\sigma\)). A distribuição normal é amplamente utilizada para modelar variáveis naturais e fenómenos de erro aleatório.
+
+---
+
+## **Análise de Regressão**  
+A análise de regressão é uma técnica estatística fundamental que investiga a relação entre variáveis, permitindo modelar e predizer o comportamento de uma variável dependente a partir de uma ou mais variáveis independentes. Este tópico aborda regressão linear simples e múltipla, pressupostos estatísticos, avaliação de modelos, diagnóstico de resíduos e tipos especiais como regressão polinomial, Ridge e Lasso. Mais detalhes podem ser vistos em [Análise de Regressão](topicos/08-regressao/README.md)
+
+---
+
+## **Teste de Hipóteses**  
+O teste de hipóteses é uma metodologia estatística fundamental para tomar decisões baseadas em dados. Permite avaliar se uma afirmação sobre uma população é suportada pela evidência disponível em uma amostra. Este tópico aborda a estrutura dos testes, tipos de erro, principais testes estatísticos (t, qui-quadrado, ANOVA), interpretação do valor-p, tamanho do efeito e poder estatístico. Mais detalhes podem ser vistos em [Teste de Hipóteses](topicos/07-teste-hipoteses/README.md)
 
 ---
 

@@ -258,7 +258,7 @@ O fatorial tradicional, $n!$, só faz sentido para números **inteiros não nega
 - $3! = 3 × 2 × 1 = 6$  
 - $0! = 1$ (por definição)
 
-Mas... e quanto vale:
+Mas, e quanto vale:
 - $(1/2)!$ ou $\pi!$ ou $(7.8)!$? 🤯
 
 Para resolver esse problema, os matemáticos estenderam a ideia de fatorial para o **domínio dos reais** (e até dos complexos) usando a **função gama**.
@@ -467,7 +467,7 @@ Podemos pedir aos alunos que escrevam **todas as permutações** para confirmar 
 Se temos **n elementos**, dos quais:
 - **a₁** são do tipo 1,
 - **a₂** são do tipo 2,
-- ...
+- **a₃** são do tipo 3,
 - **aₖ** são do tipo k,
 
 então o número de **permutações distintas** é:
