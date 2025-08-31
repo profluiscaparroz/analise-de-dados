@@ -72,9 +72,9 @@ David A. Freedman destacou que, em modelos de regressão, especialmente quando o
 
 ---
 
-### 📊 Viés em Revisões Sistemátics
+### 📊 Viés em Revisões Sistemáticas
 
-A Cochrane Collaboration, reconhecida por suas revisões sistemáticas rigorosas, utiliza ferramentas específicas para avaliar o risco de viés em estudos clínio. O viés é categorizado em diferentes domínios, como viés de seleção, desempenho e relato, permitindo uma avaliação abrangente da qualidade dos estudos includos citeturn0search4.
+A Cochrane Collaboration, reconhecida por suas revisões sistemáticas rigorosas, utiliza ferramentas específicas para avaliar o risco de viés em estudos clínicos. O viés é categorizado em diferentes domínios, como viés de seleção, desempenho e relato, permitindo uma avaliação abrangente da qualidade dos estudos includos citeturn0search4.
 
 ---
 
@@ -96,17 +96,12 @@ A presença de viés pode comprometer a validade das conclusões estatísticas, 
 O **viés de um estimador** $\hat{\theta}$ em relação ao parâmetro verdadeiro $\theta$ é dado por:
 
 $
-\text{Viés}(\hat{\theta}) = E[\hat{\theta}] - \theta
+\text{Viés}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta
 $
 
 Onde:
-- $E[\hat{\theta}]$: Valor esperado (médio) do estimador $\hat{\theta}$
+- $\mathbb{E}[\hat{\theta}]$: Valor esperado (médio) do estimador $\hat{\theta}$
 - $\theta$: Valor real do parâmetro da população
-
-
-$
-\text{Viés}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta
-$
 
 ### 🔤 Leitura em português:
 
