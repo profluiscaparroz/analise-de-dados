@@ -872,8 +872,200 @@ Se quiser, posso mostrar códigos para simulação, exemplos de estimativa de $p
 
 ---
 
+---
+
+## 📝 Exercícios Resolvidos
+
+### Exercício 1: Teste de Qualidade Industrial
+
+**Enunciado:** Uma fábrica de componentes eletrônicos tem uma taxa de defeitos de 5% em sua produção. Seja $X$ a variável aleatória que indica se um componente é defeituoso (1) ou não (0). 
+
+a) Modele essa situação usando uma distribuição de Bernoulli.
+b) Calcule a esperança e a variância de $X$.
+c) Se inspecionarmos 10 componentes, qual a probabilidade de encontrarmos exatamente 2 defeituosos?
+
+**Solução:**
+
+**Parte a) Modelagem:**
+Definimos a variável aleatória $X$ como:
+$$X = \begin{cases}
+1 & \text{se o componente é defeituoso (sucesso)} \\
+0 & \text{se o componente não é defeituoso (fracasso)}
+\end{cases}$$
+
+Como a taxa de defeitos é 5%, temos $p = 0{,}05$.
+
+Logo, $X \sim \text{Bernoulli}(0{,}05)$ com função de probabilidade:
+$$P(X = x) = 0{,}05^x \times 0{,}95^{1-x}, \quad x \in \{0,1\}$$
+
+Especificamente:
+- $P(X = 1) = 0{,}05$ (probabilidade de defeito)
+- $P(X = 0) = 0{,}95$ (probabilidade de não haver defeito)
+
+**Parte b) Esperança e Variância:**
+
+Esperança:
+$$\mathbb{E}[X] = p = 0{,}05$$
+
+**Interpretação:** Em média, 5% dos componentes são defeituosos.
+
+Variância:
+$$\text{Var}(X) = p(1-p) = 0{,}05 \times 0{,}95 = 0{,}0475$$
+
+**Parte c) Probabilidade com 10 componentes:**
+Para 10 componentes independentes, definimos $Y = \sum_{i=1}^{10} X_i$ onde cada $X_i \sim \text{Bernoulli}(0{,}05)$.
+
+Então $Y \sim \text{Binomial}(10, 0{,}05)$.
+
+A probabilidade de exatamente 2 defeituosos é:
+$$P(Y = 2) = \binom{10}{2} \times 0{,}05^2 \times 0{,}95^8$$
+
+$$P(Y = 2) = 45 \times 0{,}0025 \times 0{,}6634 = 0{,}0746$$
+
+**Resposta:** Aproximadamente 7,46% de chance de encontrar exatamente 2 componentes defeituosos.
+
+---
+
+### Exercício 2: Eficácia de Tratamento Médico
+
+**Enunciado:** Um novo medicamento tem 80% de eficácia no tratamento de uma doença. Seja $X$ a variável que indica se o tratamento foi eficaz (1) ou não (0) para um paciente.
+
+a) Determine a distribuição de $X$ e sua função de probabilidade.
+b) Calcule $P(X = 1)$, $\mathbb{E}[X]$ e $\text{Var}(X)$.
+c) Interprete os resultados no contexto médico.
+
+**Solução:**
+
+**Parte a) Distribuição:**
+$X \sim \text{Bernoulli}(0{,}8)$
+
+Função de probabilidade:
+$$P(X = x) = 0{,}8^x \times 0{,}2^{1-x}, \quad x \in \{0,1\}$$
+
+**Parte b) Cálculos:**
+- $P(X = 1) = 0{,}8$ (80% de eficácia)
+- $P(X = 0) = 0{,}2$ (20% de falha)
+
+Esperança:
+$$\mathbb{E}[X] = 0{,}8$$
+
+Variância:
+$$\text{Var}(X) = 0{,}8 \times 0{,}2 = 0{,}16$$
+
+**Parte c) Interpretação médica:**
+- O medicamento tem alta probabilidade de sucesso (80%)
+- A esperança de 0,8 indica que, em média, o tratamento é eficaz em 8 de cada 10 pacientes
+- A variância de 0,16 mostra que há alguma incerteza no resultado, mas é relativamente baixa devido à alta eficácia
+
+---
+
+### Exercício 3: Marketing Digital - Taxa de Conversão
+
+**Enunciado:** Uma campanha de marketing digital tem taxa de conversão de 12%. Seja $X$ a variável que indica se um visitante do site faz uma compra (1) ou não (0).
+
+a) Modele usando Bernoulli e calcule as probabilidades.
+b) Determine esperança, variância e desvio padrão.
+c) Em uma amostra de 100 visitantes, quantas conversões esperamos?
+
+**Solução:**
+
+**Parte a) Modelagem:**
+$X \sim \text{Bernoulli}(0{,}12)$
+
+- $P(X = 1) = 0{,}12$ (conversão)
+- $P(X = 0) = 0{,}88$ (sem conversão)
+
+**Parte b) Medidas estatísticas:**
+
+Esperança:
+$$\mathbb{E}[X] = 0{,}12$$
+
+Variância:
+$$\text{Var}(X) = 0{,}12 \times 0{,}88 = 0{,}1056$$
+
+Desvio padrão:
+$$\sigma = \sqrt{0{,}1056} = 0{,}325$$
+
+**Parte c) Expectativa para 100 visitantes:**
+Para $n = 100$ visitantes independentes, o número esperado de conversões é:
+$$\mathbb{E}[\text{Total de conversões}] = n \times p = 100 \times 0{,}12 = 12 \text{ conversões}$$
+
+---
+
+### Exercício 4: Controle de Qualidade em Software
+
+**Enunciado:** Um sistema de detecção de bugs identifica corretamente 95% dos erros em códigos de software. Modelamos cada teste como uma variável de Bernoulli $X$.
+
+a) Defina $X$ e determine sua distribuição.
+b) Se o sistema analisar 5 códigos independentes, qual a probabilidade de detectar bugs em todos?
+c) E a probabilidade de falhar na detecção em pelo menos um código?
+
+**Solução:**
+
+**Parte a) Definição:**
+$$X = \begin{cases}
+1 & \text{se o bug é detectado corretamente} \\
+0 & \text{se o bug não é detectado (falha)}
+\end{cases}$$
+
+$X \sim \text{Bernoulli}(0{,}95)$
+
+**Parte b) Probabilidade de sucesso em todos os 5 códigos:**
+Para códigos independentes, a probabilidade de sucesso em todos é:
+$$P(\text{sucesso em todos}) = P(X_1 = 1, X_2 = 1, ..., X_5 = 1)$$
+$$= P(X_1 = 1) \times P(X_2 = 1) \times ... \times P(X_5 = 1)$$
+$$= 0{,}95^5 = 0{,}7738$$
+
+**Parte c) Probabilidade de pelo menos uma falha:**
+$$P(\text{pelo menos uma falha}) = 1 - P(\text{nenhuma falha})$$
+$$= 1 - 0{,}95^5 = 1 - 0{,}7738 = 0{,}2262$$
+
+**Interpretação:** Há cerca de 22,62% de chance de o sistema falhar na detecção em pelo menos um dos 5 códigos analisados.
+
+---
+
+## 🎯 Exercícios Propostos
+
+### Exercício 1 (Nível Básico)
+Uma moeda honesta é lançada uma vez. Seja $X$ a variável aleatória que vale 1 se sair cara e 0 se sair coroa.
+a) Determine a distribuição de $X$.
+b) Calcule $\mathbb{E}[X]$ e $\text{Var}(X)$.
+c) Encontre $P(X = 0)$ e $P(X = 1)$.
+
+### Exercício 2 (Nível Básico)
+Em um teste de múltipla escolha com 4 alternativas, um aluno chuta uma questão aleatoriamente. Seja $Y$ a variável que indica acerto (1) ou erro (0).
+a) Modele $Y$ como uma Bernoulli.
+b) Qual a probabilidade de acerto?
+c) Calcule esperança e variância de $Y$.
+
+### Exercício 3 (Nível Intermediário)
+Uma empresa de delivery tem 8% de pedidos com atraso. Modelamos cada entrega como uma Bernoulli, onde 1 indica atraso.
+a) Defina a variável aleatória e sua distribuição.
+b) Se a empresa processar 20 pedidos independentes, qual a probabilidade de todos chegarem no prazo?
+c) Qual o número esperado de atrasos em 50 entregas?
+
+### Exercício 4 (Nível Intermediário)
+Um sensor de segurança tem probabilidade de falha de 0,02 em cada operação. Seja $X$ a variável que indica falha (1) ou funcionamento normal (0).
+a) Determine $\mathbb{E}[X]$ e $\text{Var}(X)$.
+b) Em 10 operações independentes, qual a probabilidade de nenhuma falha?
+c) Qual a probabilidade de pelo menos uma falha em 10 operações?
+
+### Exercício 5 (Nível Avançado)
+Uma rede neural classifica imagens com 92% de acurácia. Considere $X$ como variável Bernoulli onde 1 indica classificação correta.
+a) Se processarmos um batch de 100 imagens, quantas classificações corretas esperamos?
+b) Calcule a probabilidade de acertar exatamente 90 classificações.
+c) Determine o intervalo que contém 95% das classificações corretas esperadas (use aproximação normal se necessário).
+
+### Exercício 6 (Nível Avançado)
+Em um estudo clínico, a taxa de cura de um tratamento experimental é de 75%. Cada paciente pode ser modelado como uma Bernoulli independente.
+a) Para uma amostra de 30 pacientes, calcule a esperança e variância do número de curas.
+b) Use a aproximação normal para estimar a probabilidade de que entre 20 e 25 pacientes sejam curados.
+c) Quantos pacientes devem ser incluídos no estudo para que a probabilidade de pelo menos 80% de curas seja superior a 90%?
+
+---
+
 ## 📘 Conclusão
 
 As distribuições **equiprovável** e **de Bernoulli** são fundamentais para compreender experimentos aleatórios discretos. Enquanto a equiprovável lida com simetria (todos os resultados com mesma chance), a Bernoulli introduz **assimetria binária**, sendo essencial para aplicações probabilísticas em estatística, aprendizado de máquina e ciências aplicadas.
 
-Se quiser, posso complementar com **simulações em Python**, **exercícios resolvidos** ou **comparações com distribuições contínuas** como a **Uniforme contínua** ou **Normal**. Deseja seguir por algum desses caminhos?
+Os exercícios apresentados demonstram a versatilidade da distribuição de Bernoulli em contextos práticos, desde controle de qualidade industrial até análises médicas e marketing digital. O domínio desses conceitos é fundamental para avançar em tópicos mais complexos como distribuições binomial, geométrica e processos estocásticos.
