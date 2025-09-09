@@ -839,6 +839,32 @@ print("Média amostral:", np.mean(resultados))
 
 ```
 
+### 📊 Visualizações Gráficas
+
+#### Comparação de Diferentes Valores de p
+
+![Distribuição de Bernoulli](distribuicao_bernoulli.png)
+
+Este gráfico mostra como a distribuição de Bernoulli se comporta com diferentes valores de p:
+- **p = 0.2**: Baixa probabilidade de sucesso (20%)
+- **p = 0.5**: Probabilidades iguais para sucesso e fracasso (moeda justa)
+- **p = 0.8**: Alta probabilidade de sucesso (80%)
+
+#### Exemplo Prático: Moeda Viciada
+
+![Exemplo Moeda Bernoulli](exemplo_moeda_bernoulli.png)
+
+Visualização do exemplo da moeda viciada com p = 0.7, mostrando que:
+- A chance de cara (sucesso) é 70%
+- A chance de coroa (fracasso) é 30%
+- O valor esperado é 0.7
+- A variância é 0.21
+
+> **💡 Para gerar essas visualizações**, execute o script:
+> ```bash
+> python3 generate_bernoulli_visualization.py
+> ```
+
 ### Curiosidades e observações
 
 * Embora simples, a Bernoulli é a base para modelos probabilísticos mais complexos.

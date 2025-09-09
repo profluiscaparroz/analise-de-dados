@@ -279,6 +279,32 @@ Para o exemplo da prova de múltipla escolha (n=5, p=0.5):
 - **Variância**: Var(X) = 5 × 0.5 × 0.5 = 1.25
 - **Desvio Padrão**: σ = √1.25 ≈ 1.12
 
+### 📊 Visualizações Gráficas - Distribuição Binomial
+
+#### Comparação de Diferentes Parâmetros
+
+![Distribuição Binomial](distribuicao_binomial.png)
+
+Este gráfico mostra como a distribuição binomial varia com diferentes parâmetros:
+- **n = 10, p = 0.3**: Poucos sucessos esperados (média = 3)
+- **n = 10, p = 0.5**: Distribuição simétrica (média = 5)
+- **n = 20, p = 0.3**: Mais tentativas, mesma probabilidade (média = 6)
+- **n = 30, p = 0.1**: Muitas tentativas, baixa probabilidade (média = 3)
+
+#### Exemplo: Prova de Múltipla Escolha
+
+![Exemplo Prova Binomial](exemplo_prova_binomial.png)
+
+Visualização específica do exemplo da prova com 5 questões (n=5, p=0.5):
+- Destaque para P(X=2) = 0.3125, conforme calculado no exemplo
+- Mostra a simetria da distribuição quando p = 0.5
+- Valor esperado de 2.5 acertos
+
+> **💡 Para gerar essas visualizações**, execute o script:
+> ```bash
+> python3 generate_binomial_poisson_visualization.py
+> ```
+
 ---
 
 # Distribuição Poisson
@@ -482,3 +508,34 @@ plt.show()
 ```bash
 pip install matplotlib numpy scipy
 ```
+
+### 📊 Visualizações Gráficas - Distribuição de Poisson
+
+#### Comparação de Diferentes Valores de λ
+
+![Distribuição Poisson](distribuicao_poisson.png)
+
+Este gráfico mostra como a distribuição de Poisson varia com diferentes valores de λ:
+- **λ = 1**: Poucos eventos por intervalo, alta concentração no 0 e 1
+- **λ = 3**: Distribuição moderada, moda em 3
+- **λ = 5**: Distribuição mais espalhada, aproximando-se da normal
+- **λ = 10**: Aproximação à distribuição normal, mais simétrica
+
+#### Exemplo: Central de Atendimento
+
+![Exemplo Central Poisson](exemplo_central_poisson.png)
+
+Visualização específica do exemplo da central de atendimento (λ = 4):
+- Destaque para P(X=2) ≈ 0.1465, conforme calculado no exemplo
+- Mostra que o valor mais provável é próximo a λ = 4
+- Demonstra como a distribuição se concentra em torno da média
+
+**Características observadas nos gráficos:**
+- Para Poisson: E[X] = Var(X) = λ
+- À medida que λ aumenta, a distribuição se torna mais simétrica
+- Useful para modelar eventos raros com taxa constante
+
+> **💡 Para gerar essas visualizações**, execute o script:
+> ```bash
+> python3 generate_binomial_poisson_visualization.py
+> ```
