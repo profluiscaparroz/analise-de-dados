@@ -923,7 +923,7 @@ desvio_padrao_teorico = np.sqrt(variancia_teorica)
 print(f"\nPropriedades estatísticas:")
 print(f"Média (valor esperado): {media_teorica:.3f}")
 print(f"Variância: {variancia_teorica:.3f}")
-print(f"Desvio padrão: {desvio_padrao_teorico:.3f}")
+print(f"Desvio-padrão: {desvio_padrao_teorico:.3f}")
 ```
 
 **Interpretação:** Em média, o teste detecta corretamente 85% dos casos. A variância de 0.128 indica moderada dispersão nos resultados.
