@@ -1426,9 +1426,9 @@ $
 ### **📖 Livros Fundamentais**
 
 #### **Clássicos da Teoria da Probabilidade**
-- **Grinstead, C. M., & Snell, J. L. (1997). "Introduction to Probability"** — Excelente para eventos e simulações básicas. Disponível gratuitamente online.
-- **Ross, S. M. (2014). "Introduction to Probability Models"** — Aborda formalmente independência, dependência e eventos compostos.
-- **Klenke, A. (2013). "Probability Theory"** — Livro avançado sobre teoria da probabilidade moderna.
+- GRINSTEAD, C. M.; SNELL, J. L. *Introduction to Probability*. 2. ed. Providence: American Mathematical Society, 1997. Excelente para eventos e simulações básicas. Disponível gratuitamente online.
+- ROSS, S. M. *Introduction to Probability Models*. 11. ed. Amsterdam: Academic Press, 2014. Aborda formalmente independência, dependência e eventos compostos.
+- KLENKE, A. *Probability Theory*. 2. ed. London: Springer, 2013. Livro avançado sobre teoria da probabilidade moderna.
 
 #### **Textos em Português**
 - BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 9. ed. São Paulo: Saraiva, 2017.
