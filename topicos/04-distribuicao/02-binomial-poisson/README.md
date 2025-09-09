@@ -105,7 +105,7 @@ $$P(X = k) = \frac{\lambda^k \cdot e^{-\lambda}}{k!}$$
 - λ = 4 (média de 4 chamadas por minuto)
 - k = 6 (queremos exatamente 6 chamadas)
 
-$$P(X = 6) = \frac{4^6 \cdot e^{-4}}{6!} = \frac{4096 \cdot 0.0183}{720} = 0.1042$$
+$$P(X = 6) = \frac{4^6 \cdot e^{-4}}{6!} = \frac{4096 \cdot 0.0183}{720} = 0.1041$$
 
 **Resposta**: 10,42% de chance
 
