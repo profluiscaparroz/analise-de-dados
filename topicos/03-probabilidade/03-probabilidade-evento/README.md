@@ -161,7 +161,7 @@ Ou seja, existe **1 chance em 6** de sair o número 4.
 
 **Exemplo 2: Tirar uma carta de copas de um baralho**
 
-Um baralho comum tem 52 cartas. Existem 13 cartas de copas (♣️). Qual a probabilidade de tirar uma carta de copas ao pegar uma carta aleatoriamente?
+Um baralho comum tem 52 cartas. Existem 13 cartas de copas (♥️). Qual a probabilidade de tirar uma carta de copas ao pegar uma carta aleatoriamente?
 
 - Resultados favoráveis: **13 cartas** de copas.
 - Resultados possíveis: **52 cartas** no total.
