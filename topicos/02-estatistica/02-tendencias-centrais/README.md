@@ -1,10 +1,10 @@
 # Tendências de Medidas Estatísticas: Conceitos e Aplicações
 
-## Sumario
+## Sumário
 
 - [Média aritmética](#1-média-aritmética)
 - [Média Geométrica](#2-média-geométrica-definição-propriedades-e-aplicações)
-- [Méida harmonica](#3-média-harmônica)
+- [Média harmônica](#3-média-harmônica)
 - [Mediana](#4-mediana)
 - [Moda](#5-moda)
 

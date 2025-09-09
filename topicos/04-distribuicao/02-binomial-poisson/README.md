@@ -247,6 +247,40 @@ plt.show()
 
 ```
 
+## **Propriedades da Distribuição Binomial**
+
+### **Valor Esperado (Média)**
+O valor esperado de uma variável aleatória binomial X ~ Binomial(n, p) é:
+
+$$
+E[X] = np
+$$
+
+**Interpretação**: Em média, esperamos **np** sucessos em **n** tentativas.
+
+### **Variância**
+A variância de uma distribuição binomial é:
+
+$$
+Var(X) = np(1-p)
+$$
+
+### **Desvio Padrão**
+O desvio padrão é:
+
+$$
+\sigma = \sqrt{np(1-p)}
+$$
+
+### **Exemplo Prático das Propriedades**
+
+Para o exemplo da prova de múltipla escolha (n=5, p=0.5):
+- **Média**: E[X] = 5 × 0.5 = 2.5 acertos esperados
+- **Variância**: Var(X) = 5 × 0.5 × 0.5 = 1.25
+- **Desvio Padrão**: σ = √1.25 ≈ 1.12
+
+---
+
 # Distribuição Poisson
 
 
