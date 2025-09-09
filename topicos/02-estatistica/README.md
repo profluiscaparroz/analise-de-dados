@@ -1,14 +1,14 @@
 # **Estatística: História, Importância, Aplicações e Etapas**
 
-### Sumario 
+### Sumário 
 1. [História da Estatística](#1-história-da-estatística)
-1. [Importância da Estatística](#2-importância-da-estatística)
-1. [Áreas de Aplicação da Estatística](#3-áreas-de-aplicação-da-estatística)
-1. [Etapas da Análise Estatística](#4-etapas-da-análise-estatística)
-1. [Conceitos Fundamentais da Estatística](#5-conceitos-fundamentais-da-estatística)
-1. [Aplicações da Estatística em Diversas Áreas](#6-aplicações-da-estatística-em-diversas-áreas)
-1. [Estatística e a Era do Big Data](#7-estatística-e-a-era-do-big-data)
-1. [Conclusão](#conclusao)
+2. [Importância da Estatística](#2-importância-da-estatística)
+3. [Áreas de Aplicação da Estatística](#3-áreas-de-aplicação-da-estatística)
+4. [Etapas da Análise Estatística](#4-etapas-da-análise-estatística)
+5. [Conceitos Fundamentais da Estatística](#5-conceitos-fundamentais-da-estatística)
+6. [Aplicações da Estatística em Diversas Áreas](#6-aplicações-da-estatística-em-diversas-áreas)
+7. [Estatística e a Era do Big Data](#7-estatística-e-a-era-do-big-data)
+8. [Conclusão](#conclusao)
 
 ---
 

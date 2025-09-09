@@ -68,7 +68,7 @@ Um pesquisador acredita que **alunos que usam aplicativos educacionais têm melh
 
 ### 📐 Viés em Modelos Estatístico
 
-David A. Freedman destacou que, em modelos de regressão, especialmente quando o número de variáveis explicativas é grande em relação ao número de observações, é comum identificar variáveis não relacionadas como estatisticamente significativs Esse fenômeno, conhecido como "paradoxo de Freedman", ilustra como a seleção de modelos pode introduzir viés nas análies 
+David A. Freedman destacou que, em modelos de regressão, especialmente quando o número de variáveis explicativas é grande em relação ao número de observações, é comum identificar variáveis não relacionadas como estatisticamente significativas. Esse fenômeno, conhecido como "paradoxo de Freedman", ilustra como a seleção de modelos pode introduzir viés nas análises. 
 
 ---
 
@@ -78,15 +78,15 @@ A Cochrane Collaboration, reconhecida por suas revisões sistemáticas rigorosas
 
 ---
 
-### 🎯 Importância de Identificar e Corrigir o Vés
+### 🎯 Importância de Identificar e Corrigir o Viés
 
-A presença de viés pode comprometer a validade das conclusões estatísticas, levando a decisões baseadas em informações distorcds. Portanto, é cruial:
+A presença de viés pode comprometer a validade das conclusões estatísticas, levando a decisões baseadas em informações distorcidas. Portanto, é crucial:
 
-- Utilizar métodos de amostragem adequados para garantir representativiade.
+- Utilizar métodos de amostragem adequados para garantir representatividade.
 
-- Empregar instrumentos de medição calibrados e procedimentos padronizdos.
+- Empregar instrumentos de medição calibrados e procedimentos padronizados.
 
-- Aplicar técnicas estatísticas apropriadas que considerem possíveis fontes de iés.
+- Aplicar técnicas estatísticas apropriadas que considerem possíveis fontes de viés.
 
 
 
