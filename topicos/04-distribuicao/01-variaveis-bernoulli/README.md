@@ -1086,7 +1086,7 @@ import matplotlib.pyplot as plt
 # Definindo diferentes cenários
 cenarios = {
     "Teste COVID-19": 0.85,
-    "Clique em Anúncio": 0.035, 
+    "Clique em Anúncio": 0.035,
     "Defeito Industrial": 0.02,
     "Aprovação Vestibular": 0.40
 }
