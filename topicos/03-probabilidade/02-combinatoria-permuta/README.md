@@ -1379,3 +1379,302 @@ print(tabulate(df, headers='keys', tablefmt='grid'))
 |  10 |   5 |           3628800 |              3628800 |              30240 |                    252 |
 +----+----+------------------+----------------------+--------------------+------------------------+
 ```
+
+---
+
+## 🎯 **Aplicações Práticas em Python: Problemas Reais**
+
+### Exemplo 1: Sistema de Senhas e Segurança
+
+```python
+import math
+import itertools
+import time
+
+def calcular_seguranca_senha(comprimento, tipos_caracteres):
+    """
+    Calcula o número de senhas possíveis e tempo para quebrar por força bruta
+    
+    tipos_caracteres: lista com número de caracteres de cada tipo
+    Ex: [26, 26, 10] = minúsculas, maiúsculas, números
+    """
+    total_caracteres = sum(tipos_caracteres)
+    total_senhas = total_caracteres ** comprimento
+    
+    # Supondo 1 bilhão de tentativas por segundo
+    tempo_quebrar = total_senhas / (2 * 10**9)  # média = metade das tentativas
+    
+    return total_senhas, tempo_quebrar
+
+# Comparando diferentes configurações de senha
+configs = [
+    ("Só números", 4, [10]),
+    ("Letras minúsculas", 6, [26]),
+    ("Letras + números", 6, [26, 10]),
+    ("Maiús + minús + números", 8, [26, 26, 10]),
+    ("Todos os caracteres", 8, [26, 26, 10, 32]),  # + símbolos
+    ("Senha forte", 12, [26, 26, 10, 32])
+]
+
+print("ANÁLISE DE SEGURANÇA DE SENHAS")
+print("=" * 60)
+print(f"{'Tipo':<25} {'Combinações':<15} {'Tempo para quebrar':<20}")
+print("-" * 60)
+
+for nome, comp, tipos in configs:
+    total, tempo = calcular_seguranca_senha(comp, tipos)
+    
+    if tempo < 60:
+        tempo_str = f"{tempo:.2f} segundos"
+    elif tempo < 3600:
+        tempo_str = f"{tempo/60:.2f} minutos"
+    elif tempo < 86400:
+        tempo_str = f"{tempo/3600:.2f} horas"
+    elif tempo < 31536000:
+        tempo_str = f"{tempo/86400:.2f} dias"
+    else:
+        tempo_str = f"{tempo/31536000:.2e} anos"
+    
+    print(f"{nome:<25} {total:<15.2e} {tempo_str:<20}")
+```
+
+---
+
+### Exemplo 2: Análise de Loteria e Probabilidades
+
+```python
+import math
+import matplotlib.pyplot as plt
+
+def probabilidade_loteria(total_numeros, numeros_sorteados):
+    """Calcula a probabilidade de acertar na loteria"""
+    combinacoes = math.comb(total_numeros, numeros_sorteados)
+    probabilidade = 1 / combinacoes
+    return combinacoes, probabilidade
+
+# Analisando diferentes tipos de loteria no Brasil
+loterias = [
+    ("Mega-Sena", 60, 6),
+    ("Quina", 80, 5),
+    ("Quadra", 80, 4),
+    ("Lotofácil", 25, 15),
+    ("Dupla Sena", 50, 6),
+]
+
+print("ANÁLISE DE PROBABILIDADES EM LOTERIAS")
+print("=" * 60)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+
+nomes = []
+probabilidades = []
+combinacoes_totais = []
+
+for nome, total, sorteados in loterias:
+    comb, prob = probabilidade_loteria(total, sorteados)
+    nomes.append(nome)
+    probabilidades.append(prob)
+    combinacoes_totais.append(comb)
+    
+    print(f"\n{nome}:")
+    print(f"  Números sorteados: {sorteados} de {total}")
+    print(f"  Combinações possíveis: {comb:,}")
+    print(f"  Probabilidade: 1 em {comb:,} ({prob:.10f})")
+    print(f"  Probabilidade percentual: {prob*100:.10f}%")
+
+# Gráfico 1: Combinações possíveis (escala log)
+ax1.bar(nomes, combinacoes_totais, color='skyblue')
+ax1.set_yscale('log')
+ax1.set_title('Número de Combinações Possíveis')
+ax1.set_ylabel('Combinações (escala log)')
+ax1.tick_params(axis='x', rotation=45)
+
+# Gráfico 2: Probabilidade de acertar
+ax2.bar(nomes, [p*100 for p in probabilidades], color='lightcoral')
+ax2.set_title('Probabilidade de Acertar (%)')
+ax2.set_ylabel('Probabilidade (%)')
+ax2.tick_params(axis='x', rotation=45)
+ax2.set_yscale('log')
+
+plt.tight_layout()
+plt.show()
+
+# Calculando o "valor esperado" se o prêmio fosse R$ 100 milhões
+print(f"\nAnálise de Valor Esperado (prêmio: R$ 100 milhões):")
+print("-" * 50)
+for i, nome in enumerate(nomes):
+    valor_esperado = 100_000_000 * probabilidades[i]
+    print(f"{nome}: R$ {valor_esperado:.2f}")
+```
+
+---
+
+### Exemplo 3: Planejamento de Eventos e Organização
+
+```python
+import math
+import pandas as pd
+
+def problema_organizacao_evento():
+    """
+    Resolve problemas práticos de organização usando combinatória
+    """
+    
+    print("PROBLEMA: ORGANIZAÇÃO DE UM EVENTO")
+    print("=" * 50)
+    
+    # Cenário: Organizando uma conferência
+    palestrantes = 12
+    slots_manha = 4
+    slots_tarde = 3
+    mesas_redondas = 2  # 5 pessoas cada
+    
+    # 1. Quantas formas de organizar as palestras da manhã?
+    arranjos_manha = math.perm(palestrantes, slots_manha)
+    print(f"1. Organização das {slots_manha} palestras da manhã:")
+    print(f"   {arranjos_manha:,} maneiras diferentes")
+    
+    # 2. E as da tarde? (com os palestrantes restantes)
+    arranjos_tarde = math.perm(palestrantes - slots_manha, slots_tarde)
+    print(f"\n2. Organização das {slots_tarde} palestras da tarde:")
+    print(f"   {arranjos_tarde:,} maneiras diferentes")
+    
+    # 3. Formação das mesas redondas
+    # Primeiro, escolher 10 pessoas das 12 para as mesas redondas
+    escolher_10_de_12 = math.comb(palestrantes, 10)
+    
+    # Depois, dividir essas 10 em 2 grupos de 5
+    # Isso é mais complexo - usamos o conceito de partições
+    mesa1_escolhas = math.comb(10, 5)
+    mesa2_escolhas = math.comb(5, 5)  # Os 5 restantes
+    
+    # Mas como as mesas são indistinguíveis, dividimos por 2!
+    mesas_redondas_total = (mesa1_escolhas * mesa2_escolhas) // 2
+    
+    print(f"\n3. Formação de 2 mesas redondas com 5 pessoas cada:")
+    print(f"   {mesas_redondas_total:,} maneiras diferentes")
+    
+    # 4. Total de configurações possíveis do evento
+    total_configuracoes = arranjos_manha * arranjos_tarde * mesas_redondas_total
+    print(f"\n4. TOTAL de configurações possíveis do evento:")
+    print(f"   {total_configuracoes:,} maneiras diferentes")
+    
+    return {
+        'palestrantes': palestrantes,
+        'arranjos_manha': arranjos_manha,
+        'arranjos_tarde': arranjos_tarde,
+        'mesas_redondas': mesas_redondas_total,
+        'total': total_configuracoes
+    }
+
+# Executar o exemplo
+resultado = problema_organizacao_evento()
+
+# Visualização dos resultados
+fig, ax = plt.subplots(figsize=(10, 6))
+
+categorias = ['Manhã\n(Arranjos)', 'Tarde\n(Arranjos)', 'Mesas Redondas\n(Combinações)']
+valores = [resultado['arranjos_manha'], resultado['arranjos_tarde'], resultado['mesas_redondas']]
+
+bars = ax.bar(categorias, valores, color=['lightblue', 'lightgreen', 'lightcoral'])
+ax.set_yscale('log')
+ax.set_title('Número de Possibilidades por Categoria do Evento')
+ax.set_ylabel('Número de Possibilidades (escala log)')
+
+# Adicionar valores nas barras
+for bar, valor in zip(bars, valores):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height,
+           f'{valor:,}', ha='center', va='bottom')
+
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### Exemplo 4: Simulação de Monte Carlo para Validar Cálculos
+
+```python
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+from collections import Counter
+
+def simulacao_monte_carlo_combinatoria(n_simulacoes=100000):
+    """
+    Usa simulação de Monte Carlo para validar cálculos combinatórios
+    """
+    
+    print("VALIDAÇÃO POR SIMULAÇÃO DE MONTE CARLO")
+    print("=" * 50)
+    
+    # Exemplo: Quantas maneiras de formar uma equipe de 3 pessoas de um grupo de 6?
+    pessoas = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eduardo', 'Fernanda']
+    n_pessoas = len(pessoas)
+    tamanho_equipe = 3
+    
+    # Cálculo teórico
+    combinacoes_teoricas = math.comb(n_pessoas, tamanho_equipe)
+    print(f"Cálculo teórico: C({n_pessoas},{tamanho_equipe}) = {combinacoes_teoricas}")
+    
+    # Simulação de Monte Carlo
+    equipes_encontradas = set()
+    
+    for _ in range(n_simulacoes):
+        equipe = tuple(sorted(random.sample(pessoas, tamanho_equipe)))
+        equipes_encontradas.add(equipe)
+    
+    combinacoes_simuladas = len(equipes_encontradas)
+    print(f"Simulação Monte Carlo: {combinacoes_simuladas} combinações encontradas")
+    print(f"Diferença: {abs(combinacoes_teoricas - combinacoes_simuladas)}")
+    
+    # Mostrando todas as combinações encontradas
+    print(f"\nTodas as {combinacoes_simuladas} combinações encontradas:")
+    for i, equipe in enumerate(sorted(equipes_encontradas), 1):
+        print(f"{i:2d}. {', '.join(equipe)}")
+    
+    return combinacoes_teoricas, combinacoes_simuladas, equipes_encontradas
+
+# Executar simulação
+teorico, simulado, equipes = simulacao_monte_carlo_combinatoria()
+
+# Análise de convergência
+def analise_convergencia():
+    """Mostra como a simulação converge para o valor teórico"""
+    
+    pessoas = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eduardo', 'Fernanda']
+    simulacoes = [100, 500, 1000, 5000, 10000, 50000, 100000]
+    combinacoes_encontradas = []
+    
+    for n_sim in simulacoes:
+        equipes_set = set()
+        for _ in range(n_sim):
+            equipe = tuple(sorted(random.sample(pessoas, 3)))
+            equipes_set.add(equipe)
+        combinacoes_encontradas.append(len(equipes_set))
+    
+    # Plotar convergência
+    plt.figure(figsize=(10, 6))
+    plt.plot(simulacoes, combinacoes_encontradas, 'bo-', label='Simulação')
+    plt.axhline(y=20, color='red', linestyle='--', label='Valor teórico (20)')
+    plt.xlabel('Número de Simulações')
+    plt.ylabel('Combinações Encontradas')
+    plt.title('Convergência da Simulação Monte Carlo')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+    
+    # Tabela de resultados
+    df = pd.DataFrame({
+        'Simulações': simulacoes,
+        'Combinações Encontradas': combinacoes_encontradas,
+        'Erro Absoluto': [abs(20 - x) for x in combinacoes_encontradas],
+        'Erro Percentual (%)': [abs(20 - x)/20 * 100 for x in combinacoes_encontradas]
+    })
+    
+    print("\nAnálise de Convergência:")
+    print(df)
+
+analise_convergencia()
+```
