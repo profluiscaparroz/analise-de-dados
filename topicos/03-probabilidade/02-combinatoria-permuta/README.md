@@ -1427,10 +1427,26 @@ print(tabulate(df, headers='keys', tablefmt='grid'))
 - **sympy**: Matemática simbólica com funções combinatórias
 
 ```python
-# Exemplos de uso
-import math
-from scipy.special import comb, perm
-from itertools import combinations, permutations
+# Exemplos de uso das principais bibliotecas para combinatória em Python:
+
+import math  # Funções matemáticas básicas, como fatorial
+from scipy.special import comb, perm  # Funções combinatórias avançadas
+from itertools import combinations, permutations  # Geração de combinações e permutações
+
+# Exemplo: calcular 5!
+print("5! =", math.factorial(5))  # Saída: 120
+
+# Exemplo: número de combinações de 5 elementos tomados 2 a 2
+print("Combinações (5,2) =", comb(5, 2, exact=True))  # Saída: 10
+
+# Exemplo: número de permutações de 5 elementos tomados 2 a 2
+print("Permutações (5,2) =", perm(5, 2, exact=True))  # Saída: 20
+
+# Exemplo: listar todas as combinações de 3 elementos do conjunto [1,2,3,4]
+print("Combinações de 3 em [1,2,3,4]:", list(combinations([1,2,3,4], 3)))
+
+# Exemplo: listar todas as permutações de 2 elementos do conjunto [1,2,3]
+print("Permutações de 2 em [1,2,3]:", list(permutations([1,2,3], 2)))
 ```
 
 #### **R**
