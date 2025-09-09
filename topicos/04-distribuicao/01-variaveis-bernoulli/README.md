@@ -984,6 +984,8 @@ else:
 **Variável de Bernoulli:**
 - $X = 1$: Chip defeituoso (sucesso para o evento que queremos monitorar)
 - $X = 0$: Chip em perfeito estado (fracasso)
+
+> **Nota:** Em estatística, chamamos de "sucesso" o evento que estamos contando/interessados, mesmo que ele seja indesejado na prática (como encontrar um defeito). O termo não implica que seja algo positivo, apenas que é o evento de interesse para a análise.
 - $p = 0.02$ (taxa de defeito)
 
 ```python
