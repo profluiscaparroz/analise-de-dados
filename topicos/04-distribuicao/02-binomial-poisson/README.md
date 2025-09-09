@@ -123,7 +123,7 @@ $$P(X = 6) = \frac{4^6 \cdot e^{-4}}{6!} = \frac{4096 \cdot 0.0183}{720} = 0.104
 | **Quando usar** | Experimentos com resultado binário | Contagem de eventos raros |
 
 ### **Relação Especial**
-Quando **n é grande** e **p é pequeno** (n×p ≈ λ), a **Binomial se aproxima da Poisson**!
+Quando **n ≥ 20**, **p ≤ 0,05** e **n×p ≤ 10** (ou seja, n é grande e p é pequeno), a **Binomial pode ser bem aproximada pela Poisson** (com λ = n×p)!
 
 ---
 
