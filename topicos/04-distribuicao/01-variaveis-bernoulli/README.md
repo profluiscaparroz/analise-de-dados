@@ -877,3 +877,93 @@ Se quiser, posso mostrar códigos para simulação, exemplos de estimativa de $p
 As distribuições **equiprovável** e **de Bernoulli** são fundamentais para compreender experimentos aleatórios discretos. Enquanto a equiprovável lida com simetria (todos os resultados com mesma chance), a Bernoulli introduz **assimetria binária**, sendo essencial para aplicações probabilísticas em estatística, aprendizado de máquina e ciências aplicadas.
 
 Se quiser, posso complementar com **simulações em Python**, **exercícios resolvidos** ou **comparações com distribuições contínuas** como a **Uniforme contínua** ou **Normal**. Deseja seguir por algum desses caminhos?
+
+---
+
+## **Referências e Links para Aprofundamento**
+
+### **📚 Livros Fundamentais**
+
+- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 9. ed. São Paulo: Saraiva, 2017.
+- ROSS, S. M. *A First Course in Probability*. 10. ed. Pearson, 2019.
+- MOOD, A. M.; GRAYBILL, F. A.; BOES, D. C. *Introduction to the Theory of Statistics*. 3. ed. McGraw-Hill, 1974.
+- TRIOLA, M. F. *Introdução à Estatística*. 12. ed. Rio de Janeiro: LTC, 2017.
+- MEYER, P. L. *Probabilidade: Aplicações à Estatística*. 2. ed. Rio de Janeiro: LTC, 2009.
+
+### **🎓 Textos Avançados**
+
+- CASELLA, G.; BERGER, R. L. *Statistical Inference*. 2. ed. Duxbury Press, 2001.
+- DEGROOT, M. H.; SCHERVISH, M. J. *Probability and Statistics*. 4. ed. Boston: Addison-Wesley, 2012.
+- HOGG, R. V.; CRAIG, A. T. *Introduction to Mathematical Statistics*. 8. ed. Pearson, 2018.
+- LARSEN, R. J.; MARX, M. L. *An Introduction to Mathematical Statistics and Its Applications*. 6. ed. Pearson, 2017.
+
+### **🌐 Recursos Online de Qualidade**
+
+#### **Cursos e Vídeos**
+- **Khan Academy - Probabilidade**: https://pt.khanacademy.org/math/statistics-probability
+- **MIT OpenCourseWare - Probability**: https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/
+- **Coursera - Probability Theory**: https://www.coursera.org/learn/probability-theory-foundation-for-data-science
+- **edX - Probability and Statistics**: https://www.edx.org/course/introduction-probability-science
+
+#### **Documentação Técnica**
+- **SciPy Stats Module**: https://docs.scipy.org/doc/scipy/reference/stats.html
+- **NumPy Random**: https://numpy.org/doc/stable/reference/random/index.html
+- **Matplotlib Gallery**: https://matplotlib.org/stable/gallery/statistics/index.html
+
+#### **Simuladores Interativos**
+- **Seeing Theory**: https://seeing-theory.brown.edu/basic-probability/
+- **PhET Simulations**: https://phet.colorado.edu/sims/html/plinko-probability/latest/plinko-probability_pt_BR.html
+- **GeoGebra - Probability**: https://www.geogebra.org/probability
+
+### **📱 Ferramentas e Software**
+
+#### **Python**
+- **SciPy**: https://scipy.org/ - Biblioteca científica para Python
+- **StatsModels**: https://www.statsmodels.org/ - Modelagem estatística
+- **Seaborn**: https://seaborn.pydata.org/ - Visualização estatística
+
+#### **R**
+- **R Project**: https://www.r-project.org/
+- **RStudio**: https://www.rstudio.com/
+- **CRAN Task View - Distributions**: https://cran.r-project.org/web/views/Distributions.html
+
+#### **Outras Ferramentas**
+- **Wolfram Alpha**: https://www.wolframalpha.com/
+- **Desmos Calculator**: https://www.desmos.com/calculator
+- **StatCrunch**: https://www.statcrunch.com/
+
+### **🎯 Aplicações Específicas**
+
+#### **Machine Learning e Data Science**
+- HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. *The Elements of Statistical Learning*. 2. ed. Springer, 2009.
+- BISHOP, C. M. *Pattern Recognition and Machine Learning*. Springer, 2006.
+
+#### **Economia e Finanças**
+- HULL, J. C. *Options, Futures, and Other Derivatives*. 10. ed. Pearson, 2017.
+
+#### **Engenharia de Confiabilidade**
+- LAWLESS, J. F. *Statistical Models and Methods for Lifetime Data*. 2. ed. John Wiley & Sons, 2003.
+
+### **📖 Artigos Históricos e Fundadores**
+
+- BERNOULLI, J. *Ars Conjectandi*. Basel: Thurnisiorum, 1713. (Obra fundadora da teoria da probabilidade)
+- CARDANO, G. *Liber de Ludo Aleae*. 1564. (Um dos primeiros tratados sobre probabilidade)
+- PASCAL, B.; FERMAT, P. Correspondência sobre jogos de azar, 1654.
+
+### **💡 Recursos para Diferentes Níveis**
+
+#### **Iniciante**
+- MAGALHÃES, M. N.; LIMA, A. C. P. *Noções de Probabilidade e Estatística*. 7. ed. São Paulo: EDUSP, 2010.
+- BARBETTA, P. A.; REIS, M. M.; BORNIA, A. C. *Estatística para Cursos de Engenharia e Informática*. 3. ed. São Paulo: Atlas, 2010.
+
+#### **Intermediário**
+- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7. ed. John Wiley & Sons, 2018.
+- WALPOLE, R. E. et al. *Probabilidade e Estatística para Engenharia e Ciências*. 8. ed. São Paulo: Pearson, 2009.
+
+#### **Avançado**
+- FELLER, W. *An Introduction to Probability Theory and Its Applications*. 2 volumes. John Wiley & Sons, 1968-1971.
+- BILLINGSLEY, P. *Probability and Measure*. 3. ed. John Wiley & Sons, 1995.
+
+---
+
+**💡 Dica de Estudo:** Comece entendendo bem o conceito da distribuição de Bernoulli com exemplos simples (moeda, teste aprovado/reprovado) antes de avançar para suas aplicações em modelos mais complexos como regressão logística e redes neurais.

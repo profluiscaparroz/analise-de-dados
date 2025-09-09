@@ -482,3 +482,74 @@ plt.show()
 ```bash
 pip install matplotlib numpy scipy
 ```
+
+---
+
+## **Referências e Links para Aprofundamento**
+
+### **📚 Livros e Textos Acadêmicos**
+
+- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 9. ed. São Paulo: Saraiva, 2017.
+- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7. ed. John Wiley & Sons, 2018.
+- ROSS, S. M. *A First Course in Probability*. 10. ed. Pearson, 2019.
+- TRIOLA, M. F. *Introdução à Estatística*. 12. ed. Rio de Janeiro: LTC, 2017.
+- MEYER, P. L. *Probabilidade: Aplicações à Estatística*. 2. ed. Rio de Janeiro: LTC, 2009.
+- HOEL, P. G.; PORT, S. C.; STONE, C. J. *Introduction to Probability Theory*. Boston: Houghton Mifflin, 1971.
+- FELLER, W. *An Introduction to Probability Theory and Its Applications*. Volume 1. 3. ed. John Wiley & Sons, 1968.
+
+### **🎓 Artigos e Recursos Acadêmicos**
+
+- BERNOULLI, J. *Ars Conjectandi*. Basel: Thurnisiorum, 1713. (Obra histórica sobre probabilidade)
+- POISSON, S. D. *Recherches sur la Probabilité des Jugements*. Paris: Bachelier, 1837.
+- STIGLER, S. M. "Poisson on the Poisson Distribution". *Statistics & Probability Letters*, v. 1, n. 1, p. 33-35, 1982.
+
+### **🌐 Recursos Online Confiáveis**
+
+#### **Vídeos Educacionais**
+- **Khan Academy - Probabilidade e Estatística**: https://pt.khanacademy.org/math/statistics-probability
+- **Coursera - Introduction to Probability and Data**: https://www.coursera.org/learn/probability-intro
+- **MIT OpenCourseWare - Probability and Statistics**: https://ocw.mit.edu/courses/mathematics/
+
+#### **Documentação e Tutoriais**
+- **SciPy Documentation - Probability Distributions**: https://docs.scipy.org/doc/scipy/reference/stats.html
+- **NumPy Random Sampling**: https://numpy.org/doc/stable/reference/random/index.html
+- **Matplotlib Examples**: https://matplotlib.org/stable/gallery/index.html
+
+#### **Simuladores e Ferramentas Interativas**
+- **Seeing Theory (Brown University)**: https://seeing-theory.brown.edu/probability-distributions/
+- **GeoGebra - Distribuições de Probabilidade**: https://www.geogebra.org/probability
+- **Desmos Graphing Calculator**: https://www.desmos.com/calculator
+
+### **📱 Aplicativos e Software**
+
+- **R Project**: https://www.r-project.org/ (Software estatístico gratuito)
+- **Python SciPy Stack**: https://scipy.org/ (Biblioteca científica para Python)
+- **Wolfram Alpha**: https://www.wolframalpha.com/ (Calculadora online avançada)
+- **StatCrunch**: https://www.statcrunch.com/ (Software estatístico online)
+
+### **📖 Recursos Complementares**
+
+#### **Para Iniciantes**
+- MAGALHÃES, M. N.; LIMA, A. C. P. *Noções de Probabilidade e Estatística*. 7. ed. São Paulo: EDUSP, 2010.
+- MORETTIN, L. G. *Estatística Básica: Probabilidade e Inferência*. São Paulo: Pearson, 2010.
+
+#### **Para Aprofundamento**
+- CASELLA, G.; BERGER, R. L. *Statistical Inference*. 2. ed. Duxbury Press, 2001.
+- DEGROOT, M. H.; SCHERVISH, M. J. *Probability and Statistics*. 4. ed. Boston: Addison-Wesley, 2012.
+- JOHNSON, N. L.; KEMP, A. W.; KOTZ, S. *Univariate Discrete Distributions*. 3. ed. John Wiley & Sons, 2005.
+
+#### **Aplicações Específicas**
+- LAWLESS, J. F. *Statistical Models and Methods for Lifetime Data*. 2. ed. John Wiley & Sons, 2003.
+- NELSON, W. B. *Applied Life Data Analysis*. John Wiley & Sons, 1982.
+- MEEKER, W. Q.; ESCOBAR, L. A. *Statistical Methods for Reliability Data*. John Wiley & Sons, 1998.
+
+### **🎯 Links Úteis para Prática**
+
+- **Exercícios Online**: https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library
+- **Conjunto de Dados para Prática**: https://www.kaggle.com/datasets (procurar por "binomial", "poisson")
+- **Simulações Monte Carlo**: https://github.com/topics/monte-carlo-simulation
+- **Tutoriais Python**: https://realpython.com/python-statistics/
+
+---
+
+**💡 Dica de Estudo:** Comece com os livros básicos em português (Bussab & Morettin, Triola) e depois avance para textos mais técnicos. Use os simuladores online para visualizar os conceitos antes de implementar em código.
