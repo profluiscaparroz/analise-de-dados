@@ -714,3 +714,140 @@ print("Combinação:", combinacao(n, p))
 ```
 
 ---
+
+## **📚 Referências e Links para Aprofundamento**
+
+### **📖 Livros Fundamentais sobre Distribuições de Probabilidade**
+
+- ROSS, S. M. *A First Course in Probability*. 10. ed. Pearson, 2019.
+- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 9. ed. São Paulo: Saraiva, 2017.
+- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7. ed. John Wiley & Sons, 2018.
+- TRIOLA, M. F. *Introdução à Estatística*. 12. ed. Rio de Janeiro: LTC, 2017.
+- MEYER, P. L. *Probabilidade: Aplicações à Estatística*. 2. ed. Rio de Janeiro: LTC, 2009.
+
+### **📊 Distribuição Normal e Z-Score**
+
+- MOOD, A. M.; GRAYBILL, F. A.; BOES, D. C. *Introduction to the Theory of Statistics*. 3. ed. McGraw-Hill, 1974.
+- WALPOLE, R. E. et al. *Probabilidade e Estatística para Engenharia e Ciências*. 8. ed. São Paulo: Pearson, 2009.
+- HOGG, R. V.; CRAIG, A. T. *Introduction to Mathematical Statistics*. 8. ed. Pearson, 2018.
+- DEVORE, J. L. *Probability and Statistics for Engineering and the Sciences*. 9. ed. Cengage Learning, 2015.
+
+### **🎓 Textos Avançados**
+
+- CASELLA, G.; BERGER, R. L. *Statistical Inference*. 2. ed. Duxbury Press, 2001.
+- DEGROOT, M. H.; SCHERVISH, M. J. *Probability and Statistics*. 4. ed. Boston: Addison-Wesley, 2012.
+- LARSEN, R. J.; MARX, M. L. *An Introduction to Mathematical Statistics and Its Applications*. 6. ed. Pearson, 2017.
+- BICKEL, P. J.; DOKSUM, K. A. *Mathematical Statistics: Basic Ideas and Selected Topics*. 2. ed. Chapman & Hall, 2015.
+
+### **🌐 Recursos Online de Qualidade**
+
+#### **Cursos e Vídeos Educacionais**
+- **Khan Academy - Probabilidade e Estatística**: https://pt.khanacademy.org/math/statistics-probability
+- **MIT OpenCourseWare - Probability**: https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/
+- **Coursera - Introduction to Probability and Data**: https://www.coursera.org/learn/probability-intro
+- **edX - Probability and Statistics**: https://www.edx.org/course/introduction-probability-science
+
+#### **Documentação Técnica**
+- **SciPy Documentation**: https://docs.scipy.org/doc/scipy/reference/stats.html
+- **NumPy Random Sampling**: https://numpy.org/doc/stable/reference/random/index.html
+- **Matplotlib Statistics**: https://matplotlib.org/stable/gallery/statistics/index.html
+- **Seaborn Statistical Plots**: https://seaborn.pydata.org/tutorial/distributions.html
+
+#### **Simuladores e Visualizações Interativas**
+- **Seeing Theory (Brown University)**: https://seeing-theory.brown.edu/probability-distributions/
+- **PhET Probability Simulations**: https://phet.colorado.edu/sims/html/plinko-probability/latest/plinko-probability_pt_BR.html
+- **GeoGebra - Normal Distribution**: https://www.geogebra.org/m/fBgKCUEM
+- **Desmos Graphing Calculator**: https://www.desmos.com/calculator
+
+### **💻 Ferramentas Computacionais**
+
+#### **Python**
+- **SciPy**: https://scipy.org/ - Biblioteca científica completa
+- **NumPy**: https://numpy.org/ - Computação numérica
+- **Matplotlib**: https://matplotlib.org/ - Visualizações
+- **Seaborn**: https://seaborn.pydata.org/ - Visualizações estatísticas
+- **StatsModels**: https://www.statsmodels.org/ - Modelagem estatística
+
+#### **R**
+- **R Project**: https://www.r-project.org/
+- **RStudio**: https://www.rstudio.com/
+- **CRAN Task View - Distributions**: https://cran.r-project.org/web/views/Distributions.html
+
+#### **Software Estatístico**
+- **Minitab**: https://www.minitab.com/
+- **SPSS**: https://www.ibm.com/products/spss-statistics
+- **JMP**: https://www.jmp.com/
+- **Stata**: https://www.stata.com/
+
+### **🎯 Aplicações Específicas**
+
+#### **Controle de Qualidade e Six Sigma**
+- MONTGOMERY, D. C. *Introduction to Statistical Quality Control*. 8. ed. John Wiley & Sons, 2019.
+- PYZDEK, T.; KELLER, P. *The Six Sigma Handbook*. 4. ed. McGraw-Hill, 2014.
+
+#### **Finanças e Economia**
+- HULL, J. C. *Options, Futures, and Other Derivatives*. 10. ed. Pearson, 2017.
+- JORION, P. *Value at Risk: The New Benchmark for Managing Financial Risk*. 3. ed. McGraw-Hill, 2006.
+
+#### **Pesquisa e Amostragem**
+- COCHRAN, W. G. *Sampling Techniques*. 3. ed. John Wiley & Sons, 1977.
+- LOHR, S. L. *Sampling: Design and Analysis*. 2. ed. Brooks/Cole, 2009.
+
+### **📱 Calculadoras e Aplicativos Online**
+
+- **Normal Distribution Calculator**: https://stattrek.com/online-calculator/normal.aspx
+- **Statistics Kingdom**: https://www.statskingdom.com/
+- **Wolfram Alpha**: https://www.wolframalpha.com/
+- **StatCrunch**: https://www.statcrunch.com/
+
+### **📊 Recursos Visuais e Didáticos**
+
+#### **Applets Educacionais**
+- **Rice Virtual Lab in Statistics**: http://onlinestatbook.com/stat_sim/
+- **StatKey**: https://www.lock5stat.com/StatKey/
+- **Rossman & Chance Applets**: http://www.rossmanchance.com/applets/
+
+#### **Vídeos no YouTube (Canais Confiáveis)**
+- **StatQuest with Josh Starmer**: Canal com explicações claras sobre conceitos estatísticos
+- **Khan Academy**: Vídeos em português sobre distribuição normal
+- **Professor Leonard**: Explicações detalhadas sobre estatística
+
+### **🧮 Tópicos Históricos e Matemáticos**
+
+#### **História da Estatística**
+- STIGLER, S. M. *The History of Statistics: The Measurement of Uncertainty before 1900*. Harvard University Press, 1986.
+- HALD, A. *A History of Mathematical Statistics from 1750 to 1930*. John Wiley & Sons, 1998.
+
+#### **Matemática Subjacente**
+- FELLER, W. *An Introduction to Probability Theory and Its Applications*. Volume 1. 3. ed. John Wiley & Sons, 1968.
+- BILLINGSLEY, P. *Probability and Measure*. 3. ed. John Wiley & Sons, 1995.
+
+### **🔬 Artigos e Papers Fundamentais**
+
+#### **Artigos Clássicos**
+- GAUSS, C. F. "Theoria combinationis observationum erroribus minimis obnoxiae". 1809. (Base da distribuição normal)
+- DE MOIVRE, A. "The Doctrine of Chances". 1738. (Primeiros estudos sobre distribuição normal)
+
+#### **Periódicos Relevantes**
+- **The American Statistician**
+- **Journal of the American Statistical Association**
+- **Annals of Statistics**
+- **Statistics & Probability Letters**
+
+### **💡 Recursos para Diferentes Níveis**
+
+#### **Iniciante (Ensino Médio/Superior)**
+- MAGALHÃES, M. N.; LIMA, A. C. P. *Noções de Probabilidade e Estatística*. 7. ed. São Paulo: EDUSP, 2010.
+- BARBETTA, P. A.; REIS, M. M.; BORNIA, A. C. *Estatística para Cursos de Engenharia e Informática*. 3. ed. São Paulo: Atlas, 2010.
+
+#### **Intermediário (Graduação)**
+- FREUND, J. E.; MILLER, I.; MILLER, M. *Mathematical Statistics with Applications*. 8. ed. Pearson, 2014.
+- MENDENHALL, W.; BEAVER, R. J.; BEAVER, B. M. *Introduction to Probability and Statistics*. 15. ed. Cengage Learning, 2019.
+
+#### **Avançado (Pós-graduação)**
+- VAN DER VAART, A. W. *Asymptotic Statistics*. Cambridge University Press, 1998.
+- LEHMANN, E. L.; ROMANO, J. P. *Testing Statistical Hypotheses*. 3. ed. Springer, 2005.
+
+---
+
+**💡 Dica de Estudo:** Comece entendendo bem a distribuição normal padrão e o conceito de Z-score, pois são fundamentais para entender intervalos de confiança, testes de hipóteses e cálculos de tamanho de amostra. Use os simuladores online para visualizar como diferentes valores de média e desvio padrão afetam a forma da curva normal.

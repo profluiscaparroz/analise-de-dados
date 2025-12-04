@@ -663,6 +663,8 @@ Imagine que temos uma turma com 30 alunos, e queremos **selecionar aleatoriament
 ```python
 import random
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 # 1. Lista de 30 alunos fictícios
 alunos = [f'Aluno_{i+1}' for i in range(30)]
@@ -679,6 +681,294 @@ amostra = random.sample(alunos, 5)
 print("\nAmostra aleatória simples (5 alunos):\n")
 for i, nome in enumerate(amostra, 1):
     print(f"{i}. {nome}")
+```
+
+---
+
+## 📊 **Exemplo Avançado: Comparando Métodos de Amostragem**
+
+Este exemplo demonstra na prática as diferenças entre os principais tipos de amostragem probabilística:
+
+```python
+import random
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Criando uma população simulada de 1000 pessoas
+np.random.seed(42)
+populacao = pd.DataFrame({
+    'ID': range(1, 1001),
+    'Idade': np.random.normal(35, 12, 1000).astype(int),
+    'Salario': np.random.lognormal(10.5, 0.5, 1000),
+    'Escolaridade': np.random.choice(['Fundamental', 'Médio', 'Superior', 'Pós'], 1000, 
+                                   p=[0.2, 0.4, 0.3, 0.1]),
+    'Região': np.random.choice(['Norte', 'Sul', 'Leste', 'Oeste'], 1000, p=[0.15, 0.25, 0.35, 0.25])
+})
+
+print("População completa (primeiras 10 linhas):")
+print(populacao.head(10))
+print(f"\nResumo da população:")
+print(f"Idade média: {populacao['Idade'].mean():.2f}")
+print(f"Salário médio: R$ {populacao['Salario'].mean():.2f}")
+print("\nDistribuição por Escolaridade:")
+print(populacao['Escolaridade'].value_counts(normalize=True))
+
+def amostragem_aleatoria_simples(df, n_amostra):
+    """Amostragem Aleatória Simples"""
+    return df.sample(n=n_amostra, random_state=42)
+
+def amostragem_sistematica(df, n_amostra):
+    """Amostragem Sistemática"""
+    k = len(df) // n_amostra  # intervalo
+    inicio = random.randint(0, k-1)  # ponto de partida aleatório
+    indices = [inicio + i*k for i in range(n_amostra) if inicio + i*k < len(df)]
+    return df.iloc[indices[:n_amostra]]
+
+def amostragem_estratificada(df, n_amostra, coluna_estrato):
+    """Amostragem Estratificada Proporcional"""
+    resultado = df.groupby(coluna_estrato, group_keys=False).apply(
+        lambda x: x.sample(n=max(1, int(n_amostra * len(x) / len(df))), 
+                          random_state=42)
+    )
+    # Ajustar para o tamanho exato se necessário
+    if len(resultado) != n_amostra:
+        resultado = resultado.sample(n=min(n_amostra, len(resultado)), random_state=42)
+    return resultado
+
+# Realizando as amostragens
+n_amostra = 100
+
+# 1. Amostragem Aleatória Simples
+amostra_aleatoria = amostragem_aleatoria_simples(populacao, n_amostra)
+
+# 2. Amostragem Sistemática  
+amostra_sistematica = amostragem_sistematica(populacao, n_amostra)
+
+# 3. Amostragem Estratificada por escolaridade
+amostra_estratificada = amostragem_estratificada(populacao, n_amostra, 'Escolaridade')
+
+# Comparando os resultados
+resultados = {
+    'População': populacao,
+    'Aleatória Simples': amostra_aleatoria,
+    'Sistemática': amostra_sistematica,
+    'Estratificada': amostra_estratificada
+}
+
+# Criando visualização comparativa
+fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+fig.suptitle('Comparação dos Métodos de Amostragem', fontsize=16)
+
+# Gráfico 1: Distribuição de Idade
+for i, (nome, dados) in enumerate(resultados.items()):
+    cor = ['blue', 'red', 'green', 'orange'][i]
+    axes[0,0].hist(dados['Idade'], alpha=0.5, bins=20, label=nome, color=cor)
+axes[0,0].set_title('Distribuição de Idade')
+axes[0,0].set_xlabel('Idade')
+axes[0,0].set_ylabel('Frequência')
+axes[0,0].legend()
+
+# Gráfico 2: Salário médio por método
+nomes = list(resultados.keys())
+salarios_medios = [dados['Salario'].mean() for dados in resultados.values()]
+axes[0,1].bar(nomes, salarios_medios, color=['blue', 'red', 'green', 'orange'])
+axes[0,1].set_title('Salário Médio por Método de Amostragem')
+axes[0,1].set_ylabel('Salário Médio (R$)')
+axes[0,1].tick_params(axis='x', rotation=45)
+
+# Gráfico 3: Distribuição por Escolaridade na população vs estratificada
+pop_escolaridade = populacao['Escolaridade'].value_counts(normalize=True)
+est_escolaridade = amostra_estratificada['Escolaridade'].value_counts(normalize=True)
+
+x = range(len(pop_escolaridade))
+width = 0.35
+axes[1,0].bar([i - width/2 for i in x], pop_escolaridade.values, width, 
+             label='População', color='blue', alpha=0.7)
+axes[1,0].bar([i + width/2 for i in x], est_escolaridade.values, width,
+             label='Amostra Estratificada', color='orange', alpha=0.7)
+axes[1,0].set_title('Representatividade da Amostragem Estratificada')
+axes[1,0].set_xlabel('Escolaridade')
+axes[1,0].set_ylabel('Proporção')
+axes[1,0].set_xticks(x)
+axes[1,0].set_xticklabels(pop_escolaridade.index, rotation=45)
+axes[1,0].legend()
+
+# Gráfico 4: Variabilidade das estimativas
+metodos = ['Aleatória', 'Sistemática', 'Estratificada']
+idade_medias = [amostra_aleatoria['Idade'].mean(), 
+               amostra_sistematica['Idade'].mean(),
+               amostra_estratificada['Idade'].mean()]
+idade_real = populacao['Idade'].mean()
+
+axes[1,1].bar(metodos, idade_medias, color=['red', 'green', 'orange'])
+axes[1,1].axhline(y=idade_real, color='blue', linestyle='--', linewidth=2, 
+                 label=f'População real: {idade_real:.2f}')
+axes[1,1].set_title('Precisão na Estimativa da Idade Média')
+axes[1,1].set_ylabel('Idade Média')
+axes[1,1].legend()
+
+plt.tight_layout()
+plt.show()
+
+# Relatório de desempenho
+print("\n" + "="*60)
+print("RELATÓRIO DE DESEMPENHO DOS MÉTODOS DE AMOSTRAGEM")
+print("="*60)
+
+idade_real = populacao['Idade'].mean()
+salario_real = populacao['Salario'].mean()
+
+for nome, amostra in [('Aleatória Simples', amostra_aleatoria),
+                      ('Sistemática', amostra_sistematica), 
+                      ('Estratificada', amostra_estratificada)]:
+    
+    idade_est = amostra['Idade'].mean()
+    salario_est = amostra['Salario'].mean()
+    
+    erro_idade = abs(idade_est - idade_real)
+    erro_salario = abs(salario_est - salario_real) / salario_real * 100
+    
+    print(f"\n{nome}:")
+    print(f"  Idade estimada: {idade_est:.2f} (erro: {erro_idade:.2f})")
+    print(f"  Salário estimado: R$ {salario_est:.2f} (erro: {erro_salario:.1f}%)")
+    print(f"  Tamanho da amostra: {len(amostra)}")
+```
+
+---
+
+## 🔍 **Demonstração de Viés em Amostragem**
+
+Este exemplo mostra como diferentes tipos de viés podem afetar os resultados:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Simulando uma população com diferentes características
+np.random.seed(123)
+
+# População de 2000 pessoas em uma cidade
+populacao = pd.DataFrame({
+    'ID': range(1, 2001),
+    'Bairro': np.random.choice(['Centro', 'Periferia'], 2000, p=[0.3, 0.7]),
+    'Tem_Telefone': np.random.choice([True, False], 2000, p=[0.8, 0.2]),
+    'Renda': np.random.lognormal(9, 0.8, 2000),
+    'Idade': np.random.normal(40, 15, 2000).astype(int),
+    'Satisfacao_Cidade': np.random.normal(7, 2, 2000)  # escala 1-10
+})
+
+# Ajustando satisfação baseada no bairro (viés real)
+mask_centro = populacao['Bairro'] == 'Centro'
+populacao.loc[mask_centro, 'Satisfacao_Cidade'] += 1  # Centro mais satisfeito
+populacao.loc[mask_centro, 'Renda'] *= 1.5  # Centro mais rico
+
+# Ajustando posse de telefone baseada na renda
+renda_media = populacao['Renda'].median()
+populacao.loc[populacao['Renda'] < renda_media, 'Tem_Telefone'] = \
+    np.random.choice([True, False], sum(populacao['Renda'] < renda_media), p=[0.4, 0.6])
+
+print("Características da População Real:")
+print(f"Satisfação média real: {populacao['Satisfacao_Cidade'].mean():.2f}")
+print(f"Proporção Centro: {(populacao['Bairro']=='Centro').mean():.2%}")
+print(f"Proporção com telefone: {populacao['Tem_Telefone'].mean():.2%}")
+
+# Simulando diferentes tipos de viés
+
+# 1. AMOSTRAGEM IDEAL (sem viés)
+amostra_ideal = populacao.sample(n=200, random_state=42)
+
+# 2. VIÉS DE SELEÇÃO - só pessoas do centro
+amostra_centro = populacao[populacao['Bairro'] == 'Centro'].sample(n=200, random_state=42)
+
+# 3. VIÉS DE NÃO RESPOSTA - pesquisa por telefone (só quem tem telefone responde)
+amostra_telefone = populacao[populacao['Tem_Telefone']].sample(n=200, random_state=42)
+
+# 4. VIÉS DE CONVENIÊNCIA - só pessoas jovens (mais fáceis de abordar)
+amostra_jovens = populacao[populacao['Idade'] < 35].sample(n=200, random_state=42)
+
+amostras = {
+    'População Real': populacao,
+    'Amostra Ideal': amostra_ideal,
+    'Viés de Seleção\n(só Centro)': amostra_centro,
+    'Viés de Não Resposta\n(só c/ telefone)': amostra_telefone,
+    'Viés de Conveniência\n(só jovens)': amostra_jovens
+}
+
+# Visualizando os diferentes vieses
+fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+fig.suptitle('Impacto de Diferentes Tipos de Viés na Amostragem', fontsize=16)
+
+# Gráfico 1: Satisfação média
+nomes = list(amostras.keys())
+satisfacao_media = [dados['Satisfacao_Cidade'].mean() for dados in amostras.values()]
+cores = ['blue', 'green', 'red', 'orange', 'purple']
+
+axes[0,0].bar(nomes, satisfacao_media, color=cores)
+axes[0,0].set_title('Satisfação Média com a Cidade')
+axes[0,0].set_ylabel('Satisfação (1-10)')
+axes[0,0].tick_params(axis='x', rotation=45)
+axes[0,0].axhline(y=populacao['Satisfacao_Cidade'].mean(), color='black', 
+                 linestyle='--', label='Valor Real')
+axes[0,0].legend()
+
+# Gráfico 2: Distribuição de renda
+for i, (nome, dados) in enumerate(amostras.items()):
+    if i == 0:  # População
+        axes[0,1].hist(dados['Renda'], bins=30, alpha=0.3, color=cores[i], 
+                      label=nome, density=True)
+    else:  # Amostras
+        axes[0,1].hist(dados['Renda'], bins=20, alpha=0.6, color=cores[i], 
+                      label=nome, density=True)
+axes[0,1].set_title('Distribuição de Renda')
+axes[0,1].set_xlabel('Renda (R$)')
+axes[0,1].set_ylabel('Densidade')
+axes[0,1].legend()
+
+# Gráfico 3: Proporção por bairro
+prop_centro = [(dados['Bairro'] == 'Centro').mean() for dados in amostras.values()]
+axes[1,0].bar(nomes, prop_centro, color=cores)
+axes[1,0].set_title('Proporção de Pessoas do Centro')
+axes[1,0].set_ylabel('Proporção')
+axes[1,0].tick_params(axis='x', rotation=45)
+axes[1,0].axhline(y=(populacao['Bairro'] == 'Centro').mean(), 
+                 color='black', linestyle='--', label='Proporção Real')
+axes[1,0].legend()
+
+# Gráfico 4: Idade média
+idade_media = [dados['Idade'].mean() for dados in amostras.values()]
+axes[1,1].bar(nomes, idade_media, color=cores)
+axes[1,1].set_title('Idade Média')
+axes[1,1].set_ylabel('Idade (anos)')
+axes[1,1].tick_params(axis='x', rotation=45)
+axes[1,1].axhline(y=populacao['Idade'].mean(), color='black', 
+                 linestyle='--', label='Idade Real')
+axes[1,1].legend()
+
+plt.tight_layout()
+plt.show()
+
+# Calculando e exibindo os erros
+valor_real_satisfacao = populacao['Satisfacao_Cidade'].mean()
+print("\n" + "="*60)
+print("ANÁLISE DE VIÉS NAS AMOSTRAS")
+print("="*60)
+
+for nome, amostra in amostras.items():
+    if nome == 'População Real':
+        continue
+    
+    satisfacao_amostra = amostra['Satisfacao_Cidade'].mean()
+    erro = abs(satisfacao_amostra - valor_real_satisfacao)
+    erro_percentual = (erro / valor_real_satisfacao) * 100
+    
+    print(f"\n{nome}:")
+    print(f"  Satisfação estimada: {satisfacao_amostra:.2f}")
+    print(f"  Erro absoluto: {erro:.2f}")
+    print(f"  Erro percentual: {erro_percentual:.1f}%")
+    print(f"  Proporção Centro: {(amostra['Bairro']=='Centro').mean():.2%} "
+          f"(real: {(populacao['Bairro']=='Centro').mean():.2%})")
 ```
 
 ---
@@ -2423,11 +2713,164 @@ Segundo Babbie (2010), “na amostragem não probabilística, os casos não são
 
 ---
 
-## 📚 Referências Bibliográficas
+## 📚 Referências e Links para Aprofundamento
 
+### **📖 Livros Fundamentais sobre Amostragem**
+
+#### **Textos Clássicos**
+- COCHRAN, W. G. *Sampling Techniques*. 3. ed. John Wiley & Sons, 1977.
+- LOHR, S. L. *Sampling: Design and Analysis*. 2. ed. Brooks/Cole, 2009.
+- SCHEAFFER, R. L.; MENDENHALL III, W.; OTT, R. L. *Elementary Survey Sampling*. 7. ed. Cengage Learning, 2011.
+- THOMPSON, S. K. *Sampling*. 3. ed. John Wiley & Sons, 2012.
+
+#### **Textos em Português**
+- BOLFARINE, H.; BUSSAB, W. O. *Elementos de Amostragem*. São Paulo: Blucher, 2005.
+- SILVA, N. N. *Amostragem Probabilística: Um Curso Introdutório*. 2. ed. São Paulo: EDUSP, 2001.
+- BARBETTA, P. A. *Estatística Aplicada às Ciências Sociais*. 9. ed. Florianópolis: UFSC, 2014.
+
+#### **Aplicações em Pesquisa Social**
 - Babbie, E. (2010). *The Practice of Social Research*. Wadsworth.
 - Malhotra, N. K. (2006). *Pesquisa de Marketing: Uma Orientação Aplicada*. Bookman.
 - Kotler, P., & Keller, K. L. (2012). *Administração de Marketing*. Pearson.
 - Biernacki, P., & Waldorf, D. (1981). *Snowball Sampling: Problems and Techniques of Chain Referral Sampling*. Sociological Methods & Research.
+
+### **🎓 Textos Avançados**
+
+- SÄRNDAL, C. E.; SWENSSON, B.; WRETMAN, J. *Model Assisted Survey Sampling*. Springer, 1992.
+- FULLER, W. A. *Sampling Statistics*. John Wiley & Sons, 2009.
+- VALLIANT, R.; DEVER, J. A.; KREUTER, F. *Practical Tools for Designing and Weighting Survey Samples*. 2. ed. Springer, 2018.
+
+### **🌐 Recursos Online Especializados**
+
+#### **Cursos Online**
+- **Coursera - Survey Data Collection**: https://www.coursera.org/learn/survey-data-collection-questionnaire-design
+- **edX - Statistical Sampling**: https://www.edx.org/course/statistical-sampling
+- **Khan Academy - Statistical Studies**: https://www.khanacademy.org/math/statistics-probability/designing-studies
+
+#### **Organizações e Institutos**
+- **IBGE - Instituto Brasileiro de Geografia e Estatística**: https://www.ibge.gov.br/
+  - Manuais de metodologia de pesquisa
+  - Conceitos e definições estatísticas
+- **American Statistical Association (ASA)**: https://www.amstat.org/
+- **International Statistical Institute (ISI)**: https://www.isi-web.org/
+- **Survey Research Methods Section (SRMS)**: https://www.amstat.org/ASA/Membership/Sections/Survey-Research-Methods.aspx
+
+#### **Software e Calculadoras**
+- **R Survey Package**: https://cran.r-project.org/web/packages/survey/
+- **SPSS Complex Samples**: https://www.ibm.com/products/spss-statistics
+- **SAS Survey Procedures**: https://support.sas.com/documentation/
+- **Sample Size Calculator**: https://www.calculator.net/sample-size-calculator.html
+
+### **📊 Ferramentas Computacionais**
+
+#### **R - Pacotes Especializados**
+```r
+# Principais pacotes para amostragem em R
+library(survey)      # Análise de pesquisas complexas
+library(sampling)    # Técnicas de amostragem
+library(samplingbook)# Cálculo de tamanhos de amostra
+library(pps)         # Amostragem com probabilidade proporcional
+```
+
+#### **Python - Bibliotecas**
+```python
+# Bibliotecas para amostragem em Python
+import pandas as pd
+import numpy as np
+from scipy import stats
+import statsmodels.stats.power as smp
+```
+
+#### **SPSS - Módulos**
+- **Complex Samples**: Análise de amostras complexas
+- **Sample Power**: Cálculo de poder e tamanho amostral
+
+### **🎯 Aplicações por Área**
+
+#### **Pesquisa de Mercado e Marketing**
+- MALHOTRA, N. K. *Pesquisa de Marketing: Foco na Decisão*. 3. ed. Pearson, 2011.
+- HAIR Jr., J. F. et al. *Fundamentos de Métodos de Pesquisa em Administração*. Bookman, 2005.
+- AAKER, D. A.; KUMAR, V.; DAY, G. S. *Pesquisa de Marketing*. 2. ed. Atlas, 2004.
+
+#### **Saúde Pública e Epidemiologia**
+- ROTHMAN, K. J.; GREENLAND, S.; LASH, T. L. *Modern Epidemiology*. 3. ed. Lippincott Williams & Wilkins, 2008.
+- JEKEL, J. F. et al. *Epidemiologia, Bioestatística e Medicina Preventiva*. 3. ed. Artmed, 2010.
+
+#### **Ciências Sociais**
+- FOWLER Jr., F. J. *Survey Research Methods*. 5. ed. SAGE Publications, 2013.
+- GROVES, R. M. et al. *Survey Methodology*. 2. ed. John Wiley & Sons, 2009.
+
+#### **Controle de Qualidade**
+- MONTGOMERY, D. C. *Introduction to Statistical Quality Control*. 8. ed. John Wiley & Sons, 2019.
+- JURAN, J. M.; GODFREY, A. B. *Juran's Quality Handbook*. 5. ed. McGraw-Hill, 1999.
+
+### **📱 Recursos Online Gratuitos**
+
+#### **Calculadoras de Tamanho Amostral**
+- **Creative Research Systems**: https://www.surveysystem.com/sscalc.htm
+- **Raosoft Sample Size Calculator**: http://www.raosoft.com/samplesize.html
+- **Survey Monkey**: https://www.surveymonkey.com/mp/sample-size-calculator/
+
+#### **Bases de Dados para Prática**
+- **UCI Machine Learning Repository**: https://archive.ics.uci.edu/ml/index.php
+- **Kaggle Datasets**: https://www.kaggle.com/datasets
+- **Data.gov**: https://www.data.gov/ (Dados governamentais americanos)
+- **Portal Brasileiro de Dados Abertos**: https://dados.gov.br/
+
+### **🔍 Métodos Especializados**
+
+#### **Amostragem em Populações Difíceis**
+- HECKATHORN, D. D. "Respondent-Driven Sampling: A New Approach to the Study of Hidden Populations". *Social Problems*, 1997.
+- SALGANIK, M. J.; HECKATHORN, D. D. "Sampling and Estimation in Hidden Populations Using Respondent-Driven Sampling". *Sociological Methodology*, 2004.
+
+#### **Amostragem Online e Digital**
+- COUPER, M. P. *Designing Effective Web Surveys*. Cambridge University Press, 2008.
+- BAKER, R. et al. "Research Synthesis: AAPOR Report on Online Panels". *Public Opinion Quarterly*, 2010.
+
+#### **Amostragem com Big Data**
+- CHEN, C.; ZHANG, J. "Big Data and Survey Sampling". *Survey Methodology*, 2014.
+- ELLIOTT, M. R.; VALLIANT, R. "Inference for Nonprobability Samples". *Statistical Science*, 2017.
+
+### **📈 Tópicos Avançados**
+
+#### **Teoria de Amostragem Complexa**
+- WOLTER, K. M. *Introduction to Variance Estimation*. 2. ed. Springer, 2007.
+- VALLIANT, R.; DORFMAN, A. H.; ROYALL, R. M. *Finite Population Sampling and Inference*. John Wiley & Sons, 2000.
+
+#### **Calibração e Pós-estratificação**
+- DEVILLE, J. C.; SÄRNDAL, C. E. "Calibration Estimators in Survey Sampling". *Journal of the American Statistical Association*, 1992.
+- LITTLE, R. J. A. "Post-stratification: A Modeler's Perspective". *Journal of the American Statistical Association*, 1993.
+
+### **🏛️ Organizações e Certificações**
+
+#### **Organizações Profissionais**
+- **Market Research Society (MRS)**: https://www.mrs.org.uk/
+- **ESOMAR**: https://www.esomar.org/ (European Society for Opinion and Marketing Research)
+- **Associação Brasileira de Empresas de Pesquisa (ABEP)**: https://www.abep.org/
+
+#### **Certificações**
+- **Certified Survey Research Professional (CSRP)**
+- **Professional Researcher Certification (PRC)**
+
+### **💡 Recursos por Nível**
+
+#### **Iniciante**
+- Conceitos básicos de população vs. amostra
+- Tipos de amostragem probabilística e não probabilística
+- Cálculo simples de tamanho amostral
+
+#### **Intermediário**
+- Estratificação e conglomeração
+- Ponderação e calibração
+- Análise de dados de pesquisas complexas
+
+#### **Avançado**
+- Teoria assintótica de estimadores
+- Métodos de reamostragem (bootstrap, jackknife)
+- Integração de dados de múltiplas fontes
+
+---
+
+**💡 Dica de Estudo:** Comece entendendo bem a diferença entre amostragem probabilística e não probabilística, pois isso é fundamental para interpretar corretamente os resultados de qualquer pesquisa. Use as calculadoras online para praticar o cálculo de tamanhos amostrais com diferentes parâmetros (nível de confiança, margem de erro, tamanho da população).
 
 ---
