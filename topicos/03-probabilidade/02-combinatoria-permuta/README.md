@@ -1382,299 +1382,171 @@ print(tabulate(df, headers='keys', tablefmt='grid'))
 
 ---
 
-## 🎯 **Aplicações Práticas em Python: Problemas Reais**
+## **📚 Referências e Links para Aprofundamento**
 
-### Exemplo 1: Sistema de Senhas e Segurança
+### **📖 Livros Fundamentais sobre Combinatória**
+
+- SANTOS, J. P. O.; MELLO, M. P.; MURARI, I. T. C. *Introdução à Análise Combinatória*. 4. ed. Rio de Janeiro: Ciência Moderna, 2007.
+- HAZZAN, S. *Fundamentos de Matemática Elementar 5: Combinatória e Probabilidade*. 8. ed. São Paulo: Atual, 2013.
+- MORGADO, A. C.; CARVALHO, J. B. P.; CARVALHO, P. C. P.; FERNANDEZ, P. *Análise Combinatória e Probabilidade*. 10. ed. Rio de Janeiro: SBM, 2006.
+- IEZZI, G. et al. *Matemática: Ciência e Aplicações*. Volume 2. 9. ed. São Paulo: Saraiva, 2016.
+
+### **🎓 Textos Avançados**
+
+- ROSEN, K. H. *Discrete Mathematics and Its Applications*. 8. ed. McGraw-Hill, 2018.
+- GRAHAM, R. L.; KNUTH, D. E.; PATASHNIK, O. *Concrete Mathematics*. 2. ed. Addison-Wesley, 1994.
+- STANLEY, R. P. *Enumerative Combinatorics*. 2 volumes. 2. ed. Cambridge University Press, 2011.
+- VAN LINT, J. H.; WILSON, R. M. *A Course in Combinatorics*. 2. ed. Cambridge University Press, 2001.
+
+### **🌐 Recursos Online de Qualidade**
+
+#### **Cursos e Vídeos Educacionais**
+- **Khan Academy - Combinatória**: https://pt.khanacademy.org/math/probability/xa88397b6:counting-permutations-combinations
+- **MIT OpenCourseWare - Discrete Mathematics**: https://ocw.mit.edu/courses/mathematics/18-310-principles-of-discrete-applied-mathematics-fall-2013/
+- **Coursera - Introduction to Discrete Mathematics**: https://www.coursera.org/learn/discrete-mathematics
+- **edX - Combinatorics**: https://www.edx.org/course/combinatorics
+
+#### **Plataformas Brasileiras**
+- **OBMEP - Portal da Matemática**: https://portaldaobmep.impa.br/
+- **Professor Ferretto**: Canal no YouTube com vídeos sobre análise combinatória
+- **IMPA - Instituto de Matemática Pura e Aplicada**: https://impa.br/
+- **SBM - Sociedade Brasileira de Matemática**: https://www.sbm.org.br/
+
+#### **Simuladores e Calculadoras**
+- **Wolfram Alpha**: https://www.wolframalpha.com/ (Digite: "combinations n choose k")
+- **GeoGebra**: https://www.geogebra.org/ (Applets interativos)
+- **Desmos**: https://www.desmos.com/calculator (Visualizações gráficas)
+- **Combination Calculator**: https://www.mathsisfun.com/combinatorics/combinations-permutations-calculator.html
+
+### **💻 Ferramentas Computacionais**
+
+#### **Python**
+- **math**: Biblioteca nativa com `factorial`, `comb`, `perm`
+- **SciPy**: `scipy.special` com funções combinatórias avançadas
+- **itertools**: Geração de permutações e combinações
+- **sympy**: Matemática simbólica com funções combinatórias
 
 ```python
-import math
-import itertools
-import time
+# Exemplos de uso das principais bibliotecas para combinatória em Python:
 
-def calcular_seguranca_senha(comprimento, tipos_caracteres):
-    """
-    Calcula o número de senhas possíveis e tempo para quebrar por força bruta
-    
-    tipos_caracteres: lista com número de caracteres de cada tipo
-    Ex: [26, 26, 10] = minúsculas, maiúsculas, números
-    """
-    total_caracteres = sum(tipos_caracteres)
-    total_senhas = total_caracteres ** comprimento
-    
-    # Supondo 1 bilhão de tentativas por segundo
-    tempo_quebrar = total_senhas / (2 * 10**9)  # média = metade das tentativas
-    
-    return total_senhas, tempo_quebrar
+import math  # Funções matemáticas básicas, como fatorial
+from scipy.special import comb, perm  # Funções combinatórias avançadas
+from itertools import combinations, permutations  # Geração de combinações e permutações
 
-# Comparando diferentes configurações de senha
-configs = [
-    ("Só números", 4, [10]),
-    ("Letras minúsculas", 6, [26]),
-    ("Letras + números", 6, [26, 10]),
-    ("Maiús + minús + números", 8, [26, 26, 10]),
-    ("Todos os caracteres", 8, [26, 26, 10, 32]),  # + símbolos
-    ("Senha forte", 12, [26, 26, 10, 32])
-]
+# Exemplo: calcular 5!
+print("5! =", math.factorial(5))  # Saída: 120
 
-print("ANÁLISE DE SEGURANÇA DE SENHAS")
-print("=" * 60)
-print(f"{'Tipo':<25} {'Combinações':<15} {'Tempo para quebrar':<20}")
-print("-" * 60)
+# Exemplo: número de combinações de 5 elementos tomados 2 a 2
+print("Combinações (5,2) =", comb(5, 2, exact=True))  # Saída: 10
 
-for nome, comp, tipos in configs:
-    total, tempo = calcular_seguranca_senha(comp, tipos)
-    
-    if tempo < 60:
-        tempo_str = f"{tempo:.2f} segundos"
-    elif tempo < 3600:
-        tempo_str = f"{tempo/60:.2f} minutos"
-    elif tempo < 86400:
-        tempo_str = f"{tempo/3600:.2f} horas"
-    elif tempo < 31536000:
-        tempo_str = f"{tempo/86400:.2f} dias"
-    else:
-        tempo_str = f"{tempo/31536000:.2e} anos"
-    
-    print(f"{nome:<25} {total:<15.2e} {tempo_str:<20}")
+# Exemplo: número de permutações de 5 elementos tomados 2 a 2
+print("Permutações (5,2) =", perm(5, 2, exact=True))  # Saída: 20
+
+# Exemplo: listar todas as combinações de 3 elementos do conjunto [1,2,3,4]
+print("Combinações de 3 em [1,2,3,4]:", list(combinations([1,2,3,4], 3)))
+
+# Exemplo: listar todas as permutações de 2 elementos do conjunto [1,2,3]
+print("Permutações de 2 em [1,2,3]:", list(permutations([1,2,3], 2)))
 ```
+
+#### **R**
+- **Base R**: Funções `factorial()`, `choose()`, `combn()`
+- **gtools**: Pacote com funções de permutações e combinações
+- **combinat**: Funções especializadas em combinatória
+
+#### **MATLAB/Octave**
+- **nchoosek()**: Função para combinações
+- **perms()**: Função para permutações
+- **factorial()**: Função para fatoriais
+
+#### **Software Matemático**
+- **Mathematica**: Funções `Binomial`, `Factorial`, `Permutations`
+- **Maple**: Comandos `binomial`, `factorial`, `combinat`
+- **Sage**: Software livre de matemática com amplo suporte combinatório
+
+### **🎯 Aplicações Práticas**
+
+#### **Probabilidade e Estatística**
+- ROSS, S. M. *A First Course in Probability*. 10. ed. Pearson, 2019.
+- MEYER, P. L. *Probabilidade: Aplicações à Estatística*. 2. ed. Rio de Janeiro: LTC, 2009.
+
+#### **Criptografia e Segurança**
+- STALLINGS, W. *Cryptography and Network Security*. 7. ed. Pearson, 2016.
+- SCHNEIER, B. *Applied Cryptography*. 2. ed. John Wiley & Sons, 1996.
+
+#### **Algoritmos e Ciência da Computação**
+- CORMEN, T. H. et al. *Introduction to Algorithms*. 4. ed. MIT Press, 2022.
+- KNUTH, D. E. *The Art of Computer Programming*. Volume 4A: Combinatorial Algorithms. Addison-Wesley, 2011.
+
+#### **Teoria dos Jogos e Economia**
+- FUDENBERG, D.; TIROLE, J. *Game Theory*. MIT Press, 1991.
+- OSBORNE, M. J.; RUBINSTEIN, A. *A Course in Game Theory*. MIT Press, 1994.
+
+### **📱 Aplicativos e Calculadoras Mobile**
+
+- **Calculator Plus**: App com funções combinatórias
+- **Wolfram Alpha**: App mobile
+- **GeoGebra**: App com ferramentas matemáticas
+- **Microsoft Math Solver**: Reconhecimento de equações
+
+### **🏆 Olimpíadas e Competições**
+
+#### **Competições Brasileiras**
+- **OBMEP**: https://www.obmep.org.br/ (Olimpíada Brasileira de Matemática)
+- **OBM**: https://www.obm.org.br/ (Olimpíada Brasileira de Matemática - Nível Universitário)
+- **FEBRACE**: https://febrace.org.br/ (Feira Brasileira de Ciências)
+
+#### **Competições Internacionais**
+- **IMO**: International Mathematical Olympiad
+- **ICPC**: International Collegiate Programming Contest
+- **IOI**: International Olympiad in Informatics
+
+#### **Recursos para Treinamento**
+- **AoPS - Art of Problem Solving**: https://artofproblemsolving.com/
+- **Project Euler**: https://projecteuler.net/ (Problemas matemático-computacionais)
+- **Codeforces**: https://codeforces.com/ (Problemas de programação)
+
+### **📊 Recursos Visuais e Didáticos**
+
+#### **Vídeos no YouTube (Canais Confiáveis)**
+- **3Blue1Brown**: Visualizações matemáticas extraordinárias
+- **Numberphile**: Curiosidades matemáticas
+- **Professor Leonard**: Explicações detalhadas
+- **Equaciona com Paulo Pereira**: Conteúdo em português
+
+#### **Applets e Simulações**
+- **National Library of Virtual Manipulatives**: https://www.nlvm.usu.edu/
+- **Illuminations (NCTM)**: https://illuminations.nctm.org/
+- **PhET Interactive Simulations**: https://phet.colorado.edu/
+
+### **📚 Leitura Complementar**
+
+#### **História da Matemática**
+- BOYER, C. B.; MERZBACH, U. C. *História da Matemática*. 3. ed. São Paulo: Blucher, 2012.
+- EVES, H. *Introdução à História da Matemática*. 5. ed. Campinas: Unicamp, 2011.
+
+#### **Matemática Recreativa**
+- GARDNER, M. *Divertimentos Matemáticos*. Série com vários volumes. São Paulo: Ibrasa.
+- SMULLYAN, R. *What Is the Name of This Book?*. Dover Publications, 2011.
+
+#### **Divulgação Científica**
+- SINGH, S. *O Último Teorema de Fermat*. Rio de Janeiro: Record, 1998.
+- STEWART, I. *Os Números da Natureza*. Rio de Janeiro: Rocco, 1996.
+
+### **💡 Recursos para Diferentes Níveis**
+
+#### **Ensino Fundamental**
+- DANTE, L. R. *Matemática: Contexto & Aplicações*. Volume único. 5. ed. São Paulo: Ática, 2015.
+- BIANCHINI, E.; PACCOLA, H. *Matemática*. 3. ed. São Paulo: Moderna, 2016.
+
+#### **Ensino Médio**
+- PAIVA, M. *Matemática*. 3 volumes. 3. ed. São Paulo: Moderna, 2015.
+- IEZZI, G. et al. *Fundamentos de Matemática Elementar*. Volume 5. 8. ed. São Paulo: Atual, 2013.
+
+#### **Ensino Superior**
+- LIPSCHUTZ, S.; LIPSON, M. L. *Matemática Discreta*. 3. ed. Porto Alegre: Bookman, 2013.
+- ROSEN, K. H. *Matemática Discreta e Suas Aplicações*. 6. ed. São Paulo: McGraw-Hill, 2009.
 
 ---
 
-### Exemplo 2: Análise de Loteria e Probabilidades
-
-```python
-import math
-import matplotlib.pyplot as plt
-
-def probabilidade_loteria(total_numeros, numeros_sorteados):
-    """Calcula a probabilidade de acertar na loteria"""
-    combinacoes = math.comb(total_numeros, numeros_sorteados)
-    probabilidade = 1 / combinacoes
-    return combinacoes, probabilidade
-
-# Analisando diferentes tipos de loteria no Brasil
-loterias = [
-    ("Mega-Sena", 60, 6),
-    ("Quina", 80, 5),
-    ("Quadra", 80, 4),
-    ("Lotofácil", 25, 15),
-    ("Dupla Sena", 50, 6),
-]
-
-print("ANÁLISE DE PROBABILIDADES EM LOTERIAS")
-print("=" * 60)
-
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
-
-nomes = []
-probabilidades = []
-combinacoes_totais = []
-
-for nome, total, sorteados in loterias:
-    comb, prob = probabilidade_loteria(total, sorteados)
-    nomes.append(nome)
-    probabilidades.append(prob)
-    combinacoes_totais.append(comb)
-    
-    print(f"\n{nome}:")
-    print(f"  Números sorteados: {sorteados} de {total}")
-    print(f"  Combinações possíveis: {comb:,}")
-    print(f"  Probabilidade: 1 em {comb:,} ({prob:.10f})")
-    print(f"  Probabilidade percentual: {prob*100:.10f}%")
-
-# Gráfico 1: Combinações possíveis (escala log)
-ax1.bar(nomes, combinacoes_totais, color='skyblue')
-ax1.set_yscale('log')
-ax1.set_title('Número de Combinações Possíveis')
-ax1.set_ylabel('Combinações (escala log)')
-ax1.tick_params(axis='x', rotation=45)
-
-# Gráfico 2: Probabilidade de acertar
-ax2.bar(nomes, [p*100 for p in probabilidades], color='lightcoral')
-ax2.set_title('Probabilidade de Acertar (%)')
-ax2.set_ylabel('Probabilidade (%)')
-ax2.tick_params(axis='x', rotation=45)
-ax2.set_yscale('log')
-
-plt.tight_layout()
-plt.show()
-
-# Calculando o "valor esperado" se o prêmio fosse R$ 100 milhões
-print(f"\nAnálise de Valor Esperado (prêmio: R$ 100 milhões):")
-print("-" * 50)
-for i, nome in enumerate(nomes):
-    valor_esperado = 100_000_000 * probabilidades[i]
-    print(f"{nome}: R$ {valor_esperado:.2f}")
-```
-
----
-
-### Exemplo 3: Planejamento de Eventos e Organização
-
-```python
-import math
-import pandas as pd
-
-def problema_organizacao_evento():
-    """
-    Resolve problemas práticos de organização usando combinatória
-    """
-    
-    print("PROBLEMA: ORGANIZAÇÃO DE UM EVENTO")
-    print("=" * 50)
-    
-    # Cenário: Organizando uma conferência
-    palestrantes = 12
-    slots_manha = 4
-    slots_tarde = 3
-    mesas_redondas = 2  # 5 pessoas cada
-    
-    # 1. Quantas formas de organizar as palestras da manhã?
-    arranjos_manha = math.perm(palestrantes, slots_manha)
-    print(f"1. Organização das {slots_manha} palestras da manhã:")
-    print(f"   {arranjos_manha:,} maneiras diferentes")
-    
-    # 2. E as da tarde? (com os palestrantes restantes)
-    arranjos_tarde = math.perm(palestrantes - slots_manha, slots_tarde)
-    print(f"\n2. Organização das {slots_tarde} palestras da tarde:")
-    print(f"   {arranjos_tarde:,} maneiras diferentes")
-    
-    # 3. Formação das mesas redondas
-    # Primeiro, escolher 10 pessoas das 12 para as mesas redondas
-    escolher_10_de_12 = math.comb(palestrantes, 10)
-    
-    # Depois, dividir essas 10 em 2 grupos de 5
-    # Isso é mais complexo - usamos o conceito de partições
-    mesa1_escolhas = math.comb(10, 5)
-    mesa2_escolhas = math.comb(5, 5)  # Os 5 restantes
-    
-    # Mas como as mesas são indistinguíveis, dividimos por 2!
-    mesas_redondas_total = (mesa1_escolhas * mesa2_escolhas) // 2
-    
-    print(f"\n3. Formação de 2 mesas redondas com 5 pessoas cada:")
-    print(f"   {mesas_redondas_total:,} maneiras diferentes")
-    
-    # 4. Total de configurações possíveis do evento
-    total_configuracoes = arranjos_manha * arranjos_tarde * mesas_redondas_total
-    print(f"\n4. TOTAL de configurações possíveis do evento:")
-    print(f"   {total_configuracoes:,} maneiras diferentes")
-    
-    return {
-        'palestrantes': palestrantes,
-        'arranjos_manha': arranjos_manha,
-        'arranjos_tarde': arranjos_tarde,
-        'mesas_redondas': mesas_redondas_total,
-        'total': total_configuracoes
-    }
-
-# Executar o exemplo
-resultado = problema_organizacao_evento()
-
-# Visualização dos resultados
-fig, ax = plt.subplots(figsize=(10, 6))
-
-categorias = ['Manhã\n(Arranjos)', 'Tarde\n(Arranjos)', 'Mesas Redondas\n(Combinações)']
-valores = [resultado['arranjos_manha'], resultado['arranjos_tarde'], resultado['mesas_redondas']]
-
-bars = ax.bar(categorias, valores, color=['lightblue', 'lightgreen', 'lightcoral'])
-ax.set_yscale('log')
-ax.set_title('Número de Possibilidades por Categoria do Evento')
-ax.set_ylabel('Número de Possibilidades (escala log)')
-
-# Adicionar valores nas barras
-for bar, valor in zip(bars, valores):
-    height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2., height,
-           f'{valor:,}', ha='center', va='bottom')
-
-plt.tight_layout()
-plt.show()
-```
-
----
-
-### Exemplo 4: Simulação de Monte Carlo para Validar Cálculos
-
-```python
-import random
-import numpy as np
-import matplotlib.pyplot as plt
-from collections import Counter
-
-def simulacao_monte_carlo_combinatoria(n_simulacoes=100000):
-    """
-    Usa simulação de Monte Carlo para validar cálculos combinatórios
-    """
-    
-    print("VALIDAÇÃO POR SIMULAÇÃO DE MONTE CARLO")
-    print("=" * 50)
-    
-    # Exemplo: Quantas maneiras de formar uma equipe de 3 pessoas de um grupo de 6?
-    pessoas = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eduardo', 'Fernanda']
-    n_pessoas = len(pessoas)
-    tamanho_equipe = 3
-    
-    # Cálculo teórico
-    combinacoes_teoricas = math.comb(n_pessoas, tamanho_equipe)
-    print(f"Cálculo teórico: C({n_pessoas},{tamanho_equipe}) = {combinacoes_teoricas}")
-    
-    # Simulação de Monte Carlo
-    equipes_encontradas = set()
-    
-    for _ in range(n_simulacoes):
-        equipe = tuple(sorted(random.sample(pessoas, tamanho_equipe)))
-        equipes_encontradas.add(equipe)
-    
-    combinacoes_simuladas = len(equipes_encontradas)
-    print(f"Simulação Monte Carlo: {combinacoes_simuladas} combinações encontradas")
-    print(f"Diferença: {abs(combinacoes_teoricas - combinacoes_simuladas)}")
-    
-    # Mostrando todas as combinações encontradas
-    print(f"\nTodas as {combinacoes_simuladas} combinações encontradas:")
-    for i, equipe in enumerate(sorted(equipes_encontradas), 1):
-        print(f"{i:2d}. {', '.join(equipe)}")
-    
-    return combinacoes_teoricas, combinacoes_simuladas, equipes_encontradas
-
-# Executar simulação
-teorico, simulado, equipes = simulacao_monte_carlo_combinatoria()
-
-# Análise de convergência
-def analise_convergencia():
-    """Mostra como a simulação converge para o valor teórico"""
-    
-    pessoas = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eduardo', 'Fernanda']
-    simulacoes = [100, 500, 1000, 5000, 10000, 50000, 100000]
-    combinacoes_encontradas = []
-    
-    for n_sim in simulacoes:
-        equipes_set = set()
-        for _ in range(n_sim):
-            equipe = tuple(sorted(random.sample(pessoas, 3)))
-            equipes_set.add(equipe)
-        combinacoes_encontradas.append(len(equipes_set))
-    
-    # Plotar convergência
-    plt.figure(figsize=(10, 6))
-    plt.plot(simulacoes, combinacoes_encontradas, 'bo-', label='Simulação')
-    plt.axhline(y=20, color='red', linestyle='--', label='Valor teórico (20)')
-    plt.xlabel('Número de Simulações')
-    plt.ylabel('Combinações Encontradas')
-    plt.title('Convergência da Simulação Monte Carlo')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-    
-    # Tabela de resultados
-    df = pd.DataFrame({
-        'Simulações': simulacoes,
-        'Combinações Encontradas': combinacoes_encontradas,
-        'Erro Absoluto': [abs(20 - x) for x in combinacoes_encontradas],
-        'Erro Percentual (%)': [abs(20 - x)/20 * 100 for x in combinacoes_encontradas]
-    })
-    
-    print("\nAnálise de Convergência:")
-    print(df)
-
-analise_convergencia()
-```
+**💡 Dica de Estudo:** Comece praticando problemas simples de contagem (com poucos elementos) para desenvolver a intuição sobre quando a ordem importa ou não. Use as ferramentas online para verificar seus cálculos e visualizar os conceitos antes de partir para problemas mais complexos. A combinatória é fundamental para probabilidade, então domine bem os conceitos básicos!

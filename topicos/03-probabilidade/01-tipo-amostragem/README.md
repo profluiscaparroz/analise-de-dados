@@ -2713,11 +2713,164 @@ Segundo Babbie (2010), “na amostragem não probabilística, os casos não são
 
 ---
 
-## 📚 Referências Bibliográficas
+## 📚 Referências e Links para Aprofundamento
 
+### **📖 Livros Fundamentais sobre Amostragem**
+
+#### **Textos Clássicos**
+- COCHRAN, W. G. *Sampling Techniques*. 3. ed. John Wiley & Sons, 1977.
+- LOHR, S. L. *Sampling: Design and Analysis*. 2. ed. Brooks/Cole, 2009.
+- SCHEAFFER, R. L.; MENDENHALL III, W.; OTT, R. L. *Elementary Survey Sampling*. 7. ed. Cengage Learning, 2011.
+- THOMPSON, S. K. *Sampling*. 3. ed. John Wiley & Sons, 2012.
+
+#### **Textos em Português**
+- BOLFARINE, H.; BUSSAB, W. O. *Elementos de Amostragem*. São Paulo: Blucher, 2005.
+- SILVA, N. N. *Amostragem Probabilística: Um Curso Introdutório*. 2. ed. São Paulo: EDUSP, 2001.
+- BARBETTA, P. A. *Estatística Aplicada às Ciências Sociais*. 9. ed. Florianópolis: UFSC, 2014.
+
+#### **Aplicações em Pesquisa Social**
 - Babbie, E. (2010). *The Practice of Social Research*. Wadsworth.
 - Malhotra, N. K. (2006). *Pesquisa de Marketing: Uma Orientação Aplicada*. Bookman.
 - Kotler, P., & Keller, K. L. (2012). *Administração de Marketing*. Pearson.
 - Biernacki, P., & Waldorf, D. (1981). *Snowball Sampling: Problems and Techniques of Chain Referral Sampling*. Sociological Methods & Research.
+
+### **🎓 Textos Avançados**
+
+- SÄRNDAL, C. E.; SWENSSON, B.; WRETMAN, J. *Model Assisted Survey Sampling*. Springer, 1992.
+- FULLER, W. A. *Sampling Statistics*. John Wiley & Sons, 2009.
+- VALLIANT, R.; DEVER, J. A.; KREUTER, F. *Practical Tools for Designing and Weighting Survey Samples*. 2. ed. Springer, 2018.
+
+### **🌐 Recursos Online Especializados**
+
+#### **Cursos Online**
+- **Coursera - Survey Data Collection**: https://www.coursera.org/learn/survey-data-collection-questionnaire-design
+- **edX - Statistical Sampling**: https://www.edx.org/course/statistical-sampling
+- **Khan Academy - Statistical Studies**: https://www.khanacademy.org/math/statistics-probability/designing-studies
+
+#### **Organizações e Institutos**
+- **IBGE - Instituto Brasileiro de Geografia e Estatística**: https://www.ibge.gov.br/
+  - Manuais de metodologia de pesquisa
+  - Conceitos e definições estatísticas
+- **American Statistical Association (ASA)**: https://www.amstat.org/
+- **International Statistical Institute (ISI)**: https://www.isi-web.org/
+- **Survey Research Methods Section (SRMS)**: https://www.amstat.org/ASA/Membership/Sections/Survey-Research-Methods.aspx
+
+#### **Software e Calculadoras**
+- **R Survey Package**: https://cran.r-project.org/web/packages/survey/
+- **SPSS Complex Samples**: https://www.ibm.com/products/spss-statistics
+- **SAS Survey Procedures**: https://support.sas.com/documentation/
+- **Sample Size Calculator**: https://www.calculator.net/sample-size-calculator.html
+
+### **📊 Ferramentas Computacionais**
+
+#### **R - Pacotes Especializados**
+```r
+# Principais pacotes para amostragem em R
+library(survey)      # Análise de pesquisas complexas
+library(sampling)    # Técnicas de amostragem
+library(samplingbook)# Cálculo de tamanhos de amostra
+library(pps)         # Amostragem com probabilidade proporcional
+```
+
+#### **Python - Bibliotecas**
+```python
+# Bibliotecas para amostragem em Python
+import pandas as pd
+import numpy as np
+from scipy import stats
+import statsmodels.stats.power as smp
+```
+
+#### **SPSS - Módulos**
+- **Complex Samples**: Análise de amostras complexas
+- **Sample Power**: Cálculo de poder e tamanho amostral
+
+### **🎯 Aplicações por Área**
+
+#### **Pesquisa de Mercado e Marketing**
+- MALHOTRA, N. K. *Pesquisa de Marketing: Foco na Decisão*. 3. ed. Pearson, 2011.
+- HAIR Jr., J. F. et al. *Fundamentos de Métodos de Pesquisa em Administração*. Bookman, 2005.
+- AAKER, D. A.; KUMAR, V.; DAY, G. S. *Pesquisa de Marketing*. 2. ed. Atlas, 2004.
+
+#### **Saúde Pública e Epidemiologia**
+- ROTHMAN, K. J.; GREENLAND, S.; LASH, T. L. *Modern Epidemiology*. 3. ed. Lippincott Williams & Wilkins, 2008.
+- JEKEL, J. F. et al. *Epidemiologia, Bioestatística e Medicina Preventiva*. 3. ed. Artmed, 2010.
+
+#### **Ciências Sociais**
+- FOWLER Jr., F. J. *Survey Research Methods*. 5. ed. SAGE Publications, 2013.
+- GROVES, R. M. et al. *Survey Methodology*. 2. ed. John Wiley & Sons, 2009.
+
+#### **Controle de Qualidade**
+- MONTGOMERY, D. C. *Introduction to Statistical Quality Control*. 8. ed. John Wiley & Sons, 2019.
+- JURAN, J. M.; GODFREY, A. B. *Juran's Quality Handbook*. 5. ed. McGraw-Hill, 1999.
+
+### **📱 Recursos Online Gratuitos**
+
+#### **Calculadoras de Tamanho Amostral**
+- **Creative Research Systems**: https://www.surveysystem.com/sscalc.htm
+- **Raosoft Sample Size Calculator**: http://www.raosoft.com/samplesize.html
+- **Survey Monkey**: https://www.surveymonkey.com/mp/sample-size-calculator/
+
+#### **Bases de Dados para Prática**
+- **UCI Machine Learning Repository**: https://archive.ics.uci.edu/ml/index.php
+- **Kaggle Datasets**: https://www.kaggle.com/datasets
+- **Data.gov**: https://www.data.gov/ (Dados governamentais americanos)
+- **Portal Brasileiro de Dados Abertos**: https://dados.gov.br/
+
+### **🔍 Métodos Especializados**
+
+#### **Amostragem em Populações Difíceis**
+- HECKATHORN, D. D. "Respondent-Driven Sampling: A New Approach to the Study of Hidden Populations". *Social Problems*, 1997.
+- SALGANIK, M. J.; HECKATHORN, D. D. "Sampling and Estimation in Hidden Populations Using Respondent-Driven Sampling". *Sociological Methodology*, 2004.
+
+#### **Amostragem Online e Digital**
+- COUPER, M. P. *Designing Effective Web Surveys*. Cambridge University Press, 2008.
+- BAKER, R. et al. "Research Synthesis: AAPOR Report on Online Panels". *Public Opinion Quarterly*, 2010.
+
+#### **Amostragem com Big Data**
+- CHEN, C.; ZHANG, J. "Big Data and Survey Sampling". *Survey Methodology*, 2014.
+- ELLIOTT, M. R.; VALLIANT, R. "Inference for Nonprobability Samples". *Statistical Science*, 2017.
+
+### **📈 Tópicos Avançados**
+
+#### **Teoria de Amostragem Complexa**
+- WOLTER, K. M. *Introduction to Variance Estimation*. 2. ed. Springer, 2007.
+- VALLIANT, R.; DORFMAN, A. H.; ROYALL, R. M. *Finite Population Sampling and Inference*. John Wiley & Sons, 2000.
+
+#### **Calibração e Pós-estratificação**
+- DEVILLE, J. C.; SÄRNDAL, C. E. "Calibration Estimators in Survey Sampling". *Journal of the American Statistical Association*, 1992.
+- LITTLE, R. J. A. "Post-stratification: A Modeler's Perspective". *Journal of the American Statistical Association*, 1993.
+
+### **🏛️ Organizações e Certificações**
+
+#### **Organizações Profissionais**
+- **Market Research Society (MRS)**: https://www.mrs.org.uk/
+- **ESOMAR**: https://www.esomar.org/ (European Society for Opinion and Marketing Research)
+- **Associação Brasileira de Empresas de Pesquisa (ABEP)**: https://www.abep.org/
+
+#### **Certificações**
+- **Certified Survey Research Professional (CSRP)**
+- **Professional Researcher Certification (PRC)**
+
+### **💡 Recursos por Nível**
+
+#### **Iniciante**
+- Conceitos básicos de população vs. amostra
+- Tipos de amostragem probabilística e não probabilística
+- Cálculo simples de tamanho amostral
+
+#### **Intermediário**
+- Estratificação e conglomeração
+- Ponderação e calibração
+- Análise de dados de pesquisas complexas
+
+#### **Avançado**
+- Teoria assintótica de estimadores
+- Métodos de reamostragem (bootstrap, jackknife)
+- Integração de dados de múltiplas fontes
+
+---
+
+**💡 Dica de Estudo:** Comece entendendo bem a diferença entre amostragem probabilística e não probabilística, pois isso é fundamental para interpretar corretamente os resultados de qualquer pesquisa. Use as calculadoras online para praticar o cálculo de tamanhos amostrais com diferentes parâmetros (nível de confiança, margem de erro, tamanho da população).
 
 ---
