@@ -872,6 +872,265 @@ Se quiser, posso mostrar códigos para simulação, exemplos de estimativa de $p
 
 ---
 
+## 💼 Exemplos Práticos em Contextos Reais
+
+### Como estudante de estatística...
+**Quero ver exemplos práticos de variáveis de Bernoulli**  
+**Para que eu possa entender melhor aplicações reais desse conceito.**
+
+A seguir, apresentamos exemplos contextualizados que demonstram como as variáveis de Bernoulli aparecem em situações do mundo real, cada um acompanhado de código Python para simulação e análise.
+
+---
+
+### 🏥 Exemplo 1: Teste Médico para COVID-19
+
+**Contexto:** Um laboratório desenvolveu um teste rápido para COVID-19 que tem 85% de acurácia na detecção da doença.
+
+**Variável de Bernoulli:** 
+- $X = 1$: Teste detecta corretamente a presença do vírus (sucesso)
+- $X = 0$: Teste falha na detecção (fracasso)
+- $p = 0.85$ (probabilidade de sucesso)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import bernoulli
+
+# Parâmetros do teste médico
+p_deteccao = 0.85
+nome_teste = "Teste COVID-19"
+
+# Simulação de 1000 testes
+n_testes = 1000
+resultados_teste = bernoulli.rvs(p_deteccao, size=n_testes)
+
+# Análise dos resultados
+sucessos = np.sum(resultados_teste)
+taxa_sucesso_observada = sucessos / n_testes
+
+print(f"=== {nome_teste} ===")
+print(f"Probabilidade teórica de detecção: {p_deteccao:.1%}")
+print(f"Número de testes realizados: {n_testes}")
+print(f"Detecções corretas observadas: {sucessos}")
+print(f"Taxa de sucesso observada: {taxa_sucesso_observada:.1%}")
+print(f"Diferença da teoria: {abs(taxa_sucesso_observada - p_deteccao):.1%}")
+
+# Propriedades estatísticas
+media_teorica = p_deteccao
+variancia_teorica = p_deteccao * (1 - p_deteccao)
+desvio_padrao_teorico = np.sqrt(variancia_teorica)
+
+print(f"\nPropriedades estatísticas:")
+print(f"Média (valor esperado): {media_teorica:.3f}")
+print(f"Variância: {variancia_teorica:.3f}")
+print(f"Desvio-padrão: {desvio_padrao_teorico:.3f}")
+```
+
+**Interpretação:** Em média, o teste detecta corretamente 85% dos casos. A variância de 0.128 indica moderada dispersão nos resultados.
+
+---
+
+### 📱 Exemplo 2: Taxa de Clique em Anúncios Online
+
+**Contexto:** Uma empresa de marketing digital quer analisar a eficácia de um anúncio que tem taxa de clique de 3.5%.
+
+**Variável de Bernoulli:**
+- $X = 1$: Usuário clica no anúncio (sucesso)
+- $X = 0$: Usuário não clica (fracasso)  
+- $p = 0.035$ (taxa de clique)
+
+```python
+# Parâmetros da campanha publicitária
+p_clique = 0.035
+nome_campanha = "Campanha Produto X"
+
+# Simulação de 10.000 visualizações
+n_visualizacoes = 10000
+resultados_clique = bernoulli.rvs(p_clique, size=n_visualizacoes)
+
+# Análise dos resultados
+total_cliques = np.sum(resultados_clique)
+ctr_observado = total_cliques / n_visualizacoes  # Click-Through Rate
+
+print(f"=== {nome_campanha} ===")
+print(f"Taxa de clique esperada: {p_clique:.1%}")
+print(f"Visualizações do anúncio: {n_visualizacoes:,}")
+print(f"Cliques obtidos: {total_cliques}")
+print(f"CTR observado: {ctr_observado:.2%}")
+
+# Análise de intervalo de confiança (aproximação)
+erro_padrao = np.sqrt(p_clique * (1 - p_clique) / n_visualizacoes)
+intervalo_confianca = 1.96 * erro_padrao  # 95% de confiança
+
+print(f"\nAnálise estatística:")
+print(f"Erro padrão estimado: {erro_padrao:.4f}")
+print(f"Intervalo de confiança 95%: [{p_clique - intervalo_confianca:.3%}, {p_clique + intervalo_confianca:.3%}]")
+
+# Verificação se resultado está no intervalo esperado
+if abs(ctr_observado - p_clique) <= intervalo_confianca:
+    print("✅ Resultado dentro do esperado!")
+else:
+    print("⚠️ Resultado fora do intervalo esperado - investigar!")
+```
+
+**Interpretação:** Taxas de clique baixas são comuns em publicidade digital. A variável de Bernoulli ajuda a modelar e prever o comportamento dos usuários.
+
+---
+
+### 🏭 Exemplo 3: Controle de Qualidade Industrial
+
+**Contexto:** Uma fábrica de semicondutores tem 2% de taxa de defeito em seus chips. O controle de qualidade precisa monitorar esta taxa.
+
+**Variável de Bernoulli:**
+- $X = 1$: Chip defeituoso (sucesso para o evento que queremos monitorar)
+- $X = 0$: Chip em perfeito estado (fracasso)
+
+> **Nota:** Em estatística, chamamos de "sucesso" o evento que estamos contando/interessados, mesmo que ele seja indesejado na prática (como encontrar um defeito). O termo não implica que seja algo positivo, apenas que é o evento de interesse para a análise.
+- $p = 0.02$ (taxa de defeito)
+
+```python
+# Parâmetros do controle de qualidade
+p_defeito = 0.02
+nome_processo = "Produção de Chips"
+
+# Simulação de um lote de produção
+tamanho_lote = 5000
+resultados_inspecao = bernoulli.rvs(p_defeito, size=tamanho_lote)
+
+# Análise dos resultados
+chips_defeituosos = np.sum(resultados_inspecao)
+taxa_defeito_observada = chips_defeituosos / tamanho_lote
+
+print(f"=== {nome_processo} ===")
+print(f"Taxa de defeito esperada: {p_defeito:.1%}")
+print(f"Tamanho do lote inspecionado: {tamanho_lote:,}")
+print(f"Chips defeituosos encontrados: {chips_defeituosos}")
+print(f"Taxa de defeito observada: {taxa_defeito_observada:.2%}")
+
+# Análise para tomada de decisão
+limite_superior_aceitavel = 0.025  # 2.5%
+if taxa_defeito_observada <= limite_superior_aceitavel:
+    decisao = "✅ LOTE APROVADO"
+    print(f"{decisao} - Qualidade dentro do padrão")
+else:
+    decisao = "❌ LOTE REJEITADO"
+    print(f"{decisao} - Taxa de defeito acima do aceitável")
+
+# Estimativa de perdas financeiras
+custo_por_chip = 50.00  # R$ 50 por chip
+perda_financeira = chips_defeituosos * custo_por_chip
+print(f"\nImpacto financeiro:")
+print(f"Custo estimado com defeitos: R$ {perda_financeira:,.2f}")
+print(f"Perda percentual do lote: {taxa_defeito_observada:.2%}")
+```
+
+**Interpretação:** O controle de qualidade usa a distribuição de Bernoulli para tomar decisões sobre aprovação ou rejeição de lotes de produção.
+
+---
+
+### 🎓 Exemplo 4: Taxa de Aprovação em Vestibular
+
+**Contexto:** Um cursinho pré-vestibular tem histórico de 40% de aprovação de seus alunos em universidades públicas.
+
+**Variável de Bernoulli:**
+- $X = 1$: Aluno aprovado no vestibular (sucesso)
+- $X = 0$: Aluno não aprovado (fracasso)
+- $p = 0.40$ (taxa de aprovação)
+
+```python
+# Parâmetros do vestibular
+p_aprovacao = 0.40
+nome_instituicao = "Cursinho Sucesso"
+
+# Simulação de uma turma
+n_alunos = 150
+resultados_vestibular = bernoulli.rvs(p_aprovacao, size=n_alunos)
+
+# Análise dos resultados
+aprovados = np.sum(resultados_vestibular)
+taxa_aprovacao_observada = aprovados / n_alunos
+
+print(f"=== {nome_instituicao} ===")
+print(f"Taxa histórica de aprovação: {p_aprovacao:.1%}")
+print(f"Número de alunos na turma: {n_alunos}")
+print(f"Alunos aprovados: {aprovados}")
+print(f"Taxa de aprovação da turma: {taxa_aprovacao_observada:.1%}")
+
+# Comparação com a meta
+meta_aprovacao = 0.45  # Meta de 45%
+diferenca_meta = taxa_aprovacao_observada - meta_aprovacao
+
+print(f"\nAnálise de desempenho:")
+print(f"Meta estabelecida: {meta_aprovacao:.1%}")
+if diferenca_meta >= 0:
+    print(f"✅ Meta ATINGIDA! Superou em {diferenca_meta:.1%}")
+else:
+    print(f"❌ Meta NÃO atingida. Faltaram {abs(diferenca_meta):.1%}")
+
+# Simulação de cenários futuros
+print(f"\nProjeções para próximas turmas:")
+for tamanho in [100, 200, 300]:
+    aprovados_esperados = int(tamanho * p_aprovacao)
+    print(f"Turma de {tamanho} alunos: ~{aprovados_esperados} aprovações esperadas")
+```
+
+**Interpretação:** Instituições de ensino usam dados históricos modelados como Bernoulli para estabelecer metas e projetar resultados futuros.
+
+---
+
+### 📊 Exemplo Avançado: Comparação Visual de Cenários
+
+```python
+import matplotlib.pyplot as plt
+
+# Definindo diferentes cenários
+cenarios = {
+    "Teste COVID-19": 0.85,
+    "Clique em Anúncio": 0.035,
+    "Defeito Industrial": 0.02,
+    "Aprovação Vestibular": 0.40
+}
+
+# Criando visualização comparativa
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(15, 10))
+axes = [ax1, ax2, ax3, ax4]
+
+for idx, (cenario, p) in enumerate(cenarios.items()):
+    # Simulação
+    n_simulacoes = 1000
+    resultados = bernoulli.rvs(p, size=n_simulacoes)
+    
+    # Média móvel para mostrar convergência
+    media_movel = np.cumsum(resultados) / np.arange(1, n_simulacoes + 1)
+    
+    ax = axes[idx]
+    ax.plot(media_movel, color='blue', alpha=0.7)
+    ax.axhline(y=p, color='red', linestyle='--', label=f'p = {p:.3f}')
+    ax.set_title(f'{cenario}')
+    ax.set_xlabel('Número de Ensaios')
+    ax.set_ylabel('Média Acumulada')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+plt.suptitle('Convergência da Média Amostral para p (Lei dos Grandes Números)', fontsize=16)
+plt.tight_layout()
+plt.show()
+
+# Resumo comparativo
+print("=== RESUMO COMPARATIVO ===")
+print(f"{'Cenário':<20} {'p':<8} {'E[X]':<8} {'Var(X)':<8} {'σ':<8}")
+print("-" * 60)
+for cenario, p in cenarios.items():
+    media = p
+    variancia = p * (1 - p)
+    desvio = np.sqrt(variancia)
+    print(f"{cenario:<20} {p:<8.3f} {media:<8.3f} {variancia:<8.3f} {desvio:<8.3f}")
+```
+
+**Interpretação Final:** A visualização mostra como a Lei dos Grandes Números funciona na prática - conforme aumentamos o número de experimentos, a média amostral converge para o valor teórico de $p$.
+
+---
+
 ## 📘 Conclusão
 
 As distribuições **equiprovável** e **de Bernoulli** são fundamentais para compreender experimentos aleatórios discretos. Enquanto a equiprovável lida com simetria (todos os resultados com mesma chance), a Bernoulli introduz **assimetria binária**, sendo essencial para aplicações probabilísticas em estatística, aprendizado de máquina e ciências aplicadas.
