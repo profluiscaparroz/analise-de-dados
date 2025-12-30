@@ -305,7 +305,7 @@ Para trabalhar com visualização de dados em Python, é necessário configurar 
 ```python
 # Instalação das bibliotecas principais
 # Execute no terminal ou prompt de comando:
-# pip install matplotlib seaborn plotly pandas numpy scipy
+# pip install matplotlib seaborn plotly pandas numpy scipy scikit-learn
 
 # Importações padrão para visualização
 import matplotlib.pyplot as plt
@@ -326,10 +326,16 @@ plt.rcParams['axes.titlesize'] = 14  # Tamanho do título
 plt.rcParams['xtick.labelsize'] = 10  # Tamanho dos rótulos do eixo x
 plt.rcParams['ytick.labelsize'] = 10  # Tamanho dos rótulos do eixo y
 plt.rcParams['legend.fontsize'] = 10  # Tamanho da fonte da legenda
+```
 
-# Para exibir gráficos em notebooks Jupyter (remova esta linha se usar Python script normal)
+**Nota sobre Jupyter Notebooks:**
+Se estiver usando Jupyter Notebook ou JupyterLab, adicione após as importações:
+```python
 %matplotlib inline
 ```
+
+**Nota sobre importações:**  
+Nos exemplos a seguir, algumas bibliotecas adicionais (como `sklearn`) são importadas localmente onde são usadas para fins didáticos. Em um script de produção, consolide todas as importações no início do arquivo.
 
 ### **5.2 Anatomia de um Gráfico com Matplotlib**
 
