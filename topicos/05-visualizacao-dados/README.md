@@ -167,6 +167,9 @@ A escolha de cores não é apenas estética, mas fundamental para a eficácia da
 
 **Edward Tufte (2001)** propôs o conceito de **razão dados-tinta**, definido como:
 
+**Razão Dados-Tinta** = (tinta usada para dados) / (tinta total usada no gráfico)
+
+*Nota: A fórmula acima também pode ser representada em LaTeX como:*
 $$\text{Razão Dados-Tinta} = \frac{\text{tinta usada para dados}}{\text{tinta total usada no gráfico}}$$
 
 **Princípios de Tufte para excelência gráfica:**
@@ -317,7 +320,7 @@ import numpy as np
 from scipy import stats
 
 # Configurações globais para melhor aparência
-plt.style.use('seaborn-v0_8-darkgrid')  # Estilo visual
+plt.style.use('seaborn-darkgrid')  # Estilo visual (compatível com diferentes versões)
 sns.set_palette("husl")  # Paleta de cores
 plt.rcParams['figure.figsize'] = (10, 6)  # Tamanho padrão das figuras
 plt.rcParams['font.size'] = 12  # Tamanho da fonte
@@ -335,7 +338,10 @@ Se estiver usando Jupyter Notebook ou JupyterLab, adicione após as importaçõe
 ```
 
 **Nota sobre importações:**  
-Nos exemplos a seguir, algumas bibliotecas adicionais (como `sklearn`) são importadas localmente onde são usadas para fins didáticos. Em um script de produção, consolide todas as importações no início do arquivo.
+Nos exemplos a seguir, algumas bibliotecas adicionais (como `sklearn`) são importadas localmente onde são usadas apenas para fins didáticos e para tornar o código nos trechos mais auto-contido. **Essa prática não segue a recomendação da PEP 8**, que orienta que todas as importações fiquem no início do arquivo, e **não deve ser utilizada em código de produção**. Em scripts reais, consolide todas as importações no topo do arquivo.
+
+**Nota sobre nomenclatura:**  
+Os exemplos de código utilizam nomes de variáveis em português (como `dados`, `grupo`, `categorias`) para fins pedagógicos, facilitando a compreensão do material didático pelo público-alvo brasileiro. Em contextos internacionais ou projetos colaborativos, recomenda-se o uso de nomenclatura em inglês.
 
 ### **5.2 Anatomia de um Gráfico com Matplotlib**
 
@@ -421,8 +427,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 scatter = ax.scatter(x, y, alpha=0.6, s=50, c=y, cmap='viridis', edgecolors='black')
 
 # Adicionando linha de regressão
-from scipy.stats import linregress
-slope, intercept, r_value, p_value, std_err = linregress(x, y)
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
 line_x = np.array([x.min(), x.max()])
 line_y = slope * line_x + intercept
 ax.plot(line_x, line_y, 'r--', linewidth=2, label=f'Regressão (R² = {r_value**2:.3f})')
@@ -480,9 +485,8 @@ ax1.grid(True, alpha=0.3, axis='y')
 ax2 = axes[1]
 ax2.hist(data, bins=30, density=True, alpha=0.5, color='lightgreen', edgecolor='black')
 
-# KDE usando seaborn
-from scipy.stats import gaussian_kde
-kde = gaussian_kde(data)
+# KDE usando scipy
+kde = stats.gaussian_kde(data)
 x_kde = np.linspace(data.min(), data.max(), 100)
 y_kde = kde(x_kde)
 ax2.plot(x_kde, y_kde, 'b-', linewidth=2, label='KDE (estimativa não-paramétrica)')
@@ -638,8 +642,8 @@ plt.tight_layout()
 plt.show()
 
 # Teste ANOVA para comparação de médias
-from scipy.stats import f_oneway
-f_stat, p_value = f_oneway(*[dados_categorias[cat] for cat in categorias])
+# Import específico para o teste ANOVA
+f_stat, p_value = stats.f_oneway(*[dados_categorias[cat] for cat in categorias])
 print(f"\n=== TESTE ANOVA ===")
 print(f"H₀: Todas as médias são iguais")
 print(f"H₁: Pelo menos uma média é diferente")
@@ -679,7 +683,7 @@ fig, axes = plt.subplots(1, 2, figsize=(16, 6))
 # Subplot 1: Heatmap de correlação
 ax1 = axes[0]
 correlation_matrix = df.corr()
-mask = np.triu(np.ones_like(correlation_matrix, dtype=bool))  # Máscara para triângulo superior
+mask = np.triu(np.ones_like(correlation_matrix, dtype=bool), k=1)  # Máscara para triângulo superior (exclui diagonal)
 
 sns.heatmap(correlation_matrix, annot=True, fmt='.2f', cmap='coolwarm', 
             center=0, square=True, linewidths=1, cbar_kws={"shrink": 0.8},
@@ -797,10 +801,11 @@ ax1.set_title('Regressão Linear: Dados e Linha Ajustada', fontsize=14, fontweig
 ax1.legend()
 ax1.grid(True, alpha=0.3)
 
-# Calculando R² e outras métricas
-from sklearn.metrics import r2_score, mean_squared_error
-r2 = r2_score(y, y_pred)
-rmse = np.sqrt(mean_squared_error(y, y_pred))
+# Calculando R² e outras métricas (sem depender de sklearn)
+ss_res = np.sum((y - y_pred) ** 2)
+ss_tot = np.sum((y - np.mean(y)) ** 2)
+r2 = 1 - ss_res / ss_tot
+rmse = np.sqrt(np.mean((y - y_pred) ** 2))
 ax1.text(0.05, 0.95, f'R² = {r2:.3f}\nRMSE = {rmse:.3f}',
          transform=ax1.transAxes, fontsize=11, verticalalignment='top',
          bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.7))
@@ -886,9 +891,8 @@ ax1.hist(grupo1, bins=15, alpha=0.6, label='Grupo 1', color='blue', density=True
 ax1.hist(grupo2, bins=15, alpha=0.6, label='Grupo 2', color='red', density=True)
 
 # Adicionando curvas de densidade
-from scipy.stats import gaussian_kde
-kde1 = gaussian_kde(grupo1)
-kde2 = gaussian_kde(grupo2)
+kde1 = stats.gaussian_kde(grupo1)
+kde2 = stats.gaussian_kde(grupo2)
 x_range = np.linspace(min(grupo1.min(), grupo2.min()), 
                       max(grupo1.max(), grupo2.max()), 100)
 ax1.plot(x_range, kde1(x_range), 'b-', linewidth=2, label='KDE Grupo 1')
@@ -1301,18 +1305,18 @@ Dominar a visualização de dados transforma profissionais em comunicadores efic
 > Apresentação da biblioteca D3.js para visualizações interativas baseadas em web.
 
 **3M Corporation.** *Polishing Your Presentation*. 3M Meeting Management Team, 2001.
-> Fonte do estadística sobre processamento visual ser 60.000 vezes mais rápido que texto.
+> Fonte da estatística sobre processamento visual ser 60.000 vezes mais rápido que texto.
 
-**ColorBrewer.** Disponível em: <https://colorbrewer2.org/>. Acesso em: 30 dez. 2024.
+**ColorBrewer.** Disponível em: <https://colorbrewer2.org/>. Acesso em: 30 dez. 2025.
 > Ferramenta científica para escolha de paletas de cores acessíveis e eficazes.
 
-**Matplotlib Documentation.** Disponível em: <https://matplotlib.org/>. Acesso em: 30 dez. 2024.
+**Matplotlib Documentation.** Disponível em: <https://matplotlib.org/>. Acesso em: 30 dez. 2025.
 > Documentação oficial completa da biblioteca Matplotlib.
 
-**Seaborn Documentation.** Disponível em: <https://seaborn.pydata.org/>. Acesso em: 30 dez. 2024.
+**Seaborn Documentation.** Disponível em: <https://seaborn.pydata.org/>. Acesso em: 30 dez. 2025.
 > Documentação e tutoriais da biblioteca Seaborn.
 
-**Plotly Documentation.** Disponível em: <https://plotly.com/python/>. Acesso em: 30 dez. 2024.
+**Plotly Documentation.** Disponível em: <https://plotly.com/python/>. Acesso em: 30 dez. 2025.
 > Documentação da biblioteca Plotly para gráficos interativos em Python.
 
 ---
