@@ -327,7 +327,7 @@ plt.rcParams['xtick.labelsize'] = 10  # Tamanho dos rótulos do eixo x
 plt.rcParams['ytick.labelsize'] = 10  # Tamanho dos rótulos do eixo y
 plt.rcParams['legend.fontsize'] = 10  # Tamanho da fonte da legenda
 
-# Para exibir gráficos em notebooks Jupyter
+# Para exibir gráficos em notebooks Jupyter (remova esta linha se usar Python script normal)
 %matplotlib inline
 ```
 
@@ -703,6 +703,342 @@ print("0.4 < r ≤ 0.7: Correlação moderada positiva")
 print("0.2 < r ≤ 0.4: Correlação fraca positiva")
 print("|r| ≤ 0.2: Correlação muito fraca ou inexistente")
 print("Valores negativos: Correlação inversa")
+```
+
+---
+
+## **Visualizações Estatísticas Avançadas**
+
+### **8.1 Q-Q Plot (Quantile-Quantile Plot)**
+
+O Q-Q plot é fundamental para verificar se dados seguem uma distribuição teórica (geralmente normal).
+
+```python
+# Exemplo: Verificação de normalidade com Q-Q Plot
+np.random.seed(42)
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Dados com diferentes distribuições
+dados_normal = np.random.normal(0, 1, 500)
+dados_exponencial = np.random.exponential(1, 500)
+dados_uniforme = np.random.uniform(-2, 2, 500)
+dados_bimodal = np.concatenate([np.random.normal(-2, 0.5, 250), 
+                                np.random.normal(2, 0.5, 250)])
+
+datasets = [
+    (dados_normal, "Distribuição Normal", axes[0, 0]),
+    (dados_exponencial, "Distribuição Exponencial", axes[0, 1]),
+    (dados_uniforme, "Distribuição Uniforme", axes[1, 0]),
+    (dados_bimodal, "Distribuição Bimodal", axes[1, 1])
+]
+
+for dados, titulo, ax in datasets:
+    # Q-Q plot
+    stats.probplot(dados, dist="norm", plot=ax)
+    ax.set_title(f'Q-Q Plot: {titulo}', fontsize=12, fontweight='bold')
+    ax.grid(True, alpha=0.3)
+    
+    # Teste de normalidade Shapiro-Wilk
+    statistic, p_value = stats.shapiro(dados)
+    resultado = "Normal" if p_value > 0.05 else "Não-Normal"
+    ax.text(0.05, 0.95, f'Shapiro-Wilk:\np = {p_value:.4f}\n{resultado} (α=0.05)',
+            transform=ax.transAxes, fontsize=10, verticalalignment='top',
+            bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.5))
+
+plt.tight_layout()
+plt.show()
+
+print("=== INTERPRETAÇÃO DO Q-Q PLOT ===")
+print("Se os pontos seguem aproximadamente a linha diagonal:")
+print("  → Os dados seguem distribuição normal")
+print("Se há desvios sistemáticos:")
+print("  → Pontos curvam para cima: Distribuição com cauda pesada à direita")
+print("  → Pontos curvam para baixo: Distribuição com cauda pesada à esquerda")
+print("  → Padrão em S: Distribuição com caudas leves (curtose negativa)")
+```
+
+### **8.2 Gráficos para Análise de Regressão**
+
+```python
+# Exemplo completo: Diagnóstico de regressão linear
+np.random.seed(42)
+n = 100
+
+# Gerando dados com relação linear + ruído
+X = np.random.uniform(0, 10, n)
+y = 2 * X + 5 + np.random.normal(0, 2, n)
+
+# Ajustando modelo de regressão
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+X_reshape = X.reshape(-1, 1)
+model.fit(X_reshape, y)
+y_pred = model.predict(X_reshape)
+residuos = y - y_pred
+
+# Criando figura com múltiplos subplots para diagnóstico
+fig = plt.figure(figsize=(16, 12))
+gs = fig.add_gridspec(3, 2, hspace=0.3, wspace=0.3)
+
+# Plot 1: Dados e linha de regressão
+ax1 = fig.add_subplot(gs[0, :])
+ax1.scatter(X, y, alpha=0.6, s=50, label='Dados observados')
+ax1.plot(X, y_pred, 'r-', linewidth=2, label=f'y = {model.coef_[0]:.2f}x + {model.intercept_:.2f}')
+ax1.set_xlabel('X', fontsize=12)
+ax1.set_ylabel('y', fontsize=12)
+ax1.set_title('Regressão Linear: Dados e Linha Ajustada', fontsize=14, fontweight='bold')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Calculando R² e outras métricas
+from sklearn.metrics import r2_score, mean_squared_error
+r2 = r2_score(y, y_pred)
+rmse = np.sqrt(mean_squared_error(y, y_pred))
+ax1.text(0.05, 0.95, f'R² = {r2:.3f}\nRMSE = {rmse:.3f}',
+         transform=ax1.transAxes, fontsize=11, verticalalignment='top',
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.7))
+
+# Plot 2: Resíduos vs Valores Ajustados (Homoscedasticidade)
+ax2 = fig.add_subplot(gs[1, 0])
+ax2.scatter(y_pred, residuos, alpha=0.6, s=50)
+ax2.axhline(y=0, color='r', linestyle='--', linewidth=2)
+ax2.set_xlabel('Valores Ajustados', fontsize=12)
+ax2.set_ylabel('Resíduos', fontsize=12)
+ax2.set_title('Resíduos vs Valores Ajustados\n(Verificação de Homoscedasticidade)', 
+              fontsize=12, fontweight='bold')
+ax2.grid(True, alpha=0.3)
+
+# Plot 3: Q-Q Plot dos Resíduos (Normalidade)
+ax3 = fig.add_subplot(gs[1, 1])
+stats.probplot(residuos, dist="norm", plot=ax3)
+ax3.set_title('Q-Q Plot dos Resíduos\n(Verificação de Normalidade)', 
+              fontsize=12, fontweight='bold')
+ax3.grid(True, alpha=0.3)
+
+# Teste de normalidade
+stat_sw, p_sw = stats.shapiro(residuos)
+ax3.text(0.05, 0.95, f'Shapiro-Wilk:\np = {p_sw:.4f}',
+         transform=ax3.transAxes, fontsize=10, verticalalignment='top',
+         bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.5))
+
+# Plot 4: Scale-Location (Raiz dos resíduos padronizados)
+ax4 = fig.add_subplot(gs[2, 0])
+residuos_padronizados = residuos / np.std(residuos)
+ax4.scatter(y_pred, np.sqrt(np.abs(residuos_padronizados)), alpha=0.6, s=50)
+ax4.set_xlabel('Valores Ajustados', fontsize=12)
+ax4.set_ylabel('√|Resíduos Padronizados|', fontsize=12)
+ax4.set_title('Scale-Location Plot\n(Verificação de Homoscedasticidade)', 
+              fontsize=12, fontweight='bold')
+ax4.grid(True, alpha=0.3)
+
+# Plot 5: Histograma dos resíduos
+ax5 = fig.add_subplot(gs[2, 1])
+ax5.hist(residuos, bins=20, density=True, alpha=0.7, color='skyblue', edgecolor='black')
+# Sobrepondo curva normal
+mu_res, sigma_res = residuos.mean(), residuos.std()
+x_norm = np.linspace(residuos.min(), residuos.max(), 100)
+ax5.plot(x_norm, stats.norm.pdf(x_norm, mu_res, sigma_res), 'r-', linewidth=2, 
+         label='Normal teórica')
+ax5.set_xlabel('Resíduos', fontsize=12)
+ax5.set_ylabel('Densidade', fontsize=12)
+ax5.set_title('Distribuição dos Resíduos', fontsize=12, fontweight='bold')
+ax5.legend()
+ax5.grid(True, alpha=0.3, axis='y')
+
+plt.suptitle('Diagnóstico Completo de Regressão Linear', fontsize=16, fontweight='bold', y=0.995)
+plt.show()
+
+print("\n=== PRESSUPOSTOS DA REGRESSÃO LINEAR ===")
+print("1. LINEARIDADE: Relação linear entre X e y")
+print("2. HOMOSCEDASTICIDADE: Variância constante dos resíduos")
+print("   → Gráfico Resíduos vs Ajustados deve mostrar dispersão uniforme")
+print("3. NORMALIDADE: Resíduos seguem distribuição normal")
+print("   → Q-Q plot deve mostrar pontos próximos à linha diagonal")
+print("4. INDEPENDÊNCIA: Observações são independentes")
+print("   → Não deve haver padrões sistemáticos nos resíduos")
+```
+
+### **8.3 Visualização de Testes de Hipóteses**
+
+```python
+# Exemplo: Visualização de teste t para comparação de médias
+np.random.seed(42)
+
+# Dois grupos com médias diferentes
+grupo1 = np.random.normal(100, 15, 50)
+grupo2 = np.random.normal(110, 15, 50)
+
+# Teste t independente
+t_stat, p_value = stats.ttest_ind(grupo1, grupo2)
+
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+# Plot 1: Distribuições dos grupos
+ax1 = axes[0]
+ax1.hist(grupo1, bins=15, alpha=0.6, label='Grupo 1', color='blue', density=True)
+ax1.hist(grupo2, bins=15, alpha=0.6, label='Grupo 2', color='red', density=True)
+
+# Adicionando curvas de densidade
+from scipy.stats import gaussian_kde
+kde1 = gaussian_kde(grupo1)
+kde2 = gaussian_kde(grupo2)
+x_range = np.linspace(min(grupo1.min(), grupo2.min()), 
+                      max(grupo1.max(), grupo2.max()), 100)
+ax1.plot(x_range, kde1(x_range), 'b-', linewidth=2, label='KDE Grupo 1')
+ax1.plot(x_range, kde2(x_range), 'r-', linewidth=2, label='KDE Grupo 2')
+
+ax1.axvline(grupo1.mean(), color='blue', linestyle='--', linewidth=2, alpha=0.7)
+ax1.axvline(grupo2.mean(), color='red', linestyle='--', linewidth=2, alpha=0.7)
+ax1.set_title('Distribuições dos Grupos', fontsize=12, fontweight='bold')
+ax1.set_xlabel('Valores')
+ax1.set_ylabel('Densidade')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: Box plots comparativos
+ax2 = axes[1]
+bp = ax2.boxplot([grupo1, grupo2], labels=['Grupo 1', 'Grupo 2'],
+                  patch_artist=True, notch=True, showmeans=True)
+bp['boxes'][0].set_facecolor('lightblue')
+bp['boxes'][1].set_facecolor('lightcoral')
+ax2.set_title('Comparação Box Plot', fontsize=12, fontweight='bold')
+ax2.set_ylabel('Valores')
+ax2.grid(True, alpha=0.3, axis='y')
+
+# Adicionando resultado do teste
+resultado = "Sim" if p_value < 0.05 else "Não"
+ax2.text(0.5, 0.95, f'Teste t:\nt = {t_stat:.3f}\np = {p_value:.4f}\n'
+                     f'Diferença significativa? {resultado} (α=0.05)',
+         transform=ax2.transAxes, fontsize=10, verticalalignment='top',
+         ha='center', bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.7))
+
+# Plot 3: Distribuição t e região de rejeição
+ax3 = axes[2]
+df = len(grupo1) + len(grupo2) - 2
+x_t = np.linspace(-4, 4, 1000)
+y_t = stats.t.pdf(x_t, df)
+ax3.plot(x_t, y_t, 'k-', linewidth=2, label='Distribuição t')
+
+# Região crítica (bilateral, α = 0.05)
+t_crit = stats.t.ppf(0.975, df)
+x_fill_left = x_t[x_t <= -t_crit]
+x_fill_right = x_t[x_t >= t_crit]
+ax3.fill_between(x_fill_left, stats.t.pdf(x_fill_left, df), alpha=0.3, color='red',
+                 label=f'Região de rejeição (α=0.05)')
+ax3.fill_between(x_fill_right, stats.t.pdf(x_fill_right, df), alpha=0.3, color='red')
+
+# Estatística t observada
+ax3.axvline(t_stat, color='blue', linestyle='--', linewidth=2, 
+            label=f't observado = {t_stat:.3f}')
+ax3.set_title('Distribuição t e Região de Rejeição', fontsize=12, fontweight='bold')
+ax3.set_xlabel('Estatística t')
+ax3.set_ylabel('Densidade')
+ax3.legend()
+ax3.grid(True, alpha=0.3)
+
+plt.suptitle('Visualização do Teste t para Comparação de Médias', 
+             fontsize=14, fontweight='bold')
+plt.tight_layout()
+plt.show()
+
+print("\n=== HIPÓTESES DO TESTE ===")
+print(f"H₀: μ₁ = μ₂ (as médias são iguais)")
+print(f"H₁: μ₁ ≠ μ₂ (as médias são diferentes)")
+print(f"\n=== RESULTADOS ===")
+print(f"Grupo 1: n={len(grupo1)}, μ={grupo1.mean():.2f}, σ={grupo1.std():.2f}")
+print(f"Grupo 2: n={len(grupo2)}, μ={grupo2.mean():.2f}, σ={grupo2.std():.2f}")
+print(f"Estatística t: {t_stat:.3f}")
+print(f"Graus de liberdade: {df}")
+print(f"p-valor: {p_value:.4f}")
+print(f"\nConclusão: ", end="")
+if p_value < 0.05:
+    print("Rejeitamos H₀. Há diferença significativa entre as médias (α=0.05)")
+else:
+    print("Não rejeitamos H₀. Não há evidência de diferença entre as médias (α=0.05)")
+```
+
+### **8.4 Visualização de Distribuições de Probabilidade**
+
+```python
+# Exemplo: Comparação de distribuições teóricas importantes em estatística
+fig, axes = plt.subplots(2, 3, figsize=(18, 10))
+
+# 1. Distribuição Normal
+ax = axes[0, 0]
+x = np.linspace(-4, 4, 1000)
+for mu, sigma in [(0, 1), (0, 0.5), (1, 1)]:
+    ax.plot(x, stats.norm.pdf(x, mu, sigma), 
+            label=f'μ={mu}, σ={sigma}', linewidth=2)
+ax.set_title('Distribuição Normal', fontsize=12, fontweight='bold')
+ax.set_xlabel('x')
+ax.set_ylabel('Densidade')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+# 2. Distribuição Exponencial
+ax = axes[0, 1]
+x = np.linspace(0, 5, 1000)
+for lambda_param in [0.5, 1, 2]:
+    ax.plot(x, stats.expon.pdf(x, scale=1/lambda_param), 
+            label=f'λ={lambda_param}', linewidth=2)
+ax.set_title('Distribuição Exponencial', fontsize=12, fontweight='bold')
+ax.set_xlabel('x')
+ax.set_ylabel('Densidade')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+# 3. Distribuição Binomial
+ax = axes[0, 2]
+x = np.arange(0, 21)
+for n, p in [(20, 0.3), (20, 0.5), (20, 0.7)]:
+    pmf = stats.binom.pmf(x, n, p)
+    ax.plot(x, pmf, 'o-', label=f'n={n}, p={p}', linewidth=2, markersize=6)
+ax.set_title('Distribuição Binomial', fontsize=12, fontweight='bold')
+ax.set_xlabel('k (número de sucessos)')
+ax.set_ylabel('P(X = k)')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+# 4. Distribuição de Poisson
+ax = axes[1, 0]
+x = np.arange(0, 20)
+for lambda_param in [2, 5, 10]:
+    pmf = stats.poisson.pmf(x, lambda_param)
+    ax.plot(x, pmf, 'o-', label=f'λ={lambda_param}', linewidth=2, markersize=6)
+ax.set_title('Distribuição de Poisson', fontsize=12, fontweight='bold')
+ax.set_xlabel('k (número de eventos)')
+ax.set_ylabel('P(X = k)')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+# 5. Distribuição t de Student
+ax = axes[1, 1]
+x = np.linspace(-4, 4, 1000)
+for df in [1, 5, 30]:
+    ax.plot(x, stats.t.pdf(x, df), label=f'gl={df}', linewidth=2)
+ax.plot(x, stats.norm.pdf(x, 0, 1), '--', label='Normal padrão', linewidth=2)
+ax.set_title('Distribuição t de Student', fontsize=12, fontweight='bold')
+ax.set_xlabel('x')
+ax.set_ylabel('Densidade')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+# 6. Distribuição Qui-Quadrado
+ax = axes[1, 2]
+x = np.linspace(0, 20, 1000)
+for df in [2, 5, 10]:
+    ax.plot(x, stats.chi2.pdf(x, df), label=f'gl={df}', linewidth=2)
+ax.set_title('Distribuição Qui-Quadrado', fontsize=12, fontweight='bold')
+ax.set_xlabel('x')
+ax.set_ylabel('Densidade')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+plt.suptitle('Distribuições de Probabilidade Importantes em Estatística', 
+             fontsize=16, fontweight='bold')
+plt.tight_layout()
+plt.show()
 ```
 
 ---
