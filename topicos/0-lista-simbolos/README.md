@@ -83,7 +83,7 @@ Esta seção apresenta símbolos mais especializados, comumente utilizados em in
 | $\theta$                   | **theta**                            | Parâmetro populacional genérico | $\theta$ = proporção real de pessoas satisfeitas com um produto |
 | $\epsilon$                 | **épsilon**                          | Erro aleatório ou termo de erro | Diferença entre preço previsto e real de uma casa: preço_real = preço_previsto + $\epsilon$ |
 | $\delta$                   | **delta**                            | Diferença entre valores / parâmetro de decisão | $\delta$ = diferença na eficácia entre dois medicamentos |
-| $\alpha$                   | **alfa**                             | Nível de significância (ex: 0.05) | $\alpha$ = 0,05 significa "aceito 5% de chance de erro" ao tomar uma decisão |
+| $\alpha$                   | **alfa**                             | Nível de significância (ex: 0,05) | $\alpha$ = 0,05 significa "aceito 5% de chance de erro" ao tomar uma decisão |
 | $\beta$                    | **beta**                             | Coeficiente de regressão / Erro tipo II | Em "salário = 2000 + 500×anos_estudo", $\beta$ = 500 (cada ano de estudo aumenta salário em R$500) |
 | $\gamma$                   | **gama**                             | Parâmetro auxiliar ou taxa | Taxa de crescimento populacional; parâmetro de forma em distribuições |
 | $\lambda$                  | **lambda**                           | Taxa em Poisson / regularização | $\lambda$ = 3 ligações/hora no call center (taxa média de chegada) |
