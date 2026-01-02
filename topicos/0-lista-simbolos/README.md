@@ -250,7 +250,7 @@ Para tornar os símbolos matemáticos mais acessíveis e compreensíveis, aprese
 - **Média aritmética:** $\bar{x}_A$ = (5+8+6+7+9)/5 = **7%**
 
 **Investimento B - crescimento composto:**
-- **Média geométrica:** $\bar{x}_G = \sqrt[5]{(1,05)(1,08)(1,06)(1,07)(1,09)} - 1$ ≈ **6,98%**
+- **Média geométrica:** $\bar{x}_G = \sqrt[5]{(1,05)(1,08)(1,06)(1,07)(1,09)} - 1$ ≈ **6,99%**
 
 **Interpretação:** Para retornos compostos (como investimentos), a média geométrica é mais apropriada que a aritmética.
 
