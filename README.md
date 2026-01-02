@@ -46,6 +46,7 @@ Este curso é destinado a:
 
 - [🎯 Visão Geral do Curso](#-visão-geral-do-curso)
 - [📖 Como Usar Este Material](#-como-usar-este-material)
+- [🔣 Símbolos Matemáticos e Estatísticos](#-símbolos-matemáticos-e-estatísticos)
 - [📋 Tópicos da Disciplina](#-tópicos-da-disciplina)
 - [🏆 Resultados de Aprendizagem](#-resultados-de-aprendizagem)  
 - [📚 Recursos Adicionais](#-recursos-adicionais)
@@ -86,6 +87,36 @@ Para acompanhar o curso, recomenda-se familiaridade com:
 - **Python/R**: Para análises avançadas (opcional)
 - **Calculadora científica**: Para cálculos estatísticos
 - **Software de visualização**: Para criação de gráficos
+
+---
+
+## 🔣 Símbolos Matemáticos e Estatísticos
+
+### 📐 Por que os Símbolos são Importantes?
+
+Na análise de dados, os símbolos matemáticos são a linguagem universal que nos permite comunicar conceitos complexos de forma precisa e concisa. Assim como músicos leem partituras, analistas de dados precisam compreender a "partitura matemática" que descreve estatísticas, probabilidades e relações entre variáveis.
+
+### 🎯 Símbolos Essenciais para Começar
+
+Aqui estão alguns dos símbolos mais importantes que você encontrará ao longo do curso:
+
+| Símbolo | Leitura | Uso no Dia a Dia |
+|---------|---------|------------------|
+| $\bar{x}$ | **x barra** | Média dos seus gastos mensais: se você gastou R$1.200, R$1.500 e R$1.300, então $\bar{x}$ = R$1.333,33 |
+| $\mu$ | **mi** | Média de **todos** os salários do Brasil (população completa), não apenas da sua amostra |
+| $\sigma$ | **sigma** | Variação real dos preços de todos os apartamentos de uma cidade |
+| $s$ | **s** | Variação dos preços apenas nos apartamentos que você pesquisou |
+| $\sum$ | **somatório** | Soma total: $\sum$ vendas = vendas de janeiro + fevereiro + março... |
+| $P(A)$ | **probabilidade de A** | Chance de chover amanhã: P(chuva) = 30% ou 0,30 |
+| $\mathbb{E}[X]$ | **esperança de X** | Valor médio esperado ao jogar um dado muitas vezes: $\mathbb{E}[dado]$ = 3,5 |
+
+### 📚 Aprofundamento
+
+Para uma **lista completa de símbolos** com explicações detalhadas, exemplos práticos e aplicações em diferentes contextos, consulte:
+
+➡️ **[Lista Completa de Símbolos Matemáticos e Estatísticos](topicos/0-lista-simbolos/README.md)**
+
+Este material complementar é fundamental para acompanhar as fórmulas e notações utilizadas ao longo de todo o curso. Recomendamos consultar sempre que encontrar um símbolo desconhecido!
 
 ---
 ## 📋 Tópicos da Disciplina
