@@ -156,8 +156,8 @@ Para tornar os símbolos matemáticos mais acessíveis e compreensíveis, aprese
 
 - $\bar{x}$ = (800 + 950 + 850 + 900 + 1100 + 800) / 6 = **R$ 900,00** (média amostral dos seus gastos)
 - $\sum x_i$ = 800 + 950 + 850 + 900 + 1100 + 800 = **R$ 5.400,00** (total gasto no período)
-- $s$ ≈ **R$ 117,26** (desvio padrão amostral - mostra quanto seus gastos variam mês a mês)
-- **Interpretação:** Você gasta em média R$ 900 por mês em alimentação, com uma variação típica de ±R$ 117
+- $s$ ≈ **R$ 114,02** (desvio padrão amostral - mostra quanto seus gastos variam mês a mês)
+- **Interpretação:** Você gasta em média R$ 900 por mês em alimentação, com uma variação típica de ±R$ 114
 
 #### **📈 Cenário 2: Previsão do Tempo**
 
