@@ -266,7 +266,7 @@ Para tornar os símbolos matemáticos mais acessíveis e compreensíveis, aprese
 | 4 | 8 | 9,0 |
 | 5 | 3 | 6,0 |
 
-- **Correlação de Pearson:** $r$ ≈ **0,95** (correlação amostral)
+- **Correlação de Pearson:** $r$ ≈ **0,98** (correlação amostral)
 - **Covariância:** $Cov(X,Y)$ > 0 (quando uma variável aumenta, a outra tende a aumentar)
 
 **Interpretação:** Há uma forte correlação positiva - mais horas de estudo estão associadas a notas maiores.
