@@ -57,7 +57,7 @@ Os símbolos apresentados a seguir constituem o vocabulário básico para qualqu
 | $\sigma$ | **sigma** | Desvio padrão populacional |
 | $s$ | **s** | Desvio padrão amostral |
 | $\text{Var}(X)$ | **Variância de X** | Esperança do quadrado do desvio de $X$ da média |
-| $\sqrt{}$ | **raiz quadrada** | Usada em cálculos de desvio padrão ou erro |
+| $\sqrt{x}$ | **raiz quadrada** | Usada em cálculos de desvio padrão ou erro |
 | $\sum$ | **soma** | Indica uma soma (ex: somatório dos elementos) |
 | $\int$ | **integral** | Usada em distribuições contínuas (ex: densidade de probabilidade) |
 | $P(A)$ | **probabilidade de A** | Chance de um evento A ocorrer |
