@@ -96,7 +96,7 @@ Esta seção apresenta símbolos mais especializados, comumente utilizados em in
 | $\text{MSE}$               | **erro quadrático médio**            | $\mathbb{E}[(\hat{\theta} - \theta)^2]$ | Mede qualidade da previsão: MSE baixo = previsões mais precisas |
 | $\text{RMSE}$              | **raiz do erro quadrático médio**    | $\sqrt{\text{MSE}}$ | Se RMSE = R$5.000, suas previsões de preço erram em média R$5.000 |
 | $\text{Bias}$              | **viés**                             | $\mathbb{E}[\hat{\theta}] - \theta$ | Se você sempre prevê preços R$10.000 acima do real, o viés = R$10.000 |
-| $\text{Var}(\hat{\theta})$ | **variância do estimador**           | Mede a dispersão do estimador | Previsões muito variáveis (ora R$100k, ora R$200k) têm alta variância |
+| $\text{Var}(\hat{\theta})$ | **variância do estimador**           | Mede a dispersão do estimador | Previsões muito variáveis (ora R$100.000, ora R$200.000) têm alta variância |
 | $\text{SE}$                | **erro padrão (standard error)**     | $\text{SE} = \frac{\sigma}{\sqrt{n}}$ | Com mais dados (n maior), o erro diminui: 100 pessoas dá SE menor que 10 pessoas |
 | $\text{CI}$                | **intervalo de confiança**           | Intervalo estimado para o parâmetro populacional | IC 95%: [R$45.000, R$55.000] - 95% de confiança que o valor real está neste intervalo |
 
