@@ -237,7 +237,7 @@ Para tornar os símbolos matemáticos mais acessíveis e compreensíveis, aprese
 
 - $\mu$ = 10,0 mm (média populacional esperada)
 - $\sigma$ = 0,2 mm (desvio padrão populacional aceitável)
-- **Distribuição:** $X \sim N(10, 0,2^2)$ (distribuição normal)
+- **Distribuição:** $X \sim N(10, 0,2²)$ (distribuição normal)
 - **Parafuso de 10,5mm:** está a $\frac{10,5-10}{0,2}$ = **2,5 desvios padrão** da média
 
 **Interpretação:** Usando a distribuição normal, menos de 1% dos parafusos deveriam ter 10,5mm ou mais. Este pode ser um defeito.
