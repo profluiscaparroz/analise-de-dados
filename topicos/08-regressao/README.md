@@ -452,10 +452,11 @@ Interpretação: Erro médio absoluto
 
 ### Datasets para Prática
 
-- **Scikit-learn built-in**: boston, diabetes, california_housing
-- **Kaggle**: House Prices, Ames Housing, etc.
+- **Scikit-learn built-in**: california_housing, diabetes, fetch_openml('house_prices')
+- **Kaggle**: House Prices (Ames), California Housing, Bike Sharing, etc.
 - **UCI ML Repository**: Vários datasets de regressão
 - **Statsmodels**: Datasets clássicos de estatística
+- **Seaborn built-in**: tips, mpg, diamonds (para exemplos)
 
 ---
 

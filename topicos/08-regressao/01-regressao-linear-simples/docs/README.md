@@ -876,9 +876,9 @@ A regressão linear simples é uma ferramenta fundamental em análise de dados q
 - Correlação não implica causação
 
 **Próximos Passos:**
-- Estude Regressão Linear Múltipla
-- Aprenda sobre Regressão Polinomial
-- Explore técnicas de regularização (Ridge, Lasso)
+- Estude [Regressão Linear Múltipla](../02-regressao-linear-multipla/docs/README.md)
+- Aprenda sobre [Regressão Polinomial](../03-regressao-polinomial/docs/README.md)
+- Explore técnicas de regularização: [Ridge](../04-regressao-ridge/docs/README.md) e [Lasso](../05-regressao-lasso/docs/README.md)
 - Aprofunde-se em diagnósticos de regressão
 
 ---
