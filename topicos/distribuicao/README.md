@@ -1337,15 +1337,15 @@ def quiz_combinacao():
     
     for questao in range(1, total_questoes + 1):
         # Gerar valores aleatórios
-        n = random.randint(5, 15)
-        p = random.randint(2, min(n-1, 8))
+        n = random.randint(5, 15)  # n = total de elementos
+        k = random.randint(2, min(n-1, 8))  # k = elementos a escolher
         
-        resposta_correta = math.comb(n, p)
+        resposta_correta = math.comb(n, k)
         
         print(f"\n📝 Questão {questao}/{total_questoes}")
-        print(f"Quantas combinações de {p} elementos podem ser")
+        print(f"Quantas combinações de {k} elementos podem ser")
         print(f"feitas a partir de {n} elementos?")
-        print(f"(Em outras palavras: C({n},{p}) = ?)")
+        print(f"(Em outras palavras: C({n},{k}) = ?)")
         
         try:
             resposta_usuario = int(input("\nSua resposta: "))
@@ -1356,17 +1356,20 @@ def quiz_combinacao():
                 
                 # Dica educacional
                 print(f"\n💡 Explicação:")
-                print(f"C({n},{p}) = {n}! / ({p}! × {n-p}!)")
-                print(f"        = {math.factorial(n):,} / ({math.factorial(p):,} × {math.factorial(n-p):,})")
+                print(f"C({n},{k}) = {n}! / ({k}! × {n-k}!)")
+                print(f"        = {math.factorial(n):,} / ({math.factorial(k):,} × {math.factorial(n-k):,})")
                 print(f"        = {resposta_correta:,}")
             else:
                 print(f"❌ Errado! A resposta correta é {resposta_correta:,}")
                 print(f"\n💡 Você respondeu: {resposta_usuario:,}")
                 print(f"   Diferença: {abs(resposta_usuario - resposta_correta):,}")
                 
-        except ValueError:
-            print("❌ Resposta inválida! Por favor, digite um número.")
+        except (ValueError, EOFError, KeyboardInterrupt):
+            print("\n❌ Entrada inválida ou interrupção detectada.")
             print(f"   A resposta correta era: {resposta_correta:,}")
+            if isinstance(Exception, KeyboardInterrupt):
+                print("\n⚠️  Quiz interrompido pelo usuário.")
+                break
     
     # Resultado final
     print("\n" + "=" * 50)

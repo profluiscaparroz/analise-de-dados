@@ -50,9 +50,11 @@ $$P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}$$
 **Decomposição da fórmula:**
 
 1. **$\binom{n}{k}$**: Conta de quantas maneiras diferentes podemos ter exatamente k sucessos em n tentativas
-2. **$p^k$**: Probabilidade de obter k sucessos consecutivos
-3. **$(1-p)^{n-k}$**: Probabilidade de obter (n-k) fracassos consecutivos
+2. **$p^k$**: Probabilidade de obter exatamente k sucessos (não necessariamente consecutivos)
+3. **$(1-p)^{n-k}$**: Probabilidade de obter exatamente (n-k) fracassos
 4. O produto desses três termos nos dá a probabilidade total
+
+**Nota importante:** Os sucessos e fracassos podem ocorrer em qualquer ordem. O coeficiente binomial $\binom{n}{k}$ já conta todas as possíveis ordens em que os k sucessos podem aparecer nas n tentativas.
 
 ### **Propriedades Importantes**
 - **Média**: μ = n × p
@@ -128,7 +130,11 @@ $$P(X = k) = \frac{\lambda^k \cdot e^{-\lambda}}{k!}$$
 4. **$k!$**: Ajusta pela forma como os eventos podem ser contados
 
 **Por que e (número de Euler)?**
+
 A distribuição de Poisson surge naturalmente de processos limitantes da binomial quando n → ∞ e p → 0, mantendo n×p = λ constante. Nesses limites, o número e aparece naturalmente, assim como em muitos processos de crescimento e decaimento na natureza.
+
+**Explicação mais simples:**
+Imagine que você está dividindo um intervalo de tempo em pedaços cada vez menores. Por exemplo, dividir 1 minuto em 60 segundos, depois em 6000 centésimos de segundo, e assim por diante. Quando fazemos isso infinitamente, a matemática que descreve "quantas vezes algo acontece" naturalmente envolve o número e. É o mesmo motivo pelo qual e aparece em juros compostos: quanto mais você divide o tempo, mais natural fica usar e = 2.71828...
 
 ### **Propriedades Importantes**
 - **Média**: μ = λ
