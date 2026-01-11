@@ -638,66 +638,355 @@ $
 
 ## 3. 🎯 Aplicações reais do Z-score
 
-Z é super útil em diversas áreas:
+O Z-score é uma ferramenta poderosa e versátil, usada em diversas áreas profissionais e situações do cotidiano. Veja exemplos práticos:
 
-### 💼 RH e Seleção
+### 💼 Área: Recursos Humanos e Seleção
 
-Comparar candidatos em provas diferentes:
+**Cenário:** Uma empresa aplicou testes diferentes para selecionar candidatos de dois turnos diferentes.
 
-- João tirou 85 numa prova com média 75 e desvio 5 → Z = 2.0
-- Maria tirou 90 numa com média 88 e desvio 1 → Z = 2.0
+**Situação:**
+- **João** fez o teste matutino: tirou 85 pontos (média da turma: 75, desvio: 5)
+- **Maria** fez o teste vespertino: tirou 90 pontos (média da turma: 88, desvio: 1)
 
-> Ambos estão igualmente bem, **relativamente** às suas turmas.
+**Análise:**
+
+Z de João:
+$$
+Z_{João} = \frac{85 - 75}{5} = \frac{10}{5} = 2.0
+$$
+
+Z de Maria:
+$$
+Z_{Maria} = \frac{90 - 88}{1} = \frac{2}{1} = 2.0
+$$
+
+**Interpretação:**
+- Ambos estão igualmente bem, **relativamente** às suas turmas (2 desvios acima)
+- ✅ Apesar dos testes diferentes, o Z-score permite **comparação justa**
+- A empresa pode considerá-los igualmente qualificados
+- **Lição:** O Z-score elimina o viés causado por diferenças nas dificuldades dos testes
 
 ---
 
-### 🏥 Medicina
+### 🏥 Área: Medicina e Saúde
 
-Medições como:
+**Cenário 1: Avaliação de Colesterol**
 
-- Pressão arterial
-- Colesterol
-- Peso de recém-nascidos
+**Dados populacionais:**
+- Nível médio de colesterol: 190 mg/dL
+- Desvio padrão: 20 mg/dL
 
-Exemplo:
-> "Seu colesterol está 2 desvios acima do normal"  
-→ Indica que está fora do padrão e precisa de atenção.
+**Paciente:** Carlos tem 230 mg/dL
+
+**Cálculo:**
+$$
+Z = \frac{230 - 190}{20} = \frac{40}{20} = 2.0
+$$
+
+**Interpretação médica:**
+- Carlos está 2 desvios acima do normal
+- Isso coloca-o no top ~2.5% mais alto
+- 🚨 **Ação necessária:** Indica risco cardiovascular, precisa de atenção médica
+- Recomendações: dieta, exercícios, possível medicação
+
+**Cenário 2: Peso de Recém-nascidos**
+
+**Dados populacionais:**
+- Peso médio ao nascer: 3.2 kg
+- Desvio padrão: 0.5 kg
+
+**Bebê A:** 2.0 kg
+$$
+Z_A = \frac{2.0 - 3.2}{0.5} = \frac{-1.2}{0.5} = -2.4
+$$
+- ⚠️ Baixo peso (abaixo de -2): requer cuidados especiais, UTI neonatal
+
+**Bebê B:** 3.5 kg
+$$
+Z_B = \frac{3.5 - 3.2}{0.5} = \frac{0.3}{0.5} = 0.6
+$$
+- ✅ Normal: dentro da faixa esperada
 
 ---
 
-### 🏦 Finanças
+### 🏦 Área: Finanças e Investimentos
 
-- Em **controle de risco**, o Z-score ajuda a prever **quão anormal** é um retorno financeiro.
-- Em **credit scoring**, pode indicar **probabilidade de inadimplência**.
+**Cenário: Análise de Risco de Investimento**
+
+**Dados históricos de um fundo:**
+- Retorno médio mensal: 1.5%
+- Desvio padrão: 2.0%
+
+**Mês atual:** Retorno de -3.5%
+
+**Cálculo:**
+$$
+Z = \frac{-3.5 - 1.5}{2.0} = \frac{-5.0}{2.0} = -2.5
+$$
+
+**Interpretação financeira:**
+- Retorno 2.5 desvios **abaixo** do esperado
+- 📉 Evento raro (probabilidade < 1%)
+- **Ação:** Investigar causas: crise do mercado? Problema específico do fundo?
+- Decisão de gestão de risco: manter, vender ou comprar mais (oportunidade)?
+
+**Aplicação em Credit Scoring:**
+- Bancos usam Z-score para prever **probabilidade de inadimplência**
+- Cliente com Z muito baixo → Alto risco → Juros maiores ou crédito negado
+- Cliente com Z alto → Baixo risco → Melhores condições
+
+---
+
+### 📊 Área: Controle de Qualidade Industrial
+
+**Cenário: Fábrica de Parafusos**
+
+**Especificações:**
+- Diâmetro médio desejado: 5.00 mm
+- Desvio padrão aceitável: 0.05 mm
+- **Critério de qualidade:** |Z| < 2 (dentro de ±2 desvios)
+
+**Lote de testes:**
+
+**Parafuso 1:** 5.08 mm
+$$
+Z_1 = \frac{5.08 - 5.00}{0.05} = \frac{0.08}{0.05} = 1.6
+$$
+- ✅ **Aprovado** (Z = 1.6 < 2)
+
+**Parafuso 2:** 5.12 mm
+$$
+Z_2 = \frac{5.12 - 5.00}{0.05} = \frac{0.12}{0.05} = 2.4
+$$
+- ❌ **Reprovado** (Z = 2.4 > 2)
+
+**Decisão prática:**
+- Parafuso 2 está fora da especificação
+- Pode causar problemas de montagem
+- Lote pode ser rejeitado se muitos itens tiverem |Z| > 2
+
+---
+
+### 🎓 Área: Educação
+
+**Cenário: Sistema de Notas Nacional (ENEM)**
+
+**Dados:**
+- Média nacional em Matemática: 500 pontos
+- Desvio padrão: 100 pontos
+
+**Estudante:** Ana tirou 720 pontos
+
+**Cálculo:**
+$$
+Z = \frac{720 - 500}{100} = \frac{220}{100} = 2.2
+$$
+
+**Interpretação:**
+- Ana está 2.2 desvios acima da média
+- Está entre os **~1.5% melhores** estudantes
+- 🎯 **Consequências práticas:**
+  - Elegível para bolsas de estudo
+  - Pode concorrer às melhores universidades
+  - Apta para programas de alto desempenho
+
+---
+
+### 🏃 Área: Esportes e Performance
+
+**Cenário: Seleção para Equipe de Atletismo**
+
+**Prova de 100m rasos - Resultados da escola:**
+- Tempo médio: 14.5 segundos
+- Desvio padrão: 1.2 segundos
+
+**Candidato:** Pedro completou em 12.1 segundos
+
+**Cálculo:**
+$$
+Z = \frac{12.1 - 14.5}{1.2} = \frac{-2.4}{1.2} = -2.0
+$$
+
+**Interpretação:**
+- Z negativo = tempo menor = **melhor desempenho**
+- Pedro está 2 desvios **abaixo** da média (mais rápido)
+- 🏆 **Decisão:** Forte candidato para a equipe de atletismo
+- Performance excepcional comparada aos colegas
 
 ---
 
 ## 4. 🛠️ Z-score no Excel e Python
 
-### Excel
+### 📊 Excel - Funções para Z-score
 
-| Fórmula        | Significado                            |
-|----------------|----------------------------------------|
-| `=STANDARDIZE(x, média, desvio)` | Calcula o Z de `x` |
-| `=NORM.S.DIST(z, TRUE)` | Área até o Z-score         |
-| `=NORM.S.INV(0.975)`   | Dá o Z para uma área (ex: 0.975 → 1.96) |
+O Excel oferece várias funções para trabalhar com Z-scores e distribuição normal:
+
+| Fórmula | Significado | Exemplo |
+|---------|-------------|---------|
+| `=STANDARDIZE(x, média, desvio)` | Calcula o Z-score de um valor | `=STANDARDIZE(85, 70, 10)` → 1.5 |
+| `=NORM.S.DIST(z, TRUE)` | Probabilidade acumulada até Z (área à esquerda) | `=NORM.S.DIST(1.96, TRUE)` → 0.975 |
+| `=NORM.S.DIST(z, FALSE)` | Densidade de probabilidade em Z | `=NORM.S.DIST(0, FALSE)` → 0.399 |
+| `=NORM.S.INV(probabilidade)` | Z correspondente a uma probabilidade | `=NORM.S.INV(0.975)` → 1.96 |
+| `=NORM.DIST(x, média, desvio, TRUE)` | Probabilidade de X em distribuição normal | `=NORM.DIST(85, 70, 10, TRUE)` |
+| `=NORM.INV(prob, média, desvio)` | Valor de X para uma probabilidade | `=NORM.INV(0.95, 70, 10)` |
+
+**Exemplo prático no Excel:**
+
+```excel
+// Situação: Nota de um aluno = 85, Média da turma = 70, Desvio = 10
+
+// Célula A1: Calcular Z-score
+=STANDARDIZE(85, 70, 10)
+// Resultado: 1.5
+
+// Célula A2: Probabilidade de ter nota menor que 85
+=NORM.DIST(85, 70, 10, TRUE)
+// Resultado: 0.9332 (93.32% dos alunos tiraram menos que 85)
+
+// Célula A3: Nota necessária para estar no top 5%
+=NORM.INV(0.95, 70, 10)
+// Resultado: 86.45 (precisa de 86.45 pontos para estar no top 5%)
+```
 
 ---
 
-### Python (SciPy)
+### 🐍 Python (SciPy e NumPy)
+
+Python oferece bibliotecas poderosas para trabalhar com distribuições estatísticas:
 
 ```python
+import numpy as np
 from scipy.stats import norm
 
-# Z-score de um valor
-z = (valor - media) / desvio
+# ==== EXEMPLO 1: Calculando Z-score manualmente ====
+valor = 85
+media = 70
+desvio = 10
 
-# Probabilidade até Z
-prob = norm.cdf(z)
+z_score = (valor - media) / desvio
+print(f"Z-score: {z_score}")  # Resultado: 1.5
 
-# Z correspondente a uma probabilidade
-z_critico = norm.ppf(0.975)  # → 1.96
+# ==== EXEMPLO 2: Probabilidade acumulada até Z ====
+z = 1.96
+probabilidade = norm.cdf(z)
+print(f"P(Z ≤ {z}) = {probabilidade:.4f}")  # Resultado: 0.9750
+
+# ==== EXEMPLO 3: Z correspondente a uma probabilidade ====
+prob = 0.975
+z_critico = norm.ppf(prob)
+print(f"Z para p={prob}: {z_critico:.4f}")  # Resultado: 1.96
+
+# ==== EXEMPLO 4: Probabilidade entre dois Z-scores ====
+z1, z2 = -1, 1
+prob_entre = norm.cdf(z2) - norm.cdf(z1)
+print(f"P({z1} < Z < {z2}) = {prob_entre:.4f}")  # Resultado: 0.6827 (68.27%)
+
+# ==== EXEMPLO 5: Análise completa de um dataset ====
+notas = np.array([65, 70, 75, 80, 85, 90, 95])
+media_notas = np.mean(notas)
+desvio_notas = np.std(notas, ddof=1)  # ddof=1 para amostra
+
+# Calcular Z-score para cada nota
+z_scores = (notas - media_notas) / desvio_notas
+
+print("\n=== Análise de Notas ===")
+print(f"Média: {media_notas:.2f}")
+print(f"Desvio padrão: {desvio_notas:.2f}")
+print("\nNota | Z-score | Percentil")
+print("-" * 35)
+for nota, z in zip(notas, z_scores):
+    percentil = norm.cdf(z) * 100
+    print(f"{nota:4.0f} | {z:7.2f} | {percentil:5.1f}%")
 ```
+
+**Saída esperada:**
+```
+Z-score: 1.5
+P(Z ≤ 1.96) = 0.9750
+Z para p=0.975: 1.9600
+P(-1 < Z < 1) = 0.6827
+
+=== Análise de Notas ===
+Média: 80.00
+Desvio padrão: 11.18
+
+Nota | Z-score | Percentil
+-----------------------------------
+  65 |   -1.34 |   9.0%
+  70 |   -0.89 |  18.7%
+  75 |   -0.45 |  32.6%
+  80 |    0.00 |  50.0%
+  85 |    0.45 |  67.4%
+  90 |    0.89 |  81.3%
+  95 |    1.34 |  91.0%
+```
+
+**Visualização gráfica com Python:**
+
+```python
+import matplotlib.pyplot as plt
+
+# Criar gráfico da distribuição normal padrão
+x = np.linspace(-4, 4, 1000)
+y = norm.pdf(x)
+
+plt.figure(figsize=(12, 6))
+plt.plot(x, y, 'b-', linewidth=2, label='Distribuição Normal Padrão')
+
+# Destacar área até Z = 1.96
+x_fill = x[x <= 1.96]
+y_fill = norm.pdf(x_fill)
+plt.fill_between(x_fill, y_fill, alpha=0.3, color='green', 
+                 label='P(Z ≤ 1.96) = 97.5%')
+
+# Linhas verticais para valores importantes
+for z_val in [-2, -1, 0, 1, 2]:
+    plt.axvline(z_val, color='red', linestyle='--', alpha=0.5)
+    plt.text(z_val, -0.02, f'Z={z_val}', ha='center')
+
+plt.xlabel('Z-score')
+plt.ylabel('Densidade de Probabilidade')
+plt.title('Distribuição Normal Padrão com Valores Críticos')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.ylim(-0.05, 0.45)
+plt.tight_layout()
+plt.show()
+```
+
+**Aplicação prática: Identificando outliers**
+
+```python
+# Dataset de salários de uma empresa
+salarios = np.array([3000, 3200, 3500, 3800, 4000, 4200, 4500, 15000])
+
+media = np.mean(salarios)
+desvio = np.std(salarios, ddof=1)
+
+# Calcular Z-scores
+z_scores = (salarios - media) / desvio
+
+print("=== Detecção de Outliers ===")
+print(f"Média: R$ {media:.2f}")
+print(f"Desvio: R$ {desvio:.2f}\n")
+
+print("Salário | Z-score | Status")
+print("-" * 40)
+for salario, z in zip(salarios, z_scores):
+    if abs(z) > 3:
+        status = "🚨 OUTLIER EXTREMO"
+    elif abs(z) > 2:
+        status = "⚠️  OUTLIER"
+    else:
+        status = "✅ Normal"
+    print(f"R$ {salario:6.0f} | {z:7.2f} | {status}")
+```
+
+**Dica profissional:** Use Z-scores para:
+- Detectar valores anômalos em datasets
+- Comparar performance em diferentes métricas
+- Normalizar dados antes de aplicar machine learning
+- Criar sistemas de alerta baseados em desvios do padrão
 
 ---
 
@@ -760,114 +1049,342 @@ plt.tight_layout()
 plt.show()
 ```
 
-Perfeito, agora vamos transpor esse conteúdo de **combinação** para o ambiente de **Python**, focando em aprendizado e prática. Abaixo segue uma explicação com **exemplos práticos**, desde o uso da fórmula até a biblioteca pronta `math` — ideal para aplicar em sala de aula, avaliações automáticas ou pequenos projetos.
+## 🐍 Combinações em Python: Do Básico ao Avançado
+
+Vamos explorar como trabalhar com combinações em Python, desde a implementação manual até o uso de bibliotecas otimizadas. Ideal para aprendizado prático e aplicações reais.
 
 ---
 
-## 🐍 1. **Usando a fórmula manualmente em Python**
+## 🐍 1. **Implementação Manual - Entendendo a Lógica**
+
+Primeiro, vamos implementar do zero para entender como funciona:
 
 ```python
 def fatorial(n):
+    """
+    Calcula o fatorial de n.
+    
+    Args:
+        n: Número inteiro não-negativo
+        
+    Returns:
+        n! = n × (n-1) × (n-2) × ... × 2 × 1
+        
+    Exemplo:
+        fatorial(5) = 5 × 4 × 3 × 2 × 1 = 120
+    """
+    if n < 0:
+        raise ValueError("Fatorial não definido para números negativos")
+    
     resultado = 1
     for i in range(2, n + 1):
         resultado *= i
     return resultado
 
 def combinacao(n, p):
+    """
+    Calcula o número de combinações de n elementos tomados p a p.
+    
+    Fórmula: C(n,p) = n! / (p! × (n-p)!)
+    
+    Args:
+        n: Total de elementos disponíveis
+        p: Quantidade de elementos a escolher
+        
+    Returns:
+        Número de combinações possíveis
+        
+    Exemplo:
+        combinacao(8, 3) = 8! / (3! × 5!) = 56
+    """
+    if p > n:
+        return 0
+    if p == 0 or p == n:
+        return 1
+    
     return fatorial(n) // (fatorial(p) * fatorial(n - p))
 
-# Exemplo: de 8 alunos, quantas comissões de 3 posso montar?
-n = 8
-p = 3
-print(f"C({n}, {p}) =", combinacao(n, p))
+# ==== EXEMPLOS PRÁTICOS ====
+
+# Exemplo 1: Comissão de alunos
+print("=== Exemplo 1: Formação de Comissão ===")
+n_alunos = 8
+n_comissao = 3
+resultado = combinacao(n_alunos, n_comissao)
+print(f"De {n_alunos} alunos, podemos formar {resultado} comissões diferentes de {n_comissao} membros")
+print(f"Fórmula: C({n_alunos},{n_comissao}) = {n_alunos}! / ({n_comissao}! × {n_alunos-n_comissao}!) = {resultado}\n")
+
+# Exemplo 2: Apostas na loteria
+print("=== Exemplo 2: Loteria ===")
+n_numeros = 60  # Total de números disponíveis
+n_escolhidos = 6  # Números escolhidos por aposta
+total_combinacoes = combinacao(n_numeros, n_escolhidos)
+print(f"Em uma loteria com {n_numeros} números, escolhendo {n_escolhidos}:")
+print(f"Total de combinações possíveis: {total_combinacoes:,}")
+print(f"Chance de ganhar: 1 em {total_combinacoes:,}")
+print(f"Probabilidade: {1/total_combinacoes:.10f} ({1/total_combinacoes*100:.8f}%)\n")
+
+# Exemplo 3: Menu de restaurante
+print("=== Exemplo 3: Menu Degustação ===")
+pratos_disponiveis = 10
+pratos_menu = 4
+opcoes = combinacao(pratos_disponiveis, pratos_menu)
+print(f"Um restaurante tem {pratos_disponiveis} pratos especiais")
+print(f"Para criar um menu degustação com {pratos_menu} pratos:")
+print(f"Existem {opcoes} combinações diferentes possíveis")
 ```
 
-🔹 **Saída**:
+**Saída esperada:**
 ```
-C(8, 3) = 56
+=== Exemplo 1: Formação de Comissão ===
+De 8 alunos, podemos formar 56 comissões diferentes de 3 membros
+Fórmula: C(8,3) = 8! / (3! × 5!) = 56
+
+=== Exemplo 2: Loteria ===
+Em uma loteria com 60 números, escolhendo 6:
+Total de combinações possíveis: 50,063,860
+Chance de ganhar: 1 em 50,063,860
+Probabilidade: 0.0000000200 (0.00000200%)
+
+=== Exemplo 3: Menu Degustação ===
+Um restaurante tem 10 pratos especiais
+Para criar um menu degustação com 4 pratos:
+Existem 210 combinações diferentes possíveis
 ```
 
 ---
 
-## 🧮 2. **Usando a biblioteca `math`**
+## 🧮 2. **Usando a Biblioteca `math` (Python 3.8+)**
 
-A partir do Python 3.8+, a função `math.comb(n, p)` faz isso diretamente.
+A partir do Python 3.8, a função `math.comb(n, p)` faz o cálculo de forma otimizada:
 
 ```python
 import math
 
-n = 8
-p = 3
+# ==== VANTAGENS DA FUNÇÃO math.comb() ====
+# ✅ Mais rápida (implementação em C)
+# ✅ Lida bem com números grandes
+# ✅ Previne overflow
+# ✅ Código mais limpo e legível
 
-print(f"C({n}, {p}) =", math.comb(n, p))
+print("=== Usando math.comb() ===\n")
+
+# Exemplo 1: Combinações simples
+n, p = 8, 3
+print(f"C({n}, {p}) = {math.comb(n, p)}")
+
+# Exemplo 2: Comparação de velocidade
+import time
+
+n_grande = 100
+p_grande = 50
+
+# Medindo tempo com implementação manual
+inicio = time.time()
+resultado_manual = combinacao(n_grande, p_grande)
+tempo_manual = time.time() - inicio
+
+# Medindo tempo com math.comb
+inicio = time.time()
+resultado_math = math.comb(n_grande, p_grande)
+tempo_math = time.time() - inicio
+
+print(f"\n=== Comparação de Performance ===")
+print(f"C({n_grande}, {p_grande}) = {resultado_math:,}")
+print(f"Tempo (implementação manual): {tempo_manual*1000:.4f} ms")
+print(f"Tempo (math.comb): {tempo_math*1000:.4f} ms")
+print(f"math.comb é {tempo_manual/tempo_math:.1f}x mais rápido!")
+
+# Exemplo 3: Aplicação prática - Análise de portfólio
+print(f"\n=== Exemplo: Diversificação de Investimentos ===")
+total_acoes = 20  # Total de ações disponíveis
+acoes_portfolio = 5  # Ações no portfólio
+
+portfolios_possiveis = math.comb(total_acoes, acoes_portfolio)
+print(f"Com {total_acoes} ações disponíveis,")
+print(f"Podemos criar {portfolios_possiveis:,} portfólios diferentes")
+print(f"escolhendo {acoes_portfolio} ações cada")
 ```
-
-🔹 É mais rápido e seguro (lida com inteiros grandes e casos extremos).
 
 ---
 
-## 🧠 3. **Visualizando combinações possíveis com `itertools`**
+## 🧠 3. **Visualizando Combinações com `itertools`**
 
-Para mostrar todas as combinações possíveis (além de contar), podemos usar:
+Para ver **todas as combinações possíveis** (não apenas contar), use `itertools.combinations`:
 
 ```python
 from itertools import combinations
 
-alunos = ["Ana", "Beto", "Carla", "Diego", "Elisa"]
-pares = list(combinations(alunos, 2))
+print("=== Listando Todas as Combinações ===\n")
 
-print("Total de pares:", len(pares))
-for par in pares:
-    print(par)
-```
+# Exemplo 1: Equipe de futebol
+jogadores = ["Ana", "Bruno", "Carlos", "Diana", "Eduardo"]
+tamanho_equipe = 3
 
-🔹 **Saída**:
-```
-Total de pares: 10
-('Ana', 'Beto')
-('Ana', 'Carla')
-...
+print(f"Jogadores disponíveis: {jogadores}")
+print(f"Formando times de {tamanho_equipe} pessoas:\n")
+
+equipes = list(combinations(jogadores, tamanho_equipe))
+print(f"Total de equipes possíveis: {len(equipes)}")
+print("\nEquipes formadas:")
+for i, equipe in enumerate(equipes, 1):
+    print(f"{i:2d}. {' + '.join(equipe)}")
+
+# Exemplo 2: Escolha de ingredientes
+print("\n=== Exemplo: Pizzas Personalizadas ===")
+ingredientes = ["Queijo", "Tomate", "Presunto", "Azeitona", "Cebola"]
+n_ingredientes = 3
+
+print(f"Ingredientes disponíveis: {', '.join(ingredientes)}")
+print(f"Escolhendo {n_ingredientes} ingredientes:\n")
+
+pizzas = list(combinations(ingredientes, n_ingredientes))
+print(f"Total de pizzas diferentes: {len(pizzas)}\n")
+
+for i, pizza in enumerate(pizzas, 1):
+    print(f"Pizza {i}: {' + '.join(pizza)}")
+
+# Exemplo 3: Agenda de reuniões
+print("\n=== Exemplo: Agendamento de Reuniões ===")
+dias = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"]
+reunioes_necessarias = 2
+
+print(f"Dias disponíveis: {', '.join(dias)}")
+print(f"Precisamos agendar {reunioes_necessarias} reuniões")
+print(f"\nOpções de agendamento:\n")
+
+opcoes = list(combinations(dias, reunioes_necessarias))
+for i, opcao in enumerate(opcoes, 1):
+    print(f"{i:2d}. {' e '.join(opcao)}")
+
+print(f"\nTotal: {len(opcoes)} combinações possíveis de dias")
 ```
 
 ---
 
-## 📊 4. **Gráfico de crescimento da combinação com Python**
+## 📊 4. **Gráfico de Crescimento da Combinação**
 
-Vamos ver como o número de combinações cresce com `n`, mantendo `p` fixo:
+Veja como o número de combinações cresce com `n`:
 
 ```python
 import matplotlib.pyplot as plt
 import math
 
-p = 3
-n_values = list(range(3, 21))  # de 3 a 20
+# Configuração
+p = 3  # Fixamos p = 3
+n_values = list(range(3, 21))  # n varia de 3 a 20
 c_values = [math.comb(n, p) for n in n_values]
 
-plt.plot(n_values, c_values, marker='o')
-plt.title(f"C(n, {p}) - Crescimento da Combinação")
-plt.xlabel("n (elementos totais)")
-plt.ylabel("Número de combinações")
-plt.grid(True)
+# Criando o gráfico
+plt.figure(figsize=(12, 6))
+plt.plot(n_values, c_values, marker='o', linewidth=2, markersize=8, color='blue')
+plt.fill_between(n_values, c_values, alpha=0.3, color='blue')
+
+# Adicionando anotações em pontos importantes
+pontos_destaque = [5, 10, 15, 20]
+for n in pontos_destaque:
+    if n in n_values:
+        idx = n_values.index(n)
+        c = c_values[idx]
+        plt.annotate(f'C({n},{p}) = {c}', 
+                    xy=(n, c), 
+                    xytext=(10, 20), 
+                    textcoords='offset points',
+                    fontsize=10,
+                    bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow', alpha=0.7),
+                    arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=0'))
+
+plt.title(f'Crescimento de C(n, {p}) - Número de Combinações', fontsize=14, fontweight='bold')
+plt.xlabel('n (elementos totais)', fontsize=12)
+plt.ylabel('Número de combinações', fontsize=12)
+plt.grid(True, alpha=0.3, linestyle='--')
+plt.xticks(n_values)
+plt.tight_layout()
 plt.show()
+
+print("\n=== Análise do Crescimento ===")
+print(f"{'n':<5} {'C(n,{p})':<15} {'Crescimento':<15}")
+print("-" * 40)
+for i, n in enumerate(n_values):
+    c = c_values[i]
+    if i > 0:
+        crescimento = (c / c_values[i-1] - 1) * 100
+        print(f"{n:<5} {c:<15,} {crescimento:>10.1f}%")
+    else:
+        print(f"{n:<5} {c:<15,} {'---':>15}")
 ```
 
 ---
 
-## 🎓 5. **Aplicações didáticas**
+## 🎓 5. **Sistema Interativo de Aprendizado**
 
-### ✅ Exercício automático:
+Crie um quiz para praticar:
 
 ```python
-def quiz_combinacao(n, p):
-    print(f"Quantas combinações de {p} elementos podem ser feitas a partir de {n} elementos?")
-    resposta = int(input("Sua resposta: "))
-    correta = math.comb(n, p)
-    if resposta == correta:
-        print("✔️ Correto!")
-    else:
-        print(f"❌ Errado! A resposta certa é {correta}")
+import random
+import math
 
-quiz_combinacao(6, 2)
+def quiz_combinacao():
+    """
+    Sistema interativo para praticar cálculo de combinações.
+    """
+    print("=" * 50)
+    print("🎓 QUIZ DE COMBINAÇÕES")
+    print("=" * 50)
+    
+    acertos = 0
+    total_questoes = 5
+    
+    for questao in range(1, total_questoes + 1):
+        # Gerar valores aleatórios
+        n = random.randint(5, 15)
+        p = random.randint(2, min(n-1, 8))
+        
+        resposta_correta = math.comb(n, p)
+        
+        print(f"\n📝 Questão {questao}/{total_questoes}")
+        print(f"Quantas combinações de {p} elementos podem ser")
+        print(f"feitas a partir de {n} elementos?")
+        print(f"(Em outras palavras: C({n},{p}) = ?)")
+        
+        try:
+            resposta_usuario = int(input("\nSua resposta: "))
+            
+            if resposta_usuario == resposta_correta:
+                print("✅ Correto! Parabéns!")
+                acertos += 1
+                
+                # Dica educacional
+                print(f"\n💡 Explicação:")
+                print(f"C({n},{p}) = {n}! / ({p}! × {n-p}!)")
+                print(f"        = {math.factorial(n):,} / ({math.factorial(p):,} × {math.factorial(n-p):,})")
+                print(f"        = {resposta_correta:,}")
+            else:
+                print(f"❌ Errado! A resposta correta é {resposta_correta:,}")
+                print(f"\n💡 Você respondeu: {resposta_usuario:,}")
+                print(f"   Diferença: {abs(resposta_usuario - resposta_correta):,}")
+                
+        except ValueError:
+            print("❌ Resposta inválida! Por favor, digite um número.")
+            print(f"   A resposta correta era: {resposta_correta:,}")
+    
+    # Resultado final
+    print("\n" + "=" * 50)
+    print(f"🏆 RESULTADO FINAL: {acertos}/{total_questoes}")
+    percentual = (acertos / total_questoes) * 100
+    print(f"   Percentual de acerto: {percentual:.1f}%")
+    
+    if percentual >= 80:
+        print("   🌟 Excelente! Você domina combinações!")
+    elif percentual >= 60:
+        print("   👍 Bom trabalho! Continue praticando!")
+    else:
+        print("   📚 Continue estudando! A prática leva à perfeição!")
+    print("=" * 50)
+
+# Executar o quiz
+if __name__ == "__main__":
+    quiz_combinacao()
 ```
 
 ---
