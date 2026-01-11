@@ -466,8 +466,8 @@ $$
 
 **Resultados:**
 ```
-β̂ = 1.8 (MLE com censura)
-η̂ = 45.000 horas
+β_hat = 1.8 (MLE com censura)
+η_hat = 45.000 horas
 ```
 
 **Implicações:**
