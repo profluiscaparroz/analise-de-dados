@@ -29,8 +29,8 @@ Um teste de hipóteses é um procedimento estatístico formal que usa dados amos
 ### **Fundamentos Teóricos**
 
 O teste de hipóteses tem suas raízes no trabalho de pioneiros como:
-- **Ronald Fisher** (1920s): Desenvolveu o conceito de teste de significância e valor-p
-- **Jerzy Neyman e Egon Pearson** (1930s): Formalizaram a teoria dos testes de hipóteses com α e β
+- **Ronald Fisher** (anos 1920): Desenvolveu o conceito de teste de significância e valor-p
+- **Jerzy Neyman e Egon Pearson** (anos 1930): Formalizaram a teoria dos testes de hipóteses com α e β
 - **Karl Pearson**: Contribuiu com o teste qui-quadrado e outras ferramentas fundamentais
 
 **Paradigma Frequentista**: O teste de hipóteses clássico se baseia na abordagem frequentista, onde as probabilidades são interpretadas como frequências relativas de eventos em repetições infinitas de um experimento.
@@ -112,7 +112,7 @@ O valor-p é a probabilidade de obter um resultado tão extremo quanto o observa
 ### **5. Decisão**
 
 - Se p-valor ≤ α: **Rejeitamos H₀**
-- Se p-valor > α: **Não rejeitamos H₀**
+- Se p-valor > α: **Não rejeitamos H₀** (ver discussão detalhada na seção [Valor-p e Significância Estatística](#valor-p-e-significância-estatística))
 
 ---
 
@@ -188,7 +188,7 @@ media_hipotetica = 25
 
 n = len(dados)
 media_amostral = np.mean(dados)
-desvio_padrao = np.std(dados, ddof=1)  # ddof=1 para amostra
+desvio_padrao = np.std(dados, ddof=1)  # ddof=1 para calcular desvio padrão amostral (divisão por n-1)
 
 # Estatística t
 t_stat = (media_amostral - media_hipotetica) / (desvio_padrao / np.sqrt(n))
@@ -365,9 +365,6 @@ print(f"μ₀ no IC: {no_ic}")
 print(f"Não rejeita H₀: {nao_rejeita}")
 print(f"Equivalência verificada: {no_ic == nao_rejeita}")
 ```
-
-- Se p-valor ≤ α: **Rejeitamos H₀**
-- Se p-valor > α: **Não rejeitamos H₀**
 
 ---
 
@@ -753,8 +750,11 @@ stats.probplot(grupo2, dist="norm", plot=axes[2])
 axes[2].set_title('Q-Q Plot - Grupo 2')
 
 plt.tight_layout()
-plt.savefig('/tmp/pressupostos_teste.png', dpi=150, bbox_inches='tight')
-print("\n✓ Gráficos de diagnóstico salvos em /tmp/pressupostos_teste.png")
+# Nota: Ajuste o caminho conforme seu sistema operacional
+# Windows: 'C:\\temp\\pressupostos_teste.png'
+# Linux/Mac: '/tmp/pressupostos_teste.png'
+plt.savefig('pressupostos_teste.png', dpi=150, bbox_inches='tight')
+print("\n✓ Gráficos de diagnóstico salvos em pressupostos_teste.png")
 ```
 
 ---
@@ -792,7 +792,7 @@ Se realizarmos *m* testes independentes, cada um com α = 0.05, a probabilidade 
 
 **P(pelo menos 1 erro tipo I) = 1 - (1 - α)^m**
 
-Por exemplo, com 10 testes: 1 - (0.95)^10 ≈ 0.40 (40% de chance!)
+Por exemplo, com 10 testes: 1 - (0.95)^10 = 1 - 0.5987 ≈ 0.40 (40% de chance!)
 
 #### **Correção de Bonferroni**
 
@@ -1079,8 +1079,8 @@ else:
     print("  Conclusão: Dados seguem distribuição normal")
 
 plt.tight_layout()
-plt.savefig('/tmp/teste_normalidade.png', dpi=150, bbox_inches='tight')
-print("\n✓ Gráfico salvo em /tmp/teste_normalidade.png")
+plt.savefig('teste_normalidade.png', dpi=150, bbox_inches='tight')
+print("\n✓ Gráfico salvo em teste_normalidade.png")
 ```
 
 ### **Exemplo 4: ANOVA com Testes Post-Hoc**
@@ -1152,8 +1152,8 @@ if p_value < 0.05:
     axes[1].grid(axis='y', alpha=0.3)
     
     plt.tight_layout()
-    plt.savefig('/tmp/anova_posthoc.png', dpi=150, bbox_inches='tight')
-    print("\n✓ Gráficos salvos em /tmp/anova_posthoc.png")
+    plt.savefig('anova_posthoc.png', dpi=150, bbox_inches='tight')
+    print("\n✓ Gráficos salvos em anova_posthoc.png")
 else:
     print("\nConclusão: Não há diferença significativa entre os grupos")
 ```
@@ -1254,8 +1254,8 @@ for i in range(len(residuos.index)):
 
 plt.colorbar(im, ax=axes[1])
 plt.tight_layout()
-plt.savefig('/tmp/qui_quadrado.png', dpi=150, bbox_inches='tight')
-print("\n✓ Gráficos salvos em /tmp/qui_quadrado.png")
+plt.savefig('qui_quadrado.png', dpi=150, bbox_inches='tight')
+print("\n✓ Gráficos salvos em qui_quadrado.png")
 ```
 
 ---
@@ -1276,7 +1276,7 @@ O teste de hipóteses é uma ferramenta poderosa e fundamental para a inferênci
 ### **✅ Boas Práticas**
 
 **Planejamento**:
-- Formule hipóteses **antes** de ver os dados (evitar HARKing - Hypothesizing After Results are Known)
+- Formule hipóteses **antes** de ver os dados (evitar HARKing - Formulação de Hipóteses Após Conhecer os Resultados, do inglês "Hypothesizing After Results are Known")
 - Defina α priori baseado nas consequências dos erros
 - Calcule o tamanho amostral necessário para poder adequado (1-β ≥ 0.80)
 
@@ -1406,7 +1406,7 @@ O campo continua evoluindo com:
 - Discussão sobre interpretação errônea de estatísticas
 
 **BENJAMIN, Daniel J. et al.** Redefine Statistical Significance. *Nature Human Behaviour*, v. 2, n. 1, p. 6-10, 2018.
-- Proposta de redefinir limiar de significância para α = 0.005
+- Proposta controversa de redefinir limiar de significância para α = 0.005 (não amplamente adotada)
 
 ### **Recursos Online**
 
