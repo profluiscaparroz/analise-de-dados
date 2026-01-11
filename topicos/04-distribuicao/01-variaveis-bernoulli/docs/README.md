@@ -10,24 +10,49 @@ Na prática, a variável aleatória discreta é usada para **quantificar eventos
 
 > A palavra "discreta" significa que a variável **não assume valores contínuos** (como qualquer número real em um intervalo), mas sim **valores pontuais e isolados**.
 
-### Exemplos clássicos:
+### Exemplos clássicos do dia a dia:
 
-* O número obtido ao lançar um dado ($X \in \{1, 2, 3, 4, 5, 6\}$).
-* O número de filhos em uma família.
-* O número de chamadas recebidas por uma central em uma hora.
-* O resultado de um teste que retorna "positivo" ou "negativo" (representado por 1 ou 0).
+**Em jogos e sorteios:**
+* O número obtido ao lançar um dado ($X \in \{1, 2, 3, 4, 5, 6\}$)
+* O resultado de cara ou coroa em uma moeda ($X \in \{0, 1\}$)
+
+**Em contextos familiares e sociais:**
+* O número de filhos em uma família ($X \in \{0, 1, 2, 3, ...\}$)
+* Número de pessoas que comparecem a um evento ($X \in \{0, 1, 2, ..., n\}$)
+
+**Em tecnologia e comunicação:**
+* O número de chamadas recebidas por uma central telefônica em uma hora
+* Número de e-mails recebidos por dia
+* Quantidade de cliques em um anúncio online
+
+**Em medicina e testes:**
+* O resultado de um teste diagnóstico: "positivo" ou "negativo" (representado por 1 ou 0)
+* Número de pacientes que respondem positivamente a um tratamento
+
+**Em controle de qualidade:**
+* Número de produtos defeituosos em um lote
+* Quantidade de erros encontrados em um software
 
 ### Representação formal:
 
 Seja $S$ o espaço amostral de um experimento (o conjunto de todos os resultados possíveis). Uma **variável aleatória discreta $X$** é uma função:
 
-$
+$$
 X: S \rightarrow \mathbb{R}
-$
+$$
 
 tal que o conjunto dos valores possíveis $\{x_1, x_2, \dots\} \subset \mathbb{R}$ é finito ou enumerável.
 
-Por exemplo, ao jogar dois dados, o espaço amostral tem 36 pares ordenados, mas uma variável aleatória pode representar a **soma dos valores dos dados**, que varia de 2 a 12. Ou seja, o espaço amostral é complexo, mas a variável aleatória nos ajuda a extrair e analisar um aspecto específico desse espaço — nesse caso, a soma dos dados.
+**Exemplo detalhado:**
+
+Ao jogar dois dados, o espaço amostral tem 36 pares ordenados possíveis: (1,1), (1,2), ..., (6,6). 
+
+Podemos definir diferentes variáveis aleatórias sobre esse espaço:
+- **$X_1$**: soma dos valores dos dados (varia de 2 a 12)
+- **$X_2$**: produto dos valores (varia de 1 a 36)
+- **$X_3$**: maior valor entre os dois dados (varia de 1 a 6)
+
+Cada variável aleatória extrai uma informação específica do experimento, simplificando a análise. Por exemplo, para analisar a soma dos dados, não precisamos considerar todos os 36 resultados individuais, apenas os 11 valores possíveis de soma (2, 3, 4, ..., 12) e suas respectivas probabilidades.
 
 ### Por que são importantes?
 
