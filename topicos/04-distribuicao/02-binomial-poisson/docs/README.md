@@ -13,10 +13,8 @@
 1. [Distribuição Binomial](#distribuição-binomial)
 2. [Distribuição de Poisson](#distribuição-de-poisson)  
 3. [Comparação entre as Distribuições](#comparação-entre-as-distribuições)
-4. [Aproximação de Binomial por Poisson](#aproximação-de-binomial-por-poisson)
-5. [Aplicações Práticas Detalhadas](#aplicações-práticas-detalhadas)
-6. [Exemplos com Python](#exemplos-com-python)
-7. [Exercícios Resolvidos](#exercícios-resolvidos)
+4. [Aplicações Práticas](#aplicações-práticas)
+5. [Exemplos com Python](#exemplos-com-python)
 
 ---
 

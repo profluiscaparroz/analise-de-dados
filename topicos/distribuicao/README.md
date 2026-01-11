@@ -1364,12 +1364,14 @@ def quiz_combinacao():
                 print(f"\n💡 Você respondeu: {resposta_usuario:,}")
                 print(f"   Diferença: {abs(resposta_usuario - resposta_correta):,}")
                 
-        except (ValueError, EOFError, KeyboardInterrupt):
+        except KeyboardInterrupt:
             print("\n❌ Entrada inválida ou interrupção detectada.")
             print(f"   A resposta correta era: {resposta_correta:,}")
-            if isinstance(Exception, KeyboardInterrupt):
-                print("\n⚠️  Quiz interrompido pelo usuário.")
-                break
+            print("\n⚠️  Quiz interrompido pelo usuário.")
+            break
+        except (ValueError, EOFError):
+            print("\n❌ Entrada inválida ou interrupção detectada.")
+            print(f"   A resposta correta era: {resposta_correta:,}")
     
     # Resultado final
     print("\n" + "=" * 50)
