@@ -75,18 +75,70 @@ O curso está organizado em **tópicos sequenciais** localizados na pasta `topic
 
 ### 📚 Navegação Recomendada
 
-1. **Inicie pelo básico**: Comece pelos tópicos fundamentais (Estatística, Probabilidade)
-2. **Pratique regularmente**: Utilize os datasets fornecidos para exercitar
-3. **Consulte as referências**: Links para materiais complementares
-4. **Avance progressivamente**: Cada tópico se baseia no anterior
+#### **Para Iniciantes**
+1. **Comece pela fundamentação**: Leia [Símbolos Matemáticos](topicos/0-lista-simbolos/README.md) e [Introdução](topicos/01-introducao/README.md)
+2. **Aprenda estatística descritiva**: Estude [Estatística](topicos/02-estatistica/README.md) com todas as medidas
+3. **Visualize seus dados**: Explore [Visualização de Dados](topicos/05-visualizacao-dados/README.md)
+4. **Pratique com exercícios**: Utilize os notebooks `.ipynb` em cada tópico
+
+#### **Para Estudantes Intermediários**
+1. **Aprofunde em probabilidade**: Estude [Probabilidade](topicos/03-probabilidade/) e [Distribuições](topicos/04-distribuicao/)
+2. **Trabalhe com qualidade**: Leia [Qualidade de Dados](topicos/06-qualidade-dados/README.md)
+3. **Teste hipóteses**: Pratique com [Teste de Hipóteses](topicos/07-teste-hipoteses/README.md)
+4. **Execute os notebooks práticos**: Cada tópico agora contém exercícios com soluções
+
+#### **Para Estudantes Avançados**
+1. **Domine regressão**: Estude todos os tipos em [Análise de Regressão](topicos/08-regressao/README.md)
+2. **Integre conhecimentos**: Combine técnicas de múltiplos tópicos
+3. **Explore referências acadêmicas**: Consulte os artigos e livros citados
+4. **Contribua com o projeto**: Proponha melhorias e novos exemplos
+
+#### **Metodologia de Estudo Sugerida** (baseada em Bloom et al., 1956)
+1. **Leitura ativa** (20%): Leia o README.md anotando conceitos-chave
+2. **Prática dirigida** (40%): Resolva os exercícios propostos nos notebooks
+3. **Aplicação independente** (30%): Trabalhe com seus próprios dados
+4. **Revisão e reflexão** (10%): Revise conceitos e consulte referências
+
+**Referência metodológica:** BLOOM, Benjamin S. et al. *Taxonomy of Educational Objectives*. New York: David McKay, 1956.
 
 ### 🛠️ Ferramentas Recomendadas
 
-Para acompanhar o curso, recomenda-se familiaridade com:
-- **Excel/Google Sheets**: Para análises básicas
-- **Python/R**: Para análises avançadas (opcional)
-- **Calculadora científica**: Para cálculos estatísticos
-- **Software de visualização**: Para criação de gráficos
+#### **Nível Básico (Iniciantes)**
+- **Microsoft Excel / Google Sheets**: Análises descritivas, gráficos básicos
+  - Funções essenciais: MÉDIA, DESVPAD, CONT.SE, SOMASE
+  - Tabelas dinâmicas e gráficos interativos
+- **Calculadora científica**: Cálculos estatísticos manuais
+  - Recomendadas: Casio fx-991, HP 12C, Texas Instruments TI-84
+
+#### **Nível Intermediário**
+- **Python** (3.8+): Análise de dados com bibliotecas científicas
+  - **Essenciais**: NumPy, Pandas, Matplotlib, Seaborn
+  - **IDE recomendada**: Jupyter Notebook, VS Code, PyCharm
+  - **Instalação**: [Anaconda Distribution](https://www.anaconda.com/)
+- **R e RStudio**: Análise estatística especializada
+  - Pacotes: tidyverse, ggplot2, dplyr
+  - Interface amigável e comunidade ativa
+
+#### **Nível Avançado**
+- **Python Avançado**: Machine Learning e modelagem
+  - **Scikit-learn**: Algoritmos de ML
+  - **Statsmodels**: Modelos estatísticos avançados
+  - **SciPy**: Funções científicas e estatísticas
+- **Ferramentas de Big Data**: Para grandes volumes
+  - Apache Spark, Dask, Vaex
+- **Visualização Interativa**: Dashboards e relatórios
+  - Plotly, Dash, Streamlit, Tableau
+
+#### **Ferramentas Online Gratuitas**
+- **Google Colab**: Jupyter notebooks na nuvem (sem instalação)
+- **Kaggle Kernels**: Ambiente completo para ciência de dados
+- **Repl.it**: Editor online para Python e R
+- **Observable**: Notebooks JavaScript para visualizações interativas
+
+**Referências sobre ferramentas:**
+- **McKINNEY, Wes.** *Python for Data Analysis*. 3. ed. O'Reilly, 2022.
+- **WICKHAM, Hadley; GROLEMUND, Garrett.** *R for Data Science*. 2. ed. O'Reilly, 2023.
+- **VanderPlas, Jake.** *Python Data Science Handbook*. O'Reilly, 2016.
 
 ---
 
@@ -312,10 +364,97 @@ Ao concluir todos os módulos desta disciplina, o estudante terá desenvolvido:
 ## 📚 Recursos Adicionais
 
 ### 📖 **Bibliografia Recomendada**
-- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*
-- TRIOLA, M. F. *Elementary Statistics*
-- HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. *The Elements of Statistical Learning*
-- PROVOST, F.; FAWCETT, T. *Data Science for Business*
+
+#### **Obras Fundamentais**
+
+**MONTGOMERY, Douglas C.; RUNGER, George C.** *Applied Statistics and Probability for Engineers*. 7. ed. Hoboken: John Wiley & Sons, 2018.
+- Texto completo para estatística aplicada com foco em engenharia e ciências aplicadas
+
+**TRIOLA, Mario F.** *Elementary Statistics*. 13. ed. Boston: Pearson, 2017.
+- Introdução acessível à estatística com exemplos práticos e aplicações reais
+
+**HASTIE, Trevor; TIBSHIRANI, Robert; FRIEDMAN, Jerome.** *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2. ed. New York: Springer, 2009.
+- Referência avançada em aprendizado estatístico e mineração de dados
+
+**PROVOST, Foster; FAWCETT, Tom.** *Data Science for Business*. Sebastopol: O'Reilly Media, 2013.
+- Aplicações práticas de ciência de dados em contextos empresariais
+
+#### **Teoria Estatística**
+
+**CASELLA, George; BERGER, Roger L.** *Statistical Inference*. 2. ed. Pacific Grove: Duxbury, 2002.
+- Tratamento matemático rigoroso de inferência estatística
+
+**DEVORE, Jay L.** *Probability and Statistics for Engineering and the Sciences*. 9. ed. Boston: Cengage Learning, 2015.
+- Probabilidade e estatística com forte componente aplicado
+
+**DEGROOT, Morris H.; SCHERVISH, Mark J.** *Probability and Statistics*. 4. ed. Boston: Pearson, 2012.
+- Abordagem equilibrada entre teoria e aplicação
+
+#### **Análise de Dados e Visualização**
+
+**TUKEY, John W.** *Exploratory Data Analysis*. Reading: Addison-Wesley, 1977.
+- Obra revolucionária sobre análise exploratória de dados
+
+**WILKINSON, Leland.** *The Grammar of Graphics*. 2. ed. New York: Springer, 2005.
+- Framework teórico fundamental para visualização de dados
+
+**McKINNEY, Wes.** *Python for Data Analysis*. 3. ed. Sebastopol: O'Reilly Media, 2022.
+- Referência para análise de dados com Python, Pandas e NumPy
+
+#### **Amostragem e Pesquisa**
+
+**COCHRAN, William G.** *Sampling Techniques*. 3. ed. New York: John Wiley & Sons, 1977.
+- Clássico sobre teoria e prática de amostragem
+
+**LOHR, Sharon L.** *Sampling: Design and Analysis*. 2. ed. Boston: Brooks/Cole, 2019.
+- Abordagem moderna de métodos de amostragem
+
+**GROVES, Robert M. et al.** *Survey Methodology*. 2. ed. Hoboken: Wiley, 2009.
+- Metodologia completa para pesquisas por amostragem
+
+#### **Testes de Hipóteses e Inferência**
+
+**COHEN, Jacob.** *Statistical Power Analysis for the Behavioral Sciences*. 2. ed. Hillsdale: Lawrence Erlbaum Associates, 1988.
+- Referência definitiva sobre poder estatístico e tamanho do efeito
+
+**FIELD, Andy.** *Discovering Statistics Using IBM SPSS Statistics*. 5. ed. London: SAGE Publications, 2018.
+- Abordagem acessível e prática de testes estatísticos
+
+**LEHMANN, Erich L.; ROMANO, Joseph P.** *Testing Statistical Hypotheses*. 3. ed. New York: Springer, 2005.
+- Tratamento avançado e completo de testes de hipóteses
+
+#### **Regressão e Modelagem**
+
+**JAMES, Gareth et al.** *An Introduction to Statistical Learning with Applications in R*. 2. ed. New York: Springer, 2021.
+- Introdução acessível ao aprendizado estatístico
+
+**KUTNER, Michael H. et al.** *Applied Linear Statistical Models*. 5. ed. New York: McGraw-Hill, 2005.
+- Modelos lineares aplicados com exemplos detalhados
+
+**MONTGOMERY, Douglas C.; PECK, Elizabeth A.; VINING, G. Geoffrey.** *Introduction to Linear Regression Analysis*. 6. ed. Hoboken: Wiley, 2021.
+- Análise de regressão linear completa e rigorosa
+
+#### **Qualidade de Dados**
+
+**REDMAN, Thomas C.** *Data Quality: The Field Guide*. Boston: Digital Press, 2001.
+- Guia prático sobre qualidade de dados
+
+**LOSHIN, David.** *The Practitioner's Guide to Data Quality Improvement*. Burlington: Morgan Kaufmann, 2011.
+- Metodologias práticas para melhoria da qualidade de dados
+
+**SEBASTIAN-COLEMAN, Laura.** *Measuring Data Quality for Ongoing Improvement*. Burlington: Morgan Kaufmann, 2013.
+- Métricas e processos para garantir qualidade de dados
+
+#### **Matemática Discreta e Combinatória**
+
+**GRAHAM, Ronald L.; KNUTH, Donald E.; PATASHNIK, Oren.** *Concrete Mathematics: A Foundation for Computer Science*. 2. ed. Reading: Addison-Wesley, 1994.
+- Referência definitiva em combinatória e matemática discreta
+
+**ROSEN, Kenneth H.** *Discrete Mathematics and Its Applications*. 8. ed. New York: McGraw-Hill, 2019.
+- Matemática discreta com muitos exemplos práticos
+
+**FELLER, William.** *An Introduction to Probability Theory and Its Applications*. Vol. 1, 3. ed. New York: Wiley, 1968.
+- Obra clássica sobre probabilidade e suas aplicações
 
 ### 🔗 **Links Úteis**
 - [Introdução à Análise de Dados](topicos/01-introducao/README.md)
@@ -352,6 +491,101 @@ Ao concluir todos os módulos desta disciplina, o estudante terá desenvolvido:
 
 ---
 
+## 📊 Boas Práticas em Análise de Dados
+
+### **Princípios Fundamentais** (baseado em Tukey, 1977)
+
+1. **Explore antes de modelar**: Sempre realize análise exploratória antes de aplicar testes ou modelos
+2. **Visualize seus dados**: Gráficos revelam padrões que estatísticas descritivas podem ocultar
+3. **Questione pressupostos**: Verifique se os dados atendem aos requisitos dos testes aplicados
+4. **Documente seu processo**: Mantenha registro de todas as etapas de análise
+5. **Seja transparente**: Reporte todos os testes realizados, não apenas os significativos
+
+### **Ciclo de Análise de Dados** (Wickham & Grolemund, 2023)
+
+```
+1. Importar → 2. Limpar → 3. Transformar → 4. Visualizar → 5. Modelar → 6. Comunicar
+   ↑_______________________________________________________________|
+```
+
+### **Checklist de Qualidade**
+
+Antes de finalizar qualquer análise, verifique:
+
+- [ ] **Dados**: Verificou valores ausentes, outliers e inconsistências?
+- [ ] **Pressupostos**: Testou normalidade, homogeneidade de variâncias?
+- [ ] **Visualização**: Criou gráficos apropriados para seus dados?
+- [ ] **Estatísticas**: Calculou medidas de tendência central e dispersão?
+- [ ] **Testes**: Escolheu testes apropriados para seus objetivos?
+- [ ] **Interpretação**: Considerou significância prática além da estatística?
+- [ ] **Tamanho do efeito**: Reportou medidas de tamanho do efeito (d, η², r)?
+- [ ] **Replicabilidade**: Seu código é reproduzível por outros?
+- [ ] **Documentação**: Incluiu referências e explicações claras?
+
+### **Erros Comuns a Evitar** (Gigerenzer, 2004)
+
+1. **P-hacking**: Realizar múltiplos testes até obter p < 0.05
+2. **HARKing**: Formular hipóteses após ver os resultados
+3. **Cherry-picking**: Reportar apenas resultados favoráveis
+4. **Causalidade espúria**: Confundir correlação com causação
+5. **Extrapolação**: Aplicar conclusões além do escopo dos dados
+6. **Ignorar tamanho do efeito**: Focar apenas em significância estatística
+7. **Violação de pressupostos**: Aplicar testes sem verificar requisitos
+
+### **Estratégias de Aprendizagem Eficaz**
+
+#### **Técnica Feynman** (aprender ensinando)
+1. Escolha um conceito do curso
+2. Explique-o em termos simples (como se ensinasse uma criança)
+3. Identifique lacunas no seu entendimento
+4. Revise e simplifique sua explicação
+
+#### **Prática Espaçada** (Ebbinghaus, 1885)
+- Revise conceitos após 1 dia, 1 semana, 1 mês
+- Não concentre todo o estudo em uma única sessão
+- Intercale diferentes tópicos nas sessões de estudo
+
+#### **Elaboração e Conexão**
+- Relacione novos conceitos com conhecimento prévio
+- Crie exemplos próprios além dos fornecidos
+- Explique *por que* uma técnica funciona, não apenas *como*
+
+### **Recursos para Aprendizagem Contínua**
+
+#### **Comunidades Online**
+- **Stack Overflow**: Para dúvidas de programação
+- **Cross Validated**: Para questões de estatística
+- **Reddit** (r/statistics, r/datascience): Discussões e recursos
+- **Kaggle**: Competições e notebooks compartilhados
+
+#### **Publicações Acadêmicas**
+- **Journal of Statistical Software**: Software estatístico de código aberto
+- **The American Statistician**: Artigos metodológicos acessíveis
+- **Journal of Data Science**: Aplicações práticas
+
+#### **Blogs e Newsletters Recomendados**
+- **Towards Data Science** (Medium)
+- **R-bloggers**: Tutoriais em R
+- **Real Python**: Tutoriais Python aprofundados
+- **Statistical Modeling, Causal Inference, and Social Science**
+
+### **Ética em Análise de Dados** (ASA, 2016)
+
+1. **Integridade Profissional**: Conduza análises honestas e transparentes
+2. **Responsabilidade Social**: Considere o impacto de suas análises
+3. **Privacidade**: Proteja dados sensíveis e identidades
+4. **Conflitos de Interesse**: Declare possíveis vieses
+5. **Reprodutibilidade**: Compartilhe métodos e código quando possível
+
+**Referências sobre boas práticas:**
+- **TUKEY, John W.** *Exploratory Data Analysis*. Addison-Wesley, 1977.
+- **WICKHAM, Hadley; GROLEMUND, Garrett.** *R for Data Science*. 2. ed. O'Reilly, 2023.
+- **GIGERENZER, Gerd.** Mindless Statistics. *Journal of Socio-Economics*, v. 33, n. 5, p. 587-606, 2004.
+- **ASA.** Ethical Guidelines for Statistical Practice. *American Statistical Association*, 2016.
+- **EBBINGHAUS, Hermann.** *Memory: A Contribution to Experimental Psychology*. Teachers College, 1885.
+
+---
+
 ## 📄 Licença
 
 Este material está disponível sob a licença especificada no arquivo [LICENSE](LICENSE).
@@ -364,6 +598,30 @@ Em resumo, todos esses tópicos estão interconectados para proporcionar uma com
 
 **Este curso representa uma jornada completa pelo mundo da análise de dados, desde os conceitos mais básicos até as técnicas mais avançadas, preparando o estudante para aplicar conhecimento estatístico em contextos reais e profissionais.**
 
+### **Próximos Passos**
+
+Após concluir este curso, você estará preparado para:
+
+1. **Aplicar análises estatísticas** em projetos reais de pesquisa ou negócios
+2. **Interpretar estudos científicos** com compreensão crítica das metodologias
+3. **Comunicar insights** de forma clara para audiências técnicas e não-técnicas
+4. **Continuar aprendendo** com cursos avançados em machine learning, causalidade e modelagem bayesiana
+5. **Contribuir para a ciência de dados** através de projetos open source e pesquisa
+
+### **Recursos de Continuação**
+
+- **Aprendizado de Máquina**: Explore scikit-learn, TensorFlow, PyTorch
+- **Inferência Causal**: Estude *The Book of Why* (Pearl & Mackenzie, 2018)
+- **Estatística Bayesiana**: Leia *Bayesian Data Analysis* (Gelman et al., 2013)
+- **Big Data**: Aprenda Spark, Hadoop, processamento distribuído
+- **Visualização Avançada**: Domine D3.js, Plotly, dashboards interativos
+
+**Lembre-se**: A análise de dados é uma jornada de aprendizado contínuo. Mantenha-se curioso, pratique regularmente e sempre busque entender *por que* os métodos funcionam, não apenas *como* aplicá-los.
+
 ---
 
-*⭐ Se este material foi útil para você, considere dar uma estrela no repositório!*
+*⭐ Se este material foi útil para você, considere dar uma estrela no repositório e compartilhar com outros estudantes!*
+
+---
+
+**Última atualização**: Fevereiro 2026 | **Versão**: 2.0 | **Contribuidores**: Prof. Luis Caparroz e comunidade
