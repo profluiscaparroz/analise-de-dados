@@ -10,24 +10,49 @@ Na prática, a variável aleatória discreta é usada para **quantificar eventos
 
 > A palavra "discreta" significa que a variável **não assume valores contínuos** (como qualquer número real em um intervalo), mas sim **valores pontuais e isolados**.
 
-### Exemplos clássicos:
+### Exemplos clássicos do dia a dia:
 
-* O número obtido ao lançar um dado ($X \in \{1, 2, 3, 4, 5, 6\}$).
-* O número de filhos em uma família.
-* O número de chamadas recebidas por uma central em uma hora.
-* O resultado de um teste que retorna "positivo" ou "negativo" (representado por 1 ou 0).
+**Em jogos e sorteios:**
+* O número obtido ao lançar um dado ($X \in \{1, 2, 3, 4, 5, 6\}$)
+* O resultado de cara ou coroa em uma moeda ($X \in \{0, 1\}$)
+
+**Em contextos familiares e sociais:**
+* O número de filhos em uma família ($X \in \{0, 1, 2, 3, ...\}$)
+* Número de pessoas que comparecem a um evento ($X \in \{0, 1, 2, ..., n\}$)
+
+**Em tecnologia e comunicação:**
+* O número de chamadas recebidas por uma central telefônica em uma hora
+* Número de e-mails recebidos por dia
+* Quantidade de cliques em um anúncio online
+
+**Em medicina e testes:**
+* O resultado de um teste diagnóstico: "positivo" ou "negativo" (representado por 1 ou 0)
+* Número de pacientes que respondem positivamente a um tratamento
+
+**Em controle de qualidade:**
+* Número de produtos defeituosos em um lote
+* Quantidade de erros encontrados em um software
 
 ### Representação formal:
 
 Seja $S$ o espaço amostral de um experimento (o conjunto de todos os resultados possíveis). Uma **variável aleatória discreta $X$** é uma função:
 
-$
+$$
 X: S \rightarrow \mathbb{R}
-$
+$$
 
 tal que o conjunto dos valores possíveis $\{x_1, x_2, \dots\} \subset \mathbb{R}$ é finito ou enumerável.
 
-Por exemplo, ao jogar dois dados, o espaço amostral tem 36 pares ordenados, mas uma variável aleatória pode representar a **soma dos valores dos dados**, que varia de 2 a 12. Ou seja, o espaço amostral é complexo, mas a variável aleatória nos ajuda a extrair e analisar um aspecto específico desse espaço — nesse caso, a soma dos dados.
+**Exemplo detalhado:**
+
+Ao jogar dois dados, o espaço amostral tem 36 pares ordenados possíveis: (1,1), (1,2), ..., (6,6). 
+
+Podemos definir diferentes variáveis aleatórias sobre esse espaço:
+- **$X_1$**: soma dos valores dos dados (varia de 2 a 12)
+- **$X_2$**: produto dos valores (varia de 1 a 36)
+- **$X_3$**: maior valor entre os dois dados (varia de 1 a 6)
+
+Cada variável aleatória extrai uma informação específica do experimento, simplificando a análise. Por exemplo, para analisar a soma dos dados, não precisamos considerar todos os 36 resultados individuais, apenas os 11 valores possíveis de soma (2, 3, 4, ..., 12) e suas respectivas probabilidades.
 
 ### Por que são importantes?
 
@@ -843,7 +868,7 @@ print("Média amostral:", np.mean(resultados))
 
 #### Comparação de Diferentes Valores de p
 
-![Distribuição de Bernoulli](distribuicao_bernoulli.png)
+![Distribuição de Bernoulli](../distribuicao_bernoulli.png)
 
 Este gráfico mostra como a distribuição de Bernoulli se comporta com diferentes valores de p:
 - **p = 0.2**: Baixa probabilidade de sucesso (20%)
@@ -852,7 +877,7 @@ Este gráfico mostra como a distribuição de Bernoulli se comporta com diferent
 
 #### Exemplo Prático: Moeda Viciada
 
-![Exemplo Moeda Bernoulli](exemplo_moeda_bernoulli.png)
+![Exemplo Moeda Bernoulli](../exemplo_moeda_bernoulli.png)
 
 Visualização do exemplo da moeda viciada com p = 0.7, mostrando que:
 - A chance de cara (sucesso) é 70%
@@ -898,8 +923,544 @@ Se quiser, posso mostrar códigos para simulação, exemplos de estimativa de $p
 
 ---
 
+---
+
+## 📝 Exercícios Resolvidos
+
+### Exercício 1: Teste de Qualidade Industrial
+
+**Enunciado:** Uma fábrica de componentes eletrônicos tem uma taxa de defeitos de 5% em sua produção. Seja $X$ a variável aleatória que indica se um componente é defeituoso (1) ou não (0). 
+
+a) Modele essa situação usando uma distribuição de Bernoulli.
+b) Calcule a esperança e a variância de $X$.
+c) Se inspecionarmos 10 componentes, qual a probabilidade de encontrarmos exatamente 2 defeituosos?
+
+**Solução:**
+
+**Parte a) Modelagem:**
+Definimos a variável aleatória $X$ como:
+$$X = \begin{cases}
+1 & \text{se o componente é defeituoso (sucesso)} \\
+0 & \text{se o componente não é defeituoso (fracasso)}
+\end{cases}$$
+
+Como a taxa de defeitos é 5%, temos $p = 0{,}05$.
+
+Logo, $X \sim \text{Bernoulli}(0{,}05)$ com função de probabilidade:
+$$P(X = x) = 0{,}05^x \times 0{,}95^{1-x}, \quad x \in \{0,1\}$$
+
+Especificamente:
+- $P(X = 1) = 0{,}05$ (probabilidade de defeito)
+- $P(X = 0) = 0{,}95$ (probabilidade de não haver defeito)
+
+**Parte b) Esperança e Variância:**
+
+Esperança:
+$$\mathbb{E}[X] = p = 0{,}05$$
+
+**Interpretação:** Em média, 5% dos componentes são defeituosos.
+
+Variância:
+$$\text{Var}(X) = p(1-p) = 0{,}05 \times 0{,}95 = 0{,}0475$$
+
+**Parte c) Probabilidade com 10 componentes:**
+Para 10 componentes independentes, definimos $Y = \sum_{i=1}^{10} X_i$ onde cada $X_i \sim \text{Bernoulli}(0{,}05)$.
+
+Então $Y \sim \text{Binomial}(10, 0{,}05)$.
+
+A probabilidade de exatamente 2 defeituosos é:
+$$P(Y = 2) = \binom{10}{2} \times 0{,}05^2 \times 0{,}95^8$$
+
+$$P(Y = 2) = 45 \times 0{,}0025 \times 0{,}6634 = 0{,}0746$$
+
+**Resposta:** Aproximadamente 7,46% de chance de encontrar exatamente 2 componentes defeituosos.
+
+---
+
+### Exercício 2: Eficácia de Tratamento Médico
+
+**Enunciado:** Um novo medicamento tem 80% de eficácia no tratamento de uma doença. Seja $X$ a variável que indica se o tratamento foi eficaz (1) ou não (0) para um paciente.
+
+a) Determine a distribuição de $X$ e sua função de probabilidade.
+b) Calcule $P(X = 1)$, $\mathbb{E}[X]$ e $\text{Var}(X)$.
+c) Interprete os resultados no contexto médico.
+
+**Solução:**
+
+**Parte a) Distribuição:**
+$X \sim \text{Bernoulli}(0{,}8)$
+
+Função de probabilidade:
+$$P(X = x) = 0{,}8^x \times 0{,}2^{1-x}, \quad x \in \{0,1\}$$
+
+**Parte b) Cálculos:**
+- $P(X = 1) = 0{,}8$ (80% de eficácia)
+- $P(X = 0) = 0{,}2$ (20% de falha)
+
+Esperança:
+$$\mathbb{E}[X] = 0{,}8$$
+
+Variância:
+$$\text{Var}(X) = 0{,}8 \times 0{,}2 = 0{,}16$$
+
+**Parte c) Interpretação médica:**
+- O medicamento tem alta probabilidade de sucesso (80%)
+- A esperança de 0,8 indica que, em média, o tratamento é eficaz em 8 de cada 10 pacientes
+- A variância de 0,16 mostra que há alguma incerteza no resultado, mas é relativamente baixa devido à alta eficácia
+
+---
+
+### Exercício 3: Marketing Digital - Taxa de Conversão
+
+**Enunciado:** Uma campanha de marketing digital tem taxa de conversão de 12%. Seja $X$ a variável que indica se um visitante do site faz uma compra (1) ou não (0).
+
+a) Modele usando Bernoulli e calcule as probabilidades.
+b) Determine esperança, variância e desvio padrão.
+c) Em uma amostra de 100 visitantes, quantas conversões esperamos?
+
+**Solução:**
+
+**Parte a) Modelagem:**
+$X \sim \text{Bernoulli}(0{,}12)$
+
+- $P(X = 1) = 0{,}12$ (conversão)
+- $P(X = 0) = 0{,}88$ (sem conversão)
+
+**Parte b) Medidas estatísticas:**
+
+Esperança:
+$$\mathbb{E}[X] = 0{,}12$$
+
+Variância:
+$$\text{Var}(X) = 0{,}12 \times 0{,}88 = 0{,}1056$$
+
+Desvio padrão:
+$$\sigma = \sqrt{0{,}1056} = 0{,}325$$
+
+**Parte c) Expectativa para 100 visitantes:**
+Para $n = 100$ visitantes independentes, o número esperado de conversões é:
+$$\mathbb{E}[\text{Total de conversões}] = n \times p = 100 \times 0{,}12 = 12 \text{ conversões}$$
+
+---
+
+### Exercício 4: Controle de Qualidade em Software
+
+**Enunciado:** Um sistema de detecção de bugs identifica corretamente 95% dos erros em códigos de software. Modelamos cada teste como uma variável de Bernoulli $X$.
+
+a) Defina $X$ e determine sua distribuição.
+b) Se o sistema analisar 5 códigos independentes, qual a probabilidade de detectar bugs em todos?
+c) E a probabilidade de falhar na detecção em pelo menos um código?
+
+**Solução:**
+
+**Parte a) Definição:**
+$$X = \begin{cases}
+1 & \text{se o bug é detectado corretamente} \\
+0 & \text{se o bug não é detectado (falha)}
+\end{cases}$$
+
+$X \sim \text{Bernoulli}(0{,}95)$
+
+**Parte b) Probabilidade de sucesso em todos os 5 códigos:**
+Para códigos independentes, a probabilidade de sucesso em todos é:
+$$P(\text{sucesso em todos}) = P(X_1 = 1, X_2 = 1, ..., X_5 = 1)$$
+$$= P(X_1 = 1) \times P(X_2 = 1) \times ... \times P(X_5 = 1)$$
+$$= 0{,}95^5 = 0{,}7738$$
+
+**Parte c) Probabilidade de pelo menos uma falha:**
+$$P(\text{pelo menos uma falha}) = 1 - P(\text{nenhuma falha})$$
+$$= 1 - 0{,}95^5 = 1 - 0{,}7738 = 0{,}2262$$
+
+**Interpretação:** Há cerca de 22,62% de chance de o sistema falhar na detecção em pelo menos um dos 5 códigos analisados.
+
+---
+
+## 🎯 Exercícios Propostos
+
+### Exercício 1 (Nível Básico)
+Uma moeda honesta é lançada uma vez. Seja $X$ a variável aleatória que vale 1 se sair cara e 0 se sair coroa.
+a) Determine a distribuição de $X$.
+b) Calcule $\mathbb{E}[X]$ e $\text{Var}(X)$.
+c) Encontre $P(X = 0)$ e $P(X = 1)$.
+
+### Exercício 2 (Nível Básico)
+Em um teste de múltipla escolha com 4 alternativas, um aluno chuta uma questão aleatoriamente. Seja $Y$ a variável que indica acerto (1) ou erro (0).
+a) Modele $Y$ como uma Bernoulli.
+b) Qual a probabilidade de acerto?
+c) Calcule esperança e variância de $Y$.
+
+### Exercício 3 (Nível Intermediário)
+Uma empresa de delivery tem 8% de pedidos com atraso. Modelamos cada entrega como uma Bernoulli, onde 1 indica atraso.
+a) Defina a variável aleatória e sua distribuição.
+b) Se a empresa processar 20 pedidos independentes, qual a probabilidade de todos chegarem no prazo?
+c) Qual o número esperado de atrasos em 50 entregas?
+
+### Exercício 4 (Nível Intermediário)
+Um sensor de segurança tem probabilidade de falha de 0,02 em cada operação. Seja $X$ a variável que indica falha (1) ou funcionamento normal (0).
+a) Determine $\mathbb{E}[X]$ e $\text{Var}(X)$.
+b) Em 10 operações independentes, qual a probabilidade de nenhuma falha?
+c) Qual a probabilidade de pelo menos uma falha em 10 operações?
+
+### Exercício 5 (Nível Avançado)
+Uma rede neural classifica imagens com 92% de acurácia. Considere $X$ como variável Bernoulli onde 1 indica classificação correta.
+a) Se processarmos um batch de 100 imagens, quantas classificações corretas esperamos?
+b) Calcule a probabilidade de acertar exatamente 90 classificações.
+c) Determine o intervalo que contém 95% das classificações corretas esperadas (use aproximação normal se necessário).
+
+### Exercício 6 (Nível Avançado)
+Em um estudo clínico, a taxa de cura de um tratamento experimental é de 75%. Cada paciente pode ser modelado como uma Bernoulli independente.
+a) Para uma amostra de 30 pacientes, calcule a esperança e variância do número de curas.
+b) Use a aproximação normal para estimar a probabilidade de que entre 20 e 25 pacientes sejam curados.
+c) Quantos pacientes devem ser incluídos no estudo para que a probabilidade de pelo menos 80% de curas seja superior a 90%?
+## 💼 Exemplos Práticos em Contextos Reais
+
+### Como estudante de estatística...
+**Quero ver exemplos práticos de variáveis de Bernoulli**  
+**Para que eu possa entender melhor aplicações reais desse conceito.**
+
+A seguir, apresentamos exemplos contextualizados que demonstram como as variáveis de Bernoulli aparecem em situações do mundo real, cada um acompanhado de código Python para simulação e análise.
+
+---
+
+### 🏥 Exemplo 1: Teste Médico para COVID-19
+
+**Contexto:** Um laboratório desenvolveu um teste rápido para COVID-19 que tem 85% de acurácia na detecção da doença.
+
+**Variável de Bernoulli:** 
+- $X = 1$: Teste detecta corretamente a presença do vírus (sucesso)
+- $X = 0$: Teste falha na detecção (fracasso)
+- $p = 0.85$ (probabilidade de sucesso)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import bernoulli
+
+# Parâmetros do teste médico
+p_deteccao = 0.85
+nome_teste = "Teste COVID-19"
+
+# Simulação de 1000 testes
+n_testes = 1000
+resultados_teste = bernoulli.rvs(p_deteccao, size=n_testes)
+
+# Análise dos resultados
+sucessos = np.sum(resultados_teste)
+taxa_sucesso_observada = sucessos / n_testes
+
+print(f"=== {nome_teste} ===")
+print(f"Probabilidade teórica de detecção: {p_deteccao:.1%}")
+print(f"Número de testes realizados: {n_testes}")
+print(f"Detecções corretas observadas: {sucessos}")
+print(f"Taxa de sucesso observada: {taxa_sucesso_observada:.1%}")
+print(f"Diferença da teoria: {abs(taxa_sucesso_observada - p_deteccao):.1%}")
+
+# Propriedades estatísticas
+media_teorica = p_deteccao
+variancia_teorica = p_deteccao * (1 - p_deteccao)
+desvio_padrao_teorico = np.sqrt(variancia_teorica)
+
+print(f"\nPropriedades estatísticas:")
+print(f"Média (valor esperado): {media_teorica:.3f}")
+print(f"Variância: {variancia_teorica:.3f}")
+print(f"Desvio-padrão: {desvio_padrao_teorico:.3f}")
+```
+
+**Interpretação:** Em média, o teste detecta corretamente 85% dos casos. A variância de 0.128 indica moderada dispersão nos resultados.
+
+---
+
+### 📱 Exemplo 2: Taxa de Clique em Anúncios Online
+
+**Contexto:** Uma empresa de marketing digital quer analisar a eficácia de um anúncio que tem taxa de clique de 3.5%.
+
+**Variável de Bernoulli:**
+- $X = 1$: Usuário clica no anúncio (sucesso)
+- $X = 0$: Usuário não clica (fracasso)  
+- $p = 0.035$ (taxa de clique)
+
+```python
+# Parâmetros da campanha publicitária
+p_clique = 0.035
+nome_campanha = "Campanha Produto X"
+
+# Simulação de 10.000 visualizações
+n_visualizacoes = 10000
+resultados_clique = bernoulli.rvs(p_clique, size=n_visualizacoes)
+
+# Análise dos resultados
+total_cliques = np.sum(resultados_clique)
+ctr_observado = total_cliques / n_visualizacoes  # Click-Through Rate
+
+print(f"=== {nome_campanha} ===")
+print(f"Taxa de clique esperada: {p_clique:.1%}")
+print(f"Visualizações do anúncio: {n_visualizacoes:,}")
+print(f"Cliques obtidos: {total_cliques}")
+print(f"CTR observado: {ctr_observado:.2%}")
+
+# Análise de intervalo de confiança (aproximação)
+erro_padrao = np.sqrt(p_clique * (1 - p_clique) / n_visualizacoes)
+intervalo_confianca = 1.96 * erro_padrao  # 95% de confiança
+
+print(f"\nAnálise estatística:")
+print(f"Erro padrão estimado: {erro_padrao:.4f}")
+print(f"Intervalo de confiança 95%: [{p_clique - intervalo_confianca:.3%}, {p_clique + intervalo_confianca:.3%}]")
+
+# Verificação se resultado está no intervalo esperado
+if abs(ctr_observado - p_clique) <= intervalo_confianca:
+    print("✅ Resultado dentro do esperado!")
+else:
+    print("⚠️ Resultado fora do intervalo esperado - investigar!")
+```
+
+**Interpretação:** Taxas de clique baixas são comuns em publicidade digital. A variável de Bernoulli ajuda a modelar e prever o comportamento dos usuários.
+
+---
+
+### 🏭 Exemplo 3: Controle de Qualidade Industrial
+
+**Contexto:** Uma fábrica de semicondutores tem 2% de taxa de defeito em seus chips. O controle de qualidade precisa monitorar esta taxa.
+
+**Variável de Bernoulli:**
+- $X = 1$: Chip defeituoso (sucesso para o evento que queremos monitorar)
+- $X = 0$: Chip em perfeito estado (fracasso)
+
+> **Nota:** Em estatística, chamamos de "sucesso" o evento que estamos contando/interessados, mesmo que ele seja indesejado na prática (como encontrar um defeito). O termo não implica que seja algo positivo, apenas que é o evento de interesse para a análise.
+- $p = 0.02$ (taxa de defeito)
+
+```python
+# Parâmetros do controle de qualidade
+p_defeito = 0.02
+nome_processo = "Produção de Chips"
+
+# Simulação de um lote de produção
+tamanho_lote = 5000
+resultados_inspecao = bernoulli.rvs(p_defeito, size=tamanho_lote)
+
+# Análise dos resultados
+chips_defeituosos = np.sum(resultados_inspecao)
+taxa_defeito_observada = chips_defeituosos / tamanho_lote
+
+print(f"=== {nome_processo} ===")
+print(f"Taxa de defeito esperada: {p_defeito:.1%}")
+print(f"Tamanho do lote inspecionado: {tamanho_lote:,}")
+print(f"Chips defeituosos encontrados: {chips_defeituosos}")
+print(f"Taxa de defeito observada: {taxa_defeito_observada:.2%}")
+
+# Análise para tomada de decisão
+limite_superior_aceitavel = 0.025  # 2.5%
+if taxa_defeito_observada <= limite_superior_aceitavel:
+    decisao = "✅ LOTE APROVADO"
+    print(f"{decisao} - Qualidade dentro do padrão")
+else:
+    decisao = "❌ LOTE REJEITADO"
+    print(f"{decisao} - Taxa de defeito acima do aceitável")
+
+# Estimativa de perdas financeiras
+custo_por_chip = 50.00  # R$ 50 por chip
+perda_financeira = chips_defeituosos * custo_por_chip
+print(f"\nImpacto financeiro:")
+print(f"Custo estimado com defeitos: R$ {perda_financeira:,.2f}")
+print(f"Perda percentual do lote: {taxa_defeito_observada:.2%}")
+```
+
+**Interpretação:** O controle de qualidade usa a distribuição de Bernoulli para tomar decisões sobre aprovação ou rejeição de lotes de produção.
+
+---
+
+### 🎓 Exemplo 4: Taxa de Aprovação em Vestibular
+
+**Contexto:** Um cursinho pré-vestibular tem histórico de 40% de aprovação de seus alunos em universidades públicas.
+
+**Variável de Bernoulli:**
+- $X = 1$: Aluno aprovado no vestibular (sucesso)
+- $X = 0$: Aluno não aprovado (fracasso)
+- $p = 0.40$ (taxa de aprovação)
+
+```python
+# Parâmetros do vestibular
+p_aprovacao = 0.40
+nome_instituicao = "Cursinho Sucesso"
+
+# Simulação de uma turma
+n_alunos = 150
+resultados_vestibular = bernoulli.rvs(p_aprovacao, size=n_alunos)
+
+# Análise dos resultados
+aprovados = np.sum(resultados_vestibular)
+taxa_aprovacao_observada = aprovados / n_alunos
+
+print(f"=== {nome_instituicao} ===")
+print(f"Taxa histórica de aprovação: {p_aprovacao:.1%}")
+print(f"Número de alunos na turma: {n_alunos}")
+print(f"Alunos aprovados: {aprovados}")
+print(f"Taxa de aprovação da turma: {taxa_aprovacao_observada:.1%}")
+
+# Comparação com a meta
+meta_aprovacao = 0.45  # Meta de 45%
+diferenca_meta = taxa_aprovacao_observada - meta_aprovacao
+
+print(f"\nAnálise de desempenho:")
+print(f"Meta estabelecida: {meta_aprovacao:.1%}")
+if diferenca_meta >= 0:
+    print(f"✅ Meta ATINGIDA! Superou em {diferenca_meta:.1%}")
+else:
+    print(f"❌ Meta NÃO atingida. Faltaram {abs(diferenca_meta):.1%}")
+
+# Simulação de cenários futuros
+print(f"\nProjeções para próximas turmas:")
+for tamanho in [100, 200, 300]:
+    aprovados_esperados = int(tamanho * p_aprovacao)
+    print(f"Turma de {tamanho} alunos: ~{aprovados_esperados} aprovações esperadas")
+```
+
+**Interpretação:** Instituições de ensino usam dados históricos modelados como Bernoulli para estabelecer metas e projetar resultados futuros.
+
+---
+
+### 📊 Exemplo Avançado: Comparação Visual de Cenários
+
+```python
+import matplotlib.pyplot as plt
+
+# Definindo diferentes cenários
+cenarios = {
+    "Teste COVID-19": 0.85,
+    "Clique em Anúncio": 0.035,
+    "Defeito Industrial": 0.02,
+    "Aprovação Vestibular": 0.40
+}
+
+# Criando visualização comparativa
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(15, 10))
+axes = [ax1, ax2, ax3, ax4]
+
+for idx, (cenario, p) in enumerate(cenarios.items()):
+    # Simulação
+    n_simulacoes = 1000
+    resultados = bernoulli.rvs(p, size=n_simulacoes)
+    
+    # Média móvel para mostrar convergência
+    media_movel = np.cumsum(resultados) / np.arange(1, n_simulacoes + 1)
+    
+    ax = axes[idx]
+    ax.plot(media_movel, color='blue', alpha=0.7)
+    ax.axhline(y=p, color='red', linestyle='--', label=f'p = {p:.3f}')
+    ax.set_title(f'{cenario}')
+    ax.set_xlabel('Número de Ensaios')
+    ax.set_ylabel('Média Acumulada')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+plt.suptitle('Convergência da Média Amostral para p (Lei dos Grandes Números)', fontsize=16)
+plt.tight_layout()
+plt.show()
+
+# Resumo comparativo
+print("=== RESUMO COMPARATIVO ===")
+print(f"{'Cenário':<20} {'p':<8} {'E[X]':<8} {'Var(X)':<8} {'σ':<8}")
+print("-" * 60)
+for cenario, p in cenarios.items():
+    media = p
+    variancia = p * (1 - p)
+    desvio = np.sqrt(variancia)
+    print(f"{cenario:<20} {p:<8.3f} {media:<8.3f} {variancia:<8.3f} {desvio:<8.3f}")
+```
+
+**Interpretação Final:** A visualização mostra como a Lei dos Grandes Números funciona na prática - conforme aumentamos o número de experimentos, a média amostral converge para o valor teórico de $p$.
+
+---
+
 ## 📘 Conclusão
 
 As distribuições **equiprovável** e **de Bernoulli** são fundamentais para compreender experimentos aleatórios discretos. Enquanto a equiprovável lida com simetria (todos os resultados com mesma chance), a Bernoulli introduz **assimetria binária**, sendo essencial para aplicações probabilísticas em estatística, aprendizado de máquina e ciências aplicadas.
 
-Se quiser, posso complementar com **simulações em Python**, **exercícios resolvidos** ou **comparações com distribuições contínuas** como a **Uniforme contínua** ou **Normal**. Deseja seguir por algum desses caminhos?
+---
+
+## **Referências e Links para Aprofundamento**
+
+### **📚 Livros Fundamentais**
+
+- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 9. ed. São Paulo: Saraiva, 2017.
+- ROSS, S. M. *A First Course in Probability*. 10. ed. Pearson, 2019.
+- MOOD, A. M.; GRAYBILL, F. A.; BOES, D. C. *Introduction to the Theory of Statistics*. 3. ed. McGraw-Hill, 1974.
+- TRIOLA, M. F. *Introdução à Estatística*. 12. ed. Rio de Janeiro: LTC, 2017.
+- MEYER, P. L. *Probabilidade: Aplicações à Estatística*. 2. ed. Rio de Janeiro: LTC, 2009.
+
+### **🎓 Textos Avançados**
+
+- CASELLA, G.; BERGER, R. L. *Statistical Inference*. 2. ed. Duxbury Press, 2001.
+- DEGROOT, M. H.; SCHERVISH, M. J. *Probability and Statistics*. 4. ed. Boston: Addison-Wesley, 2012.
+- HOGG, R. V.; CRAIG, A. T. *Introduction to Mathematical Statistics*. 8. ed. Pearson, 2018.
+- LARSEN, R. J.; MARX, M. L. *An Introduction to Mathematical Statistics and Its Applications*. 6. ed. Pearson, 2017.
+
+### **🌐 Recursos Online de Qualidade**
+
+#### **Cursos e Vídeos**
+- **Khan Academy - Probabilidade**: https://pt.khanacademy.org/math/statistics-probability
+- **MIT OpenCourseWare - Probability**: https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/
+- **Coursera - Probability Theory**: https://www.coursera.org/learn/probability-theory-foundation-for-data-science
+- **edX - Probability and Statistics**: https://www.edx.org/course/introduction-probability-science
+
+#### **Documentação Técnica**
+- **SciPy Stats Module**: https://docs.scipy.org/doc/scipy/reference/stats.html
+- **NumPy Random**: https://numpy.org/doc/stable/reference/random/index.html
+- **Matplotlib Gallery**: https://matplotlib.org/stable/gallery/statistics/index.html
+
+#### **Simuladores Interativos**
+- **Seeing Theory**: https://seeing-theory.brown.edu/basic-probability/
+- **PhET Simulations**: https://phet.colorado.edu/sims/html/plinko-probability/latest/plinko-probability_pt_BR.html
+- **GeoGebra - Probability**: https://www.geogebra.org/probability
+
+### **📱 Ferramentas e Software**
+
+#### **Python**
+- **SciPy**: https://scipy.org/ - Biblioteca científica para Python
+- **StatsModels**: https://www.statsmodels.org/ - Modelagem estatística
+- **Seaborn**: https://seaborn.pydata.org/ - Visualização estatística
+
+#### **R**
+- **R Project**: https://www.r-project.org/
+- **RStudio**: https://www.rstudio.com/
+- **CRAN Task View - Distributions**: https://cran.r-project.org/web/views/Distributions.html
+
+#### **Outras Ferramentas**
+- **Wolfram Alpha**: https://www.wolframalpha.com/
+- **Desmos Calculator**: https://www.desmos.com/calculator
+- **StatCrunch**: https://www.statcrunch.com/
+
+### **🎯 Aplicações Específicas**
+
+#### **Machine Learning e Data Science**
+- HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. *The Elements of Statistical Learning*. 2. ed. Springer, 2009.
+- BISHOP, C. M. *Pattern Recognition and Machine Learning*. Springer, 2006.
+
+#### **Economia e Finanças**
+- HULL, J. C. *Options, Futures, and Other Derivatives*. 10. ed. Pearson, 2017.
+
+#### **Engenharia de Confiabilidade**
+- LAWLESS, J. F. *Statistical Models and Methods for Lifetime Data*. 2. ed. John Wiley & Sons, 2003.
+
+### **📖 Artigos Históricos e Fundadores**
+
+- BERNOULLI, J. *Ars Conjectandi*. Basel: Thurnisiorum, 1713. (Obra fundadora da teoria da probabilidade)
+- CARDANO, G. *Liber de Ludo Aleae*. 1564. (Um dos primeiros tratados sobre probabilidade)
+- PASCAL, B.; FERMAT, P. Correspondência sobre jogos de azar, 1654.
+
+### **💡 Recursos para Diferentes Níveis**
+
+#### **Iniciante**
+- MAGALHÃES, M. N.; LIMA, A. C. P. *Noções de Probabilidade e Estatística*. 7. ed. São Paulo: EDUSP, 2010.
+- BARBETTA, P. A.; REIS, M. M.; BORNIA, A. C. *Estatística para Cursos de Engenharia e Informática*. 3. ed. São Paulo: Atlas, 2010.
+
+#### **Intermediário**
+- MONTGOMERY, D. C.; RUNGER, G. C. *Applied Statistics and Probability for Engineers*. 7. ed. John Wiley & Sons, 2018.
+- WALPOLE, R. E. et al. *Probabilidade e Estatística para Engenharia e Ciências*. 8. ed. São Paulo: Pearson, 2009.
+
+#### **Avançado**
+- FELLER, W. *An Introduction to Probability Theory and Its Applications*. 2 volumes. John Wiley & Sons, 1968-1971.
+- BILLINGSLEY, P. *Probability and Measure*. 3. ed. John Wiley & Sons, 1995.
+
+---
+
+**💡 Dica de Estudo:** Comece entendendo bem o conceito da distribuição de Bernoulli com exemplos simples (moeda, teste aprovado/reprovado) antes de avançar para suas aplicações em modelos mais complexos como regressão logística e redes neurais.

@@ -1421,11 +1421,146 @@ $
 
 ---
 
-# 📚 Referências Científicas
+# 📚 Referências e Links para Aprofundamento
 
-- **Grinstead, C. M., & Snell, J. L. (1997). "Introduction to Probability"** — Excelente para eventos e simulações básicas.
-- **Ross, S. M. (2014). "Introduction to Probability Models"** — Aborda formalmente independência, dependência e eventos compostos.
-- **Klenke, A. (2013). "Probability Theory"** — Livro avançado sobre teoria da probabilidade moderna.
+### **📖 Livros Fundamentais**
+
+#### **Clássicos da Teoria da Probabilidade**
+- GRINSTEAD, C. M.; SNELL, J. L. *Introduction to Probability*. 2. ed. Providence: American Mathematical Society, 1997. Excelente para eventos e simulações básicas. Disponível gratuitamente online.
+- ROSS, S. M. *Introduction to Probability Models*. 11. ed. Amsterdam: Academic Press, 2014. Aborda formalmente independência, dependência e eventos compostos.
+- KLENKE, A. *Probability Theory*. 2. ed. London: Springer, 2013. Livro avançado sobre teoria da probabilidade moderna.
+
+#### **Textos em Português**
+- BUSSAB, W. O.; MORETTIN, P. A. *Estatística Básica*. 9. ed. São Paulo: Saraiva, 2017.
+- MEYER, P. L. *Probabilidade: Aplicações à Estatística*. 2. ed. Rio de Janeiro: LTC, 2009.
+- MAGALHÃES, M. N.; LIMA, A. C. P. *Noções de Probabilidade e Estatística*. 7. ed. São Paulo: EDUSP, 2010.
+- DANTAS, C. A. B. *Probabilidade: Um Curso Introdutório*. 3. ed. São Paulo: EDUSP, 2008.
+
+#### **Textos Avançados**
+- BILLINGSLEY, P. *Probability and Measure*. 3. ed. John Wiley & Sons, 1995.
+- FELLER, W. *An Introduction to Probability Theory and Its Applications*. Volume 1. 3. ed. John Wiley & Sons, 1968.
+- CHUNG, K. L. *A Course in Probability Theory*. 3. ed. Academic Press, 2001.
+
+### **🌐 Recursos Online de Qualidade**
+
+#### **Cursos Online Gratuitos**
+- **Khan Academy - Probabilidade**: https://pt.khanacademy.org/math/statistics-probability
+- **MIT OpenCourseWare - Probability**: https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/
+- **Coursera - Introduction to Probability**: https://www.coursera.org/learn/probability-intro
+- **edX - Probability**: https://www.edx.org/course/introduction-probability-science
+
+#### **Simuladores e Visualizações Interativas**
+- **Seeing Theory (Brown University)**: https://seeing-theory.brown.edu/basic-probability/
+- **PhET Probability**: https://phet.colorado.edu/sims/html/plinko-probability/latest/plinko-probability_pt_BR.html
+- **GeoGebra - Probability**: https://www.geogebra.org/probability
+- **Probability Distributions**: https://homepage.divms.uiowa.edu/~mbognar/applets/
+
+#### **Documentação e Recursos Técnicos**
+- **SciPy Probability Distributions**: https://docs.scipy.org/doc/scipy/reference/stats.html
+- **NumPy Random**: https://numpy.org/doc/stable/reference/random/index.html
+- **R Probability Functions**: https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Distributions
+
+### **💻 Ferramentas Computacionais**
+
+#### **Python**
+- **Biblioteca random**: Geração de eventos aleatórios
+- **NumPy**: Operações com arrays e probabilidades
+- **SciPy**: Distribuições de probabilidade
+- **Matplotlib/Seaborn**: Visualização de eventos
+
+#### **R**
+- **Base R**: Funções básicas de probabilidade
+- **prob**: Pacote específico para probabilidade
+- **distr**: Pacote para distribuições
+
+#### **Software Especializado**
+- **Minitab**: Software estatístico com módulo de probabilidade
+- **SPSS**: Análise estatística
+- **Wolfram Alpha**: Cálculos de probabilidade online
+
+### **🎓 Artigos e Papers Históricos**
+
+#### **Fundadores da Teoria da Probabilidade**
+- PASCAL, B.; FERMAT, P. *Correspondência sobre o Problema dos Pontos* (1654). Origem da teoria da probabilidade moderna.
+- LAPLACE, P. S. *Théorie Analytique des Probabilités* (1812). Desenvolvimento matemático da probabilidade.
+- KOLMOGOROV, A. N. *Grundbegriffe der Wahrscheinlichkeitsrechnung* (1933). Fundamentos axiomáticos modernos.
+
+#### **Desenvolvimentos Modernos**
+- DE FINETTI, B. "La prévision: ses lois logiques, ses sources subjectives". *Annales de l'Institut Henri Poincaré*, 1937.
+- COX, R. T. "Probability, Frequency and Reasonable Expectation". *American Journal of Physics*, 1946.
+
+### **🎯 Aplicações Específicas**
+
+#### **Finanças e Economia**
+- HULL, J. C. *Options, Futures, and Other Derivatives*. 10. ed. Pearson, 2017.
+- SHREVE, S. E. *Stochastic Calculus for Finance*. 2 volumes. Springer, 2004.
+
+#### **Ciência da Computação**
+- MITZENMACHER, M.; UPFAL, E. *Probability and Computing*. 2. ed. Cambridge University Press, 2017.
+- MOTWANI, R.; RAGHAVAN, P. *Randomized Algorithms*. Cambridge University Press, 1995.
+
+#### **Física e Engenharia**
+- PAPOULIS, A.; PILLAI, S. U. *Probability, Random Variables and Stochastic Processes*. 4. ed. McGraw-Hill, 2002.
+- LEON-GARCIA, A. *Probability, Statistics, and Random Processes for Electrical Engineering*. 3. ed. Pearson, 2008.
+
+### **📱 Apps e Recursos Mobile**
+
+- **Wolfram Alpha**: App com cálculos de probabilidade
+- **GeoGebra**: Simulações interativas
+- **Statistics Calculator**: Cálculos básicos
+- **Probability Distributions**: Visualização de distribuições
+
+### **📊 Recursos Visuais e Demonstrações**
+
+#### **Vídeos Educacionais (YouTube)**
+- **3Blue1Brown**: Visualizações matemáticas excepcionais
+- **StatQuest**: Explicações claras de conceitos estatísticos
+- **Khan Academy**: Vídeos estruturados sobre probabilidade
+- **Professor Leonard**: Aulas detalhadas de estatística
+
+#### **Demonstrações Interativas**
+- **Rice Virtual Lab**: http://onlinestatbook.com/stat_sim/
+- **StatKey**: https://www.lock5stat.com/StatKey/
+- **Rossman-Chance Applets**: http://www.rossmanchance.com/applets/
+
+### **🏆 Recursos Acadêmicos Avançados**
+
+#### **Periódicos Especializados**
+- **Annals of Probability**
+- **Journal of Applied Probability**
+- **Probability Theory and Related Fields**
+- **Electronic Journal of Probability**
+
+#### **Sociedades Científicas**
+- **Institute of Mathematical Statistics (IMS)**
+- **Bernoulli Society**
+- **International Statistical Institute (ISI)**
+
+### **💡 Recursos por Nível de Dificuldade**
+
+#### **Iniciante**
+- TRIOLA, M. F. *Introdução à Estatística*. 12. ed. Rio de Janeiro: LTC, 2017.
+- BARBETTA, P. A. *Estatística Aplicada às Ciências Sociais*. 9. ed. Florianópolis: UFSC, 2014.
+
+#### **Intermediário**
+- CASELLA, G.; BERGER, R. L. *Statistical Inference*. 2. ed. Duxbury Press, 2001.
+- DEGROOT, M. H.; SCHERVISH, M. J. *Probability and Statistics*. 4. ed. Addison-Wesley, 2012.
+
+#### **Avançado**
+- DURRETT, R. *Probability: Theory and Examples*. 5. ed. Cambridge University Press, 2019.
+- WILLIAMS, D. *Probability with Martingales*. Cambridge University Press, 1991.
+
+### **🔍 Tópicos Relacionados para Estudo**
+
+- **Teoria da Medida**: Fundamental para probabilidade avançada
+- **Processos Estocásticos**: Evolução temporal de eventos aleatórios
+- **Teoria da Informação**: Relação entre probabilidade e informação
+- **Estatística Bayesiana**: Abordagem subjetiva da probabilidade
+- **Teoria dos Jogos**: Aplicação de probabilidade em decisões estratégicas
+
+---
+
+**💡 Dica de Estudo:** Comece com os conceitos básicos de eventos (simples, compostos, complementares) usando exemplos concretos como cartas, dados e moedas. Use os simuladores online para visualizar como diferentes tipos de eventos se comportam antes de partir para a teoria formal. A compreensão intuitiva dos eventos é fundamental para todo o desenvolvimento posterior em probabilidade e estatística.
 
 ---
 
@@ -1433,7 +1568,444 @@ Esse exemplo mostra como simular diferentes tipos de eventos aleatórios em Pyth
 
 ---
 
+## 🧮 **Calculadora Interativa de Probabilidades**
 
-## Resumo
+Este exemplo cria uma ferramenta prática para calcular diferentes tipos de probabilidades:
 
-Em probabilidade, eventos são os "blocos de construção" que usamos para descrever situações incertas. Entender sua definição, suas classificações, e suas relações é fundamental para aplicar a teoria probabilística de forma rigorosa e eficaz.
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from itertools import combinations, permutations
+import seaborn as sns
+
+class CalculadoraProbabilidade:
+    """
+    Calculadora interativa de probabilidades com visualizações
+    """
+    
+    def __init__(self):
+        self.historico = []
+    
+    def probabilidade_classica(self, eventos_favoraveis, eventos_totais):
+        """Calcula probabilidade clássica P(A) = n(A)/n(Ω)"""
+        if eventos_totais <= 0:
+            raise ValueError("Número total de eventos deve ser positivo")
+        
+        prob = eventos_favoraveis / eventos_totais
+        
+        resultado = {
+            'tipo': 'Clássica',
+            'eventos_favoraveis': eventos_favoraveis,
+            'eventos_totais': eventos_totais,
+            'probabilidade': prob,
+            'percentual': prob * 100
+        }
+        
+        self.historico.append(resultado)
+        return resultado
+    
+    def probabilidade_condicional(self, p_a_e_b, p_b):
+        """Calcula P(A|B) = P(A ∩ B) / P(B)"""
+        if p_b <= 0:
+            raise ValueError("P(B) deve ser positivo")
+        
+        prob_condicional = p_a_e_b / p_b
+        
+        resultado = {
+            'tipo': 'Condicional',
+            'p_a_e_b': p_a_e_b,
+            'p_b': p_b,
+            'probabilidade': prob_condicional,
+            'percentual': prob_condicional * 100
+        }
+        
+        self.historico.append(resultado)
+        return resultado
+    
+    def teorema_bayes(self, p_a, p_b_dado_a, p_b_dado_nao_a):
+        """
+        Calcula P(A|B) usando o Teorema de Bayes
+        P(A|B) = P(B|A) * P(A) / P(B)
+        onde P(B) = P(B|A)*P(A) + P(B|¬A)*P(¬A)
+        """
+        p_nao_a = 1 - p_a
+        p_b = (p_b_dado_a * p_a) + (p_b_dado_nao_a * p_nao_a)
+        p_a_dado_b = (p_b_dado_a * p_a) / p_b
+        
+        resultado = {
+            'tipo': 'Bayes',
+            'p_a_priori': p_a,
+            'p_b_dado_a': p_b_dado_a,
+            'p_b_dado_nao_a': p_b_dado_nao_a,
+            'p_b': p_b,
+            'p_a_dado_b': p_a_dado_b,
+            'probabilidade': p_a_dado_b,
+            'percentual': p_a_dado_b * 100
+        }
+        
+        self.historico.append(resultado)
+        return resultado
+    
+    def simular_experimento(self, prob_sucesso, n_tentativas, n_simulacoes=1000):
+        """Simula um experimento binomial"""
+        np.random.seed(42)
+        resultados = []
+        
+        for _ in range(n_simulacoes):
+            sucessos = np.random.binomial(n_tentativas, prob_sucesso)
+            resultados.append(sucessos)
+        
+        return {
+            'resultados': resultados,
+            'media': np.mean(resultados),
+            'desvio': np.std(resultados),
+            'media_teorica': n_tentativas * prob_sucesso,
+            'desvio_teorico': np.sqrt(n_tentativas * prob_sucesso * (1 - prob_sucesso))
+        }
+    
+    def visualizar_historico(self):
+        """Visualiza o histórico de cálculos"""
+        if not self.historico:
+            print("Nenhum cálculo no histórico")
+            return
+        
+        df = pd.DataFrame(self.historico)
+        
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+        
+        # Gráfico 1: Probabilidades por tipo
+        tipos = df['tipo'].value_counts()
+        ax1.pie(tipos.values, labels=tipos.index, autopct='%1.1f%%', startangle=90)
+        ax1.set_title('Distribuição dos Tipos de Cálculo')
+        
+        # Gráfico 2: Histograma das probabilidades
+        ax2.hist(df['probabilidade'], bins=10, alpha=0.7, color='skyblue', edgecolor='black')
+        ax2.set_xlabel('Probabilidade')
+        ax2.set_ylabel('Frequência')
+        ax2.set_title('Distribuição das Probabilidades Calculadas')
+        ax2.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.show()
+        
+        return df
+
+# Exemplo de uso da calculadora
+calc = CalculadoraProbabilidade()
+
+print("EXEMPLOS PRÁTICOS DE CÁLCULOS DE PROBABILIDADE")
+print("=" * 60)
+
+# 1. Probabilidade clássica - dado
+resultado1 = calc.probabilidade_classica(1, 6)  # P(sair 4 em um dado)
+print(f"1. P(sair 4 no dado) = {resultado1['probabilidade']:.4f} = {resultado1['percentual']:.2f}%")
+
+# 2. Probabilidade clássica - cartas
+resultado2 = calc.probabilidade_classica(13, 52)  # P(carta de copas)
+print(f"2. P(carta de copas) = {resultado2['probabilidade']:.4f} = {resultado2['percentual']:.2f}%")
+
+# 3. Probabilidade condicional
+# P(Rei | carta de copas) = P(Rei e copas) / P(copas) = (1/52) / (13/52) = 1/13
+resultado3 = calc.probabilidade_condicional(1/52, 13/52)
+print(f"3. P(Rei | carta de copas) = {resultado3['probabilidade']:.4f} = {resultado3['percentual']:.2f}%")
+
+# 4. Teorema de Bayes - teste médico
+# P(doença) = 0.01, P(teste+ | doença) = 0.95, P(teste+ | sem doença) = 0.05
+resultado4 = calc.teorema_bayes(0.01, 0.95, 0.05)
+print(f"4. P(doença | teste+) = {resultado4['probabilidade']:.4f} = {resultado4['percentual']:.2f}%")
+
+# 5. Simulação
+simulacao = calc.simular_experimento(0.5, 10, 1000)  # 10 moedas, 1000 simulações
+print(f"5. Simulação (10 moedas): média = {simulacao['media']:.2f} ± {simulacao['desvio']:.2f}")
+print(f"   Teórico: {simulacao['media_teorica']:.2f} ± {simulacao['desvio_teorico']:.2f}")
+
+# Visualizar histórico
+df_historico = calc.visualizar_historico()
+print("\nHistórico de cálculos:")
+print(df_historico[['tipo', 'probabilidade', 'percentual']])
+```
+
+---
+
+## 🎯 **Análise de Cenários Reais com Probabilidade**
+
+```python
+def analisar_cenarios_reais():
+    """
+    Analisa cenários do mundo real usando conceitos de probabilidade
+    """
+    
+    print("ANÁLISE DE CENÁRIOS REAIS")
+    print("=" * 50)
+    
+    cenarios = {
+        'Controle de Qualidade': {
+            'descricao': 'Uma fábrica produz peças com 2% de defeito',
+            'p_defeito': 0.02,
+            'lote_tamanho': 1000
+        },
+        'Marketing Digital': {
+            'descricao': 'Taxa de clique em email marketing é 3.5%',
+            'p_clique': 0.035,
+            'emails_enviados': 10000
+        },
+        'Diagnóstico Médico': {
+            'descricao': 'Teste diagnóstico com 95% de sensibilidade',
+            'p_doenca': 0.001,  # prevalência
+            'sensibilidade': 0.95,
+            'especificidade': 0.98
+        }
+    }
+    
+    fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+    axes = axes.flatten()
+    
+    # Cenário 1: Controle de Qualidade
+    ax1 = axes[0]
+    cenario = cenarios['Controle de Qualidade']
+    
+    # Simular produção de 30 dias
+    np.random.seed(42)
+    dias = 30
+    defeitos_por_dia = []
+    
+    for dia in range(dias):
+        pecas_defeituosas = np.random.binomial(cenario['lote_tamanho'], cenario['p_defeito'])
+        defeitos_por_dia.append(pecas_defeituosas)
+    
+    ax1.plot(range(1, dias+1), defeitos_por_dia, 'bo-', alpha=0.7)
+    media_esperada = cenario['lote_tamanho'] * cenario['p_defeito']
+    ax1.axhline(y=media_esperada, color='red', linestyle='--', 
+               label=f'Média esperada: {media_esperada:.1f}')
+    ax1.set_title('Controle de Qualidade\nPeças defeituosas por dia')
+    ax1.set_xlabel('Dia')
+    ax1.set_ylabel('Peças defeituosas')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    
+    # Cenário 2: Marketing Digital
+    ax2 = axes[1]
+    cenario = cenarios['Marketing Digital']
+    
+    # Simular campanha por semanas
+    semanas = 12
+    cliques_por_semana = []
+    
+    for semana in range(semanas):
+        cliques = np.random.binomial(cenario['emails_enviados'], cenario['p_clique'])
+        cliques_por_semana.append(cliques)
+    
+    ax2.bar(range(1, semanas+1), cliques_por_semana, alpha=0.7, color='green')
+    media_cliques = cenario['emails_enviados'] * cenario['p_clique']
+    ax2.axhline(y=media_cliques, color='red', linestyle='--',
+               label=f'Média esperada: {media_cliques:.0f}')
+    ax2.set_title('Marketing Digital\nCliques por semana')
+    ax2.set_xlabel('Semana')
+    ax2.set_ylabel('Número de cliques')
+    ax2.legend()
+    ax2.grid(True, alpha=0.3)
+    
+    # Cenário 3: Diagnóstico Médico (Teorema de Bayes)
+    ax3 = axes[2]
+    cenario = cenarios['Diagnóstico Médico']
+    
+    # Simular população de 100,000 pessoas
+    populacao = 100000
+    com_doenca = int(populacao * cenario['p_doenca'])
+    sem_doenca = populacao - com_doenca
+    
+    # Resultados dos testes
+    verdadeiro_positivo = int(com_doenca * cenario['sensibilidade'])
+    falso_negativo = com_doenca - verdadeiro_positivo
+    verdadeiro_negativo = int(sem_doenca * cenario['especificidade'])
+    falso_positivo = sem_doenca - verdadeiro_negativo
+    
+    # Matriz de confusão
+    matriz = np.array([[verdadeiro_negativo, falso_positivo],
+                       [falso_negativo, verdadeiro_positivo]])
+    
+    sns.heatmap(matriz, annot=True, fmt='d', cmap='Blues', ax=ax3,
+                xticklabels=['Teste-', 'Teste+'],
+                yticklabels=['Sem Doença', 'Com Doença'])
+    ax3.set_title('Diagnóstico Médico\nMatriz de Confusão')
+    
+    # Cálculo de Bayes
+    total_positivos = verdadeiro_positivo + falso_positivo
+    prob_doenca_dado_positivo = verdadeiro_positivo / total_positivos if total_positivos > 0 else 0
+    
+    ax3.text(0.5, -0.1, f'P(doença|teste+) = {prob_doenca_dado_positivo:.3f}',
+            transform=ax3.transAxes, ha='center', fontsize=12,
+            bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.7))
+    
+    # Cenário 4: Comparação de Estratégias
+    ax4 = axes[3]
+    
+    # Comparar diferentes estratégias de investimento
+    estrategias = ['Conservadora', 'Moderada', 'Agressiva']
+    prob_lucro = [0.8, 0.6, 0.4]
+    lucro_esperado = [5, 15, 30]  # em %
+    
+    colors = ['green', 'orange', 'red']
+    bars = ax4.bar(estrategias, lucro_esperado, color=colors, alpha=0.7)
+    
+    # Adicionar probabilidade de lucro em cada barra
+    for bar, prob in zip(bars, prob_lucro):
+        height = bar.get_height()
+        ax4.text(bar.get_x() + bar.get_width()/2., height + 0.5,
+                f'P(lucro)={prob:.1f}', ha='center', va='bottom')
+    
+    ax4.set_title('Estratégias de Investimento\nLucro Esperado vs Probabilidade')
+    ax4.set_ylabel('Lucro Esperado (%)')
+    ax4.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Relatório quantitativo
+    print("\nRELATÓRIO QUANTITATIVO")
+    print("-" * 30)
+    
+    print(f"\n1. Controle de Qualidade:")
+    print(f"   Defeitos/dia (média): {np.mean(defeitos_por_dia):.2f} ± {np.std(defeitos_por_dia):.2f}")
+    print(f"   Esperado teoricamente: {media_esperada:.2f}")
+    
+    print(f"\n2. Marketing Digital:")
+    print(f"   Cliques/semana (média): {np.mean(cliques_por_semana):.0f} ± {np.std(cliques_por_semana):.0f}")
+    print(f"   Taxa de clique: {np.mean(cliques_por_semana)/cenario['emails_enviados']:.3f}")
+    
+    print(f"\n3. Diagnóstico Médico:")
+    print(f"   Sensibilidade: {verdadeiro_positivo/com_doenca:.3f}")
+    print(f"   Especificidade: {verdadeiro_negativo/sem_doenca:.3f}")
+    print(f"   P(doença|teste+): {prob_doenca_dado_positivo:.3f}")
+    
+    return {
+        'defeitos_por_dia': defeitos_por_dia,
+        'cliques_por_semana': cliques_por_semana,
+        'matriz_confusao': matriz,
+        'prob_doenca_positivo': prob_doenca_dado_positivo
+    }
+
+# Executar análise
+resultados = analisar_cenarios_reais()
+```
+
+---
+
+## 🔄 **Simulação de Monte Carlo para Problemas Complexos**
+
+```python
+def simulacao_monte_carlo_avancada():
+    """
+    Demonstra o uso de Monte Carlo para resolver problemas complexos
+    """
+    
+    print("SIMULAÇÃO DE MONTE CARLO - PROBLEMAS COMPLEXOS")
+    print("=" * 55)
+    
+    # Problema 1: Estimativa de π usando método geométrico
+    def estimar_pi(n_pontos):
+        """Estima π usando pontos aleatórios em um círculo unitário"""
+        np.random.seed(42)
+        
+        # Gerar pontos aleatórios no quadrado [-1,1] x [-1,1]
+        x = np.random.uniform(-1, 1, n_pontos)
+        y = np.random.uniform(-1, 1, n_pontos)
+        
+        # Contar pontos dentro do círculo (x² + y² ≤ 1)
+        dentro_circulo = (x**2 + y**2) <= 1
+        n_dentro = np.sum(dentro_circulo)
+        
+        # π ≈ 4 * (pontos dentro do círculo) / (total de pontos)
+        pi_estimado = 4 * n_dentro / n_pontos
+        
+        return pi_estimado, x, y, dentro_circulo
+    
+    # Problema 2: Portfólio de investimentos (Monte Carlo)
+    def simular_portfolio(pesos, retornos_esperados, matriz_covariancia, n_sim=1000, dias=252):
+        """Simula retornos de um portfólio usando Monte Carlo"""
+        n_ativos = len(pesos)
+        
+        # Gerar retornos aleatórios correlacionados
+        retornos_simulados = np.random.multivariate_normal(
+            retornos_esperados, matriz_covariancia, (n_sim, dias)
+        )
+        
+        # Calcular retorno do portfólio para cada simulação
+        retornos_portfolio = []
+        for sim in range(n_sim):
+            retorno_diario = np.dot(retornos_simulados[sim], pesos)
+            retorno_acumulado = np.prod(1 + retorno_diario) - 1
+            retornos_portfolio.append(retorno_acumulado)
+        
+        return np.array(retornos_portfolio)
+    
+    # Visualizações
+    fig = plt.figure(figsize=(16, 12))
+    
+    # Subplot 1: Estimativa de π
+    ax1 = plt.subplot(2, 3, 1)
+    n_pontos = 5000
+    pi_est, x, y, dentro = estimar_pi(n_pontos)
+    
+    # Plotar pontos dentro e fora do círculo
+    ax1.scatter(x[dentro], y[dentro], c='red', s=1, alpha=0.6, label=f'Dentro: {np.sum(dentro)}')
+    ax1.scatter(x[~dentro], y[~dentro], c='blue', s=1, alpha=0.6, label=f'Fora: {np.sum(~dentro)}')
+    
+    # Desenhar círculo
+    theta = np.linspace(0, 2*np.pi, 100)
+    circle_x = np.cos(theta)
+    circle_y = np.sin(theta)
+    ax1.plot(circle_x, circle_y, 'black', linewidth=2)
+    
+    ax1.set_xlim(-1.1, 1.1)
+    ax1.set_ylim(-1.1, 1.1)
+    ax1.set_aspect('equal')
+    ax1.set_title(f'Estimativa de π\nπ ≈ {pi_est:.4f} (erro: {abs(pi_est - np.pi):.4f})')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    
+    # Subplot 2: Convergência da estimativa de π
+    ax2 = plt.subplot(2, 3, 2)
+    n_valores = [100, 500, 1000, 2000, 5000, 10000, 20000]
+    estimativas_pi = []
+    
+    for n in n_valores:
+        pi_temp, _, _, _ = estimar_pi(n)
+        estimativas_pi.append(pi_temp)
+    
+    ax2.plot(n_valores, estimativas_pi, 'bo-', label='Estimativas Monte Carlo')
+    ax2.axhline(y=np.pi, color='red', linestyle='--', label='π verdadeiro')
+    ax2.set_xscale('log')
+    ax2.set_xlabel('Número de pontos')
+    ax2.set_ylabel('Estimativa de π')
+    ax2.set_title('Convergência da Estimativa de π')
+    ax2.legend()
+    ax2.grid(True, alpha=0.3)
+    
+    # Subplot 3: Simulação de Portfólio
+    ax3 = plt.subplot(2, 3, 3)
+    
+    # Definir 3 ativos com diferentes características
+    pesos = np.array([0.4, 0.3, 0.3])  # Pesos do portfólio
+    retornos_esperados = np.array([0.0008, 0.0006, 0.0010])  # Retornos médios diários
+    
+    # Matriz de covariância (correlação entre ativos)
+    correlacao = np.array([
+        [1.0, 0.3, 0.1],
+        [0.3, 1.0, 0.4],
+        [0.1, 0.4, 1.0]
+    ])
+    volatilidades = np.array([0.015, 0.020, 0.025])
+    matriz_cov = np.outer(volatilidades, volatilidades) * correlacao
+    
+    # Simular portfólio
+    np.random.seed(42)
+    retornos_portfolio = simular_portfolio(pesos, retornos_esperados, matriz_cov, 1000, 252)
+    
+    ax3.hist(retornos_portfolio * 100, bins=50, alpha=0.7, color='green', edgecolor='black')
+    ax3.axvline(x=np.mean(retornos_portfolio) * 100, color='red', linestyle='-', 
+               label=f'Média: {np.mean(retornos_portfolio)*100:.2f}%')
+    ax3.axvline(x=np.percentile(retornos_portfolio * 100, 5), color='orange', linestyle='--',
+               label=f'VaR 5%: {np.percentile(retornos_portfolio * 100, 5):.2f}%')
+    ax3.set_xlabel('Retorno Anual (%)')\n    ax3.set_ylabel('Frequência')\n    ax3.set_title('Simulação Monte Carlo\\nRetornos do Portfólio (1 ano)')\n    ax3.legend()\n    ax3.grid(True, alpha=0.3)\n    \n    # Subplot 4-6: Análises adicionais\n    ax4 = plt.subplot(2, 3, 4)\n    \n    # Problema 3: Caminhada aleatória (preço de ações)\n    def simular_preco_acao(preco_inicial, mu, sigma, dias, n_sim=100):\n        \"\"\"Simula preços de ações usando movimento browniano\"\"\"\n        dt = 1/252  # Fração do ano por dia\n        \n        precos_simulados = np.zeros((n_sim, dias + 1))\n        precos_simulados[:, 0] = preco_inicial\n        \n        for sim in range(n_sim):\n            for dia in range(1, dias + 1):\n                z = np.random.normal(0, 1)\n                preco_anterior = precos_simulados[sim, dia - 1]\n                preco_simulados[sim, dia] = preco_anterior * np.exp(\n                    (mu - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * z\n                )\n        \n        return precos_simulados\n    \n    # Simular preço de ação\n    np.random.seed(123)\n    preco_inicial = 100\n    mu = 0.1  # Retorno anual esperado\n    sigma = 0.2  # Volatilidade anual\n    dias = 252  # 1 ano\n    n_simulacoes = 100\n    \n    precos = simular_preco_acao(preco_inicial, mu, sigma, dias, n_simulacoes)\n    \n    # Plotar algumas trajetórias\n    dias_eixo = np.arange(dias + 1)\n    for i in range(min(20, n_simulacoes)):\n        ax4.plot(dias_eixo, precos[i], alpha=0.3, color='blue')\n    \n    # Plotar média e percentis\n    media_precos = np.mean(precos, axis=0)\n    percentil_95 = np.percentile(precos, 95, axis=0)\n    percentil_5 = np.percentile(precos, 5, axis=0)\n    \n    ax4.plot(dias_eixo, media_precos, color='red', linewidth=2, label='Média')\n    ax4.fill_between(dias_eixo, percentil_5, percentil_95, alpha=0.2, color='gray',\n                    label='Intervalo 90%')\n    ax4.set_xlabel('Dias')\n    ax4.set_ylabel('Preço da Ação ($)')\n    ax4.set_title('Simulação Monte Carlo\\nPreços de Ações (100 trajetórias)')\n    ax4.legend()\n    ax4.grid(True, alpha=0.3)\n    \n    # Subplot 5: Distribuição de preços finais\n    ax5 = plt.subplot(2, 3, 5)\n    precos_finais = precos[:, -1]\n    \n    ax5.hist(precos_finais, bins=30, alpha=0.7, color='purple', edgecolor='black')\n    ax5.axvline(x=np.mean(precos_finais), color='red', linestyle='-',\n               label=f'Média: ${np.mean(precos_finais):.2f}')\n    ax5.axvline(x=preco_inicial, color='green', linestyle='--',\n               label=f'Preço inicial: ${preco_inicial}')\n    ax5.set_xlabel('Preço Final ($)')\n    ax5.set_ylabel('Frequência')\n    ax5.set_title('Distribuição dos Preços\\nApós 1 Ano')\n    ax5.legend()\n    ax5.grid(True, alpha=0.3)\n    \n    # Subplot 6: Análise de risco\n    ax6 = plt.subplot(2, 3, 6)\n    \n    # Calcular retornos\n    retornos_finais = (precos_finais - preco_inicial) / preco_inicial\n    \n    # Métricas de risco\n    var_5 = np.percentile(retornos_finais, 5)\n    var_1 = np.percentile(retornos_finais, 1)\n    \n    ax6.hist(retornos_finais * 100, bins=30, alpha=0.7, color='orange', edgecolor='black')\n    ax6.axvline(x=var_5 * 100, color='red', linestyle='--', \n               label=f'VaR 5%: {var_5*100:.2f}%')\n    ax6.axvline(x=var_1 * 100, color='darkred', linestyle='--',\n               label=f'VaR 1%: {var_1*100:.2f}%')\n    ax6.axvline(x=0, color='black', linestyle='-', alpha=0.5)\n    ax6.set_xlabel('Retorno (%)')\n    ax6.set_ylabel('Frequência')\n    ax6.set_title('Análise de Risco\\nDistribuição de Retornos')\n    ax6.legend()\n    ax6.grid(True, alpha=0.3)\n    \n    plt.tight_layout()\n    plt.show()\n    \n    # Relatório final\n    print(\"\\nRESUMO DAS SIMULAÇÕES MONTE CARLO\")\n    print(\"=\" * 40)\n    \n    print(f\"\\n1. Estimativa de π:\")\n    print(f\"   Valor estimado: {pi_est:.6f}\")\n    print(f\"   Valor real: {np.pi:.6f}\")\n    print(f\"   Erro absoluto: {abs(pi_est - np.pi):.6f}\")\n    \n    print(f\"\\n2. Portfólio de Investimentos:\")\n    print(f\"   Retorno médio anual: {np.mean(retornos_portfolio)*100:.2f}%\")\n    print(f\"   Volatilidade: {np.std(retornos_portfolio)*100:.2f}%\")\n    print(f\"   VaR 5%: {np.percentile(retornos_portfolio * 100, 5):.2f}%\")\n    print(f\"   Probabilidade de perda: {np.mean(retornos_portfolio < 0)*100:.1f}%\")\n    \n    print(f\"\\n3. Simulação de Preços de Ações:\")\n    print(f\"   Preço inicial: ${preco_inicial:.2f}\")\n    print(f\"   Preço médio após 1 ano: ${np.mean(precos_finais):.2f}\")\n    print(f\"   Retorno médio: {np.mean(retornos_finais)*100:.2f}%\")\n    print(f\"   VaR 5%: {var_5*100:.2f}%\")\n    print(f\"   VaR 1%: {var_1*100:.2f}%\")\n    \n    return {\n        'pi_estimado': pi_est,\n        'retornos_portfolio': retornos_portfolio,\n        'precos_finais': precos_finais,\n        'retornos_acoes': retornos_finais\n    }\n\n# Executar simulação completa\nresultados_mc = simulacao_monte_carlo_avancada()\n```\n\n---\n\n## Resumo\n\nEm probabilidade, eventos são os "blocos de construção" que usamos para descrever situações incertas. Entender sua definição, suas classificações, e suas relações é fundamental para aplicar a teoria probabilística de forma rigorosa e eficaz.\n\nOs exemplos em Python apresentados demonstram:\n- Como calcular diferentes tipos de probabilidades\n- Aplicações práticas do Teorema de Bayes\n- Uso de simulações Monte Carlo para problemas complexos\n- Análise quantitativa de cenários reais\n- Visualização de conceitos probabilísticos\n\nEsses exemplos fornecem uma base sólida para aplicar conceitos de probabilidade em situações reais, desde controle de qualidade até análise de investimentos e diagnósticos médicos.

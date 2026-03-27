@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="variáveis-aleatórias-discretas-vad">Variáveis Aleatórias
+Discretas (VAD)</h1>
+<h3 id="o-que-são">O que são?</h3>
+<p>Uma <strong>variável aleatória discreta</strong> é uma função que
+atribui um número real a cada resultado possível de um experimento
+aleatório, com a característica de que essa variável pode assumir apenas
+<strong>valores distintos e contáveis</strong>. Isso significa que
+podemos listar todos os valores possíveis que a variável pode tomar,
+mesmo que essa lista seja infinita (como os números naturais <span
+class="math inline">1, 2, 3, …</span>).</p>
+<p>Na prática, a variável aleatória discreta é usada para
+<strong>quantificar eventos aleatórios</strong>, permitindo a aplicação
+de ferramentas matemáticas (como a probabilidade, esperança, variância)
+para estudar os comportamentos esperados e as incertezas de um processo
+aleatório.</p>
+<blockquote>
+<p>A palavra “aleatória” indica que o valor assumido pela variável
+depende de um fenômeno <strong>não determinístico</strong>, ou seja, de
+um experimento cujos resultados não podem ser previstos com certeza
+antes da realização.</p>
+</blockquote>
+<blockquote>
+<p>A palavra “discreta” significa que a variável <strong>não assume
+valores contínuos</strong> (como qualquer número real em um intervalo),
+mas sim <strong>valores pontuais e isolados</strong>.</p>
+</blockquote>
+<h3 id="exemplos-clássicos">Exemplos clássicos:</h3>
+<ul>
+<li>O número obtido ao lançar um dado (<span
+class="math inline"><em>X</em> ∈ {1, 2, 3, 4, 5, 6}</span>).</li>
+<li>O número de filhos em uma família.</li>
+<li>O número de chamadas recebidas por uma central em uma hora.</li>
+<li>O resultado de um teste que retorna “positivo” ou “negativo”
+(representado por 1 ou 0).</li>
+</ul>
+<h3 id="representação-formal">Representação formal:</h3>
+<p>Seja <span class="math inline"><em>S</em></span> o espaço amostral de
+um experimento (o conjunto de todos os resultados possíveis). Uma
+<strong>variável aleatória discreta <span
+class="math inline"><em>X</em></span></strong> é uma função:</p>
+<p>$ X: S $</p>
+<p>tal que o conjunto dos valores possíveis <span
+class="math inline">{<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, …} ⊂ ℝ</span>
+é finito ou enumerável.</p>
+<p>Por exemplo, ao jogar dois dados, o espaço amostral tem 36 pares
+ordenados, mas uma variável aleatória pode representar a <strong>soma
+dos valores dos dados</strong>, que varia de 2 a 12. Ou seja, o espaço
+amostral é complexo, mas a variável aleatória nos ajuda a extrair e
+analisar um aspecto específico desse espaço — nesse caso, a soma dos
+dados.</p>
+<h3 id="por-que-são-importantes">Por que são importantes?</h3>
+<p>As variáveis aleatórias discretas são fundamentais em:</p>
+<ul>
+<li><strong>Modelagem estatística</strong>, onde muitos fenômenos reais
+envolvem contagens ou decisões binárias.</li>
+<li><strong>Teoria da probabilidade</strong>, como base para outras
+distribuições (binomial, geométrica, Poisson).</li>
+<li><strong>Ciência de dados e IA</strong>, onde eventos discretos como
+cliques, falhas, aprovações, etc., são representados por variáveis
+discretas.</li>
+<li><strong>Engenharia e computação</strong>, como em redes de filas,
+processos estocásticos, codificação e criptografia.</li>
+</ul>
+<h3 id="características-principais">Características principais:</h3>
+<p>Uma <strong>variável aleatória discreta (VAD)</strong> é definida por
+suas propriedades matemáticas e probabilísticas fundamentais, que a
+distinguem de outros tipos de variáveis (como as contínuas). As
+principais características são:</p>
+<hr />
+<h4 id="conjunto-de-valores-finito-ou-enumerável">🔹 1. Conjunto de
+valores <strong>finito ou enumerável</strong></h4>
+<p>Isso significa que a variável aleatória pode assumir apenas um número
+<strong>contável</strong> de valores distintos. Os valores podem
+ser:</p>
+<ul>
+<li>Um conjunto <strong>finito</strong>, como <span
+class="math inline">{0, 1}</span>, <span
+class="math inline">{1, 2, 3, 4, 5, 6}</span>, etc.</li>
+<li>Um conjunto <strong>infinito enumerável</strong>, como os números
+naturais <span class="math inline">ℕ = {0, 1, 2, 3, …}</span>.</li>
+</ul>
+<p>Esse conjunto é chamado de <strong>suporte</strong> da variável
+aleatória, e é onde sua função de probabilidade é diferente de zero.</p>
+<blockquote>
+<p>📌 Exemplo: Se <span class="math inline"><em>X</em></span> é o número
+de chamadas recebidas em uma central de atendimento por minuto, então
+<span class="math inline"><em>X</em> ∈ {0, 1, 2, 3, ...}</span> —
+conjunto infinito enumerável.</p>
+</blockquote>
+<hr />
+<h4 id="cada-valor-tem-uma-probabilidade-associada">🔹 2. Cada valor tem
+uma <strong>probabilidade associada</strong></h4>
+<p>A variável aleatória discreta é definida por sua <strong>função de
+probabilidade de massa</strong> (f.p.m.), ou em inglês
+<strong>Probability Mass Function (PMF)</strong>. Essa função é uma
+associação:</p>
+<p>$ f(x) = P(X = x), x X $</p>
+<p>Ou seja, para cada valor <span class="math inline"><em>x</em></span>
+que <span class="math inline"><em>X</em></span> pode assumir, existe uma
+probabilidade <span
+class="math inline"><em>P</em>(<em>X</em>=<em>x</em>)</span>, tal
+que:</p>
+<ul>
+<li><span
+class="math inline">0 ≤ <em>P</em>(<em>X</em>=<em>x</em>) ≤ 1</span>
+(todas as probabilidades são válidas)</li>
+<li>A soma das probabilidades é igual a 1:</li>
+</ul>
+<p>$ _{x } P(X = x) = 1 $</p>
+<blockquote>
+<p>🎲 Exemplo (lançamento de um dado justo): A variável <span
+class="math inline"><em>X</em> ∈ {1, 2, 3, 4, 5, 6}</span> tem:</p>
+<p>$ P(X = x) = , x $</p>
+</blockquote>
+<hr />
+<h4
+id="o-comportamento-de-x-pode-ser-descrito-por-propriedades-estatísticas">🔹
+3. O comportamento de <span class="math inline"><em>X</em></span> pode
+ser descrito por <strong>propriedades estatísticas</strong></h4>
+<p>Uma variável aleatória discreta permite o cálculo de medidas
+importantes como:</p>
+<ul>
+<li><p><strong>Esperança matemática (valor esperado)</strong>:</p>
+<p>$ [X] = _{x} x P(X = x) $</p>
+<p>Interpreta-se como a média ponderada dos valores possíveis, de acordo
+com suas probabilidades.</p></li>
+<li><p><strong>Variância</strong>:</p>
+<p>$ (X) = [(X - [X])^2] = _{x} (x - [X])^2 P(X = x) $</p>
+<p>Mede a dispersão dos valores em torno da média.</p></li>
+<li><p><strong>Moda</strong> (valor com maior probabilidade),
+<strong>mediana</strong>, <strong>função de distribuição acumulada (FDA
+ou CDF)</strong>, entre outras.</p></li>
+</ul>
+<hr />
+<h4 id="são-base-para-modelagem-de-muitos-fenômenos-discretos">🔹 4. São
+base para modelagem de muitos fenômenos discretos</h4>
+<p>Variáveis aleatórias discretas são amplamente usadas para
+modelar:</p>
+<ul>
+<li><strong>Contagens</strong> (número de eventos, chamadas, falhas,
+etc.)</li>
+<li><strong>Experimentos com resultado binário</strong>
+(sucesso/fracasso)</li>
+<li><strong>Jogos de azar</strong> (dados, moedas, cartas)</li>
+<li><strong>Processos estocásticos discretos</strong> (cadeias de
+Markov)</li>
+<li><strong>Modelos probabilísticos de algoritmos</strong>
+(randomização, hashing, simulações de Monte Carlo)</li>
+</ul>
+<hr />
+<h2 id="o-que-é-a-função-de-probabilidade-de-massa-pmf">O que é a Função
+de Probabilidade de Massa (PMF)?</h2>
+<p>A <strong>função de probabilidade de massa</strong> é a forma como
+<strong>atribuímos probabilidades a cada valor</strong> possível de uma
+<strong>variável aleatória discreta</strong>.</p>
+<p>Formalmente, para uma variável aleatória discreta <span
+class="math inline"><em>X</em></span>, a PMF é uma função <span
+class="math inline"><em>f</em></span> tal que:</p>
+<p>$ f(x) = P(X = x), x X $</p>
+<p>Essa função precisa satisfazer duas condições fundamentais:</p>
+<ol type="1">
+<li><p><strong>Não-negatividade:</strong></p>
+<p>$ P(X = x) x $</p></li>
+<li><p><strong>Soma das probabilidades igual a 1:</strong></p>
+<p>$ _{x } P(X = x) = 1 $</p></li>
+</ol>
+<hr />
+<h3 id="exemplo-passo-a-passo-jogar-um-dado-justo-de-6-lados">Exemplo
+Passo a Passo: Jogar um dado justo de 6 lados</h3>
+<h3 id="etapa-1-definir-o-experimento">Etapa 1: Definir o
+experimento</h3>
+<blockquote>
+<p>Lançamento de um dado comum, com 6 faces numeradas de 1 a 6.</p>
+</blockquote>
+<h3 id="etapa-2-definir-a-variável-aleatória">Etapa 2: Definir a
+variável aleatória</h3>
+<blockquote>
+<p>Seja <span class="math inline"><em>X</em></span> a variável aleatória
+que representa o <strong>número obtido</strong> ao lançar o dado.</p>
+</blockquote>
+<p>Então:</p>
+<p>$ X {1, 2, 3, 4, 5, 6} $</p>
+<h3 id="etapa-3-atribuir-probabilidades">Etapa 3: Atribuir
+probabilidades</h3>
+<p>Como o dado é <strong>justo</strong>, todos os valores têm
+<strong>igual chance</strong> de acontecer. Como há 6
+possibilidades:</p>
+<p>$ P(X = x) = , x {1, 2, 3, 4, 5, 6} $</p>
+<hr />
+<h3 id="etapa-4-montar-a-tabela-da-pmf">Etapa 4: Montar a Tabela da
+PMF</h3>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline"><em>x</em></span></th>
+<th><span
+class="math inline"><em>P</em>(<em>X</em>=<em>x</em>)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="etapa-5-verificar-propriedades-da-pmf">Etapa 5: Verificar
+propriedades da PMF</h3>
+<ol type="1">
+<li><p><strong>Não-negatividade:</strong> Todas as probabilidades são
+<span class="math inline">$\frac{1}{6} &gt; 0$</span> → ok.</p></li>
+<li><p><strong>Soma das probabilidades:</strong></p>
+<p>$ _{x=1}^6 P(X = x) = 6 = 1 $</p>
+<p>→ ok.</p></li>
+</ol>
+<hr />
+<h3 id="etapa-6-usar-a-pmf-para-cálculos">Etapa 6: Usar a PMF para
+cálculos</h3>
+<h4 id="cálculo-da-esperança-valor-esperado">Cálculo da esperança (valor
+esperado):</h4>
+<p>$ [X] = <em>{x=1}^6 x P(X = x) = </em>{x=1}^6 x = (1 + 2 + 3 + 4 + 5
++ 6) = = 3{,}5 $</p>
+<h4 id="cálculo-da-variância">Cálculo da variância:</h4>
+<p>$ (X) = _{x=1}^6 (x - 3{,}5)^2 $</p>
+<p>Calculando os termos individualmente:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline"><em>x</em></span></th>
+<th><span class="math inline">(<em>x</em>−3,5)<sup>2</sup></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">6, 25</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">2, 25</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math inline">0, 25</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math inline">0, 25</span></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><span class="math inline">2, 25</span></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><span class="math inline">6, 25</span></td>
+</tr>
+</tbody>
+</table>
+<p>Somando:</p>
+<p>$ (X) = (6{,}25 + 2{,}25 + 0{,}25 + 0{,}25 + 2{,}25 + 6{,}25) = =
+2{,}9167 $</p>
+<hr />
+<p>A função de probabilidade de massa (PMF) é uma <strong>ferramenta
+essencial</strong> na estatística e probabilidade, pois permite:</p>
+<ul>
+<li>Mapear os <strong>valores possíveis</strong> de uma variável
+aleatória para suas <strong>respectivas probabilidades</strong>.</li>
+<li>Fazer <strong>cálculos analíticos</strong> como esperança, variância
+e distribuição acumulada.</li>
+<li>Aplicar modelos estatísticos para simular ou prever
+comportamentos.</li>
+</ul>
+<p>Esse exemplo do dado é um <strong>caso clássico de PMF
+equiprovável</strong>, mas podemos fazer o mesmo com distribuições
+<strong>não uniformes</strong>, como a Bernoulli, binomial, geométrica,
+etc.</p>
+<hr />
+<h2 id="distribuição-equiprovável-ou-uniforme-discreta">2. Distribuição
+Equiprovável (ou uniforme discreta)</h2>
+<h3 id="definição-formal">Definição Formal</h3>
+<p>A <strong>distribuição uniforme discreta</strong>, também conhecida
+como <strong>distribuição equiprovável discreta</strong>, ocorre quando
+uma variável aleatória discreta <span
+class="math inline"><em>X</em></span> pode assumir <span
+class="math inline"><em>n</em></span> valores distintos e <strong>todos
+têm a mesma probabilidade de ocorrência</strong>. Isto é, não há nenhum
+viés ou preferência entre os valores possíveis: o sistema é
+<strong>completamente simétrico</strong> do ponto de vista
+probabilístico.</p>
+<p>Seja o espaço amostral finito:</p>
+<p>$ S = {x_1, x_2, , x_n} $</p>
+<p>Então:</p>
+<p>$ P(X = x_i) = i = 1, 2, …, n $</p>
+<h3 id="interpretação-intuitiva">Interpretação Intuitiva</h3>
+<p>Imagine uma urna com <span class="math inline"><em>n</em></span>
+bolas numeradas de 1 até <span class="math inline"><em>n</em></span>,
+todas do mesmo tamanho e sem marcações externas. Se você sortear uma
+bola sem olhar, a chance de qualquer número aparecer é exatamente <span
+class="math inline">$\frac{1}{n}$</span>. Isso é uma distribuição
+equiprovável.</p>
+<p>É a base conceitual para definir o que chamamos de “experimento
+justo”.</p>
+<hr />
+<h3 id="representação-gráfica">Representação Gráfica</h3>
+<p>A função de massa de probabilidade (f.p.m.) de uma distribuição
+uniforme discreta pode ser representada por um gráfico de <strong>barras
+com a mesma altura</strong>.</p>
+<p>Exemplo: <span
+class="math inline"><em>X</em> ∼ Uniforme(1,5)</span></p>
+<p>Valores possíveis: <span class="math inline">{1, 2, 3, 4, 5}</span>
+Probabilidades: <span
+class="math inline"><em>P</em>(<em>X</em>=<em>x</em>) = 0, 2</span> para
+cada <span class="math inline"><em>x</em></span></p>
+<p>Gráfico:</p>
+<pre><code> P(X=x)
+   |
+ 0.2 | █ █ █ █ █
+     +------------
+        1 2 3 4 5</code></pre>
+<hr />
+<h3 id="função-de-distribuição-acumulada-f.d.a">📊 Função de
+Distribuição Acumulada (F.D.A)</h3>
+<p>A função acumulada <span
+class="math inline"><em>F</em>(<em>x</em>) = <em>P</em>(<em>X</em>≤<em>x</em>)</span>
+da distribuição uniforme discreta é uma <strong>função em
+degraus</strong>. Para <span
+class="math inline"><em>X</em> ∼ Uniforme(<em>a</em>,<em>b</em>)</span>:</p>
+$ F(x) =
+<p>$</p>
+<hr />
+<h3 id="esperança-matemática">📈 Esperança Matemática</h3>
+<p>Se <span
+class="math inline"><em>X</em> ∈ {<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x</em><sub><em>n</em></sub>}</span>
+com todos os <span
+class="math inline"><em>x</em><sub><em>i</em></sub></span> igualmente
+prováveis, a <strong>esperança matemática</strong> (valor esperado ou
+média) é dada por:</p>
+<p>$ [X] = <em>{i=1}^{n} x_i = </em>{i=1}^{n} x_i $</p>
+<p><strong>Caso clássico:</strong> Se <span
+class="math inline"><em>X</em> ∈ {1, 2, ..., <em>n</em>}</span>:</p>
+<p>$ [X] = = $</p>
+<hr />
+<h3 id="variância">📉 Variância</h3>
+<p>A variância mede o quanto os valores da variável aleatória se afastam
+da média.</p>
+<p>$ (X) = [X^2] - ([X])^2 $</p>
+<p>Para <span
+class="math inline"><em>X</em> ∈ {1, 2, ..., <em>n</em>}</span>, a
+fórmula fechada é:</p>
+<p>$ (X) = $</p>
+<p>👉 Isso deriva da soma dos quadrados dos <span
+class="math inline"><em>n</em></span> primeiros números naturais:</p>
+<p>$ [X^2] = _{i=1}^{n} i^2 = $</p>
+<hr />
+<h3 id="entropia">Entropia</h3>
+<p>A <strong>entropia</strong> <span
+class="math inline"><em>H</em>(<em>X</em>)</span>, que mede a incerteza
+associada à distribuição, é máxima quando os eventos são
+equiprováveis:</p>
+<p>$ H(X) = -_{i=1}^{n} _2() = _2(n) $</p>
+<p>Portanto, quanto maior <span class="math inline"><em>n</em></span>,
+maior a incerteza.</p>
+<hr />
+<h3 id="aplicações">Aplicações</h3>
+<h4 id="teoria-das-probabilidades">🧪 1. Teoria das Probabilidades</h4>
+<ul>
+<li><p>Ponto de partida para definir espaço amostral e eventos
+equiprováveis.</p></li>
+<li><p>Definição de <strong>probabilidade clássica</strong>:</p>
+<p>$ P(A) = $</p></li>
+</ul>
+<h4 id="jogos-e-simulações">🕹 2. Jogos e Simulações</h4>
+<ul>
+<li>Lançamento de dados (6 valores).</li>
+<li>Roletas, cartas, loterias.</li>
+<li>Geração de números aleatórios simulando cenários onde todos os casos
+têm a mesma chance.</li>
+</ul>
+<h4 id="computação-e-algoritmos">🤖 3. Computação e Algoritmos</h4>
+<ul>
+<li>Algoritmos de embaralhamento (ex: Fisher-Yates).</li>
+<li>Distribuição base para <strong>random walk</strong> e simulações
+Monte Carlo.</li>
+<li>Balanceamento de carga aleatória.</li>
+</ul>
+<h4 id="inferência-e-estatística">🧮 4. Inferência e Estatística</h4>
+<ul>
+<li>Amostragem aleatória simples: escolher unidades da população com
+igual probabilidade.</li>
+<li>Testes estatísticos onde a hipótese nula assume distribuição
+uniforme dos resultados.</li>
+</ul>
+<hr />
+<h3 id="extensões">🔁 Extensões</h3>
+<ul>
+<li><strong>Uniforme Contínua:</strong> Quando os valores possíveis
+formam um intervalo contínuo <span
+class="math inline">[<em>a</em>,<em>b</em>]</span>, com densidade
+constante <span class="math inline">$f(x) = \frac{1}{b -
+a}$</span>.</li>
+<li><strong>Multivariada Uniforme Discreta:</strong> Variáveis vetoriais
+onde todos os vetores de um domínio discreto têm mesma chance de serem
+observados.</li>
+</ul>
+<hr />
+<p>A <strong>distribuição uniforme discreta</strong> é um <strong>modelo
+fundamental e simétrico</strong> na teoria das probabilidades. Ela é
+simples, mas extremamente útil, aparecendo em contextos didáticos,
+computacionais e estatísticos. A igualdade de chances entre os valores
+possíveis a torna um <strong>modelo neutro de referência</strong>,
+essencial para modelagem inicial de incerteza, simulação e inferência
+estatística.</p>
+<ol type="1">
+<li>Definir a variável aleatória com <span
+class="math inline"><em>n</em></span> valores igualmente prováveis.</li>
+<li>Simular valores com <code>numpy</code>.</li>
+<li>Plotar a distribuição de frequências com
+<code>matplotlib</code>.</li>
+<li>Calcular a média e a variância empíricas e comparar com os valores
+teóricos.</li>
+</ol>
+<hr />
+<h3 id="exemplo-prático-lançamento-de-uma-moeda-viciada">Exemplo
+prático: Lançamento de uma moeda viciada</h3>
+<h3 id="cenário">Cenário</h3>
+<p>Imagine uma moeda que não é justa — ela tem 70% de chance de dar
+<strong>cara</strong> e 30% de chance de dar <strong>coroa</strong>.
+Queremos modelar essa situação usando uma variável aleatória Bernoulli,
+onde:</p>
+<ul>
+<li><strong>Sucesso (X = 1):</strong> sair cara</li>
+<li><strong>Fracasso (X = 0):</strong> sair coroa</li>
+</ul>
+<p>Assim, <span class="math inline"><em>p</em> = 0.7</span>.</p>
+<hr />
+<h3 id="passo-1-definir-a-variável-aleatória-x">Passo 1: Definir a
+variável aleatória <span class="math inline"><em>X</em></span></h3>
+<p>Definimos <span class="math inline"><em>X</em></span> como:</p>
+$ X =
+<p>$</p>
+<hr />
+<h3 id="passo-2-escrever-a-função-de-probabilidade">Passo 2: Escrever a
+função de probabilidade</h3>
+<p>A função de massa de probabilidade é:</p>
+<p>$ P(X = x) = p^x (1 - p)^{1 - x}, x {0,1} $</p>
+<p>Para nosso caso:</p>
+<ul>
+<li><span class="math inline"><em>P</em>(<em>X</em>=1) = 0.7</span></li>
+<li><span class="math inline"><em>P</em>(<em>X</em>=0) = 0.3</span></li>
+</ul>
+<hr />
+<h3 id="passo-3-calcular-a-esperança-valor-esperado">Passo 3: Calcular a
+esperança (valor esperado)</h3>
+<p>$ [X] = 1 P(X=1) + 0 P(X=0) = 1 + 0 = 0.7 $</p>
+<p>Interpretação: Em muitos lançamentos, a média de caras será 70%.</p>
+<hr />
+<h3 id="passo-4-calcular-a-variância">Passo 4: Calcular a variância</h3>
+<p>$ (X) = p(1-p) = 0.7 = 0.21 $</p>
+<p>Isso mede a variabilidade dos resultados.</p>
+<hr />
+<h3 id="passo-5-interpretar-resultados">Passo 5: Interpretar
+resultados</h3>
+<ul>
+<li>A moeda tem alta probabilidade de dar cara (70%).</li>
+<li>Em muitas repetições, a média de caras será próxima a 0.7.</li>
+<li>A variância indica que há alguma dispersão (não é 0, logo nem sempre
+sai cara).</li>
+</ul>
+<hr />
+<h3 id="passo-6-simular-10-lançamentos-exemplo">Passo 6: Simular 10
+lançamentos (exemplo)</h3>
+<p>Suponha que lançamos essa moeda 10 vezes, observando <span
+class="math inline"><em>X</em><sub><em>i</em></sub></span> em cada
+lançamento.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Lançamento</th>
+<th>Resultado (X_i)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1 (cara)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0 (coroa)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1 (cara)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1 (cara)</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>0 (coroa)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>1 (cara)</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>1 (cara)</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>0 (coroa)</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>1 (cara)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>1 (cara)</td>
+</tr>
+</tbody>
+</table>
+<p>Número de caras: 7 (ou seja, 7 sucessos)</p>
+<p>Média amostral: <span class="math inline">$\frac{7}{10} =
+0.7$</span>, exatamente o valor esperado!</p>
+<h3 id="exemplo-em-python">🧪 Exemplo em Python</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros da distribuição</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span>           <span class="co"># menor valor</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">6</span>           <span class="co"># maior valor</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> b <span class="op">-</span> a <span class="op">+</span> <span class="dv">1</span>   <span class="co"># número de valores possíveis</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de simulações</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100_000</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação da variável aleatória uniforme discreta</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> np.random.randint(a, b <span class="op">+</span> <span class="dv">1</span>, size<span class="op">=</span>N)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo das frequências relativas (probabilidades empíricas)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>valores_unicos, contagens <span class="op">=</span> np.unique(valores, return_counts<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>frequencias_relativas <span class="op">=</span> contagens <span class="op">/</span> N</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo teórico</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>media_teorica <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>variancia_teorica <span class="op">=</span> ((b <span class="op">-</span> a <span class="op">+</span> <span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>) <span class="op">/</span> <span class="dv">12</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo empírico</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>media_empirica <span class="op">=</span> np.mean(valores)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>variancia_empirica <span class="op">=</span> np.var(valores)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Impressão dos resultados</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Valores possíveis: </span><span class="sc">{</span>valores_unicos<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Frequências relativas: </span><span class="sc">{</span>frequencias_relativas<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Média teórica: </span><span class="sc">{</span>media_teorica<span class="sc">:.4f}</span><span class="ss"> | Média empírica: </span><span class="sc">{</span>media_empirica<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Variância teórica: </span><span class="sc">{</span>variancia_teorica<span class="sc">:.4f}</span><span class="ss"> | Variância empírica: </span><span class="sc">{</span>variancia_empirica<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotagem do gráfico de barras</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.bar(valores_unicos, frequencias_relativas, color<span class="op">=</span><span class="st">&#39;royalblue&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">1</span><span class="op">/</span>n, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="ss">f&#39;Prob. teórica = </span><span class="sc">{</span><span class="dv">1</span><span class="op">/</span>n<span class="sc">:.2f}</span><span class="ss">&#39;</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f&#39;Distribuição Uniforme Discreta (a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Valores&#39;</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Frequência Relativa&#39;</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, axis<span class="op">=</span><span class="st">&#39;y&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<h2 id="exemplo-1-lançamento-de-um-dado---obter-número-6">Exemplo 1:
+Lançamento de um dado - “obter número 6”</h2>
+<h3 id="cenário-1">Cenário</h3>
+<ul>
+<li><p>Experimento: lançar um dado justo de 6 faces.</p></li>
+<li><p>Definimos o sucesso como <strong>“sair o número
+6”</strong>.</p></li>
+<li><p>Resultado possível da variável <span
+class="math inline"><em>X</em></span>:</p>
+<ul>
+<li><span class="math inline"><em>X</em> = 1</span> se sair 6
+(sucesso).</li>
+<li><span class="math inline"><em>X</em> = 0</span> se sair outro número
+(fracasso).</li>
+</ul></li>
+</ul>
+<h3 id="passo-1-determinar-p">Passo 1: Determinar <span
+class="math inline"><em>p</em></span></h3>
+<p>Probabilidade de sucesso:</p>
+<p>$ p = P(X=1) = P() = ,1667 $</p>
+<p>Logo,</p>
+<p>$ P(X=0) = 1 - p = ,8333 $</p>
+<h3 id="passo-2-escrever-a-função-de-probabilidade-1">Passo 2: Escrever
+a função de probabilidade</h3>
+<p>$ P(X=x) = p^{x} (1-p)^{1-x}, x {0,1} $</p>
+<p>Ou seja,</p>
+<ul>
+<li><span
+class="math inline"><em>P</em>(<em>X</em>=1) = 0, 1667</span></li>
+<li><span
+class="math inline"><em>P</em>(<em>X</em>=0) = 0, 8333</span></li>
+</ul>
+<h3 id="passo-3-calcular-expectativa-e-variância">Passo 3: Calcular
+expectativa e variância</h3>
+<ul>
+<li>Esperança:</li>
+</ul>
+<p>$ [X] = p = 0,1667 $</p>
+<p>Interpretação: em média, o dado “sai 6” em cerca de 16,67% dos
+lançamentos.</p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p>$ (X) = p(1-p) = 0,1667 ,8333 = 0,1389 $</p>
+<h3 id="passo-4-interpretação-final">Passo 4: Interpretação final</h3>
+<p>Esse modelo Bernoulli ajuda a responder perguntas do tipo: “Qual a
+chance de obter um 6 no dado em um lançamento?”, “Qual é o comportamento
+esperado e variabilidade?”.</p>
+<hr />
+<h2 id="exemplo-2-um-teste-médico-para-detectar-uma-doença">Exemplo 2:
+Um teste médico para detectar uma doença</h2>
+<h3 id="cenário-2">Cenário</h3>
+<ul>
+<li><p>Um teste clínico detecta a doença em pacientes com 90% de
+eficácia (probabilidade de sucesso).</p></li>
+<li><p>Variável <span class="math inline"><em>X</em></span>:</p>
+<ul>
+<li><span class="math inline"><em>X</em> = 1</span> se o teste detectar
+corretamente a doença (sucesso).</li>
+<li><span class="math inline"><em>X</em> = 0</span> se o teste falhar
+(fracasso).</li>
+</ul></li>
+</ul>
+<h3 id="passo-1-determinar-p-1">Passo 1: Determinar <span
+class="math inline"><em>p</em></span></h3>
+<p>$ p = 0.9 $</p>
+<p>Logo,</p>
+<p>$ P(X=1) = 0.9, P(X=0) = 0.1 $</p>
+<h3 id="passo-2-função-de-probabilidade">Passo 2: Função de
+probabilidade</h3>
+<p>$ P(X=x) = 0.9^{x} ^{1-x}, x {0,1} $</p>
+<ul>
+<li><span class="math inline"><em>P</em>(<em>X</em>=1) = 0.9</span></li>
+<li><span class="math inline"><em>P</em>(<em>X</em>=0) = 0.1</span></li>
+</ul>
+<h3 id="passo-3-calcular-expectativa-e-variância-1">Passo 3: Calcular
+expectativa e variância</h3>
+<ul>
+<li>Esperança:</li>
+</ul>
+<p>$ [X] = p = 0.9 $</p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p>$ (X) = p(1-p) = 0.9 = 0.09 $</p>
+<h3 id="passo-4-interpretação">Passo 4: Interpretação</h3>
+<p>O teste é muito eficiente, com alta chance de sucesso. A variância
+baixa indica que a chance de falha é pequena.</p>
+<hr />
+<h3 id="saída-esperada">📊 Saída Esperada</h3>
+<ul>
+<li>Um gráfico de barras onde todas as alturas (frequências relativas)
+estão próximas de <span class="math inline">$\frac{1}{n}$</span>,
+indicando equiprobabilidade.</li>
+<li>Impressão da média e variância teóricas e empíricas, que devem estar
+muito próximas quando <span class="math inline"><em>N</em></span> é
+grande.</li>
+</ul>
+<hr />
+<h3 id="explicação">🧠 Explicação</h3>
+<ul>
+<li><code>np.random.randint(a, b+1, size=N)</code> gera amostras da
+distribuição uniforme discreta no intervalo <span
+class="math inline">[<em>a</em>,<em>b</em>]</span>.</li>
+<li><code>np.unique(..., return_counts=True)</code> contabiliza a
+frequência de cada valor.</li>
+<li>As comparações entre <strong>teoria</strong> e
+<strong>simulação</strong> mostram como a distribuição se comporta na
+prática.</li>
+</ul>
+<hr />
+<h2 id="distribuição-de-bernoulli">🟢 3. Distribuição de Bernoulli</h2>
+<p>Claro! Vamos aprofundar bastante a seção sobre a <strong>Distribuição
+de Bernoulli</strong>, detalhando sua origem, propriedades matemáticas,
+interpretações, generalizações, exemplos práticos, e sua importância no
+contexto estatístico e computacional.</p>
+<hr />
+<h2 id="distribuição-de-bernoulli-versão-aprofundada">🟢 3. Distribuição
+de Bernoulli (versão aprofundada)</h2>
+<h3 id="introdução-e-contexto-histórico">Introdução e contexto
+histórico</h3>
+<p>A distribuição de Bernoulli é uma das distribuições probabilísticas
+mais simples e fundamentais. Seu nome vem do matemático suíço
+<strong>Jacob Bernoulli</strong> (1654–1705), que foi um dos pioneiros
+no estudo da probabilidade e da análise combinatória. A distribuição
+modela o resultado de um experimento ou ensaio que possui exatamente
+<strong>dois resultados possíveis mutuamente exclusivos e
+exaustivos</strong>, comumente chamados de <strong>“sucesso”</strong> e
+<strong>“fracasso”</strong>.</p>
+<hr />
+<h3 id="definição-formal-1">Definição formal</h3>
+<p>Seja <span class="math inline"><em>X</em></span> uma variável
+aleatória discreta que representa o resultado de um ensaio com dois
+possíveis resultados:</p>
+<ul>
+<li><span class="math inline"><em>X</em> = 1</span> (sucesso)</li>
+<li><span class="math inline"><em>X</em> = 0</span> (fracasso)</li>
+</ul>
+<p>A variável <span class="math inline"><em>X</em></span> segue uma
+distribuição de Bernoulli com parâmetro <span
+class="math inline"><em>p</em></span>, denotada por <span
+class="math inline"><em>X</em> ∼ Bernoulli(<em>p</em>)</span>, se</p>
+<p>$ P(X = 1) = p, P(X = 0) = 1 - p $</p>
+<p>onde</p>
+<ul>
+<li><span class="math inline"><em>p</em> ∈ [0,1]</span> é a
+probabilidade de sucesso;</li>
+<li><span class="math inline">1 − <em>p</em></span> é a probabilidade de
+fracasso.</li>
+</ul>
+<p>A função de massa de probabilidade (f.p.m.) é dada por:</p>
+<p>$ P(X = x) = p^{x} (1-p)^{1-x}, x {0,1} $</p>
+<hr />
+<h3 id="interpretação-intuitiva-1">Interpretação intuitiva</h3>
+<p>Imagine uma moeda que, ao ser lançada, pode dar “cara” ou “coroa”. Se
+a moeda for justa, <span class="math inline"><em>p</em> = 0.5</span> e
+ambos os resultados são igualmente prováveis. Porém, se a moeda for
+viciada, <span class="math inline"><em>p</em> ≠ 0.5</span>, e a chance
+de “cara” é diferente da chance de “coroa”. Essa é a essência da
+distribuição de Bernoulli.</p>
+<p>Mas essa distribuição não se limita a moedas. Qualquer situação
+binária pode ser modelada por ela, como:</p>
+<ul>
+<li>Passar ou não em um teste.</li>
+<li>Acontecimento ou não de um evento (ex: um dispositivo falha ou
+funciona).</li>
+<li>Compra ou não de um produto pelo consumidor.</li>
+</ul>
+<hr />
+<h3 id="propriedades-matemáticas-importantes">Propriedades matemáticas
+importantes</h3>
+<ol type="1">
+<li><strong>Esperança (média):</strong></li>
+</ol>
+<p>A esperança de <span class="math inline"><em>X</em></span>, que
+indica o valor médio esperado de sucesso, é</p>
+<p>$ [X] = 1 p + 0 (1-p) = p $</p>
+<p>Ou seja, o valor esperado é simplesmente a probabilidade de
+sucesso.</p>
+<ol start="2" type="1">
+<li><strong>Variância:</strong></li>
+</ol>
+<p>A variância mede a dispersão dos valores em torno da média. Para
+Bernoulli:</p>
+<p>$ (X) = [X^2] - ([X])^2 $</p>
+<p>Como <span
+class="math inline"><em>X</em><sup>2</sup> = <em>X</em></span> para
+<span class="math inline"><em>X</em> ∈ {0, 1}</span>,</p>
+<p>$ (X) = p - p^2 = p(1-p) $</p>
+<p>Note que a variância é máxima quando <span
+class="math inline"><em>p</em> = 0.5</span> e mínima (zero) quando <span
+class="math inline"><em>p</em> = 0</span> ou <span
+class="math inline"><em>p</em> = 1</span>, refletindo a certeza no
+resultado.</p>
+<ol start="3" type="1">
+<li><strong>Momento gerador (MGF):</strong></li>
+</ol>
+<p>O momento gerador é uma função útil para calcular momentos e para
+caracterizar a distribuição:</p>
+<p>$ M_X(t) = [e^{tX}] = (1-p) + p e^{t} $</p>
+<hr />
+<h3 id="função-de-distribuição-acumulada-cdf">Função de distribuição
+acumulada (CDF)</h3>
+<p>A CDF <span
+class="math inline"><em>F</em>(<em>x</em>) = <em>P</em>(<em>X</em>≤<em>x</em>)</span>
+para <span class="math inline"><em>X</em> ∼ Bernoulli(<em>p</em>)</span>
+é:</p>
+$ F(x) =
+<p>$</p>
+<p>Por ser discreta, a CDF tem saltos em <span
+class="math inline"><em>x</em> = 0</span> e <span
+class="math inline"><em>x</em> = 1</span>.</p>
+<hr />
+<h3 id="relações-e-generalizações">Relações e generalizações</h3>
+<ul>
+<li><strong>Distribuição Binomial:</strong> A soma de <span
+class="math inline"><em>n</em></span> variáveis aleatórias independentes
+e identicamente distribuídas (i.i.d.) Bernoulli(<span
+class="math inline"><em>p</em></span>) tem distribuição Binomial(<span
+class="math inline"><em>n</em>, <em>p</em></span>).</li>
+</ul>
+<p>$ Y = _{i=1}^n X_i (n,p) $</p>
+<ul>
+<li><p><strong>Distribuição Geométrica:</strong> Modela o número de
+ensaios até o primeiro sucesso em uma sequência de Bernoullis.</p></li>
+<li><p><strong>Distribuição de Poisson:</strong> Pode ser vista como um
+limite da distribuição binomial para eventos raros.</p></li>
+</ul>
+<hr />
+<h3 id="exemplo-detalhado">Exemplo detalhado</h3>
+<p>Suponha que um teste médico tenha 80% de chance de detectar
+corretamente uma doença (sucesso). Seja <span
+class="math inline"><em>X</em></span> a variável que indica se o teste
+foi positivo (1) ou negativo (0).</p>
+<ul>
+<li><span class="math inline"><em>P</em>(<em>X</em>=1) = 0.8</span></li>
+<li><span class="math inline"><em>P</em>(<em>X</em>=0) = 0.2</span></li>
+</ul>
+<p>A esperança é <span class="math inline">𝔼[<em>X</em>] = 0.8</span>,
+indicando que, em média, o teste detecta a doença 80% das vezes. A
+variância é <span class="math inline">0.8 × 0.2 = 0.16</span>, mostrando
+a dispersão do resultado em torno da média.</p>
+<hr />
+<h3 id="aplicações-práticas-em-ciência-e-tecnologia">Aplicações práticas
+em ciência e tecnologia</h3>
+<ul>
+<li><p><strong>Machine Learning e Estatística:</strong> Classificadores
+binários, testes de hipóteses, modelos probabilísticos e redes neurais
+usam a Bernoulli para modelar saídas binárias
+(verdadeiro/falso).</p></li>
+<li><p><strong>Engenharia de Confiabilidade:</strong> Modelagem de
+falhas de componentes (funciona/falha).</p></li>
+<li><p><strong>Marketing e Economia:</strong> Análise de compra vs. não
+compra, sucesso vs. fracasso em campanhas.</p></li>
+<li><p><strong>Ciência da Computação:</strong> Simulações de eventos
+aleatórios, algoritmos probabilísticos.</p></li>
+</ul>
+<hr />
+<h3 id="exemplo">Exemplo</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetro da Bernoulli</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.7</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de lançamentos</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação dos lançamentos (0 ou 1)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>resultados <span class="op">=</span> np.random.binomial(n<span class="op">=</span><span class="dv">1</span>, p<span class="op">=</span>p, size<span class="op">=</span>n)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Resultados dos lançamentos:&quot;</span>, resultados)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Número de caras (sucessos):&quot;</span>, np.<span class="bu">sum</span>(resultados))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Média amostral:&quot;</span>, np.mean(resultados))</span></code></pre></div>
+<h3 id="curiosidades-e-observações">Curiosidades e observações</h3>
+<ul>
+<li>Embora simples, a Bernoulli é a base para modelos probabilísticos
+mais complexos.</li>
+<li>O parâmetro <span class="math inline"><em>p</em></span> pode ser
+interpretado como a “taxa de sucesso”.</li>
+<li>Em inferência estatística, estimar <span
+class="math inline"><em>p</em></span> a partir de dados Bernoulli é um
+problema clássico (ex: proporção amostral).</li>
+</ul>
+<p>A <strong>distribuição de Bernoulli</strong> é o alicerce para
+entender processos aleatórios binários. Sua simplicidade esconde uma
+riqueza matemática e uma ampla aplicabilidade prática que permeia quase
+todas as áreas da ciência e da engenharia.</p>
+<p>Se quiser, posso mostrar códigos para simulação, exemplos de
+estimativa de <span class="math inline"><em>p</em></span> em amostras,
+ou explicações de como a Bernoulli conecta com outras distribuições.
+Quer que eu faça?</p>
+<h3 id="aplicações-1">Aplicações:</h3>
+<ul>
+<li>Modelagem de ensaios binários (sucesso/fracasso).</li>
+<li>Fundamento da distribuição <strong>binomial</strong> (soma de
+Bernoullis).</li>
+<li>Em IA, aprendizado supervisionado binário.</li>
+<li>Testes A/B em marketing, produção ou ciência de dados.</li>
+</ul>
+<hr />
+<h2 id="comparando-equiprovável-e-bernoulli">🔁 Comparando Equiprovável
+e Bernoulli</h2>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Distribuição Equiprovável</th>
+<th>Distribuição de Bernoulli</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Valores possíveis</td>
+<td><span
+class="math inline"><em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x</em><sub><em>n</em></sub></span></td>
+<td>0 ou 1</td>
+</tr>
+<tr class="even">
+<td>Probabilidades</td>
+<td>Iguais</td>
+<td><span class="math inline"><em>p</em></span> e <span
+class="math inline">1 − <em>p</em></span></td>
+</tr>
+<tr class="odd">
+<td>Tamanho do espaço amostral</td>
+<td><span class="math inline"><em>n</em></span></td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Esperança</td>
+<td><span class="math inline">$\frac{1}{n} \sum x_i$</span></td>
+<td><span class="math inline"><em>p</em></span></td>
+</tr>
+<tr class="odd">
+<td>Variância</td>
+<td>Depende de <span
+class="math inline"><em>x</em><sub><em>i</em></sub></span></td>
+<td><span class="math inline"><em>p</em>(1−<em>p</em>)</span></td>
+</tr>
+<tr class="even">
+<td>Uso comum</td>
+<td>Jogos, sorteios</td>
+<td>Sucesso/fracasso binário</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conclusão">📘 Conclusão</h2>
+<p>As distribuições <strong>equiprovável</strong> e <strong>de
+Bernoulli</strong> são fundamentais para compreender experimentos
+aleatórios discretos. Enquanto a equiprovável lida com simetria (todos
+os resultados com mesma chance), a Bernoulli introduz <strong>assimetria
+binária</strong>, sendo essencial para aplicações probabilísticas em
+estatística, aprendizado de máquina e ciências aplicadas.</p>
+<p>Se quiser, posso complementar com <strong>simulações em
+Python</strong>, <strong>exercícios resolvidos</strong> ou
+<strong>comparações com distribuições contínuas</strong> como a
+<strong>Uniforme contínua</strong> ou <strong>Normal</strong>. Deseja
+seguir por algum desses caminhos?</p>
+</body>
+</html>
